@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Kimpress produziert AI-Videos für Coaches und Creator — fertig geliefert, ohne Kamera, ohne Aufwand." />
+    <meta name="theme-color" content="#0A0A0A" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Kimpress — AI Video Production für Coaches &amp; Creator</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
+
+    <!-- GSAP -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+
+    <!-- NAV -->
+    <nav class="nav" id="nav">
+      <a href="#" class="nav-logo">KIMPRESS</a>
+      <a href="#kontakt" class="nav-cta">Demo anfragen</a>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="hero-bg-grid" aria-hidden="true"></div>
+      <div class="hero-glow" aria-hidden="true"></div>
+
+      <div class="hero-content">
+        <span class="hero-tag">AI Video Production · DACH</span>
+        <h1 class="hero-headline">
+          Sichtbar werden.<br />
+          Ohne Kamera.<br />
+          Ohne Aufwand.
+        </h1>
+        <p class="hero-sub">
+          Du briefst einmal. Den Rest übernehmen wir.
+        </p>
+        <a href="#kontakt" class="btn-primary">
+          Erstes Demo anfragen →
+        </a>
+        <p class="hero-micro">Bezahlt wird nur wenn es dir gefällt.</p>
+      </div>
+
+      <!-- Floating Video Cards -->
+      <div class="hero-cards" aria-hidden="true">
+        <div class="card card-1">
+          <div class="card-inner">
+            <div class="card-thumb card-thumb-1"></div>
+            <div class="card-play">▶</div>
+            <div class="card-meta">
+              <div class="card-label">Coach · Business</div>
+              <div class="card-duration">0:45</div>
+            </div>
+          </div>
+        </div>
+        <div class="card card-2">
+          <div class="card-inner">
+            <div class="card-thumb card-thumb-2"></div>
+            <div class="card-play">▶</div>
+            <div class="card-meta">
+              <div class="card-label">Creator · Lifestyle</div>
+              <div class="card-duration">0:32</div>
+            </div>
+          </div>
+        </div>
+        <div class="card card-3">
+          <div class="card-inner">
+            <div class="card-thumb card-thumb-3"></div>
+            <div class="card-play">▶</div>
+            <div class="card-meta">
+              <div class="card-label">Brand · Produkt</div>
+              <div class="card-duration">0:58</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-scroll-indicator" aria-hidden="true">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- DEMO SECTION -->
+    <section class="section demo-section" id="demo">
+      <div class="container">
+        <div class="section-label fade-up">Proof of Quality</div>
+        <h2 class="section-headline fade-up">So klingt das in der Praxis.</h2>
+        <p class="section-sub fade-up">
+          Drei AI-Charaktere. Drei Nischen. Dein Video wird auf dein Thema,
+          deine Stimme, deine Marke angepasst.
+        </p>
+
+        <div class="demo-grid">
+          <div class="demo-card fade-up">
+            <div class="demo-video-placeholder demo-p-1">
+              <div class="demo-play-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </div>
+              <div class="demo-char-name">Business Coach</div>
+              <div class="demo-tag-pill">Business Coach</div>
+            </div>
+            <div class="demo-info">
+              <h3>Business Coach</h3>
+              <p>Business · Mindset · Produktivität</p>
+            </div>
+          </div>
+
+          <div class="demo-card fade-up" style="--delay: 0.12s">
+            <div class="demo-video-placeholder demo-p-2">
+              <div class="demo-play-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </div>
+              <div class="demo-char-name">Fashion Creator</div>
+              <div class="demo-tag-pill">Fashion Creator</div>
+            </div>
+            <div class="demo-info">
+              <h3>Fashion Creator</h3>
+              <p>Fashion · Style · Personal Brand</p>
+            </div>
+          </div>
+
+          <div class="demo-card fade-up" style="--delay: 0.24s">
+            <div class="demo-video-placeholder demo-p-3">
+              <div class="demo-play-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </div>
+              <div class="demo-char-name">Music Artist</div>
+              <div class="demo-tag-pill">Music Artist</div>
+            </div>
+            <div class="demo-info">
+              <h3>Music Artist</h3>
+              <p>Music · AI Artist · Brand Expansion</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ANGEBOT SECTION -->
+    <section class="section angebot-section" id="angebot">
+      <div class="container">
+        <div class="section-label fade-up">Preise</div>
+        <h2 class="section-headline fade-up">Ein Paket. Ein Preis. Fertig.</h2>
+
+        <div class="offer-grid fade-up">
+          <div class="offer-card">
+            <div class="offer-header">
+              <span class="offer-name">Standard</span>
+              <div class="offer-price">
+                <span class="price-amount">250€</span>
+                <span class="price-label">einmalig</span>
+              </div>
+            </div>
+            <ul class="offer-list">
+              <li><span class="check">✓</span> 1x AI-Video (30–60 Sek, 9:16)</li>
+              <li><span class="check">✓</span> 1x Thumbnail (brand-konform)</li>
+              <li><span class="check">✓</span> 1x Brand Music Intro/Outro</li>
+              <li><span class="check">✓</span> 1x Caption (fertig geschrieben)</li>
+              <li><span class="check">✓</span> 3x Hashtag-Sets (TikTok / IG / YT)</li>
+              <li><span class="check">✓</span> 1x Posting-Empfehlung</li>
+            </ul>
+            <div class="offer-meta">Lieferzeit: 3–5 Werktage</div>
+            <a href="#kontakt" class="btn-secondary">Demo anfragen</a>
+          </div>
+
+          <div class="offer-card offer-featured">
+            <div class="offer-badge">Empfohlen</div>
+            <div class="offer-header">
+              <span class="offer-name">Mit Revision</span>
+              <div class="offer-price">
+                <span class="price-amount">350€</span>
+                <span class="price-label">einmalig</span>
+              </div>
+            </div>
+            <ul class="offer-list">
+              <li><span class="check">✓</span> Alles aus Standard</li>
+              <li><span class="check check-v">✓</span> 1x Revisionsrunde</li>
+              <li><span class="check check-v">✓</span> Anpassung nach deinem Feedback</li>
+              <li><span class="check check-v">✓</span> Prioritäts-Lieferung</li>
+            </ul>
+            <div class="offer-meta">Lieferzeit: 3–5 Werktage</div>
+            <a href="#kontakt" class="btn-primary">Demo anfragen</a>
+          </div>
+        </div>
+
+        <p class="offer-subline fade-up">
+          Starte ohne Risiko. Bezahlt wird nur wenn das Demo dir gefällt.
+        </p>
+      </div>
+    </section>
+
+    <!-- PROZESS SECTION -->
+    <section class="section prozess-section" id="prozess">
+      <div class="container">
+        <div class="section-label fade-up">So funktioniert es</div>
+        <h2 class="section-headline fade-up">Von Brief zu fertigem Video.</h2>
+
+        <div class="prozess-grid">
+          <div class="prozess-step fade-up">
+            <div class="step-number">01</div>
+            <h3>Du briefst einmal.</h3>
+            <p>Thema, Zielgruppe, Stil. Kein Anruf. Kein Formular-Marathon. Eine DM reicht.</p>
+          </div>
+          <div class="prozess-step fade-up" style="--delay: 0.1s">
+            <div class="step-connector" aria-hidden="true"></div>
+            <div class="step-number">02</div>
+            <h3>Ich produziere.</h3>
+            <p>Script, AI Character, Voice, Schnitt, Thumbnail, Caption — alles fertig.</p>
+          </div>
+          <div class="prozess-step fade-up" style="--delay: 0.2s">
+            <div class="step-connector" aria-hidden="true"></div>
+            <div class="step-number">03</div>
+            <h3>Du postest.</h3>
+            <p>Du bekommst ein fertiges Paket. Bereit zur Veröffentlichung. Kein weiterer Aufwand.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KONTAKT SECTION -->
+    <section class="section kontakt-section" id="kontakt">
+      <div class="container">
+        <div class="kontakt-inner fade-up">
+          <div class="section-label">Jetzt starten</div>
+          <h2 class="section-headline">Bereit für dein erstes Video?</h2>
+          <p class="section-sub">
+            Kein Anruf. Kein Formular-Marathon.<br />
+            Schreib mir direkt auf Instagram.
+          </p>
+          <a
+            href="https://www.instagram.com/direct/new/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-primary btn-large"
+          >
+            Demo anfragen — kostenlos
+            <span class="btn-arrow">→</span>
+          </a>
+          <p class="kontakt-micro">
+            Oder per E-Mail:
+            <a href="mailto:hello@kimpress.de" class="kontakt-mail">hello@kimpress.de</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div class="footer-logo">KIMPRESS</div>
+        <nav class="footer-links" aria-label="Rechtliches">
+          <a href="#impressum">Impressum</a>
+          <a href="#datenschutz">Datenschutz</a>
+        </nav>
+        <div class="footer-copy">© 2026 Kimpress · kimpress.de</div>
+      </div>
+    </footer>
+
+    <!-- IMPRESSUM -->
+    <div class="legal-overlay" id="impressum" role="dialog" aria-modal="true" aria-label="Impressum">
+      <div class="legal-box">
+        <a href="#" class="legal-close" aria-label="Schließen">✕</a>
+        <h2>Impressum</h2>
+        <p>
+          Angaben gemäß § 5 TMG<br /><br />
+          <strong>Kimpress</strong><br />
+          [Vollständiger Name]<br />
+          [Straße Hausnummer]<br />
+          [PLZ Ort]<br /><br />
+          Kontakt:<br />
+          E-Mail: hello@kimpress.de<br /><br />
+          <em>Platzhalter — vor Launch ersetzen.</em>
+        </p>
+      </div>
+    </div>
+
+    <!-- DATENSCHUTZ -->
+    <div class="legal-overlay" id="datenschutz" role="dialog" aria-modal="true" aria-label="Datenschutz">
+      <div class="legal-box">
+        <a href="#" class="legal-close" aria-label="Schließen">✕</a>
+        <h2>Datenschutzerklärung</h2>
+        <p>
+          <strong>Verantwortlicher</strong><br />
+          Kimpress · hello@kimpress.de<br /><br />
+          <strong>Erhobene Daten</strong><br />
+          Diese Website erhebt keine personenbezogenen Daten.
+          Es werden keine Cookies gesetzt, kein Tracking durchgeführt.<br /><br />
+          <strong>Externe Dienste</strong><br />
+          Beim Laden der Seite werden Schriften von Google Fonts übertragen.
+          Dabei kann die IP-Adresse an Google-Server übermittelt werden.
+          Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO.<br /><br />
+          <strong>Kontakt bei Fragen</strong><br />
+          hello@kimpress.de<br /><br />
+          <em>Platzhalter — vor Launch durch vollständigen Text ersetzen.</em>
+        </p>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
