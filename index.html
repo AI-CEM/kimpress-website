@@ -1,315 +1,531 @@
 <!DOCTYPE html>
 <html lang="de">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Kimpress produziert AI-Videos für Coaches und Creator — fertig geliefert, ohne Kamera, ohne Aufwand." />
-    <meta name="theme-color" content="#0A0A0A" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>Kimpress — AI Video Production für Coaches &amp; Creator</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kimpress — KI-Agentur im DACH-Raum</title>
+  <meta name="description" content="Kimpress ist deine KI-Agentur aus Hamburg. Content, Chatbots, Automatisierung, SEO und Social Media — für KMU im DACH-Raum. 1 Operator, maximale Wirkung." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="/kimpress_test_logo.svg" />
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
+  <!-- Neural Void: background starfield canvas + ambient glow orbs -->
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+  <div class="orb orb--1" aria-hidden="true"></div>
+  <div class="orb orb--2" aria-hidden="true"></div>
+  <div class="orb orb--3" aria-hidden="true"></div>
 
-    <!-- GSAP -->
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <!-- Scroll progress bar -->
+  <div id="progress-bar" aria-hidden="true"></div>
 
-    <link rel="stylesheet" href="/src/style.css" />
-  </head>
-  <body>
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#hero" class="nav__logo" aria-label="Kimpress Home">
+        <img src="/kimpress_test_logo.svg" alt="Kimpress" />
+      </a>
+      <div class="nav__links" id="nav-links">
+        <a href="#services" class="nav__link">Services</a>
+        <a href="#process" class="nav__link">Prozess</a>
+        <a href="#about" class="nav__link">Über uns</a>
+        <a href="#faq" class="nav__link">FAQ</a>
+        <a href="/blog.html" class="nav__link">Blog</a>
+      </div>
+      <a href="#kontakt" class="btn btn--primary btn--sm" id="nav-cta">Anfragen</a>
+      <button class="nav__burger" id="burger-btn" aria-label="Menü öffnen" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
 
-    <!-- NAV -->
-    <nav class="nav" id="nav">
-      <a href="#" class="nav-logo">KIMPRESS</a>
-      <a href="#kontakt" class="nav-cta">Demo anfragen</a>
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <button class="mobile-menu__close" id="mobile-close" aria-label="Menü schließen">&#x2715;</button>
+    <nav class="mobile-menu__nav">
+      <a href="#services" class="mobile-menu__link">Services</a>
+      <a href="#process" class="mobile-menu__link">Prozess</a>
+      <a href="#about" class="mobile-menu__link">Über uns</a>
+      <a href="#faq" class="mobile-menu__link">FAQ</a>
+      <a href="/blog.html" class="mobile-menu__link">Blog</a>
+      <a href="#kontakt" class="btn btn--primary btn--lg">Projekt starten</a>
     </nav>
+  </div>
 
-    <!-- HERO -->
-    <section class="hero" id="hero">
-      <div class="hero-bg-grid" aria-hidden="true"></div>
-      <div class="hero-glow" aria-hidden="true"></div>
-
-      <div class="hero-content">
-        <span class="hero-tag">AI Video Production · DACH</span>
-        <h1 class="hero-headline">
-          Sichtbar werden.<br />
-          Ohne Kamera.<br />
-          Ohne Aufwand.
-        </h1>
-        <p class="hero-sub">
-          Du briefst einmal. Den Rest übernehmen wir.
-        </p>
-        <a href="#kontakt" class="btn-primary">
-          Erstes Demo anfragen →
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero__left">
+      <span class="hero__eyebrow">KI-Agentur · DACH-Raum · Since 2026</span>
+      <h1 class="hero__headline">KI-Systeme die dein Business <span>auf Autopilot setzen.</span></h1>
+      <p class="hero__subline">Für KMU, Coaches und Creator im DACH-Raum &mdash; skalierbare Ergebnisse ohne teure Agentur-Strukturen.</p>
+      <div class="hero__actions">
+        <a href="#kontakt" class="btn btn--primary btn--lg hero__cta" id="hero-cta">
+          Jetzt anfragen
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
-        <p class="hero-micro">Bezahlt wird nur wenn es dir gefällt.</p>
+        <a href="#services" class="btn btn--outline btn--lg">Services ansehen</a>
       </div>
+      <p class="hero__badge">Antwort innerhalb 24h garantiert</p>
+      <div class="hero__pills" aria-label="Unsere Stärken auf einen Blick">
+        <span class="hero__pill">
+          <svg width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 4" stroke="#FF0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Setup in 7 Tagen
+        </span>
+        <span class="hero__pill">
+          <svg width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 4" stroke="#FF0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Kein Retainer
+        </span>
+        <span class="hero__pill">
+          <svg width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 4" stroke="#FF0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          DACH-Raum
+        </span>
+      </div>
+    </div>
+    <div class="hero__right" aria-hidden="true">
+      <canvas id="head-canvas"></canvas>
+    </div>
+  </section>
 
-      <!-- Floating Video Cards -->
-      <div class="hero-cards" aria-hidden="true">
-        <div class="card card-1">
-          <div class="card-inner">
-            <div class="card-thumb card-thumb-1"></div>
-            <div class="card-play">▶</div>
-            <div class="card-meta">
-              <div class="card-label">Coach · Business</div>
-              <div class="card-duration">0:45</div>
+
+  <!-- TOOL TRUST MARQUEE -->
+  <div class="tool-marquee" aria-hidden="true">
+    <div class="tool-marquee__track">
+      <span class="tool-marquee__item">Make</span>
+      <span class="tool-marquee__item">n8n</span>
+      <span class="tool-marquee__item">Zapier</span>
+      <span class="tool-marquee__item">GPT-4o</span>
+      <span class="tool-marquee__item">Claude 3.7</span>
+      <span class="tool-marquee__item">Midjourney</span>
+      <span class="tool-marquee__item">ElevenLabs</span>
+      <span class="tool-marquee__item">HeyGen</span>
+      <span class="tool-marquee__item">Airtable</span>
+      <span class="tool-marquee__item">Notion</span>
+      <span class="tool-marquee__item">Vapi.ai</span>
+      <span class="tool-marquee__item">Perplexity</span>
+      <!-- duplicate for seamless loop -->
+      <span class="tool-marquee__item">Make</span>
+      <span class="tool-marquee__item">n8n</span>
+      <span class="tool-marquee__item">Zapier</span>
+      <span class="tool-marquee__item">GPT-4o</span>
+      <span class="tool-marquee__item">Claude 3.7</span>
+      <span class="tool-marquee__item">Midjourney</span>
+      <span class="tool-marquee__item">ElevenLabs</span>
+      <span class="tool-marquee__item">HeyGen</span>
+      <span class="tool-marquee__item">Airtable</span>
+      <span class="tool-marquee__item">Notion</span>
+      <span class="tool-marquee__item">Vapi.ai</span>
+      <span class="tool-marquee__item">Perplexity</span>
+    </div>
+  </div>
+
+  <!-- STATS BAR -->
+  <div class="stats">
+    <div class="container">
+      <div class="stats__grid">
+        <div class="stat">
+          <div class="stat__number">48h</div>
+          <div class="stat__label">Durchschnittliche Lieferzeit</div>
+        </div>
+        <div class="stat">
+          <div class="stat__number">10×</div>
+          <div class="stat__label">Schneller als klassische Agenturen</div>
+        </div>
+        <div class="stat">
+          <div class="stat__number">100%</div>
+          <div class="stat__label">KI-gestützte Prozesse</div>
+        </div>
+        <div class="stat">
+          <div class="stat__number">24h</div>
+          <div class="stat__label">Reaktionszeit garantiert</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="container">
+      <span class="section__label" style="text-align:center;display:block">Was wir tun</span>
+      <h2 class="section__title">Was wir liefern</h2>
+      <p class="section__subtitle">Sechs Kernleistungen. Alle KI-gestützt. Alle auf dein Business zugeschnitten.</p>
+
+      <div class="svc-list">
+
+        <article class="svc sr" id="service-content">
+          <span class="svc__num" aria-hidden="true">01</span>
+          <div class="svc__icon" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 28 28" fill="none">
+              <rect x="3" y="5" width="22" height="14" rx="2" stroke="#FF0000" stroke-width="1.5"/>
+              <path d="M11.5 10l5 3-5 3v-6z" fill="#FF0000"/>
+              <path d="M8 23h12" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="svc__body">
+            <h3 class="svc__title">KI-Content Erstellung</h3>
+            <p class="svc__text">Videos, Bilder, Texte &mdash; fertig und markenkonform geliefert. In Stunden, nicht Wochen.</p>
+          </div>
+          <div class="svc__tags"><span>Video</span><span>KI-Bilder</span><span>Copywriting</span></div>
+        </article>
+
+        <article class="svc sr" id="service-social">
+          <span class="svc__num" aria-hidden="true">02</span>
+          <div class="svc__icon" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 28 28" fill="none">
+              <circle cx="14" cy="14" r="10" stroke="#FF0000" stroke-width="1.5"/>
+              <path d="M14 4v5m0 10v5M4 14h5m10 0h5" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round"/>
+              <circle cx="14" cy="14" r="2.5" fill="#FF0000"/>
+            </svg>
+          </div>
+          <div class="svc__body">
+            <h3 class="svc__title">Social Media &amp; Automation</h3>
+            <p class="svc__text">Mehr Reichweite, weniger Aufwand. Automatisierte Pipelines die täglich posten &mdash; ohne dich.</p>
+          </div>
+          <div class="svc__tags"><span>TikTok</span><span>Instagram</span><span>LinkedIn</span></div>
+        </article>
+
+        <article class="svc sr" id="service-web">
+          <span class="svc__num" aria-hidden="true">03</span>
+          <div class="svc__icon" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 28 28" fill="none">
+              <rect x="4" y="3" width="20" height="22" rx="2" stroke="#FF0000" stroke-width="1.5"/>
+              <path d="M9 9h10M9 13.5h7M9 18h8.5" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="svc__body">
+            <h3 class="svc__title">Webseitenentwicklung &amp; SEO</h3>
+            <p class="svc__text">Professionell, schnell, messbar. Websites die konvertieren &mdash; von uns konzipiert und geliefert.</p>
+          </div>
+          <div class="svc__tags"><span>SEO</span><span>Landing Pages</span><span>DACH</span></div>
+        </article>
+
+        <article class="svc sr" id="service-chatbot">
+          <span class="svc__num" aria-hidden="true">04</span>
+          <div class="svc__icon" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 28 28" fill="none">
+              <rect x="3" y="4" width="22" height="16" rx="3" stroke="#FF0000" stroke-width="1.5"/>
+              <path d="M8 24h12" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M14 20v4" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round"/>
+              <circle cx="9" cy="12" r="1.5" fill="#FF0000"/>
+              <circle cx="14" cy="12" r="1.5" fill="#FF0000"/>
+              <circle cx="19" cy="12" r="1.5" fill="#FF0000"/>
+            </svg>
+          </div>
+          <div class="svc__body">
+            <h3 class="svc__title">Chatbots &amp; Voicebots</h3>
+            <p class="svc__text">Intelligente Assistenten für Kundenservice, Lead-Qualifizierung und interne Prozesse. Auf GPT &amp; Claude-Basis.</p>
+          </div>
+          <div class="svc__tags"><span>Chatbot</span><span>Voicebot</span><span>WhatsApp</span></div>
+        </article>
+
+        <article class="svc sr" id="service-automation">
+          <span class="svc__num" aria-hidden="true">05</span>
+          <div class="svc__icon" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 28 28" fill="none">
+              <path d="M5 7h7v7H5zM16 7h7v7h-7zM10.5 14h7v7h-7z" stroke="#FF0000" stroke-width="1.5" stroke-linejoin="round"/>
+              <path d="M8.5 14v-3M19.5 14v3M14 14v-3" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="svc__body">
+            <h3 class="svc__title">KI-Workflow Automatisierung</h3>
+            <p class="svc__text">Mit Make, Zapier &amp; n8n automatisieren wir deine Prozesse. Kein IT-Team nötig &mdash; sofort produktiv.</p>
+          </div>
+          <div class="svc__tags"><span>Make</span><span>n8n</span><span>Zapier</span></div>
+        </article>
+
+        <article class="svc svc--last sr" id="service-beratung">
+          <span class="svc__num" aria-hidden="true">06</span>
+          <div class="svc__icon" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 28 28" fill="none">
+              <circle cx="14" cy="10" r="5" stroke="#FF0000" stroke-width="1.5"/>
+              <path d="M4 24c0-5.523 4.477-10 10-10s10 4.477 10 10" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="svc__body">
+            <h3 class="svc__title">KI-Beratung &amp; Custom GPTs</h3>
+            <p class="svc__text">Custom GPTs, Claude-Assistenten und maßgefertigte Prompt-Systeme. Du arbeitest danach sofort produktiv.</p>
+          </div>
+          <div class="svc__tags"><span>Custom GPT</span><span>Claude</span><span>Onboarding</span></div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- PROCESS -->
+  <section class="process" id="process">
+    <div class="container">
+      <span class="section__label" style="text-align:center;display:block">Wie wir arbeiten</span>
+      <h2 class="section__title">Vier Schritte.<br>Kein Overhead.</h2>
+      <p class="section__subtitle">Von der ersten Idee bis zur laufenden KI — transparent, schnell, kein Bullshit.</p>
+      <div class="process__grid">
+        <div class="process__step sr">
+          <div class="process__num">01</div>
+          <h3 class="process__title">Analyse</h3>
+          <p class="process__text">Bevor wir loslegen, verstehen wir dein Business. Was kostet dich Zeit? Was fehlt? Gemeinsam finden wir wo KI wirklich Sinn macht.</p>
+        </div>
+        <div class="process__step sr">
+          <div class="process__num">02</div>
+          <h3 class="process__title">Architektur</h3>
+          <p class="process__text">Auf Basis der Analyse entscheiden wir was gebaut wird &mdash; kein Ballast, kein Overhead. Nur was dir wirklich hilft.</p>
+        </div>
+        <div class="process__step sr">
+          <div class="process__num">03</div>
+          <h3 class="process__title">Produktion</h3>
+          <p class="process__text">Du bist von Anfang an dabei. Wir bauen das System, du siehst jeden Schritt &mdash; nichts geht live ohne deine Zustimmung.</p>
+        </div>
+        <div class="process__step sr">
+          <div class="process__num">04</div>
+          <h3 class="process__title">Skalierung</h3>
+          <p class="process__text">Ab jetzt arbeitet die KI für dich &mdash; rund um die Uhr, ohne Pause. Du gewinnst Zeit und Sichtbarkeit.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about__grid">
+        <div class="about__visual sr-left">
+          <div class="about__visual-inner">
+            <div class="about__initials" aria-hidden="true">CG</div>
+          </div>
+          <div class="about__stats-row">
+            <div class="about__stat">
+              <span class="about__stat-num">12+</span>
+              <span class="about__stat-lbl">Jahre Erfahrung</span>
+            </div>
+            <div class="about__stat">
+              <span class="about__stat-num">6</span>
+              <span class="about__stat-lbl">Services</span>
+            </div>
+            <div class="about__stat about__stat--accent">
+              <span class="about__stat-num">2026</span>
+              <span class="about__stat-lbl">Gegründet Hamburg</span>
             </div>
           </div>
         </div>
-        <div class="card card-2">
-          <div class="card-inner">
-            <div class="card-thumb card-thumb-2"></div>
-            <div class="card-play">▶</div>
-            <div class="card-meta">
-              <div class="card-label">Creator · Lifestyle</div>
-              <div class="card-duration">0:32</div>
-            </div>
-          </div>
-        </div>
-        <div class="card card-3">
-          <div class="card-inner">
-            <div class="card-thumb card-thumb-3"></div>
-            <div class="card-play">▶</div>
-            <div class="card-meta">
-              <div class="card-label">Brand · Produkt</div>
-              <div class="card-duration">0:58</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="hero-scroll-indicator" aria-hidden="true">
-        <span>Scroll</span>
-        <div class="scroll-line"></div>
-      </div>
-    </section>
-
-    <!-- DEMO SECTION -->
-    <section class="section demo-section" id="demo">
-      <div class="container">
-        <div class="section-label fade-up">Proof of Quality</div>
-        <h2 class="section-headline fade-up">So klingt das in der Praxis.</h2>
-        <p class="section-sub fade-up">
-          Drei AI-Charaktere. Drei Nischen. Dein Video wird auf dein Thema,
-          deine Stimme, deine Marke angepasst.
-        </p>
-
-        <div class="demo-grid">
-          <div class="demo-card fade-up">
-            <div class="demo-video-placeholder demo-p-1">
-              <div class="demo-play-btn">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                  <path d="M8 5v14l11-7z"/>
-                </svg>
+        <div class="about__content">
+          <span class="section__label">Über Kimpress</span>
+          <h2 class="about__headline">Kein Junior-Team.<br><span>Direkt mit dem Experten.</span></h2>
+          <p class="about__text">Kimpress ist das Einzelunternehmen von Cem Görül &mdash; seit 2026 in Hamburg. Über 12 Jahre Erfahrung in Social Media und digitalem Marketing, jetzt kombiniert mit modernsten KI-Tools und Automatisierung. Du arbeitest direkt mit dem Experten &mdash; kein Overhead, kein Telefon-Pingpong mit Junior-Teams.</p>
+          <ul class="about__list">
+            <li>12+ Jahre Social Media &amp; Content-Strategie</li>
+            <li>Spezialist für KI-Prompt-Engineering</li>
+            <li>Chatbots, Voicebots &amp; KI-Assistenten</li>
+            <li>TikTok &amp; Social Media Content-Pipelines</li>
+            <li>DACH-Markt, remote-first</li>
+          </ul>
+          <div class="about__ref">
+            <div class="about__ref-label">// Referenz</div>
+            <div class="about__ref-item">
+              <div class="about__ref-icon">&#9654;</div>
+              <div>
+                <div class="about__ref-title">KI-Avatar Content-System</div>
+                <div class="about__ref-desc">Vollautomatisierte Video-Pipeline mit KI-Avatar, Lippensync und Content-Distribution &mdash; gebaut und live auf TikTok.</div>
               </div>
-              <div class="demo-char-name">Business Coach</div>
-              <div class="demo-tag-pill">Business Coach</div>
-            </div>
-            <div class="demo-info">
-              <h3>Business Coach</h3>
-              <p>Business · Mindset · Produktivität</p>
-            </div>
-          </div>
-
-          <div class="demo-card fade-up" style="--delay: 0.12s">
-            <div class="demo-video-placeholder demo-p-2">
-              <div class="demo-play-btn">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                  <path d="M8 5v14l11-7z"/>
-                </svg>
-              </div>
-              <div class="demo-char-name">Fashion Creator</div>
-              <div class="demo-tag-pill">Fashion Creator</div>
-            </div>
-            <div class="demo-info">
-              <h3>Fashion Creator</h3>
-              <p>Fashion · Style · Personal Brand</p>
-            </div>
-          </div>
-
-          <div class="demo-card fade-up" style="--delay: 0.24s">
-            <div class="demo-video-placeholder demo-p-3">
-              <div class="demo-play-btn">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                  <path d="M8 5v14l11-7z"/>
-                </svg>
-              </div>
-              <div class="demo-char-name">Music Artist</div>
-              <div class="demo-tag-pill">Music Artist</div>
-            </div>
-            <div class="demo-info">
-              <h3>Music Artist</h3>
-              <p>Music · AI Artist · Brand Expansion</p>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- ANGEBOT SECTION -->
-    <section class="section angebot-section" id="angebot">
-      <div class="container">
-        <div class="section-label fade-up">Preise</div>
-        <h2 class="section-headline fade-up">Ein Paket. Ein Preis. Fertig.</h2>
 
-        <div class="offer-grid fade-up">
-          <div class="offer-card">
-            <div class="offer-header">
-              <span class="offer-name">Standard</span>
-              <div class="offer-price">
-                <span class="price-amount">250€</span>
-                <span class="price-label">einmalig</span>
-              </div>
-            </div>
-            <ul class="offer-list">
-              <li><span class="check">✓</span> 1x AI-Video (30–60 Sek, 9:16)</li>
-              <li><span class="check">✓</span> 1x Thumbnail (brand-konform)</li>
-              <li><span class="check">✓</span> 1x Brand Music Intro/Outro</li>
-              <li><span class="check">✓</span> 1x Caption (fertig geschrieben)</li>
-              <li><span class="check">✓</span> 3x Hashtag-Sets (TikTok / IG / YT)</li>
-              <li><span class="check">✓</span> 1x Posting-Empfehlung</li>
-            </ul>
-            <div class="offer-meta">Lieferzeit: 3–5 Werktage</div>
-            <a href="#kontakt" class="btn-secondary">Demo anfragen</a>
-          </div>
 
-          <div class="offer-card offer-featured">
-            <div class="offer-badge">Empfohlen</div>
-            <div class="offer-header">
-              <span class="offer-name">Mit Revision</span>
-              <div class="offer-price">
-                <span class="price-amount">350€</span>
-                <span class="price-label">einmalig</span>
-              </div>
-            </div>
-            <ul class="offer-list">
-              <li><span class="check">✓</span> Alles aus Standard</li>
-              <li><span class="check check-v">✓</span> 1x Revisionsrunde</li>
-              <li><span class="check check-v">✓</span> Anpassung nach deinem Feedback</li>
-              <li><span class="check check-v">✓</span> Prioritäts-Lieferung</li>
-            </ul>
-            <div class="offer-meta">Lieferzeit: 3–5 Werktage</div>
-            <a href="#kontakt" class="btn-primary">Demo anfragen</a>
-          </div>
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <span class="section__label" style="text-align:center;display:block">Häufige Fragen</span>
+      <h2 class="section__title">FAQ</h2>
+      <p class="section__subtitle">Alles was du wissen musst &mdash; klar und direkt.</p>
+      <div class="faq__grid">
+        <div class="faq__item sr">
+          <button class="faq__q" aria-expanded="false">Was kostet ein Projekt?</button>
+          <div class="faq__a">Einstiegsprojekte starten ab 250€ &mdash; z.B. ein Chatbot-Setup oder eine Content-Automatisierung. Komplettlösungen werden als Fixpreis kalkuliert, kein versteckter Stundensatz. Im kostenlosen Erstgespräch bekommst du eine konkrete Einschätzung.</div>
         </div>
-
-        <p class="offer-subline fade-up">
-          Starte ohne Risiko. Bezahlt wird nur wenn das Demo dir gefällt.
-        </p>
-      </div>
-    </section>
-
-    <!-- PROZESS SECTION -->
-    <section class="section prozess-section" id="prozess">
-      <div class="container">
-        <div class="section-label fade-up">So funktioniert es</div>
-        <h2 class="section-headline fade-up">Von Brief zu fertigem Video.</h2>
-
-        <div class="prozess-grid">
-          <div class="prozess-step fade-up">
-            <div class="step-number">01</div>
-            <h3>Du briefst einmal.</h3>
-            <p>Thema, Zielgruppe, Stil. Kein Anruf. Kein Formular-Marathon. Eine DM reicht.</p>
-          </div>
-          <div class="prozess-step fade-up" style="--delay: 0.1s">
-            <div class="step-connector" aria-hidden="true"></div>
-            <div class="step-number">02</div>
-            <h3>Ich produziere.</h3>
-            <p>Script, AI Character, Voice, Schnitt, Thumbnail, Caption — alles fertig.</p>
-          </div>
-          <div class="prozess-step fade-up" style="--delay: 0.2s">
-            <div class="step-connector" aria-hidden="true"></div>
-            <div class="step-number">03</div>
-            <h3>Du postest.</h3>
-            <p>Du bekommst ein fertiges Paket. Bereit zur Veröffentlichung. Kein weiterer Aufwand.</p>
-          </div>
+        <div class="faq__item sr">
+          <button class="faq__q" aria-expanded="false">Wie schnell sehe ich Ergebnisse?</button>
+          <div class="faq__a">Einfache Systeme wie Chatbots oder Automatisierungen sind in 3&ndash;7 Werktagen live. Komplexere Projekte (Content-System + Social Media + SEO) dauern 2&ndash;4 Wochen bis zum Go-Live.</div>
+        </div>
+        <div class="faq__item sr">
+          <button class="faq__q" aria-expanded="false">Brauche ich technisches Wissen?</button>
+          <div class="faq__a">Nein. Ich baue das System, erkläre es dir und stelle sicher dass du es danach selbst bedienen kannst. Human-in-the-Loop &mdash; du hast immer die Kontrolle.</div>
+        </div>
+        <div class="faq__item sr">
+          <button class="faq__q" aria-expanded="false">Gibt es einen Vertrag?</button>
+          <div class="faq__a">Nein. Kein Jahresvertrag, keine Kündigungsfristen. Du buchst was du brauchst &mdash; als Einmalprojekt oder auf Monatsbasis. Du kannst jederzeit pausieren oder stoppen.</div>
+        </div>
+        <div class="faq__item sr">
+          <button class="faq__q" aria-expanded="false">Für wen ist Kimpress geeignet?</button>
+          <div class="faq__a">Für alle die digital sichtbarer werden wollen &mdash; egal ob Unternehmen, Gründer oder Selbstständige. Ohne teure Agentur, ohne monatelanges Lernen.</div>
+        </div>
+        <div class="faq__item sr">
+          <button class="faq__q" aria-expanded="false">Was wenn mir das Ergebnis nicht gefällt?</button>
+          <div class="faq__a">Du siehst Ergebnisse vor dem Go-Live. Änderungen sind im Fixpreis inbegriffen. Kein Ergebnis ohne deine Freigabe.</div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- KONTAKT SECTION -->
-    <section class="section kontakt-section" id="kontakt">
-      <div class="container">
-        <div class="kontakt-inner fade-up">
-          <div class="section-label">Jetzt starten</div>
-          <h2 class="section-headline">Bereit für dein erstes Video?</h2>
-          <p class="section-sub">
-            Kein Anruf. Kein Formular-Marathon.<br />
-            Schreib mir direkt auf Instagram.
-          </p>
-          <a
-            href="https://www.instagram.com/direct/new/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn-primary btn-large"
-          >
-            Demo anfragen — kostenlos
-            <span class="btn-arrow">→</span>
+  <div class="section-divider"></div>
+
+  <!-- KONTAKT -->
+  <section class="kontakt" id="kontakt">
+    <div class="container">
+      <span class="section__label" style="text-align:center;display:block">Kontakt</span>
+      <h2 class="section__title">Starte jetzt.</h2>
+      <p class="kontakt__sub">Dein persönlicher KI-Fahrplan &mdash; kostenlos &amp; unverbindlich</p>
+      <p class="kontakt__text">15 Minuten. Kein Pitch. Nur eine ehrliche Einschätzung welche KI-Systeme wirklich zu deinem Business passen.</p>
+      <div class="kontakt__buttons">
+        <button class="btn btn--primary btn--lg" id="open-contact-modal">Projekt anfragen</button>
+        <a href="https://instagram.com/kimpress.de" target="_blank" rel="noopener noreferrer" class="btn btn--outline btn--lg" id="kontakt-instagram">Instagram DM</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__top">
+      <!-- Col 1: Brand -->
+      <div class="footer__col footer__col--brand">
+        <img src="/kimpress_test_logo.svg" alt="Kimpress" height="28" class="footer__logo" />
+        <p class="footer__tagline">KI-Agentur für den DACH-Raum.<br>1 Operator. Maximale Wirkung.</p>
+        <div class="footer__social">
+          <a href="https://www.tiktok.com/@kimpress.de" target="_blank" rel="noopener noreferrer" class="footer__social-link" id="footer-tiktok" aria-label="TikTok">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.22 8.22 0 004.81 1.54V6.79a4.85 4.85 0 01-1.04-.1z"/></svg>
+            <span>TikTok</span>
           </a>
-          <p class="kontakt-micro">
-            Oder per E-Mail:
-            <a href="mailto:hello@kimpress.de" class="kontakt-mail">hello@kimpress.de</a>
-          </p>
+          <a href="https://www.instagram.com/kimpress.de" target="_blank" rel="noopener noreferrer" class="footer__social-link" id="footer-instagram" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            <span>Instagram</span>
+          </a>
+          <a href="https://www.youtube.com/@kimpress" target="_blank" rel="noopener noreferrer" class="footer__social-link" id="footer-youtube" aria-label="YouTube">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+            <span>YouTube</span>
+          </a>
         </div>
       </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="footer">
-      <div class="container footer-inner">
-        <div class="footer-logo">KIMPRESS</div>
-        <nav class="footer-links" aria-label="Rechtliches">
-          <a href="#impressum">Impressum</a>
-          <a href="#datenschutz">Datenschutz</a>
-        </nav>
-        <div class="footer-copy">© 2026 Kimpress · kimpress.de</div>
+      <!-- Col 2: Navigation -->
+      <div class="footer__col">
+        <h4 class="footer__col-title">Navigation</h4>
+        <ul class="footer__nav">
+          <li><a href="#services">Services</a></li>
+          <li><a href="#process">Prozess</a></li>
+          <li><a href="#about">Über uns</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
       </div>
-    </footer>
-
-    <!-- IMPRESSUM -->
-    <div class="legal-overlay" id="impressum" role="dialog" aria-modal="true" aria-label="Impressum">
-      <div class="legal-box">
-        <a href="#" class="legal-close" aria-label="Schließen">✕</a>
-        <h2>Impressum</h2>
-        <p>
-          Angaben gemäß § 5 TMG<br /><br />
-          <strong>Kimpress</strong><br />
-          [Vollständiger Name]<br />
-          [Straße Hausnummer]<br />
-          [PLZ Ort]<br /><br />
-          Kontakt:<br />
-          E-Mail: hello@kimpress.de<br /><br />
-          <em>Platzhalter — vor Launch ersetzen.</em>
-        </p>
+      <!-- Col 3: Services -->
+      <div class="footer__col">
+        <h4 class="footer__col-title">Services</h4>
+        <ul class="footer__nav">
+          <li><a href="#service-content">KI-Content</a></li>
+          <li><a href="#service-social">Social Media</a></li>
+          <li><a href="#service-chatbot">Chatbots &amp; Voicebots</a></li>
+          <li><a href="#service-automation">Automatisierung</a></li>
+          <li><a href="#service-web">Webentwicklung</a></li>
+          <li><a href="#service-beratung">KI-Beratung</a></li>
+        </ul>
       </div>
-    </div>
-
-    <!-- DATENSCHUTZ -->
-    <div class="legal-overlay" id="datenschutz" role="dialog" aria-modal="true" aria-label="Datenschutz">
-      <div class="legal-box">
-        <a href="#" class="legal-close" aria-label="Schließen">✕</a>
-        <h2>Datenschutzerklärung</h2>
-        <p>
-          <strong>Verantwortlicher</strong><br />
-          Kimpress · hello@kimpress.de<br /><br />
-          <strong>Erhobene Daten</strong><br />
-          Diese Website erhebt keine personenbezogenen Daten.
-          Es werden keine Cookies gesetzt, kein Tracking durchgeführt.<br /><br />
-          <strong>Externe Dienste</strong><br />
-          Beim Laden der Seite werden Schriften von Google Fonts übertragen.
-          Dabei kann die IP-Adresse an Google-Server übermittelt werden.
-          Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO.<br /><br />
-          <strong>Kontakt bei Fragen</strong><br />
-          hello@kimpress.de<br /><br />
-          <em>Platzhalter — vor Launch durch vollständigen Text ersetzen.</em>
-        </p>
+      <!-- Col 4: Legal -->
+      <div class="footer__col">
+        <h4 class="footer__col-title">Rechtliches</h4>
+        <ul class="footer__nav">
+          <li><button class="footer__link-btn" id="open-impressum">Impressum</button></li>
+          <li><button class="footer__link-btn" id="open-datenschutz">Datenschutz</button></li>
+        </ul>
+        <div class="footer__contact">
+          <p>hallo@kimpress.de</p>
+          <p>+49 1575 7221636</p>
+          <p>Hamburg, DACH-Raum</p>
+        </div>
       </div>
     </div>
+    <div class="footer__bottom">
+      <p>Kleinunternehmer gem. &sect;19 UStG &mdash; keine Umsatzsteuer ausgewiesen.</p>
+      <p>&copy; 2026 Kimpress &middot; Cem Görül &middot; Hamburg</p>
+    </div>
+  </footer>
 
-    <script type="module" src="/src/main.js"></script>
-  </body>
+  <!-- MODAL: Contact Form -->
+  <div class="modal-overlay" id="modal-contact" aria-hidden="true">
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-contact-title">
+      <button class="modal-close" id="close-contact" aria-label="Schließen">&#x2715;</button>
+      <div class="modal-title" id="modal-contact-title">Projekt starten</div>
+      <div class="modal-sub">Ich melde mich innerhalb von 24 Stunden.</div>
+      <form class="modal-form" id="contact-form" novalidate>
+        <div class="form-group">
+          <label class="form-label" for="fn">Name *</label>
+          <input class="form-input" type="text" id="fn" name="name" autocomplete="name" placeholder="Max Mustermann" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="fe">E-Mail *</label>
+          <input class="form-input" type="email" id="fe" name="email" autocomplete="email" placeholder="max@firma.de" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="fc">Unternehmen</label>
+          <input class="form-input" type="text" id="fc" name="company" autocomplete="organization" placeholder="Musterfirma GmbH" />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="fm">Was planst du?</label>
+          <textarea class="form-textarea" id="fm" name="message" placeholder="Beschreib kurz dein Projekt..."></textarea>
+        </div>
+        <p class="form-legal">Mit dem Absenden stimmst du der Verarbeitung deiner Daten zur Bearbeitung deiner Anfrage zu. Keine Weitergabe an Dritte.</p>
+        <button type="submit" class="btn btn--primary" style="width:100%;justify-content:center;padding:14px;">Anfrage senden &rarr;</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL: Impressum -->
+  <div class="modal-overlay" id="modal-impressum" aria-hidden="true">
+    <div class="modal-box modal-box--legal" role="dialog" aria-modal="true" aria-labelledby="modal-imp-title">
+      <button class="modal-close" id="close-impressum" aria-label="Schließen">&#x2715;</button>
+      <h3 class="modal-title" id="modal-imp-title">Impressum</h3>
+      <h4 class="modal-section-title">Angaben gem. &sect; 5 TMG</h4>
+      <p class="modal-text">Cem Görül &mdash; Kimpress<br>Max-Pechstein-Straße 37<br>22115 Hamburg</p>
+      <h4 class="modal-section-title">Kontakt</h4>
+      <p class="modal-text">Telefon: +49 1575 7221636<br>E-Mail: hallo [at] kimpress.de</p>
+      <h4 class="modal-section-title">Umsatzsteuer</h4>
+      <p class="modal-text">Gemäß § 19 UStG wird keine Umsatzsteuer berechnet (Kleinunternehmerregelung). Eine USt-IdNr. liegt derzeit nicht vor.</p>
+      <h4 class="modal-section-title">Verantwortlich nach § 55 Abs. 2 RStV</h4>
+      <p class="modal-text">Cem Görül, Anschrift wie oben</p>
+      <h4 class="modal-section-title">Streitbeilegung</h4>
+      <p class="modal-text">Plattform der EU-Kommission: https://ec.europa.eu/consumers/odr &mdash; Wir nehmen nicht an Verfahren vor Verbraucherschlichtungsstellen teil.</p>
+    </div>
+  </div>
+
+  <!-- MODAL: Datenschutz -->
+  <div class="modal-overlay" id="modal-datenschutz" aria-hidden="true">
+    <div class="modal-box modal-box--legal" role="dialog" aria-modal="true" aria-labelledby="modal-dsc-title">
+      <button class="modal-close" id="close-datenschutz" aria-label="Schließen">&#x2715;</button>
+      <h3 class="modal-title" id="modal-dsc-title">Datenschutzerklärung</h3>
+      <h4 class="modal-section-title">1. Verantwortlicher</h4>
+      <p class="modal-text">Cem Görül, Kimpress, Max-Pechstein-Straße 37, 22115 Hamburg &mdash; hallo [at] kimpress.de</p>
+      <h4 class="modal-section-title">2. Datenerhebung</h4>
+      <p class="modal-text">Diese Website erhebt keine personenbezogenen Daten durch Tracking, Analyse-Tools oder Cookies.</p>
+      <h4 class="modal-section-title">3. Kontaktformular</h4>
+      <p class="modal-text">Formulardaten (Name, E-Mail, Nachricht) werden per E-Mail übermittelt, ausschliesslich zur Bearbeitung deiner Anfrage genutzt und nicht an Dritte weitergegeben. Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO.</p>
+      <h4 class="modal-section-title">4. Google Fonts</h4>
+      <p class="modal-text">Diese Website lädt Schriftarten von Google Fonts (fonts.googleapis.com). Dabei wird deine IP-Adresse an Google LLC übertragen. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO.</p>
+      <h4 class="modal-section-title">5. Deine Rechte</h4>
+      <p class="modal-text">Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit (Art. 15&ndash;20 DSGVO). Beschwerden an: Hamburgischer Beauftragter für Datenschutz und Informationsfreiheit.</p>
+      <h4 class="modal-section-title">6. Kontakt Datenschutz</h4>
+      <p class="modal-text">hallo [at] kimpress.de</p>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script type="module" src="/src/main.js"></script>
+</body>
 </html>

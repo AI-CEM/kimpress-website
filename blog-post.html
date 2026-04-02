@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="post-meta-title">Blog — Kimpress</title>
+  <meta name="description" id="post-meta-desc" content="KI-Insights von Kimpress" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="/kimpress_test_logo.svg" />
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+  <div class="orb orb--1" aria-hidden="true"></div>
+  <div class="orb orb--2" aria-hidden="true"></div>
+  <div id="progress-bar" aria-hidden="true"></div>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="/" class="nav__logo" aria-label="Kimpress Home">
+        <img src="/kimpress_test_logo.svg" alt="Kimpress" />
+      </a>
+      <div class="nav__links" id="nav-links">
+        <a href="/#services" class="nav__link">Services</a>
+        <a href="/#process" class="nav__link">Prozess</a>
+        <a href="/#about" class="nav__link">Über uns</a>
+        <a href="/#faq" class="nav__link">FAQ</a>
+        <a href="/blog.html" class="nav__link nav__link--active">Blog</a>
+      </div>
+      <a href="/#kontakt" class="btn btn--primary btn--sm" id="nav-cta">Anfragen</a>
+      <button class="nav__burger" id="burger-btn" aria-label="Menü öffnen" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <button class="mobile-menu__close" id="mobile-close" aria-label="Menü schließen">&#x2715;</button>
+    <nav class="mobile-menu__nav">
+      <a href="/#services" class="mobile-menu__link">Services</a>
+      <a href="/#process" class="mobile-menu__link">Prozess</a>
+      <a href="/#about" class="mobile-menu__link">Über uns</a>
+      <a href="/#faq" class="mobile-menu__link">FAQ</a>
+      <a href="/blog.html" class="mobile-menu__link">Blog</a>
+      <a href="/#kontakt" class="btn btn--primary btn--lg">Projekt starten</a>
+    </nav>
+  </div>
+
+  <!-- POST CONTENT (rendered by JS) -->
+  <main id="post-main">
+    <!-- Loading state -->
+    <div class="post-loading" id="post-loading">
+      <div class="container">
+        <div class="post-skeleton"></div>
+      </div>
+    </div>
+  </main>
+
+  <!-- 404 state (hidden by default) -->
+  <div class="post-404" id="post-404" style="display:none">
+    <div class="container">
+      <h1>Artikel nicht gefunden</h1>
+      <p>Dieser Artikel existiert nicht oder wurde verschoben.</p>
+      <a href="/blog.html" class="btn btn--primary btn--lg">Zurück zum Blog</a>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script type="module" src="/src/blog-post.js"></script>
+</body>
+</html>
