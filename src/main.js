@@ -572,15 +572,95 @@ function initCounters() {
 /* ===================================================
    INIT
    =================================================== */
+/* ===================================================
+   SERVICE OVERLAYS — deep dive on card click
+   =================================================== */
+function initServiceOverlays() {
+  const serviceMap = {
+    content:    'svc-ol-content',
+    social:     'svc-ol-social',
+    web:        'svc-ol-web',
+    chatbot:    'svc-ol-chatbot',
+    automation: 'svc-ol-automation',
+    beratung:   'svc-ol-beratung',
+  };
+
+  function openOverlay(serviceKey) {
+    const id = serviceMap[serviceKey];
+    if (!id) return;
+    const overlay = document.getElementById(id);
+    if (!overlay) return;
+    overlay.classList.add('is-open');
+    overlay.removeAttribute('aria-hidden');
+    document.body.style.overflow = 'hidden';
+    history.replaceState(null, '', `#service-${serviceKey}`);
+    // Reset scroll position
+    const scrollEl = overlay.querySelector('.svc-overlay__scroll');
+    if (scrollEl) scrollEl.scrollTop = 0;
+    // Focus close button for a11y
+    const closeBtn = overlay.querySelector('.svc-overlay__close');
+    if (closeBtn) setTimeout(() => closeBtn.focus(), 50);
+  }
+
+  function closeAllOverlays() {
+    document.querySelectorAll('.svc-overlay.is-open').forEach(o => {
+      o.classList.remove('is-open');
+      o.setAttribute('aria-hidden', 'true');
+    });
+    document.body.style.overflow = '';
+    history.replaceState(null, '', window.location.pathname);
+  }
+
+  // Card clicks
+  document.querySelectorAll('[data-service]').forEach(card => {
+    card.addEventListener('click', () => openOverlay(card.dataset.service));
+    card.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openOverlay(card.dataset.service);
+      }
+    });
+  });
+
+  // Close buttons
+  document.querySelectorAll('.svc-overlay__close').forEach(btn => {
+    btn.addEventListener('click', closeAllOverlays);
+  });
+
+  // Overlay CTA buttons → open contact modal
+  document.querySelectorAll('.svc-ol-cta').forEach(btn => {
+    btn.addEventListener('click', () => {
+      closeAllOverlays();
+      setTimeout(() => {
+        const contactBtn = document.getElementById('open-contact-modal');
+        if (contactBtn) contactBtn.click();
+      }, 300);
+    });
+  });
+
+  // ESC key
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeAllOverlays();
+  });
+
+  // Hash-based deep linking on page load
+  const hash = window.location.hash;
+  if (hash && hash.startsWith('#service-')) {
+    const key = hash.replace('#service-', '');
+    if (serviceMap[key]) openOverlay(key);
+  }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
-  initNeuralVoid();      // starfield background
-  navScroll();           // nav glass + progress bar
-  initMobileMenu();      // hamburger menu
-  initModals();          // modal overlays
-  initFAQ();             // accordion
-  initScrollReveal();    // scroll reveal
-  initCounters();        // animated stat numbers
-  scrollAnimations();    // GSAP scroll entrance animations
+  initNeuralVoid();        // starfield background
+  navScroll();             // nav glass + progress bar
+  initMobileMenu();        // hamburger menu
+  initModals();            // modal overlays
+  initFAQ();               // accordion
+  initScrollReveal();      // scroll reveal
+  initCounters();          // animated stat numbers
+  scrollAnimations();      // GSAP scroll entrance animations
+  initServiceOverlays();   // service deep-dive overlays
 
   // Three.js sphere
   if (typeof THREE !== 'undefined') {
