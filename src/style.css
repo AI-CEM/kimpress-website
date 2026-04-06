@@ -144,9 +144,9 @@ body::after {
   inset: 0;
   width: 100%;
   height: 100%;
-  z-index: 0;
+  z-index: 1;
   pointer-events: none;
-  opacity: 0.55;
+  opacity: 1;
 }
 
 /* No static grid — ambient light system handles background depth */
@@ -571,22 +571,30 @@ button.btn {
 .stats {
   position: relative;
   z-index: 1;
-  background: #050505;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: transparent;
   padding: 32px 0;
 }
 
 .stats__grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1px;
-  background: rgba(255, 255, 255, 0.05);
+  gap: 10px;
 }
 
 .stat {
-  padding: 24px 32px;
-  background: #050505;
+  padding: 28px 24px;
   text-align: center;
+  /* Same as Process panels — no blur, particles visible */
+  background: rgba(6, 6, 6, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-top: 1px solid rgba(255, 0, 0, 0.35);
+  border-radius: 8px;
+  transition: background 300ms ease, border-top-color 300ms ease;
+}
+
+.stat:hover {
+  background: rgba(14, 4, 4, 0.65);
+  border-top-color: rgba(255, 0, 0, 0.65);
 }
 
 .stat__number {
@@ -595,13 +603,14 @@ button.btn {
   color: #FF0000;
   line-height: 1;
   letter-spacing: 0.03em;
+  text-shadow: 0 0 24px rgba(255, 0, 0, 0.35);
 }
 
 .stat__label {
-  font-size: 0.82rem;
-  color: rgba(255, 255, 255, 0.5);
-  margin-top: 4px;
-  letter-spacing: 0.04em;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.4);
+  margin-top: 6px;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
@@ -744,7 +753,7 @@ button.btn {
   z-index: 2;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   padding: 24px 28px;
 }
 
@@ -797,8 +806,11 @@ button.btn {
   border-color: rgba(255, 0, 0, 0.25);
 }
 
-/* Bottom: title + description */
-/* .svc-card__body — no additional styles needed */
+/* Bottom: title + description — pinned to bottom */
+.svc-card__body {
+  margin-top: auto;
+  padding-top: 12px;
+}
 
 .svc-card__title {
   font-family: 'Bebas Neue', sans-serif;
@@ -1339,6 +1351,7 @@ button.btn {
 @media (min-width: 641px) {
   .stats__grid {
     grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
   }
 
   .services__grid {
@@ -1619,75 +1632,148 @@ button.btn {
 }
 
 /* ===================================================
-   PROCESS SECTION
+   PROCESS SECTION — Editorial + Glassmorphism blend
+   Partikel sichtbar durch Panels. Kein Template-Look.
    =================================================== */
 .process {
-  padding: 100px 0;
+  padding: 100px 0 120px;
   position: relative;
   z-index: 1;
 }
 
-.process__grid {
+/* Steps container — mobile: single column */
+.process__steps {
+  position: relative;
+  margin-top: 64px;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 16px;
-  overflow: hidden;
-  margin-top: 0;
+  gap: 16px;
 }
 
+/* Individual step panel */
 .process__step {
-  background: #0D0D0D;
-  padding: 40px 32px;
   position: relative;
-  transition: background 300ms ease;
+  padding: 36px 32px 40px;
+  overflow: hidden;
+  /* Dark translucent — like service cards, particles visible */
+  background: rgba(6, 6, 6, 0.72);
+  border: 1px solid rgba(255, 0, 0, 0.14);
+  border-top: 1px solid rgba(255, 0, 0, 0.45);
+  border-radius: 10px;
+  transition: background 300ms ease, border-color 300ms ease;
 }
 
 .process__step:hover {
-  background: #111111;
+  background: rgba(12, 12, 12, 0.78);
+  border-color: rgba(255, 0, 0, 0.28);
+  border-top-color: rgba(255, 0, 0, 0.7);
 }
 
-.process__step::before {
-  content: '';
+/* Large watermark number — in the background of each panel */
+.process__bg-num {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, #FF0000, transparent);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 350ms ease;
-}
-
-.process__step:hover::before {
-  transform: scaleX(1);
-}
-
-.process__num {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 0.85rem;
-  color: rgba(255, 0, 0, 0.4);
-  letter-spacing: 0.1em;
+  font-size: clamp(5rem, 13vw, 11rem);
+  line-height: 0.82;
+  color: #FF0000;
+  opacity: 0.035;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+  bottom: -6px;
+  right: 16px;
+  letter-spacing: -0.02em;
+}
+
+/* Even panels: watermark bottom-left */
+.process__step--even .process__bg-num {
+  right: auto;
+  left: 16px;
+}
+
+/* Small index label */
+.process__index {
+  display: block;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #FF0000;
+  opacity: 0.8;
   margin-bottom: 16px;
 }
 
-.process__title {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 1.5rem;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  color: #FFFFFF;
-  margin-bottom: 12px;
+/* Content wrapper — above the giant number */
+.process__content {
+  position: relative;
+  z-index: 1;
 }
 
-.process__text {
-  font-size: 0.88rem;
-  color: #6B7280;
-  line-height: 1.75;
+/* Step title — red-to-white gradient */
+.process__title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #FF0000 0%, #FF6B6B 40%, #FFFFFF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 12px;
+  line-height: 0.95;
 }
+
+/* Step body text — warm off-white, more readable */
+.process__text {
+  font-size: 0.875rem;
+  color: rgba(220, 200, 200, 0.62);
+  line-height: 1.8;
+  max-width: 420px;
+}
+
+/* Desktop: 2×2 Grid */
+@media (min-width: 860px) {
+  .process__steps {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  /* Even steps: bg-num bottom-left */
+  .process__step--even .process__bg-num {
+    right: auto;
+    left: 16px;
+  }
+
+  /* Even steps: right-align content */
+  .process__step--even {
+    text-align: right;
+  }
+
+  .process__step--even .process__text {
+    margin-left: auto;
+  }
+
+  .process__step--even .process__index {
+    text-align: right;
+  }
+
+  /* Produktion (3rd) — reversed gradient: white → red, reads bright like the even panels */
+  .process__steps > .process__step:nth-child(3) .process__title {
+    background: linear-gradient(315deg, #FF0000 0%, #FF6B6B 40%, #FFFFFF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Skalierung (4th / even) — force red-dominant so it burns hot, not white */
+  .process__steps > .process__step:nth-child(4) .process__title {
+    background: linear-gradient(135deg, #FF0000 0%, #FF4444 55%, #FF6B6B 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
 
 /* ===================================================
    ABOUT SECTION
@@ -1905,10 +1991,10 @@ button.btn {
 }
 
 /* ===================================================
-   FAQ SECTION
+   FAQ SECTION — Premium Glassmorphism
    =================================================== */
 .faq {
-  padding: 100px 0;
+  padding: 60px 0 100px;   /* reduced top — closes gap after About */
   position: relative;
   z-index: 1;
 }
@@ -1916,20 +2002,27 @@ button.btn {
 .faq__grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 16px;
-  overflow: hidden;
+  gap: 8px;
 }
 
 .faq__item {
-  background: #0D0D0D;
-  transition: background 200ms ease;
+  background: rgba(8, 8, 8, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-top: 1px solid rgba(255, 0, 0, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: background 250ms ease, border-color 250ms ease, border-top-color 250ms ease;
+}
+
+.faq__item:hover {
+  background: rgba(14, 14, 14, 0.75);
+  border-top-color: rgba(255, 0, 0, 0.5);
 }
 
 .faq__item.open {
-  background: #111111;
+  background: rgba(18, 6, 6, 0.75);
+  border-top-color: rgba(255, 0, 0, 0.65);
+  border-color: rgba(255, 0, 0, 0.18);
 }
 
 .faq__q {
@@ -1941,7 +2034,7 @@ button.btn {
   font-size: 0.95rem;
   font-weight: 600;
   text-align: left;
-  padding: 24px 32px;
+  padding: 22px 28px;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -1951,35 +2044,48 @@ button.btn {
 }
 
 .faq__q:hover {
-  color: #FF0000;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.faq__item.open .faq__q {
+  color: #FFFFFF;
 }
 
 .faq__q::after {
   content: '+';
-  font-size: 1.2rem;
-  font-weight: 300;
+  font-size: 1.1rem;
+  font-weight: 400;
+  font-family: 'Bebas Neue', sans-serif;
   color: #FF0000;
   flex-shrink: 0;
   transition: transform 300ms ease;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 0, 0, 0.3);
+  border-radius: 50%;
 }
 
 .faq__item.open .faq__q::after {
   transform: rotate(45deg);
+  background: rgba(255, 0, 0, 0.1);
 }
 
 .faq__a {
-  font-size: 0.88rem;
-  color: #6B7280;
-  line-height: 1.8;
-  padding: 0 32px 0;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.45);
+  line-height: 1.85;
+  padding: 0 28px 0;
   max-height: 0;
   overflow: hidden;
   transition: max-height 400ms ease, padding 300ms ease;
 }
 
 .faq__item.open .faq__a {
-  max-height: 200px;
-  padding: 0 32px 24px;
+  max-height: 220px;
+  padding: 0 28px 22px;
 }
 
 /* ===================================================
@@ -2193,9 +2299,7 @@ button.btn {
     display: none;
   }
 
-  .process__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  /* process__steps has no responsive override needed — already stacks naturally */
 
   .faq__grid {
     grid-template-columns: repeat(2, 1fr);
@@ -2210,15 +2314,18 @@ button.btn {
     margin: 0;
   }
 
+  /* Mobile stats chips — hidden on desktop (portrait shows them) */
+  .about__stats-mobile {
+    display: none;
+  }
+
   .services__grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (min-width: 1024px) {
-  .process__grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
+  /* no override needed */
 
   .services__grid {
     grid-template-columns: repeat(3, 1fr);
@@ -2549,19 +2656,60 @@ button.btn {
    FOOTER — 4-column agency layout
    =================================================== */
 .footer {
-  background: #0A0A0A;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  /* Transparent: #bg-canvas (position:fixed) bleibt sichtbar */
+  background: transparent;
+  border-top: none;
   position: relative;
-  z-index: 1;
+  z-index: 2;
+}
+
+/* Roter Gradient-Separator — elegante Trennlinie zur Page */
+.footer::before {
+  content: '';
+  display: block;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(255, 0, 0, 0.22) 20%,
+    rgba(255, 0, 0, 0.55) 50%,
+    rgba(255, 0, 0, 0.22) 80%,
+    transparent 100%
+  );
+  margin: 0;
+}
+
+/* Subtiler Glasmorphismus-Hintergrund auf dem top-Bereich */
+.footer__top {
+  position: relative;
+}
+
+.footer__top::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(5, 5, 5, 0.0) 0%,
+    rgba(5, 5, 5, 0.82) 18%,
+    rgba(5, 5, 5, 0.94) 100%
+  );
+  pointer-events: none;
+  z-index: -1;
 }
 
 .footer__top {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 40px;
+  /* Mobile: 2-col grid — brand spans full width, nav cols side-by-side */
+  grid-template-columns: 1fr 1fr;
+  gap: 28px 20px;
   max-width: 1240px;
   margin: 0 auto;
   padding: 60px 24px 40px;
+}
+
+/* Brand column always spans both mobile columns */
+.footer__col--brand {
+  grid-column: 1 / -1;
 }
 
 .footer__col-title {
@@ -2656,35 +2804,46 @@ button.btn {
 /* Bottom stripe */
 .footer__bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.05);
-  padding: 20px 24px;
-  max-width: 1240px;
-  margin: 0 auto;
+  background: rgba(5, 5, 5, 0.96); /* Solid bottom: always readable */
+  padding: 16px 24px;
   display: flex;
   flex-direction: column;
   gap: 4px;
 }
 
 .footer__bottom p {
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   color: rgba(255, 255, 255, 0.2);
 }
 
-@media (min-width: 640px) {
-  .footer__top {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
+
 
 @media (min-width: 1024px) {
   .footer__top {
     grid-template-columns: 2fr 1fr 1fr 1fr;
-    padding: 72px 40px 48px;
+    padding: 64px 60px 48px;
+    gap: 0;
+    /* Vertikaler Separator nach Brand-Spalte via border */
+    column-gap: 0;
+  }
+
+  /* Brand-Spalte bekommt rechts einen Separator */
+  .footer__col--brand {
+    grid-column: auto; /* reset mobile full-width */
+    padding-right: 48px;
+    border-right: 1px solid rgba(255, 255, 255, 0.06);
+    margin-right: 0;
+  }
+
+  /* Nav-Spalten haben links Padding */
+  .footer__col:not(.footer__col--brand) {
+    padding-left: 40px;
   }
 
   .footer__bottom {
     flex-direction: row;
     justify-content: space-between;
-    padding: 20px 40px;
+    padding: 18px 60px;
   }
 }
 
@@ -2693,7 +2852,7 @@ button.btn {
    =================================================== */
 .footer__top {
   padding: 48px 24px 32px;
-  gap: 28px;
+  gap: 24px 20px;
 }
 
 .footer__logo {
@@ -2861,41 +3020,8 @@ button.btn {
   display: inline-block;
 }
 
-/* ===================================================
-   PROCESS — horizontal timeline desktop
-   =================================================== */
-@media (min-width: 1024px) {
-  .process__grid {
-    position: relative;
-  }
+/* process layout — Editorial vertical steps, no media override needed */
 
-  .process__grid::before {
-    content: '';
-    position: absolute;
-    top: 40px;
-    left: calc(12.5% + 16px);
-    right: calc(12.5% + 16px);
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(255, 0, 0, 0.3), rgba(255, 0, 0, 0.3), transparent);
-    z-index: 0;
-    pointer-events: none;
-  }
-
-  .process__num {
-    position: relative;
-    z-index: 1;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 32px;
-    height: 32px;
-    border: 1px solid rgba(255, 0, 0, 0.3);
-    border-radius: 50%;
-    background: #050505;
-    font-size: 0.7rem;
-    margin-bottom: 20px;
-  }
-}
 
 /* ===================================================
    HERO TRUST BADGE — bottom trust indicator
@@ -3981,8 +4107,7 @@ button.btn {
   outline-offset: 3px;
 }
 .svc-card__footer {
-  margin-top: auto;
-  padding-top: 20px;
+  padding-top: 12px;
   font-size: 0.78rem;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -4444,4 +4569,108 @@ button.btn {
   .so-step { grid-template-columns: 40px 1fr; }
   .so-two-col { grid-template-columns: 1fr; gap: 32px; }
   .so-cta-bar { padding: 32px 24px; flex-direction: column; align-items: flex-start; }
+}
+
+/* ===================================================
+   MOBILE ABOUT — Option A: Compact Portrait Card
+   Portrait floats right neben den List-Items (12+ bis DACH-Markt).
+   Headline + Paragraph span full width. Dann Portrait + List side-by-side.
+   =================================================== */
+
+/* Mobile portrait — hidden by default (desktop only shows about__visual) */
+.about__portrait-mobile {
+  display: none;
+}
+
+@media (max-width: 767px) {
+
+  /* Switch from CSS grid to block flow */
+  .about__grid {
+    display: block;
+    overflow: hidden; /* BFC: contains all floats */
+  }
+
+  /* Desktop portrait — HIDDEN on mobile (replaced by about__portrait-mobile) */
+  .about__visual {
+    display: none;
+  }
+
+  /* Content is full-width block */
+  .about__content {
+    display: block;
+    overflow: hidden; /* BFC wraps around the float below */
+  }
+
+  /* Tighter headline on mobile */
+  .about__headline {
+    font-size: clamp(1.35rem, 6.5vw, 2rem);
+    line-height: 1.15;
+    margin-bottom: 0.9rem;
+    margin-top: 2px;
+  }
+
+  /* Mobile portrait floats RIGHT alongside the list items */
+  .about__portrait-mobile {
+    display: block;
+    float: right;
+    width: 110px;
+    height: 150px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 0, 0, 0.25);
+    overflow: hidden;
+    margin: 0 0 12px 16px;
+    box-shadow:
+      -8px 8px 28px rgba(255, 0, 0, 0.12),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+    flex-shrink: 0;
+  }
+
+  .about__portrait-mobile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  /* Mobile stats strip — compact chips below, clear float */
+  .about__stats-mobile {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    clear: both;
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .about__stat-chip {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8px 14px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 8px;
+  }
+
+  .about__stat-chip-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.25rem;
+    letter-spacing: 0.04em;
+    line-height: 1;
+    color: #FFFFFF;
+  }
+
+  .about__stat-chip--accent .about__stat-chip-num {
+    color: #FF0000;
+  }
+
+  .about__stat-chip-lbl {
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.3);
+    margin-top: 2px;
+  }
 }

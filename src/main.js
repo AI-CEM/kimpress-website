@@ -22,16 +22,16 @@ function initNeuralVoid() {
   window.addEventListener('resize', resize, { passive: true });
 
   // Particle definition
-  const COUNT = 220;
+  const COUNT = 280;
   const stars = Array.from({ length: COUNT }, () => ({
     x:  Math.random() * window.innerWidth,
     y:  Math.random() * window.innerHeight,
-    r:  0.2 + Math.random() * 0.9,          // radius
-    a:  0.04 + Math.random() * 0.28,        // base opacity
-    vx: (Math.random() - 0.5) * 0.12,       // drift velocity
-    vy: (Math.random() - 0.5) * 0.12,
+    r:  0.5 + Math.random() * 1.3,          // radius (bigger)
+    a:  0.15 + Math.random() * 0.45,        // base opacity (brighter)
+    vx: (Math.random() - 0.5) * 0.22,       // faster drift
+    vy: (Math.random() - 0.5) * 0.22,
     // A few brighter "hot" particles
-    hot: Math.random() < 0.08,
+    hot: Math.random() < 0.12,
   }));
 
   let frame = 0;
@@ -54,20 +54,21 @@ function initNeuralVoid() {
       if (s.y < 0) s.y = H;
       if (s.y > H) s.y = 0;
 
-      // Twinkle: slow sine variation
-      const twinkle = s.a * (0.6 + 0.4 * Math.sin(frame * 0.018 + s.x));
+      // Twinkle: slightly faster sine variation
+      const twinkle = s.a * (0.7 + 0.3 * Math.sin(frame * 0.026 + s.x));
 
       ctx.beginPath();
       ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
 
       if (s.hot) {
         // Red-tinted hot particle
-        ctx.fillStyle = `rgba(255, 60, 30, ${twinkle * 1.4})`;
-        ctx.shadowColor = 'rgba(255, 30, 0, 0.8)';
-        ctx.shadowBlur  = 6;
+        ctx.fillStyle = `rgba(255, 60, 30, ${twinkle * 1.6})`;
+        ctx.shadowColor = 'rgba(255, 30, 0, 0.9)';
+        ctx.shadowBlur  = 8;
       } else {
-        ctx.fillStyle = `rgba(255, 255, 255, ${twinkle})`;
-        ctx.shadowBlur = 0;
+        ctx.fillStyle = `rgba(220, 220, 255, ${twinkle})`;
+        ctx.shadowColor = 'rgba(180, 180, 255, 0.4)';
+        ctx.shadowBlur  = 3;
       }
       ctx.fill();
     }
