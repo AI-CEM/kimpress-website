@@ -4581,33 +4581,35 @@ button.btn {
 }
 
 /* ===================================================
-   MOBILE ABOUT — Option A: Compact Portrait Card
-   Portrait floats right neben den List-Items (12+ bis DACH-Markt).
-   Headline + Paragraph span full width. Dann Portrait + List side-by-side.
+   MOBILE ABOUT — Option B: Full-Width Cinematic Banner
+   Portrait full width (4:3) zwischen Paragraph und Liste.
+   Headline + Text: volle Breite. Liste: volle Breite.
+   Kein Float, kein Textumbruch-Problem.
    =================================================== */
 
-/* Mobile portrait — hidden by default (desktop only shows about__visual) */
+/* Mobile portrait — hidden by default (desktop shows about__visual) */
 .about__portrait-mobile {
   display: none;
 }
 
 @media (max-width: 767px) {
 
-  /* Switch from CSS grid to block flow */
+  /* Switch from 2-col grid to single column */
   .about__grid {
-    display: block;
-    overflow: hidden; /* BFC: contains all floats */
+    display: flex;
+    flex-direction: column;
+    gap: 0;
   }
 
-  /* Desktop portrait — HIDDEN on mobile (replaced by about__portrait-mobile) */
+  /* Desktop portrait — hidden on mobile */
   .about__visual {
     display: none;
   }
 
-  /* Content is full-width block */
+  /* Content is clean single column */
   .about__content {
     display: block;
-    overflow: hidden; /* BFC wraps around the float below */
+    overflow: visible;
   }
 
   /* Tighter headline on mobile */
@@ -4618,20 +4620,44 @@ button.btn {
     margin-top: 2px;
   }
 
-  /* Mobile portrait floats RIGHT alongside the list items */
+  /* Full-width cinematic portrait banner */
   .about__portrait-mobile {
     display: block;
-    float: right;
-    width: 110px;
-    height: 150px;
+    width: 100%;
+    aspect-ratio: 4 / 3;
     border-radius: 14px;
-    border: 1px solid rgba(255, 0, 0, 0.25);
+    border: 1px solid rgba(255, 0, 0, 0.2);
     overflow: hidden;
-    margin: 0 0 12px 16px;
+    margin: 20px 0 24px;
+    position: relative;
     box-shadow:
-      -8px 8px 28px rgba(255, 0, 0, 0.12),
-      inset 0 0 0 1px rgba(255, 255, 255, 0.04);
-    flex-shrink: 0;
+      0 16px 48px rgba(255, 0, 0, 0.10),
+      0 4px 16px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Subtle red gradient overlay at bottom — cinematic vignette */
+  .about__portrait-mobile::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      transparent 45%,
+      rgba(5, 5, 5, 0.65) 100%
+    );
+    pointer-events: none;
+  }
+
+  /* Red accent line at bottom */
+  .about__portrait-mobile::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #FF0000, transparent);
+    z-index: 2;
   }
 
   .about__portrait-mobile img {
@@ -4639,14 +4665,14 @@ button.btn {
     height: 100%;
     object-fit: cover;
     object-position: center top;
+    display: block;
   }
 
-  /* Mobile stats strip — compact chips below, clear float */
+  /* Stats strip — below referenz, no float clear needed */
   .about__stats-mobile {
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
-    clear: both;
     margin-top: 20px;
     padding-top: 16px;
     border-top: 1px solid rgba(255, 255, 255, 0.06);
