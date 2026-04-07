@@ -39,7 +39,7 @@ export const BLOG_POSTS = [
   <li>Artikel → TikTok-Skript (60 Sekunden, direkt formuliert)</li>
   <li>Artikel → E-Mail-Newsletter-Snippet</li>
 </ul>
-<p>Mit Make oder n8n + Claude 3.7 ist das ein vollautomatischer Workflow — du lädst den Artikel hoch, alles andere passiert von selbst.</p>
+<p>Mit Make oder n8n + Claude 4.6 ist das ein vollautomatischer Workflow — du lädst den Artikel hoch, alles andere passiert von selbst.</p>
 
 <h3>3. Lead-Qualifizierung via WhatsApp-Bot</h3>
 <p>Der unterschätzte Kanal. WhatsApp hat im DACH-Raum eine Öffnungsrate von über 95%. Ein einfacher Bot, der Erstanfragen von deiner Website entgegennimmt, die richtigen Fragen stellt und qualifizierte Leads direkt in dein CRM schreibt — das ist der schnellste Return, den ich in der Praxis gesehen habe.</p>
@@ -55,7 +55,7 @@ export const BLOG_POSTS = [
   {
     slug: 'chatgpt-vs-claude-welches-modell',
     title: 'ChatGPT vs. Claude 2026 — Welches KI-Modell für welchen Use Case?',
-    excerpt: 'GPT-4o oder Claude 3.7? Die ehrliche Antwort lautet: kommt drauf an. Ich nutze täglich beide — hier ist mein Praxis-Vergleich für Business-Anwendungen.',
+    excerpt: 'GPT-4o oder Claude 4.6? Die ehrliche Antwort lautet: kommt drauf an. Ich nutze täglich beide — hier ist mein Praxis-Vergleich für Business-Anwendungen.',
     date: '2026-03-25',
     readTime: 6,
     category: 'KI-Tools',
@@ -64,7 +64,7 @@ export const BLOG_POSTS = [
 <p class="blog-lead">Die Frage "Welches KI-Modell ist das beste?" ist falsch gestellt. Die richtige Frage ist: Für welche Aufgabe brauche ich welches Modell?</p>
 
 <h2>Mein Alltag mit beiden Modellen</h2>
-<p>Ich arbeite täglich mit GPT-4o, Claude 3.7 und verschiedenen spezialisierten Modellen. Was ich gelernt habe: Kein Modell ist in allem besser. Jedes hat Stärken, die für bestimmte Business-Anwendungen entscheidend sind.</p>
+<p>Ich arbeite täglich mit GPT-4o, Claude 4.6 und verschiedenen spezialisierten Modellen. Was ich gelernt habe: Kein Modell ist in allem besser. Jedes hat Stärken, die für bestimmte Business-Anwendungen entscheidend sind.</p>
 
 <h2>GPT-4o: Stärken in der Praxis</h2>
 <ul>
@@ -74,19 +74,19 @@ export const BLOG_POSTS = [
   <li><strong>Tool-Ökosystem</strong> — Custom GPTs, Actions, breite API-Unterstützung in fast allen No-Code-Tools</li>
 </ul>
 
-<h2>Claude 3.7: Wo es klar gewinnt</h2>
+<h2>Claude 4.6: Wo es klar gewinnt</h2>
 <ul>
   <li><strong>Lange Dokumente analysieren</strong> — 200k Token Context Window, Claude liest komplette Jahresberichte ohne zu halluzinieren</li>
   <li><strong>Copywriting in Tonalität</strong> — Texte, die sich nicht nach KI lesen. Für Marketing-Copy mein klarer Favorit</li>
-  <li><strong>Reasoning bei komplexen Problemen</strong> — Claude 3.7 Sonnet mit Extended Thinking ist im strategischen Denken ungeschlagen</li>
+  <li><strong>Reasoning bei komplexen Problemen</strong> — Claude 4.6 Sonnet mit Extended Thinking ist im strategischen Denken ungeschlagen</li>
   <li><strong>Weniger Halluzinationen bei Faktenchecks</strong> — Wenn es auf Genauigkeit ankommt</li>
 </ul>
 
 <h2>Meine Empfehlung nach Use Case</h2>
 <p><strong>Für Automatisierungen (Make, n8n):</strong> GPT-4o — bessere API-Unterstützung, vorhersehbarere Outputs</p>
-<p><strong>Für Content-Produktion:</strong> Claude 3.7 — natürlichere Texte, bessere Tonalität</p>
+<p><strong>Für Content-Produktion:</strong> Claude 4.6 — natürlichere Texte, bessere Tonalität</p>
 <p><strong>Für Code:</strong> GPT-4o (oder Cursor AI als Wrapper)</p>
-<p><strong>Für Analyse und Research:</strong> Claude 3.7 mit langen Dokumenten</p>
+<p><strong>Für Analyse und Research:</strong> Claude 4.6 mit langen Dokumenten</p>
 <p><strong>Für Custom Chatbots:</strong> Je nach Anwendungsfall — teste beide</p>
 
 <h2>Was ich keinem empfehle</h2>
@@ -117,7 +117,7 @@ export const BLOG_POSTS = [
 <p>Für die meisten meiner Kunden baue ich folgende Kombination:</p>
 <ul>
   <li><strong>n8n</strong> als Orchestrierung — kostenlos, self-hosted möglich, flexibler als Make</li>
-  <li><strong>Claude 3.7</strong> für Caption-Texte und Hooks — klingt am wenigsten wie KI</li>
+  <li><strong>Claude 4.6</strong> für Caption-Texte und Hooks — klingt am wenigsten wie KI</li>
   <li><strong>Midjourney v6 / DALL-E 3</strong> für Bildgenerierung je nach Style-Anforderung</li>
   <li><strong>ElevenLabs</strong> wenn Voice-Overs benötigt werden</li>
   <li><strong>Buffer oder Publer</strong> für automatisches Scheduling</li>

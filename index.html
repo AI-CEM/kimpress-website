@@ -18,9 +18,9 @@
   <meta name="twitter:description" content="Kimpress ist deine KI-Agentur aus Hamburg. Content, Chatbots, Automatisierung, SEO und Social Media — für KMU im DACH-Raum. 1 Operator, maximale Wirkung." />
   <meta name="twitter:image" content="https://kimpress.de/og-image.webp" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <!-- Fonts self-hosted — kein Google CDN, DSGVO-konform -->
+  <link rel="preload" href="/fonts/bebas-neue-400.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/inter-variable.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="icon" type="image/svg+xml" href="/kimpress-logo.svg" />
   <link rel="stylesheet" href="/src/style.css" />
 </head>
@@ -44,7 +44,7 @@
       <div class="nav__links" id="nav-links">
         <a href="#services" class="nav__link">Services</a>
         <a href="#process" class="nav__link">Prozess</a>
-        <a href="#about" class="nav__link">Über uns</a>
+        <a href="#about" class="nav__link">Über Kimpress</a>
         <a href="#faq" class="nav__link">FAQ</a>
         <a href="/blog.html" class="nav__link">Blog</a>
       </div>
@@ -61,7 +61,7 @@
     <nav class="mobile-menu__nav">
       <a href="#services" class="mobile-menu__link">Services</a>
       <a href="#process" class="mobile-menu__link">Prozess</a>
-      <a href="#about" class="mobile-menu__link">Über uns</a>
+      <a href="#about" class="mobile-menu__link">Über Kimpress</a>
       <a href="#faq" class="mobile-menu__link">FAQ</a>
       <a href="/blog.html" class="mobile-menu__link">Blog</a>
       <a href="#kontakt" class="btn btn--primary btn--lg">Projekt starten</a>
@@ -114,7 +114,7 @@
       <span class="tool-marquee__item">n8n</span>
       <span class="tool-marquee__item">Zapier</span>
       <span class="tool-marquee__item">GPT-4o</span>
-      <span class="tool-marquee__item">Claude 3.7</span>
+      <span class="tool-marquee__item">Claude 4.6</span>
       <span class="tool-marquee__item">Midjourney</span>
       <span class="tool-marquee__item">ElevenLabs</span>
       <span class="tool-marquee__item">HeyGen</span>
@@ -127,7 +127,7 @@
       <span class="tool-marquee__item">n8n</span>
       <span class="tool-marquee__item">Zapier</span>
       <span class="tool-marquee__item">GPT-4o</span>
-      <span class="tool-marquee__item">Claude 3.7</span>
+      <span class="tool-marquee__item">Claude 4.6</span>
       <span class="tool-marquee__item">Midjourney</span>
       <span class="tool-marquee__item">ElevenLabs</span>
       <span class="tool-marquee__item">HeyGen</span>
@@ -165,7 +165,7 @@
   <!-- SERVICES -->
   <section class="services" id="services">
     <div class="container">
-      <span class="section__label" style="text-align:center;display:block">Was wir tun</span>
+      <span class="section__label" style="text-align:center;display:block">Services</span>
       <h2 class="section__title">Was wir liefern</h2>
       <p class="section__subtitle">Sechs Kernleistungen. Alle KI-gestützt. Alle auf dein Business zugeschnitten.</p>
 
@@ -546,16 +546,41 @@
     <div class="modal-box modal-box--legal" role="dialog" aria-modal="true" aria-labelledby="modal-imp-title">
       <button class="modal-close" id="close-impressum" aria-label="Schließen">&#x2715;</button>
       <h3 class="modal-title" id="modal-imp-title">Impressum</h3>
+
       <h4 class="modal-section-title">Angaben gem. &sect; 5 TMG</h4>
-      <p class="modal-text">Cem Görül &mdash; Kimpress<br>Max-Pechstein-Straße 37<br>22115 Hamburg</p>
+      <p class="modal-text">
+        Cem Görül<br>
+        Kimpress (Einzelunternehmen)<br>
+        Max-Pechstein-Straße 37<br>
+        22115 Hamburg<br>
+        Deutschland
+      </p>
+
       <h4 class="modal-section-title">Kontakt</h4>
-      <p class="modal-text">Telefon: +49 1575 7221636<br>E-Mail: hallo [at] kimpress.de</p>
+      <p class="modal-text">
+        Telefon: +49 1575 7221636<br>
+        E-Mail: hallo&#64;kimpress.de
+      </p>
+
       <h4 class="modal-section-title">Umsatzsteuer</h4>
-      <p class="modal-text">Gemäß § 19 UStG wird keine Umsatzsteuer berechnet (Kleinunternehmerregelung). Eine USt-IdNr. liegt derzeit nicht vor.</p>
-      <h4 class="modal-section-title">Verantwortlich nach § 55 Abs. 2 RStV</h4>
+      <p class="modal-text">
+        Gemäß &sect; 19 UStG wird keine Umsatzsteuer berechnet (Kleinunternehmerregelung).
+      </p>
+
+      <h4 class="modal-section-title">Verantwortlich f&uuml;r den Inhalt nach &sect; 18 Abs. 2 MStV</h4>
       <p class="modal-text">Cem Görül, Anschrift wie oben</p>
-      <h4 class="modal-section-title">Streitbeilegung</h4>
-      <p class="modal-text">Plattform der EU-Kommission: https://ec.europa.eu/consumers/odr &mdash; Wir nehmen nicht an Verfahren vor Verbraucherschlichtungsstellen teil.</p>
+
+      <h4 class="modal-section-title">EU-Streitschlichtung</h4>
+      <p class="modal-text">
+        Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:<br>
+        <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer" style="color:#FF0000;">https://ec.europa.eu/consumers/odr/</a><br>
+        Wir sind nicht verpflichtet und nicht bereit, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
+      </p>
+
+      <h4 class="modal-section-title">Haftung f&uuml;r Inhalte</h4>
+      <p class="modal-text">
+        Als Diensteanbieter sind wir gem&auml;&szlig; &sect; 7 Abs. 1 TMG f&uuml;r eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach &sect;&sect; 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, &uuml;bermittelte oder gespeicherte fremde Informationen zu &uuml;berwachen.
+      </p>
     </div>
   </div>
 
@@ -563,19 +588,51 @@
   <div class="modal-overlay" id="modal-datenschutz" aria-hidden="true">
     <div class="modal-box modal-box--legal" role="dialog" aria-modal="true" aria-labelledby="modal-dsc-title">
       <button class="modal-close" id="close-datenschutz" aria-label="Schließen">&#x2715;</button>
-      <h3 class="modal-title" id="modal-dsc-title">Datenschutzerklärung</h3>
-      <h4 class="modal-section-title">1. Verantwortlicher</h4>
-      <p class="modal-text">Cem Görül, Kimpress, Max-Pechstein-Straße 37, 22115 Hamburg &mdash; hallo [at] kimpress.de</p>
-      <h4 class="modal-section-title">2. Datenerhebung</h4>
-      <p class="modal-text">Diese Website erhebt keine personenbezogenen Daten durch Tracking, Analyse-Tools oder Cookies.</p>
-      <h4 class="modal-section-title">3. Kontaktformular</h4>
-      <p class="modal-text">Formulardaten (Name, E-Mail, Nachricht) werden per E-Mail übermittelt, ausschliesslich zur Bearbeitung deiner Anfrage genutzt und nicht an Dritte weitergegeben. Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO.</p>
-      <h4 class="modal-section-title">4. Google Fonts</h4>
-      <p class="modal-text">Diese Website lädt Schriftarten von Google Fonts (fonts.googleapis.com). Dabei wird deine IP-Adresse an Google LLC übertragen. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO.</p>
-      <h4 class="modal-section-title">5. Deine Rechte</h4>
-      <p class="modal-text">Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit (Art. 15&ndash;20 DSGVO). Beschwerden an: Hamburgischer Beauftragter für Datenschutz und Informationsfreiheit.</p>
-      <h4 class="modal-section-title">6. Kontakt Datenschutz</h4>
-      <p class="modal-text">hallo [at] kimpress.de</p>
+      <h3 class="modal-title" id="modal-dsc-title">Datenschutzerkl&auml;rung</h3>
+
+      <h4 class="modal-section-title">1. Verantwortlicher (Art. 4 Nr. 7 DSGVO)</h4>
+      <p class="modal-text">
+        Cem Görül &mdash; Kimpress<br>
+        Max-Pechstein-Straße 37, 22115 Hamburg<br>
+        E-Mail: hallo&#64;kimpress.de &bull; Tel: +49 1575 7221636
+      </p>
+
+      <h4 class="modal-section-title">2. Hosting &mdash; Vercel Inc.</h4>
+      <p class="modal-text">
+        Diese Website wird gehostet bei Vercel Inc., 340 Pine Street, Suite 701, San Francisco, CA 94104, USA. Beim Aufruf der Website werden technisch notwendige Daten (IP-Adresse, Browser-Typ, Uhrzeit) in Server-Logs gespeichert. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse am sicheren Betrieb). Vercel ist unter dem EU-US Data Privacy Framework zertifiziert. Weitere Informationen: <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" style="color:#FF0000;">vercel.com/legal/privacy-policy</a>
+      </p>
+
+      <h4 class="modal-section-title">3. Keine Cookies &mdash; kein Tracking</h4>
+      <p class="modal-text">
+        Diese Website verwendet keine Cookies, kein Web-Analytics und keine Tracking-Tools. Es werden keine personenbezogenen Daten f&uuml;r Werbe- oder Analysezwecke erhoben oder verarbeitet.
+      </p>
+
+      <h4 class="modal-section-title">4. Kontaktformular &mdash; Formspree</h4>
+      <p class="modal-text">
+        Das Kontaktformular wird betrieben von Formspree Inc., 340 S Lemon Ave #5960, Walnut, CA 91789, USA. Formulardaten (Name, E-Mail, Nachricht) werden zur Beantwortung deiner Anfrage an Formspree &uuml;bermittelt und per E-Mail weitergeleitet. Eine Nutzung der Daten f&uuml;r andere Zwecke oder Weitergabe an Dritte findet nicht statt. Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Vertragsanbahnnung). Speicherdauer: bis zur abschlie&szlig;enden Bearbeitung. Formspree ist unter dem EU-US Data Privacy Framework zertifiziert: <a href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener noreferrer" style="color:#FF0000;">formspree.io/legal/privacy-policy</a>
+      </p>
+
+      <h4 class="modal-section-title">5. Schriftarten (selbst gehostet)</h4>
+      <p class="modal-text">
+        Diese Website verwendet ausschlie&szlig;lich selbst gehostete Schriftarten (Bebas Neue, Inter). Es werden keine Schriftdaten von externen Servern geladen &mdash; keine IP-&Uuml;bertragung an Dritte durch Fonts.
+      </p>
+
+      <h4 class="modal-section-title">6. Externe CDN &mdash; Three.js (Cloudflare)</h4>
+      <p class="modal-text">
+        F&uuml;r die 3D-Visualisierung im Hero-Bereich wird die Bibliothek Three.js &uuml;ber das CDN von Cloudflare Inc. (101 Townsend St., San Francisco, CA 94107, USA) geladen. Dabei wird deine IP-Adresse technisch &uuml;bertragen. Cloudflare verarbeitet diese Daten als Auftragsverarbeiter und nutzt sie nicht f&uuml;r eigene Zwecke. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO. Datenschutzerkl&auml;rung Cloudflare: <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer" style="color:#FF0000;">cloudflare.com/privacypolicy</a>
+      </p>
+
+      <h4 class="modal-section-title">7. Deine Rechte (Art. 15&ndash;21 DSGVO)</h4>
+      <p class="modal-text">
+        Du hast das Recht auf: Auskunft (Art. 15), Berichtigung (Art. 16), L&ouml;schung (Art. 17), Einschr&auml;nkung der Verarbeitung (Art. 18), Daten&uuml;bertragbarkeit (Art. 20) und Widerspruch (Art. 21).<br><br>
+        Zur Aus&uuml;bung deiner Rechte wende dich an: hallo&#64;kimpress.de<br><br>
+        Du hast das Recht, dich bei der Aufsichtsbeh&ouml;rde zu beschweren:<br>
+        <strong>Hamburgischer Beauftragter f&uuml;r Datenschutz und Informationsfreiheit</strong><br>
+        Ludwig-Erhard-Str. 22, 20459 Hamburg &bull; <a href="https://datenschutz.hamburg.de" target="_blank" rel="noopener noreferrer" style="color:#FF0000;">datenschutz.hamburg.de</a>
+      </p>
+
+      <h4 class="modal-section-title">8. Aktualit&auml;t</h4>
+      <p class="modal-text">Stand: April 2026. Wir behalten uns vor, diese Datenschutzerkl&auml;rung bei &Auml;nderungen der Rechtslage oder unserer Dienste anzupassen.</p>
     </div>
   </div>
 
@@ -622,7 +679,7 @@
           <section class="so-section">
             <span class="so-section__label">Tools</span>
             <h3 class="so-section__title">Eingesetzte KI-Tools</h3>
-            <div class="so-tools"><span>GPT-4o</span><span>Claude 3.7</span><span>Midjourney</span><span>CapCut AI</span><span>ElevenLabs</span><span>HeyGen</span><span>Buffer</span></div>
+            <div class="so-tools"><span>GPT-4o</span><span>Claude 4.6</span><span>Midjourney</span><span>CapCut AI</span><span>ElevenLabs</span><span>HeyGen</span><span>Buffer</span></div>
           </section>
           <section class="so-section">
             <span class="so-section__label">Zielgruppe</span>
@@ -790,7 +847,7 @@
           <section class="so-section">
             <span class="so-section__label">Tools</span>
             <h3 class="so-section__title">Tech-Stack</h3>
-            <div class="so-tools"><span>GPT-4o</span><span>Claude 3.7</span><span>Vapi.ai</span><span>WhatsApp API</span><span>Twilio</span><span>Zapier</span><span>Make</span></div>
+            <div class="so-tools"><span>GPT-4o</span><span>Claude 4.6</span><span>Vapi.ai</span><span>WhatsApp API</span><span>Twilio</span><span>Zapier</span><span>Make</span></div>
           </section>
           <section class="so-section">
             <span class="so-section__label">Zielgruppe</span>
