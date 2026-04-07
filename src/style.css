@@ -6,7 +6,7 @@
    =================================================== */
 
 /* --- Google Fonts weight additions --- */
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&display=swap');
+/* Google Fonts loaded via <link> in HTML — no @import needed here */
 
 /* --- Reset --- */
 *,
@@ -665,16 +665,16 @@ button.btn {
 /* Per-card cinematic lighting placeholders — distinct per card
    To add real photos: set background-image: url(...) on each   */
 
-/* 01 — KI-Content Erstellung — real photo */
+/* 01 — KI-Content Erstellung — local asset */
 #service-content .svc-card__img {
-  background-image: url('https://i.ibb.co/5XsRBHm7/service-content.png');
+  background-image: url('/service-content.webp');
   background-size: cover;
   background-position: center;
 }
 
-/* 02 — cool red from upper-right, digital network vibe */
+/* 02 — Social Media — local asset */
 #service-social .svc-card__img {
-  background-image: url('https://i.ibb.co/hjjwV9B/service-social.jpg');
+  background-image: url('/service-social.webp');
   background-size: cover;
   background-position: center;
 }
@@ -858,6 +858,24 @@ button.btn {
   .svc-card__title {
     font-size: 1.1rem;
   }
+}
+
+/* ── Service card footer — CTA hint at bottom of each card ─── */
+.svc-card__footer {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.3);
+  margin-top: 12px;
+  transition: color 300ms ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.svc-card:hover .svc-card__footer {
+  color: rgba(255, 80, 60, 0.85);
 }
 
 /* ── Service List container ────────────────────────── */
@@ -1207,60 +1225,6 @@ button.btn {
 }
 
 /* ===================================================
-   FOOTER — clean minimal
-   =================================================== */
-.footer {
-  padding: 48px 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  position: relative;
-  z-index: 1;
-}
-
-.footer__inner {
-  max-width: 1240px;
-  margin: 0 auto;
-  padding: 0 24px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 24px;
-  text-align: center;
-}
-
-.footer__brand img {
-  height: 30px;
-  width: auto;
-  opacity: 0.4;
-  transition: opacity 200ms;
-}
-
-.footer__brand:hover img {
-  opacity: 0.8;
-}
-
-.footer__links {
-  display: flex;
-  gap: 24px;
-}
-
-.footer__links a {
-  font-size: 0.82rem;
-  color: rgba(255, 255, 255, 0.35);
-  transition: color 200ms ease;
-  cursor: pointer;
-}
-
-.footer__links a:hover {
-  color: #FF0000;
-}
-
-.footer__legal {
-  font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.22);
-  line-height: 1.8;
-}
-
-/* ===================================================
    RESPONSIVE — Mobile First
    375 → 640 → 1024 → 1440
    =================================================== */
@@ -1410,6 +1374,13 @@ button.btn {
   display: none;
   align-items: center;
   gap: 2rem;
+}
+
+/* Show nav links on tablet and desktop */
+@media (min-width: 768px) {
+  .nav__links {
+    display: flex;
+  }
 }
 
 .nav__link {
@@ -4237,12 +4208,12 @@ button.btn {
 .hero--content {
   background:
     linear-gradient(to bottom, rgba(7,7,7,0.15) 0%, rgba(7,7,7,0.7) 60%, #070707 100%),
-    url('/service-content.png') center / cover no-repeat;
+    url('/service-content.webp') center / cover no-repeat;
 }
 .hero--social {
   background:
     linear-gradient(to bottom, rgba(7,7,7,0.15) 0%, rgba(7,7,7,0.7) 60%, #070707 100%),
-    url('/service-social.png') center / cover no-repeat;
+    url('/service-social.webp') center / cover no-repeat;
 }
 .hero--web {
   background: radial-gradient(ellipse at 30% 60%, rgba(0,60,180,0.18) 0%, transparent 65%),

@@ -652,6 +652,115 @@ function initServiceOverlays() {
   }
 }
 
+/* ===================================================
+   CONTACT FORM — Formspree submission
+   Replace the endpoint with your actual Formspree form ID
+   Get yours free at: https://formspree.io/forms
+   =================================================== */
+function initContactForm() {
+  const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xpwqvlbg'; // ← CONFIGURE THIS
+
+  const form = document.getElementById('contact-form');
+  if (!form) return;
+
+  const submitBtn = form.querySelector('[type="submit"]');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    // Validate required fields
+    const name  = form.querySelector('#fn')?.value.trim();
+    const email = form.querySelector('#fe')?.value.trim();
+    if (!name || !email) {
+      showFormFeedback(form, 'error', 'Bitte Name und E-Mail ausfüllen.');
+      return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      showFormFeedback(form, 'error', 'Bitte eine gültige E-Mail-Adresse eingeben.');
+      return;
+    }
+
+    // Loading state
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Wird gesendet…';
+    }
+    clearFormFeedback(form);
+
+    try {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(form),
+      });
+
+      if (res.ok) {
+        showFormFeedback(form, 'success', '✓ Nachricht gesendet! Ich melde mich innerhalb von 24h.');
+        form.reset();
+      } else {
+        const data = await res.json().catch(() => ({}));
+        const msg  = data?.errors?.[0]?.message || 'Fehler beim Senden. Bitte direkt per E-Mail schreiben.';
+        showFormFeedback(form, 'error', msg);
+      }
+    } catch {
+      showFormFeedback(form, 'error', 'Keine Verbindung. Bitte direkt schreiben: hallo@kimpress.de');
+    } finally {
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Anfrage senden →';
+      }
+    }
+  });
+}
+
+function showFormFeedback(form, type, message) {
+  clearFormFeedback(form);
+  const div = document.createElement('div');
+  div.id = 'form-feedback';
+  const isSuccess = type === 'success';
+  div.style.cssText = [
+    'padding: 12px 16px',
+    'border-radius: 8px',
+    'font-size: 0.85rem',
+    'font-weight: 500',
+    'margin-top: 12px',
+    'text-align: center',
+    isSuccess
+      ? 'background:rgba(0,200,80,0.1);border:1px solid rgba(0,200,80,0.3);color:#4ade80'
+      : 'background:rgba(255,0,0,0.1);border:1px solid rgba(255,0,0,0.3);color:#f87171',
+  ].join(';');
+  div.textContent = message;
+  form.appendChild(div);
+}
+
+function clearFormFeedback(form) {
+  form.querySelector('#form-feedback')?.remove();
+}
+
+/* ===================================================
+   FOOTER SERVICE LINKS — open overlay on click
+   =================================================== */
+function initFooterServiceLinks() {
+  document.querySelectorAll('[data-open-service]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const key = btn.dataset.openService;
+      const serviceMap = {
+        content: 'svc-ol-content', social: 'svc-ol-social', web: 'svc-ol-web',
+        chatbot: 'svc-ol-chatbot', automation: 'svc-ol-automation', beratung: 'svc-ol-beratung',
+      };
+      const overlay = document.getElementById(serviceMap[key]);
+      if (!overlay) return;
+      overlay.classList.add('is-open');
+      overlay.removeAttribute('aria-hidden');
+      document.body.style.overflow = 'hidden';
+      const scrollEl = overlay.querySelector('.svc-overlay__scroll');
+      if (scrollEl) scrollEl.scrollTop = 0;
+      const closeBtn = overlay.querySelector('.svc-overlay__close');
+      if (closeBtn) setTimeout(() => closeBtn.focus(), 50);
+    });
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initNeuralVoid();        // starfield background
   navScroll();             // nav glass + progress bar
@@ -662,6 +771,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initCounters();          // animated stat numbers
   scrollAnimations();      // GSAP scroll entrance animations
   initServiceOverlays();   // service deep-dive overlays
+  initContactForm();       // contact form submission
+  initFooterServiceLinks();// footer service buttons → open overlays
 
   // Three.js sphere
   if (typeof THREE !== 'undefined') {
