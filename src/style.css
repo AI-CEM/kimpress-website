@@ -709,11 +709,11 @@ button.btn {
   background-position: center center;
 }
 
-/* 05 — orange-white hot center, workflow/data streams */
+/* 05 — KI-Workflow Automatisierung — Kubrick machine corridor */
 #service-automation .svc-card__img {
-  background:
-    radial-gradient(ellipse at 50% 55%, rgba(255, 100, 0, 0.55) 0%, rgba(180, 40, 0, 0.2) 35%, transparent 65%),
-    radial-gradient(ellipse at 15% 85%, rgba(255, 30, 0, 0.2) 0%, transparent 40%);
+  background-image: url('/service-automation.jpeg');
+  background-size: cover;
+  background-position: center center;
 }
 
 /* 06 — elegant top-down spotlight, premium consultant */
