@@ -695,18 +695,18 @@ button.btn {
   background-position: center;
 }
 
-/* 03 — deep blue-red from bottom center, architecture/code feel */
+/* 03 — Webseitenentwicklung & SEO — local asset */
 #service-web .svc-card__img {
-  background:
-    radial-gradient(ellipse at 50% 90%, rgba(180, 0, 80, 0.6) 0%, rgba(80, 0, 40, 0.2) 35%, transparent 65%),
-    radial-gradient(ellipse at 75% 15%, rgba(255, 0, 30, 0.18) 0%, transparent 45%);
+  background-image: url('/service-web.jpeg');
+  background-size: cover;
+  background-position: center center;
 }
 
-/* 04 — dual-side rim light: left red + right amber, chatbot AI feel */
+/* 04 — Chatbots & Voicebots — android/cyborg image */
 #service-chatbot .svc-card__img {
-  background:
-    radial-gradient(ellipse at 5% 50%, rgba(255, 0, 0, 0.55) 0%, rgba(120, 0, 0, 0.18) 30%, transparent 55%),
-    radial-gradient(ellipse at 95% 50%, rgba(255, 80, 0, 0.45) 0%, rgba(100, 30, 0, 0.15) 30%, transparent 55%);
+  background-image: url('/service-chatbot.jpeg');
+  background-size: cover;
+  background-position: center center;
 }
 
 /* 05 — orange-white hot center, workflow/data streams */
