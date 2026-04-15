@@ -716,11 +716,11 @@ button.btn {
   background-position: center center;
 }
 
-/* 06 — elegant top-down spotlight, premium consultant */
+/* 06 — KI-Beratung — The Oracle silhouette before AI landscape */
 #service-beratung .svc-card__img {
-  background:
-    radial-gradient(ellipse at 50% 10%, rgba(255, 60, 30, 0.6) 0%, rgba(140, 20, 0, 0.22) 35%, transparent 65%),
-    radial-gradient(ellipse at 80% 80%, rgba(80, 0, 0, 0.25) 0%, transparent 45%);
+  background-image: url('/service-beratung.jpeg');
+  background-size: cover;
+  background-position: center center;
 }
 
 /* ── Bottom gradient overlay — text legibility ───────── */
