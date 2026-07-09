@@ -658,7 +658,7 @@ function initServiceOverlays() {
    Get yours free at: https://formspree.io/forms
    =================================================== */
 function initContactForm() {
-  const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xpwqvlbg'; // ← CONFIGURE THIS
+  const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xqevrkqd'; // ← CONFIGURE THIS
 
   const form = document.getElementById('contact-form');
   if (!form) return;
