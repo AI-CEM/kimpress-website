@@ -120,7 +120,7 @@ function renderPost(post) {
     <footer class="footer">
       <div class="footer__top">
         <div class="footer__col footer__col--brand">
-          <img src="/kimpress_test_logo.svg" alt="Kimpress" height="28" class="footer__logo" />
+          <img src="/kimpress-logo.svg" alt="Kimpress" height="28" class="footer__logo" />
           <p class="footer__tagline">KI-Agentur für den DACH-Raum.<br>1 Operator. Maximale Wirkung.</p>
         </div>
         <div class="footer__col">
@@ -141,7 +141,11 @@ function renderPost(post) {
         </div>
       </div>
       <div class="footer__bottom">
-        <p>&copy; 2026 Kimpress &middot; Cem Görül &middot; Hamburg</p>
+        <p>
+          &copy; 2026 Kimpress &middot; Cem Görül &middot; Hamburg &middot; 
+          <a href="/index.html?open=impressum" style="color: inherit; text-decoration: underline;">Impressum</a> &middot; 
+          <a href="/index.html?open=datenschutz" style="color: inherit; text-decoration: underline;">Datenschutz</a>
+        </p>
       </div>
     </footer>
   `;

@@ -634,7 +634,7 @@ button.btn {
    SERVICES — cinematic image card grid
    =================================================== */
 .services {
-  padding: 100px 0;
+  padding: 100px 0 50px;
   position: relative;
   z-index: 1;
 }
@@ -1623,7 +1623,7 @@ button.btn {
    Partikel sichtbar durch Panels. Kein Template-Look.
    =================================================== */
 .process {
-  padding: 100px 0 120px;
+  padding: 50px 0 120px;
   position: relative;
   z-index: 1;
 }
@@ -4232,20 +4232,24 @@ button.btn {
     url('/service-social.webp') center / cover no-repeat;
 }
 .hero--web {
-  background: radial-gradient(ellipse at 30% 60%, rgba(0,60,180,0.18) 0%, transparent 65%),
-              linear-gradient(135deg, #000818 0%, #001233 50%, #070707 100%);
+  background:
+    linear-gradient(to bottom, rgba(7,7,7,0.15) 0%, rgba(7,7,7,0.7) 60%, #070707 100%),
+    url('/service-web.jpeg') center / cover no-repeat;
 }
 .hero--chatbot {
-  background: radial-gradient(ellipse at 70% 50%, rgba(0,160,140,0.14) 0%, transparent 60%),
-              linear-gradient(135deg, #000f0e 0%, #001f1c 50%, #070707 100%);
+  background:
+    linear-gradient(to bottom, rgba(7,7,7,0.15) 0%, rgba(7,7,7,0.7) 60%, #070707 100%),
+    url('/service-chatbot.jpeg') center / cover no-repeat;
 }
 .hero--automation {
-  background: radial-gradient(ellipse at 20% 70%, rgba(220,90,0,0.14) 0%, transparent 60%),
-              linear-gradient(135deg, #100500 0%, #251000 50%, #070707 100%);
+  background:
+    linear-gradient(to bottom, rgba(7,7,7,0.15) 0%, rgba(7,7,7,0.7) 60%, #070707 100%),
+    url('/service-automation.jpeg') center / cover no-repeat;
 }
 .hero--beratung {
-  background: radial-gradient(ellipse at 60% 40%, rgba(200,170,0,0.12) 0%, transparent 60%),
-              linear-gradient(135deg, #0d0c00 0%, #201e00 50%, #070707 100%);
+  background:
+    linear-gradient(to bottom, rgba(7,7,7,0.15) 0%, rgba(7,7,7,0.7) 60%, #070707 100%),
+    url('/service-beratung.jpeg') center / cover no-repeat;
 }
 
 /* Hero typography */

@@ -3,13 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blog — KI-Insights von Kimpress</title>
-  <meta name="description" content="KI-Wissen für KMU im DACH-Raum: Automatisierung, ChatGPT, Claude, Social Media & SEO mit künstlicher Intelligenz. Praxisnah von Kimpress." />
+  <title>KI-Blog | Insights &amp; News f&uuml;r Unternehmen &mdash; Kimpress</title>
+  <meta name="description" content="KI-Content, Automatisierung &amp; GEO: Aktuelle Insights und praktische Anleitungen deiner deutschen KI-Agentur Kimpress." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="icon" type="image/svg+xml" href="/kimpress_test_logo.svg" />
+  <link rel="icon" type="image/svg+xml" href="/kimpress-logo.svg" />
   <link rel="stylesheet" href="/src/style.css" />
+
+  <!-- JSON-LD Blog Schema for GEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Kimpress KI-Blog",
+    "url": "https://kimpress.de/blog.html",
+    "description": "Erhalte praktische Einblicke und News zu den Themen KI-Content Erstellung, Automatisierung (n8n, Make), Chatbots und Generative Engine Optimization (GEO) von deiner KI-Agentur Hamburg.",
+    "publisher": {
+      "@type": "ProfessionalService",
+      "name": "Kimpress",
+      "url": "https://kimpress.de"
+    }
+  }
+  </script>
 </head>
 <body>
 
@@ -22,7 +38,7 @@
   <nav class="nav" id="nav">
     <div class="nav__inner">
       <a href="/" class="nav__logo" aria-label="Kimpress Home">
-        <img src="/kimpress_test_logo.svg" alt="Kimpress" />
+        <img src="/kimpress-logo.svg" alt="Kimpress" />
       </a>
       <div class="nav__links" id="nav-links">
         <a href="/#services" class="nav__link">Services</a>
@@ -139,7 +155,7 @@
   <footer class="footer">
     <div class="footer__top">
       <div class="footer__col footer__col--brand">
-        <img src="/kimpress_test_logo.svg" alt="Kimpress" height="28" class="footer__logo" />
+        <img src="/kimpress-logo.svg" alt="Kimpress" height="28" class="footer__logo" />
         <p class="footer__tagline">KI-Agentur für den DACH-Raum.<br>1 Operator. Maximale Wirkung.</p>
       </div>
       <div class="footer__col">
@@ -172,11 +188,15 @@
     </div>
     <div class="footer__bottom">
       <p>Kleinunternehmer gem. &sect;19 UStG &mdash; keine Umsatzsteuer ausgewiesen.</p>
-      <p>&copy; 2026 Kimpress &middot; Cem Görül &middot; Hamburg</p>
+      <p>
+        &copy; 2026 Kimpress &middot; Cem Görül &middot; Hamburg &middot; 
+        <a href="/index.html?open=impressum" style="color: inherit; text-decoration: underline;">Impressum</a> &middot; 
+        <a href="/index.html?open=datenschutz" style="color: inherit; text-decoration: underline;">Datenschutz</a>
+      </p>
     </div>
   </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="/three.min.js"></script>
   <script type="module" src="/src/blog.js"></script>
 </body>
 </html>

@@ -774,6 +774,17 @@ document.addEventListener('DOMContentLoaded', () => {
   initContactForm();       // contact form submission
   initFooterServiceLinks();// footer service buttons → open overlays
 
+  // Open modals via URL query parameter (e.g. ?open=impressum)
+  const urlParams = new URLSearchParams(window.location.search);
+  const openParam = urlParams.get('open');
+  if (openParam === 'impressum') {
+    const btn = document.getElementById('open-impressum');
+    if (btn) btn.click();
+  } else if (openParam === 'datenschutz') {
+    const btn = document.getElementById('open-datenschutz');
+    if (btn) btn.click();
+  }
+
   // Three.js sphere
   if (typeof THREE !== 'undefined') {
     initSyntheticMind();
