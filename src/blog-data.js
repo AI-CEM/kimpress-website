@@ -6,13 +6,56 @@
 
 export const BLOG_POSTS = [
   {
+    slug: 'n8n-workflow-automatisierung-kmu-anleitung',
+    title: 'n8n Workflow-Automatisierung: Wie du dein Postfach mit KI sortierst',
+    excerpt: 'E-Mail-Chaos bremst dein B2B-Business aus. In dieser Anleitung zeige ich dir Schritt-für-Schritt, wie du ein n8n-Postfach-Setup aufsetzt, das Kundenanfragen vollautomatisch vorsortiert.',
+    date: '2026-07-10',
+    readTime: 7,
+    category: 'Automatisierung',
+    featured: true,
+    content: `
+<p class="blog-lead">Jeder Dienstleister kennt das: Am Morgen wartet ein volles Postfach. Support-Tickets, Neukunden-Anfragen, Rechnungen und Spam liegen ungeordnet nebeneinander. Die manuelle Vorsortierung kostet dich und dein Team täglich wertvolle Zeit. Die Lösung: Ein automatisierter n8n-Workflow gepaart mit künstlicher Intelligenz.</p>
+
+<h2>Warum n8n die beste Wahl für KMU ist</h2>
+<p>Im Vergleich zu Zapier oder Make bietet n8n einen unschlagbaren Vorteil: Es kann komplett selbst gehostet werden (Self-Hosting auf einem europäischen Server). Das bedeutet für deutsche Unternehmen absolute DSGVO-Konformität, da keine Daten ungewollt an US-amerikanische Server übertragen werden.</p>
+
+<h2>Die Schritt-für-Schritt-Anleitung für dein Postfach</h2>
+<p>Wir bauen eine Pipeline, die jede eingehende E-Mail liest, den Inhalt analysiert, eine passende Kategorisierung vornimmt und dir eine formatierte Benachrichtigung an Slack oder Telegram schickt.</p>
+
+<h3>Schritt 1: Der IMAP Email Trigger</h3>
+<p>Der erste Node in unserem n8n-Workflow horcht auf dein Postfach. Sobald eine neue E-Mail eingeht, zieht n8n die Metadaten: Absender, Betreff, Empfangsdatum und den reinen Text-Inhalt der E-Mail.</p>
+
+<h3>Schritt 2: Die KI-Klassifizierung</h3>
+<p>Wir leiten den E-Mail-Text an ein LLM (wie Gemini oder Claude) weiter. Der Prompt ist entscheidend und muss klare Regeln definieren:</p>
+<blockquote>
+Analysiere die folgende E-Mail und weise ihr genau eine der folgenden Kategorien zu:
+- NEUKUNDE (Anfragen zu Dienstleistungen oder Preisen)
+- SUPPORT (Bestandskunden mit technischen Fragen)
+- RECHNUNG (Belege, Mahnungen, Rechnungen)
+- SPAM (Werbung, uninteressante Angebote)
+Antworte ausschließlich im JSON-Format mit der Kategorie und einer kurzen Zusammenfassung in 2 Sätzen.
+</blockquote>
+
+<h3>Schritt 3: Das intelligente Routing</h3>
+<p>Ein Switch-Node in n8n liest das JSON-Ergebnis aus:</p>
+<ul>
+  <li><strong>NEUKUNDE:</strong> Die Anfrage wird sofort in Pipedrive/HubSpot als neuer Lead angelegt und triggert eine Push-Meldung auf dein Smartphone.</li>
+  <li><strong>RECHNUNG:</strong> Der Anhang (PDF) wird automatisch in deinen Buchhaltungs-Ordner bei Google Drive oder Microsoft OneDrive hochgeladen.</li>
+  <li><strong>SUPPORT:</strong> n8n erstellt ein Ticket im Support-System.</li>
+</ul>
+
+<h2>Fazit &amp; Dein nächster Schritt</h2>
+<p>Dieses Setup spart in inhabergeführten KMU durchschnittlich 60 bis 90 Minuten administrative Arbeit &mdash; pro Tag. Wenn du dieses System in deinem Unternehmen implementieren möchtest, um dein Postfach auf Autopilot zu stellen, kontaktiere mich direkt für eine kostenlose Prozess-Analyse.</p>
+    `,
+  },
+  {
     slug: 'ki-automatisierung-kmu-2026',
     title: 'KI-Automatisierung für KMU: Was 2026 wirklich funktioniert',
     excerpt: 'Viele Unternehmen reden über KI — nur wenige nutzen sie wirklich gewinnbringend. Ich zeige dir, welche Automatisierungen für KMU im DACH-Raum heute sofort Wirkung bringen.',
     date: '2026-04-01',
     readTime: 8,
     category: 'Automatisierung',
-    featured: true,
+    featured: false,
     content: `
 <p class="blog-lead">Ehrliche Frage: Wie viele Stunden hast du diese Woche damit verbracht, Kontaktdaten aus E-Mails in dein CRM zu kopieren, Termine manuell zu bestätigen oder Rechnungen abzugleichen? Zu viele. Genau hier liegt der Fehler: Viele KMU jagen utopischen KI-Projekten nach, während die echten Zeitfresser im operativen Alltag liegen.</p>
 
@@ -157,7 +200,7 @@ Du bist [Name], ein KI-Assistent für [Unternehmen]. Du hilfst [Zielgruppe] mit 
 </ol>
 
 <h2>Ein Beispiel aus der Praxis</h2>
-<p>Für einen meiner Kunden (Coaching-Business) habe ich einen Custom GPT gebaut, der neue Klienten durch einen strukturierten Onboarding-Fragebogen führt. Ergebnis: 70% weniger Onboarding-E-Mails, und die ersten Antworten der Coaches sind deutlich detaillierter weil der GPT schon alle Grundinfos gesammelt hat.</p>
+<p>Für einen meiner Kunden (Coaching-Business) habe ich einen Custom GPT gebaut, der neue Klienten durch einen strukturierten Onboarding-Fragebogen führt. Ergebnis: 70% weniger Onboarding-E-Mails, und die ersten Antworten der coaches sind deutlich detaillierter weil der GPT schon alle Grundinfos gesammelt hat.</p>
     `,
   },
   {
@@ -180,7 +223,7 @@ Du bist [Name], ein KI-Assistent für [Unternehmen]. Du hilfst [Zielgruppe] mit 
 <p>Perplexity AI ist mein bevorzugtes Tool für initiale Recherche. Es zeigt nicht nur Keywords, sondern erklärt die Suchintention dahinter. Kombiniert mit Ahrefs oder Semrush für Volume-Daten hast du ein Briefing in 20 Minuten statt 3 Stunden.</p>
 
 <h3>Content-Struktur und Outline</h3>
-<p>Claude ist hier stark. Prompt: "Analysiere die Top-10-Artikel zu [Keyword] und erstelle eine Outline, die alle wichtigen Unterthemen abdeckt aber einen einzigartigen Winkel bietet." Das gibt dir eine Struktur, die für User und Google funktioniert.</p>
+<p>Claude is hier stark. Prompt: "Analysiere die Top-10-Artikel zu [Keyword] und erstelle eine Outline, die alle wichtigen Unterthemen abdeckt aber einen einzigartigen Winkel bietet." Das gibt dir eine Struktur, die für User und Google funktioniert.</p>
 
 <h3>First Draft + Expertenwissen</h3>
 <p>KI schreibt den Erstentwurf. Du fügst echte Erfahrung, Zahlen, Beispiele ein. Das ist der entscheidende Schritt: Dein spezifisches Wissen macht den Artikel unique. Ohne diesen Schritt hast du KI-Content wie alle anderen — und das rankt nicht.</p>
