@@ -4849,6 +4849,14 @@ button.btn {
   color: rgba(255, 255, 255, 0.3);
 }
 
+.special-offer__pricing-disclaimer {
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.35);
+  margin-top: -15px;
+  margin-bottom: 25px;
+  line-height: 1.45;
+}
+
 .special-offer__right {
   display: flex;
   justify-content: center;
