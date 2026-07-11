@@ -761,6 +761,31 @@ function initFooterServiceLinks() {
   });
 }
 
+function initSpecialOffer() {
+  const specialCta = document.getElementById('open-special-offer');
+  if (!specialCta) return;
+
+  specialCta.addEventListener('click', (e) => {
+    e.preventDefault();
+    const modal = document.getElementById('modal-contact');
+    if (modal) {
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+
+      const msgField = document.getElementById('fm');
+      if (msgField) {
+        msgField.value = "Hi Cem, ich interessiere mich für das limitierte Launch-Special (AI Performance Starter-Kit für 490 €) und möchte anfragen.";
+      }
+
+      const nameField = document.getElementById('fn');
+      if (nameField) {
+        setTimeout(() => nameField.focus(), 150);
+      }
+    }
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initNeuralVoid();        // starfield background
   navScroll();             // nav glass + progress bar
@@ -773,6 +798,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initServiceOverlays();   // service deep-dive overlays
   initContactForm();       // contact form submission
   initFooterServiceLinks();// footer service buttons → open overlays
+  initSpecialOffer();      // launch special CTA popup handler
+
 
   // Open modals via URL query parameter (e.g. ?open=impressum)
   const urlParams = new URLSearchParams(window.location.search);
