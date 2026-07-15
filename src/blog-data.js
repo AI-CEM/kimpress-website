@@ -11,7 +11,7 @@ export const BLOG_POSTS = [
     excerpt: 'Ich hab Kimpress in Hamburg gegründet — mit 25 Euro Gewerbeanmeldung und einem Laptop. Hier erzähle ich dir ehrlich, was eine KI-Agentur kostet, was sie kann und wann sie sich für dich lohnt.',
     date: '2026-07-16',
     readTime: 8,
-    category: 'SEO',
+    category: 'KI Marketing',
     featured: true,
     content: `
 <p class="blog-lead">Ich sitze gerade in meinem Büro in Billstedt — Hamburg, 22115, für die die das nicht kennen: östliches Hamburg, weit weg von der Alster, nah an der Realität. Hier habe ich Kimpress gegründet. Mit einer 25-Euro-Gewerbeanmeldung, einem Laptop und der Überzeugung, dass KI-Marketing nicht nur für Konzerne mit sechsstelligem Budget sein muss.</p>
@@ -421,7 +421,7 @@ export const BLOG_POSTS = [
   },
 ];
 
-export const CATEGORIES = ['Alle', 'Automatisierung', 'KI-Tools', 'Social Media', 'SEO'];
+export const CATEGORIES = ['Alle', 'KI Marketing', 'Automatisierung', 'KI-Tools', 'Social Media', 'SEO'];
 
 export function getPostBySlug(slug) {
   return BLOG_POSTS.find(p => p.slug === slug) || null;
