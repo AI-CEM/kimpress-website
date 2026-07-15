@@ -6,6 +6,71 @@
 
 export const BLOG_POSTS = [
   {
+    slug: 'ki-agentur-hamburg',
+    title: 'KI-Agentur Hamburg: Was kostet KI-Marketing wirklich? (2026)',
+    excerpt: 'Du suchst eine KI-Agentur in Hamburg — aber was bekommst du wofür? Ich erkläre dir als Gründer von Kimpress, was eine KI-Agentur kostet, was sie leisten kann und wann sie sich für dein Business lohnt.',
+    date: '2026-07-16',
+    readTime: 8,
+    category: 'SEO',
+    featured: true,
+    content: `
+<p class="blog-lead">Hamburg hat eine wachsende Szene an KI-Agenturen — von großen Beratungshäusern bis zu spezialisierten Solo-Operatoren. Als Gründer von Kimpress, einer KI-Agentur aus Hamburg, bekomme ich täglich dieselben Fragen: Was macht ihr eigentlich genau? Was kostet das? Und lohnt sich das für ein kleines Unternehmen? Hier sind die ehrlichen Antworten.</p>
+
+<h2>Was macht eine KI-Agentur in Hamburg?</h2>
+<p>Eine KI-Agentur ist kein klassisches Softwarehaus und auch keine normale Marketingagentur. Sie sitzt genau dazwischen: Sie nutzt Werkzeuge der künstlichen Intelligenz, um Aufgaben zu automatisieren, die früher entweder sehr teuer oder sehr zeitaufwendig waren.</p>
+<p>In der Praxis bedeutet das für Hamburger KMU und Unternehmen:</p>
+<ul>
+  <li><strong>KI-Content-Produktion:</strong> Videos, Ad-Bilder und Social-Media-Posts, die mit KI in Stunden statt Wochen produziert werden — angepasst an dein Branding.</li>
+  <li><strong>Workflow-Automatisierung:</strong> Repetitive Aufgaben wie E-Mail-Sortierung, Lead-Qualifizierung oder Datenübertragung werden durch Tools wie n8n oder Make vollautomatisch erledigt.</li>
+  <li><strong>KI-Chatbots & Assistenten:</strong> Kundenservice-Bots, die rund um die Uhr antworten, Anfragen vorqualifizieren und direkt ins CRM eintragen.</li>
+  <li><strong>GEO (Generative Engine Optimization):</strong> Dafür sorgen, dass dein Unternehmen in KI-Suchmaschinen wie Google AI Overview, ChatGPT und Perplexity gefunden und zitiert wird.</li>
+</ul>
+
+<h2>Was kostet eine KI-Agentur in Hamburg?</h2>
+<p>Das ist die Frage, die sich die meisten stellen — und bei der die Antworten extrem weit auseinander gehen.</p>
+<p>Große Unternehmensberatungen und KI-Agenturen mit 10+ Mitarbeitern berechnen für Strategieprojekte schnell 5.000 bis 20.000 € — und das oft, bevor auch nur eine einzige Automatisierung läuft. Diese Preise sind für viele Hamburger KMU und Selbstständige schlicht unrealistisch.</p>
+<p>Bei Kimpress haben wir uns bewusst dagegen entschieden. Unser Modell: Schlanke Pakete mit echtem Ergebnis ab dem ersten Tag.</p>
+<ul>
+  <li><strong>Einstieg:</strong> Das AI Performance Starter-Kit gibt es ab 119 € — 3 KI-Videos, 5 Ad-Bilder, Bio-Optimierung und Video-Skripte. Ideal um KI-Content ohne großes Risiko auszuprobieren.</li>
+  <li><strong>Retainer:</strong> Monatliche Zusammenarbeit für laufenden Content, Automatisierungen und GEO-Aufbau ab 499 € netto/Monat.</li>
+</ul>
+
+<h2>Wann lohnt sich eine KI-Agentur — und wann nicht?</h2>
+<p>Ich bin ehrlich: KI ist kein Allheilmittel. Es gibt Situationen, in denen du dein Geld besser anders investierst.</p>
+<p><strong>Eine KI-Agentur lohnt sich, wenn du...</strong></p>
+<ul>
+  <li>...regelmäßig Content für Social Media, Ads oder deine Website brauchst, aber keine Zeit oder kein internes Team hast.</li>
+  <li>...repetitive manuelle Aufgaben hast, die dich oder deine Mitarbeiter täglich wertvolle Zeit kosten.</li>
+  <li>...in Google und KI-Suchmaschinen gefunden werden willst, ohne eine 5-stellige Agentur zu bezahlen.</li>
+</ul>
+<p><strong>Eine KI-Agentur lohnt sich noch nicht, wenn du...</strong></p>
+<ul>
+  <li>...noch kein klares Angebot oder keine definierte Zielgruppe hast.</li>
+  <li>...denkst, KI ersetzt die grundlegende Marketingstrategie. Sie beschleunigt Execution — keine Strategie.</li>
+</ul>
+
+<h2>KI-Agenturen Hamburg: Womit unterscheiden wir uns?</h2>
+<p>Es gibt inzwischen mehrere KI-Agenturen in Hamburg. Was unterscheidet Kimpress?</p>
+<p>Wir sind kein Beratungshaus das dir eine Powerpoint-Präsentation liefert. Wir produzieren. Wenn du heute anfragst, hast du morgen einen ersten Asset in der Hand — kein Konzeptpapier, kein Strategiemeeting, kein monatelanger Onboarding-Prozess.</p>
+<p>Das ist möglich weil wir als schlankes Team mit modernen KI-Tools arbeiten, die in den letzten zwei Jahren eine Qualitätsstufe erreicht haben, die noch vor kurzem fünf-köpfige Kreativteams erfordert hätte.</p>
+
+<h2>Häufige Fragen zu KI-Agenturen in Hamburg</h2>
+
+<h3>Gibt es KI-Agenturen in Hamburg die auch für kleine Unternehmen erschwinglich sind?</h3>
+<p>Ja. Kimpress ist genau dafür gemacht. Unser Einstiegspaket beginnt bei 119 €, monatliche Pakete ab 499 €. Wir richten uns explizit an KMU, Coaches, Freelancer und Creator — nicht an Konzerne.</p>
+
+<h3>Wie lange dauert es, bis KI-Marketing Ergebnisse zeigt?</h3>
+<p>KI-Content (Videos, Ad-Bilder) ist sofort einsatzbereit — oft innerhalb von 24–48 Stunden. SEO und GEO-Ergebnisse brauchen 4–12 Wochen. Workflow-Automatisierungen sparen ab Tag 1 Zeit.</p>
+
+<h3>Brauche ich technisches Vorwissen für eine Zusammenarbeit?</h3>
+<p>Nein. Du lieferst uns dein Branding, dein Angebot und deine Zielgruppe. Wir kümmern uns um den Rest.</p>
+
+<h2>Fazit: Die richtige KI-Agentur für dich in Hamburg</h2>
+<p>Hamburg hat mittlerweile eine gute Auswahl an KI-Agenturen — von Enterprise-Beratungen bis zu spezialisierten Boutique-Agenturen wie Kimpress. Die Wahl hängt davon ab, was du brauchst: Strategie-Consulting oder direkte Produktion mit schnellem Ergebnis.</p>
+<p>Wenn du herausfinden willst, welche KI-Lösung für dein spezifisches Business am meisten Sinn ergibt — schreib uns einfach. Das erste Gespräch ist kostenlos und unverbindlich.</p>
+    `,
+  },
+  {
     slug: 'n8n-workflow-automatisierung-kmu-anleitung',
     title: 'n8n Workflow-Automatisierung: Wie du dein Postfach mit KI sortierst',
     excerpt: 'E-Mail-Chaos bremst dein B2B-Business aus. In dieser Anleitung zeige ich dir Schritt-für-Schritt, wie du ein n8n-Postfach-Setup aufsetzt, das Kundenanfragen vollautomatisch vorsortiert.',
