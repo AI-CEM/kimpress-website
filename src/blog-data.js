@@ -67,7 +67,7 @@ export const BLOG_POSTS = [
 <h2>Die Fragen die ich am häufigsten bekomme</h2>
 
 <h3>Gibt es KI-Agenturen in Hamburg die auch für kleine Unternehmen bezahlbar sind?</h3>
-<p>Ja — das wäre dann wir. Einstieg ab 119 €, monatliche Zusammenarbeit ab 499 €. Kein Mindest-Vertragslaufzeit, kein verstecktes Kleingedrucktes.</p>
+<p>Ja — das wäre dann wir. Einstieg ab 119 €, monatliche Zusammenarbeit ab 499 €. Keine Mindestvertragslaufzeit, kein verstecktes Kleingedrucktes.</p>
 
 <h3>Wie lange bis man erste Ergebnisse sieht?</h3>
 <p>KI-Videos und Bilder: sofort, oft innerhalb von 24 Stunden. SEO und GEO: realistisch 4 bis 12 Wochen. Automatisierungen: ab dem ersten Tag spürbar.</p>
@@ -80,49 +80,6 @@ export const BLOG_POSTS = [
 <p>Wenn du neugierig bist — einfach schreiben. Kein Sales-Call, kein Pitch-Deck, kein Druck. Ich schaue mir an was du machst und sage dir ehrlich ob und wie KI dir helfen kann. Wenn nicht, sage ich das auch.</p>
 
 <p>Das ist halt der Vorteil wenn man in Billstedt sitzt und nicht im Glasturm.</p>
-    `,
-  },
-  {
-    slug: 'n8n-workflow-automatisierung-kmu-anleitung',
-    title: 'n8n Workflow-Automatisierung: Wie du dein Postfach mit KI sortierst',
-    excerpt: 'E-Mail-Chaos bremst dein B2B-Business aus. In dieser Anleitung zeige ich dir Schritt-für-Schritt, wie du ein n8n-Postfach-Setup aufsetzt, das Kundenanfragen vollautomatisch vorsortiert.',
-    date: '2026-07-10',
-    readTime: 7,
-    category: 'Automatisierung',
-    featured: false,
-    content: `
-<p class="blog-lead">Jeder Dienstleister kennt das: Am Morgen wartet ein volles Postfach. Support-Tickets, Neukunden-Anfragen, Rechnungen und Spam liegen ungeordnet nebeneinander. Die manuelle Vorsortierung kostet dich und dein Team täglich wertvolle Zeit. Die Lösung: Ein automatisierter n8n-Workflow gepaart mit künstlicher Intelligenz.</p>
-
-<h2>Warum n8n die beste Wahl für KMU ist</h2>
-<p>Im Vergleich zu Zapier oder Make bietet n8n einen unschlagbaren Vorteil: Es kann komplett selbst gehostet werden (Self-Hosting auf einem europäischen Server). Das bedeutet für deutsche Unternehmen absolute DSGVO-Konformität, da keine Daten ungewollt an US-amerikanische Server übertragen werden.</p>
-
-<h2>Die Schritt-für-Schritt-Anleitung für dein Postfach</h2>
-<p>Wir bauen eine Pipeline, die jede eingehende E-Mail liest, den Inhalt analysiert, eine passende Kategorisierung vornimmt und dir eine formatierte Benachrichtigung an Slack oder Telegram schickt.</p>
-
-<h3>Schritt 1: Der IMAP Email Trigger</h3>
-<p>Der erste Node in unserem n8n-Workflow horcht auf dein Postfach. Sobald eine neue E-Mail eingeht, zieht n8n die Metadaten: Absender, Betreff, Empfangsdatum und den reinen Text-Inhalt der E-Mail.</p>
-
-<h3>Schritt 2: Die KI-Klassifizierung</h3>
-<p>Wir leiten den E-Mail-Text an ein LLM (wie Gemini oder Claude) weiter. Der Prompt ist entscheidend und muss klare Regeln definieren:</p>
-<blockquote>
-Analysiere die folgende E-Mail und weise ihr genau eine der folgenden Kategorien zu:
-- NEUKUNDE (Anfragen zu Dienstleistungen oder Preisen)
-- SUPPORT (Bestandskunden mit technischen Fragen)
-- RECHNUNG (Belege, Mahnungen, Rechnungen)
-- SPAM (Werbung, uninteressante Angebote)
-Antworte ausschließlich im JSON-Format mit der Kategorie und einer kurzen Zusammenfassung in 2 Sätzen.
-</blockquote>
-
-<h3>Schritt 3: Das intelligente Routing</h3>
-<p>Ein Switch-Node in n8n liest das JSON-Ergebnis aus:</p>
-<ul>
-  <li><strong>NEUKUNDE:</strong> Die Anfrage wird sofort in Pipedrive/HubSpot als neuer Lead angelegt und triggert eine Push-Meldung auf dein Smartphone.</li>
-  <li><strong>RECHNUNG:</strong> Der Anhang (PDF) wird automatisch in deinen Buchhaltungs-Ordner bei Google Drive oder Microsoft OneDrive hochgeladen.</li>
-  <li><strong>SUPPORT:</strong> n8n erstellt ein Ticket im Support-System.</li>
-</ul>
-
-<h2>Fazit &amp; Dein nächster Schritt</h2>
-<p>Dieses Setup spart in inhabergeführten KMU durchschnittlich 60 bis 90 Minuten administrative Arbeit &mdash; pro Tag. Wenn du dieses System in deinem Unternehmen implementieren möchtest, um dein Postfach auf Autopilot zu stellen, kontaktiere mich direkt für eine kostenlose Prozess-Analyse.</p>
     `,
   },
   {
@@ -188,163 +145,265 @@ Antworte ausschließlich im JSON-Format mit der Kategorie und einer kurzen Zusam
     `,
   },
   {
+    slug: 'n8n-workflow-automatisierung-kmu-anleitung',
+    title: 'n8n Workflow: Wie ich mein Postfach mit KI auf Autopilot gestellt habe',
+    excerpt: 'Jeden Morgen 47 ungelesene Mails. Irgendwann hatte ich genug. Hier ist wie ich mein Postfach mit n8n automatisiert habe — und was dabei schief gelaufen ist.',
+    date: '2026-07-10',
+    readTime: 7,
+    category: 'Automatisierung',
+    featured: false,
+    content: `
+<p class="blog-lead">Ich bin kein Morgenmensch. Und der schlimmste Start in den Tag war für mich lange Zeit: Laptop aufklappen, 47 ungelesene Mails, und dann erstmal 40 Minuten sortieren bevor ich überhaupt anfangen konnte zu arbeiten. Das ist vorbei. Hier erzähle ich dir wie.</p>
+
+<p>Aber erstmal die ehrliche Warnung: Das erste Setup das ich gebaut habe war Schrott. Hat Mails falsch kategorisiert, einen Neukunden als Spam markiert — peinlich. Es hat drei Iterationen gebraucht bis es wirklich lief. Das sage ich nicht um dich abzuschrecken, sondern damit du weißt: Erwarte nicht dass es beim ersten Versuch perfekt ist. Erwarte dass es beim dritten Versuch verdammt gut ist.</p>
+
+<h2>Warum n8n und nicht Zapier oder Make?</h2>
+
+<p>Kurze Antwort: Datenschutz. Ich arbeite mit Kundendaten. E-Mails von Interessenten, Anfragen mit konkreten Projektinfos. Das will ich nicht durch US-amerikanische Server schicken.</p>
+
+<p>n8n kann ich selbst hosten — auf einem deutschen Server, DSGVO-konform, keine Daten die ich nicht kontrolliere. Zapier und Make sind tolle Tools aber für diese Art von Workflow ist das für mich ein No-Go. Für dich muss das keine Bedingung sein — aber ich dachte ich sage es.</p>
+
+<h2>Wie das Setup funktioniert — ohne Technik-Kauderwelsch</h2>
+
+<p>Im Kern passiert folgendes: Jede neue E-Mail die reinkommt wird von n8n abgefangen. n8n liest den Inhalt und schickt ihn weiter an ein Sprachmodell — ich nutze Gemini. Das Modell entscheidet innerhalb von Sekunden: Was ist das für eine Mail? Und wohin soll sie?</p>
+
+<p>Meine vier Kategorien:</p>
+<ul>
+  <li><strong>Neukunde</strong> — jemand fragt nach Preisen oder Leistungen. Push-Benachrichtigung auf mein Handy. Sofort.</li>
+  <li><strong>Bestandskunde</strong> — jemand mit dem ich schon arbeite hat eine Frage. Geht in einen separaten Ordner, ich schaue zweimal täglich rein.</li>
+  <li><strong>Rechnung oder Dokument</strong> — landet automatisch in Google Drive im richtigen Unterordner.</li>
+  <li><strong>Spam oder Newsletter</strong> — direkt in den Papierkorb. Keine Gnade.</li>
+</ul>
+
+<p>Der Prompt den ich dem Sprachmodell gebe ist dabei entscheidend. Zu vage und es macht Fehler. Zu eng definiert und es kommt mit Grenzfällen nicht klar. Ich hab ungefähr zwei Wochen gebraucht um ihn richtig zu kalibrieren.</p>
+
+<h2>Was ich dabei gelernt habe</h2>
+
+<p>Der größte Irrtum den ich hatte: Ich dachte nach dem Aufsetzen bin ich fertig. Bin ich nicht. Sprachmodelle machen Fehler — besonders bei kurzen, unklaren Mails. "Kurze Frage" als Betreff mit drei Zeilen Inhalt kann alles sein.</p>
+
+<p>Was hilft: Ich habe einen wöchentlichen Check eingebaut. Jeden Freitag schaue ich kurz ob irgendwas falsch einsortiert wurde. Meistens ist da nichts. Manchmal eine Mail. Das Modell wird mit der Zeit besser weil ich den Prompt nachschärfe.</p>
+
+<p>Und noch was: Starte nicht mit allem auf einmal. Ich habe zuerst nur Spam automatisiert. Eine Woche beobachtet. Dann Rechnungen dazugenommen. Dann erst Neukunden. Schritt für Schritt ist hier kein Klischee — es ist wirklich sinnvoll.</p>
+
+<h2>Was das konkret gebracht hat</h2>
+
+<p>Ich spare jeden Morgen zwischen 30 und 45 Minuten. Das klingt nach wenig. Im Jahr sind das fast 200 Stunden. Zeit die ich stattdessen mit echten Kundenprojekten verbringe, oder — ehrlich gesagt — manchmal einfach mit einem längeren Frühstück.</p>
+
+<p>Ich verpasse keine Neukunden-Anfragen mehr weil sie zwischen Newsletter und Spam untergegangen sind. Das allein hat sich schon bezahlt gemacht.</p>
+
+<h2>Willst du das auch aufsetzen?</h2>
+
+<p>Wenn du selbst n8n lernen willst: Fang mit einem Tutorial auf YouTube an, dann probiere einen einfachen Webhook-Workflow. Dann erst das hier.</p>
+
+<p>Wenn du das lieber jemand anderen bauen lassen willst: Schreib mir. Ich baue sowas regelmäßig für Kunden und kann dir sagen ob es für dein Postfach-Volumen Sinn ergibt — bevor wir irgendwas in Rechnung stellen.</p>
+    `,
+  },
+  {
     slug: 'chatgpt-vs-claude-welches-modell',
-    title: 'ChatGPT vs. Claude 2026 — Welches KI-Modell für welchen Use Case?',
-    excerpt: 'GPT-4o oder Claude 4.6? Die ehrliche Antwort lautet: kommt drauf an. Ich nutze täglich beide — hier ist mein Praxis-Vergleich für Business-Anwendungen.',
+    title: 'ChatGPT vs. Claude: Mein ehrlicher Vergleich nach einem Jahr täglicher Nutzung',
+    excerpt: 'Ich nutze beide täglich — und ich sage dir welches Modell wofür taugt. Kein Sponsored Content, keine PR-Sprache. Nur was ich in der Praxis gelernt habe.',
     date: '2026-03-25',
     readTime: 6,
     category: 'KI-Tools',
     featured: false,
     content: `
-<p class="blog-lead">"Soll ich für mein Unternehmen ChatGPT Plus abonnieren oder lieber Claude Pro?" Diese Frage höre ich fast täglich. Die ehrliche Antwort eines KI-Dienstleisters lautet: Du solltest die Stärken beider Modelle kennen, denn sie sind für völlig unterschiedliche Aufgaben gebaut.</p>
+<p class="blog-lead">Ich werde diese Frage mindestens dreimal pro Woche gefragt: ChatGPT oder Claude? Und meine Antwort ist immer die gleiche — kommt drauf an. Was danach kommt ist ein etwas längeres Gespräch. Das versuche ich hier aufzuschreiben.</p>
 
-<h2>Mein Praxis-Alltag: Welches Modell macht welchen Job?</h2>
-<p>Als Solo Operator arbeite ich täglich mit Gemini, Claude und GPT-Modellen. Ich nutze sie nicht als Spielerei, sondern als harte Produktivitäts-Werkzeuge. Dabei zeigt sich schnell: Die Modelle haben klare Spezialgebiete.</p>
+<p>Zur Einordnung: Ich nutze beide Modelle täglich, seit über einem Jahr. Nicht zum Spaß — als Arbeitswerkzeug. Kimpress läuft zu einem guten Teil auf dem was diese Modelle leisten. Ich habe also ein finanzielles Interesse daran dass sie gut funktionieren, und ein sehr konkretes Bild davon wo sie es nicht tun.</p>
 
-<h2>ChatGPT (OpenAI): Der logische Allrounder</h2>
-<p>ChatGPT ist mein Go-To-Tool, wenn es um logische Strukturen, Code und Daten geht:</p>
-<ul>
-  <li><strong>Code &amp; Debugging:</strong> Wenn ich für meine Kunden Webseiten optimiere oder Scripte schreibe, liefert ChatGPT extrem präzisen Code.</li>
-  <li><strong>Strukturierte Ausgaben (JSON):</strong> Perfekt, um unstrukturierte Texte in saubere Tabellen oder Datenbankformate umzuwandeln.</li>
-  <li><strong>Tool-Integration:</strong> Die Anbindung von Custom GPTs an externe Tools via Schnittstellen (APIs) funktioniert hier am stabilsten.</li>
-</ul>
+<h2>Wo ChatGPT mich nie im Stich lässt</h2>
 
-<h2>Claude (Anthropic): Der kreative Texter</h2>
-<p>Claude gewinnt sofort, wenn es um menschliche Sprache, lange Dokumente und konzeptionelles Denken geht:</p>
-<ul>
-  <li><strong>Natürliches Copywriting:</strong> Claude schreibt Texte, die sich nicht nach "KI" anfühlen. Der Tonfall ist wärmer, abwechslungsreicher und verzichtet auf typische Floskeln.</li>
-  <li><strong>Lange Dokumente analysieren:</strong> Du kannst Claude komplette Verträge oder Handbücher hochladen &mdash; das Modell findet Details in Sekunden, ohne wichtige Zusammenhänge zu vergessen.</li>
-  <li><strong>Konzeptioneller Partner:</strong> Perfekt, um Marketingstrategien zu brainstormen oder komplexe Texte zu redigieren.</li>
-</ul>
+<p>Code. Immer wieder Code. Ich bin kein Entwickler von Haus aus — ich habe mir das meiste selbst beigebracht. Und wenn ich in einem n8n-Workflow einen JavaScript-Snippet brauche der Daten umformatiert, oder wenn ich auf der Kimpress-Website etwas anpassen will das mich im CSS überfordert: ChatGPT. Jedes Mal.</p>
 
-<h2>Meine Empfehlung für dein Business</h2>
-<p>Wenn du primär Marketingtexte, Blogartikel und E-Mails schreibst: Wähle Claude. Wenn du primär Daten auswertest, Code benötigst oder Workflows baust: Wähle ChatGPT. Am besten ist es jedoch, beide im Verbund zu nutzen &mdash; genau das tun wir bei Kimpress, um für jedes Projekt das optimale Ergebnis zu garantieren.</p>
+<p>Was es dabei so gut macht ist nicht nur dass der Code funktioniert — sondern dass es mir erklärt warum. Das hilft mir beim Lernen. Claude macht das auch, aber irgendwie fühlt sich ChatGPT bei technischen Sachen präziser an. Weniger "kreativ", mehr "korrekt".</p>
+
+<p>Zweites echtes Stärkenfeld: Strukturierte Daten rausziehen. Ich lade manchmal Tabellen oder Listen hoch die ein Kunde als Chaos-Dokument schickt, und brauche daraus sauberes JSON. ChatGPT macht das zuverlässig. Claude macht dabei manchmal seltsame Formatierungsentscheidungen.</p>
+
+<h2>Wo Claude einfach besser klingt</h2>
+
+<p>Texte. Alles was gelesen werden soll von echten Menschen.</p>
+
+<p>Ich habe das irgendwann getestet: Denselben Blogartikel-Entwurf einmal mit ChatGPT und einmal mit Claude verfassen lassen, gleicher Prompt. Dann beide Texte Leuten gezeigt ohne zu sagen welcher welcher ist. Fast alle haben den Claude-Text bevorzugt. Er klingt... menschlicher. Weniger wie ein Wikipedia-Artikel, mehr wie jemand der wirklich nachgedacht hat.</p>
+
+<p>Für Kundenkommunikation, für Angebotsbeschreibungen, für Social-Media-Texte: Claude. Eindeutig.</p>
+
+<p>Was Claude außerdem gut kann: sehr lange Dokumente lesen und zusammenfassen. Ich lade manchmal Verträge oder längere Briefings hoch. Claude behält den Überblick über 50 Seiten besser als ChatGPT das in meiner Erfahrung tut.</p>
+
+<h2>Was beide nicht können — und das ist wichtig</h2>
+
+<p>Beide Modelle halluzinieren. Das bedeutet: Sie erfinden manchmal Fakten die falsch sind, mit der gleichen Selbstsicherheit wie bei richtigen Fakten. Das ist keine Kleinigkeit.</p>
+
+<p>Ich prüfe alles was ich aus KI-Texten übernehme das faktisch sein soll. Zahlen, Namen, Studien — alles. Das kostet Zeit, aber es ist nicht verhandelbar. Wer das nicht tut und KI-Content ungeprüft veröffentlicht, hat früher oder später ein Problem.</p>
+
+<p>Und beide Modelle kennen keine aktuelle Lage wenn sie offline sind. ChatGPT hat Webzugang — Claude im Standard nicht. Das spielt eine Rolle wenn du aktuelle Informationen brauchst.</p>
+
+<h2>Meine tatsächliche Empfehlung</h2>
+
+<p>Wenn ich nur eines wählen müsste: Für die meisten Menschen die kein starkes technisches Profil haben, würde ich Claude empfehlen. Die Texte sind besser, die Bedienung ist angenehm, und für 80% der Anwendungsfälle im Alltag ist es das stärkere Werkzeug.</p>
+
+<p>Wenn du viel mit Code, Daten oder Automatisierungen arbeitest: Dann willst du ChatGPT. Oder du nimmst beide — das ist was ich tue.</p>
+
+<p>20 € im Monat für jedes Abo. 40 € insgesamt. Für mich die beste Investition die ich monatlich tätige, mit großem Abstand.</p>
     `,
   },
   {
     slug: 'social-media-autopilot-ki',
-    title: 'Social Media auf Autopilot: Täglich posten ohne einen Finger zu rühren',
-    excerpt: 'Vollautomatisierte Content-Pipelines für TikTok, Instagram und LinkedIn — wie ich das für Kunden baue und was du heute schon umsetzen kannst.',
+    title: 'Social Media auf Autopilot: Was wirklich funktioniert (und was nicht)',
+    excerpt: 'Ich hab es ausprobiert: Vollautomatisch posten ohne jeden Post selbst zu schreiben. Hier ist was dabei herausgekommen — inklusive der Fehler die ich gemacht habe.',
     date: '2026-03-18',
     readTime: 9,
     category: 'Social Media',
     featured: false,
     content: `
-<p class="blog-lead">Täglich posten auf LinkedIn, TikTok und Instagram, während du dich voll auf deine Kunden konzentrierst? Viele Agenturen verlangen dafür vierstellige Retainer im Monat. Ich zeige dir, wie wir diese Social-Media-Workflows mit KI automatisieren &mdash; ohne Qualitätsverlust.</p>
+<p class="blog-lead">Vor ein paar Monaten habe ich einen Selbstversuch gestartet: Zwei Wochen komplett automatisiertes Social-Media-Posting. Kein manueller Post, alles durch die Pipeline. Das Ergebnis war... interessant. Nicht perfekt. Aber interessant.</p>
 
-<h2>Die drei Säulen einer automatisierten Content-Pipeline</h2>
-<p>Damit eine Automatisierung funktioniert und nicht nach seelenlosem Spam aussieht, bauen wir sie in drei Schritten auf:</p>
-<ol>
-  <li><strong>Der Input (Deine Expertise):</strong> Wir saugen dein Wissen ab. Das kann ein kurzes Sprachmemo von dir sein, ein Blogartikel oder ein Kundenfeedback. Das ist die menschliche Basis.</li>
-  <li><strong>Die KI-Verarbeitung (Die Formatierung):</strong> Gemini oder Claude transformieren deinen Input in plattformgerechte Beiträge. Sie schreiben die Hooks für LinkedIn, die Captions für Instagram und die Skripte für TikTok.</li>
-  <li><strong>Die Verteilung (Der Autopilot):</strong> n8n oder Make schieben die fertigen Beiträge direkt in dein Social-Media-Planungstool (z.B. Buffer). Dort liegen sie als Entwurf bereit. Du musst nur noch auf "Freigeben" klicken.</li>
-</ol>
+<p>Ich erzähle dir was ich dabei gelernt habe — weil die ehrliche Version nützlicher ist als die Hochglanz-Präsentation die du sonst so liest.</p>
 
-<h2>Warum das "Human-in-the-Loop"-Prinzip entscheidend ist</h2>
-<p>Ich rate jedem Kunden dringend davon ab, KI-Posts vollautomatisch und ungeprüft live zu schalten. Warum? Weil künstliche Intelligenz deine persönliche Note nicht zu 100% kopieren kann. Der echte Hebel liegt darin, dass die KI dir 90% der Schreib- und Formatierungsarbeit abnimmt. Die letzten 10% &mdash; das kurze Gegenlesen und Freigeben &mdash; bleiben bei dir. So bleibt dein Content authentisch und gewinnt echtes Vertrauen.</p>
+<h2>Wie die Pipeline aufgebaut ist</h2>
 
-<h2>Wie du heute starten kannst</h2>
-<p>Wenn du manuell Zeit sparen willst, erstelle dir ein Dokument mit deinen besten LinkedIn-Posts und füttere damit ein Sprachmodell deiner Wahl als Tonalitäts-Vorlage. Wenn du jedoch eine vollautomatisierte Pipeline haben willst, die im Hintergrund für dich arbeitet, lass uns sprechen. Wir bauen dir ein System, das sich ab dem ersten Monat bezahlt macht.</p>
+<p>Der Grundgedanke ist simpel. Du gibst der KI einen Rohstoff — einen Gedanken, eine Beobachtung, einen Link zu einem Artikel — und sie macht daraus plattformgerechten Content. LinkedIn-Post mit professionellem Ton, Instagram-Caption mit Hashtags, TikTok-Skript mit Hook für die ersten drei Sekunden.</p>
+
+<p>Technisch: n8n verbindet alles. Ich schreibe morgens ein kurzes Voice-Memo oder tippe drei Sätze in ein Notiz-Dokument. n8n zieht das ab, schickt es an Gemini, bekommt die formatierten Posts zurück, legt sie als Entwürfe in Buffer ab. Abends schaue ich kurz drüber und klicke auf Freigeben.</p>
+
+<p>Das ist der Prozess im Idealfall. In der Realität war es komplizierter.</p>
+
+<h2>Was in den zwei Wochen schief gelaufen ist</h2>
+
+<p>Erstes Problem: Die KI kennt meine Stimme nicht wirklich. Die ersten Posts haben sich gelesen wie "ein KI-Text über Cem" — nicht wie Cem selbst. Der Ton war irgendwie... glatt. Zu professionell. Zu rund. Menschen schreiben eckiger.</p>
+
+<p>Das habe ich gelöst indem ich der KI meine besten alten Posts gegeben habe als Stilreferenz. Das hat deutlich geholfen. Aber es braucht Zeit diese Referenzen aufzubauen — mindestens 20, 30 Posts die du als "so klinge ich wirklich" markierst.</p>
+
+<p>Zweites Problem: Aktuelle Ereignisse. Die KI weiß nicht was gerade passiert. Wenn Google ein neues KI-Produkt rausbringt und du am nächsten Tag einen Post darüber machen willst, musst du der KI das sagen. Sonst postet sie Evergreen-Content während alle über das neue Ding reden — und du wirkst wie jemand der nicht aufpasst.</p>
+
+<p>Drittes Problem, das mich am meisten überrascht hat: Engagement. Die automatisierten Posts haben weniger Reaktionen bekommen als meine manuellen. Nicht drastisch weniger, aber merkbar. Ich glaube das liegt daran dass spontane, unpolierte Posts authentischer wirken. Die Pipeline produziert zu perfekte Texte.</p>
+
+<h2>Was ich behalten habe — und was ich wieder manuell mache</h2>
+
+<p>Behalten: Alles was sich wiederholt. Ankündigungen, Zusammenfassungen von Blogartikeln, Tipps die sich in verschiedenen Formulierungen recyceln lassen. Dafür ist die Pipeline perfekt. Kein Aufwand, kein Qualitätsverlust.</p>
+
+<p>Wieder manuell: Persönliche Meinungen, Reaktionen auf aktuelle Ereignisse, Gespräche in den Kommentaren anfangen. Das kann keine Automatisierung ersetzen. Und ich glaube das soll sie auch nicht.</p>
+
+<p>Der Punkt ist nicht: Ich als Mensch verschwinde komplett. Der Punkt ist: Alles was Routine ist, erledigt die Maschine. Alles was mich als Person zeigt, mache ich selbst. Das ist eine saubere Aufteilung.</p>
+
+<h2>Lohnt sich das für dich?</h2>
+
+<p>Kommt drauf an wie viel du gerade postest. Wenn du einmal pro Woche postest: Vermutlich nicht. Der Setup-Aufwand rechnet sich erst ab einem gewissen Volumen.</p>
+
+<p>Wenn du täglich auf mehreren Plattformen aktiv sein willst, aber dafür keine drei Stunden pro Tag hast: Ja. Absolut. Die Pipeline zahlt sich schnell aus — zeitlich und mental.</p>
+
+<p>Wenn du willst dass ich dir zeige wie das konkret aufgebaut wird: Schreib mir. Ich baue das regelmäßig für Kunden und kann dir in 30 Minuten sagen ob es für dein Business passt.</p>
     `,
   },
   {
     slug: 'custom-gpt-bauen-anleitung',
-    title: 'Custom GPT in 30 Minuten: Dein persönlicher KI-Assistent',
-    excerpt: 'Custom GPTs sind das unterschätzte Feature von OpenAI. Ich zeige dir Schritt für Schritt, wie du deinen eigenen Assistenten für dein Business baust — ohne eine Zeile Code.',
+    title: 'Custom GPT bauen: Was mir niemand vorher gesagt hat',
+    excerpt: 'Ich habe meinen ersten Custom GPT in 2 Stunden gebaut. Er war nutzlos. Den zweiten in 4 Stunden. Er war ok. Den dritten in 6 Stunden. Der läuft heute noch. Hier ist was ich dabei gelernt habe.',
     date: '2026-03-10',
     readTime: 7,
     category: 'KI-Tools',
     featured: false,
     content: `
-<p class="blog-lead">Custom GPTs sind keine KI-Spielerei. Gut gebaut sind sie ein echtes Business-Tool, das dir täglich Stunden spart. Hier ist meine Anleitung.</p>
+<p class="blog-lead">Die meisten Tutorials zu Custom GPTs zeigen dir wie du einen baust. Kaum einer zeigt dir warum die ersten drei, vier Versuche meistens enttäuschend sind — und was du dagegen tun kannst. Das will ich hier nachholen.</p>
 
-<h2>Was ein Custom GPT kann (und was nicht)</h2>
-<p>Ein Custom GPT ist ein angepasster Chatbot auf Basis von GPT-4o, den du über OpenAI's GPT Builder erstellen kannst. Du brauchst dafür einen ChatGPT Plus Account (20€/Monat).</p>
-<p>Er kann:</p>
-<ul>
-  <li>Dokumente, PDFs, Excel-Dateien analysieren die du hochlädst</li>
-  <li>In einer bestimmten Tonalität und nach bestimmten Regeln antworten</li>
-  <li>Externe APIs aufrufen (mit etwas Setup)</li>
-  <li>Spezifisches Wissen über dein Unternehmen, deine Kunden, deine Produkte haben</li>
-</ul>
-<p>Er kann nicht (ohne Pro-Setup): Eigenständig im Web surfen, auf externe Datenbanken zugreifen, automatisch Aufgaben ausführen.</p>
+<p>Ich habe mittlerweile Custom GPTs für mich selbst gebaut und für Kunden. Der Prozess ist immer ähnlich: erster Versuch zu vage, zweiter Versuch zu eng definiert, dritter Versuch fängt an zu funktionieren. Wer das weiß, kann sich die Frustration der ersten Versuche zumindest erklären.</p>
 
-<h2>Schritt-für-Schritt: Dein erster Custom GPT</h2>
+<h2>Was ein Custom GPT eigentlich ist — ohne Marketingsprache</h2>
 
-<h3>Schritt 1: GPT Builder öffnen</h3>
-<p>Geh auf chat.openai.com → Explore GPTs → Create → Configure. Du siehst jetzt den GPT Builder.</p>
+<p>Es ist ein ChatGPT mit Gedächtnis und Charakter. Du sagst ihm wer es ist, was es weiß, wie es antworten soll — und dann verhält es sich entsprechend. Das ist der ganze Zauber dahinter.</p>
 
-<h3>Schritt 2: Den Kern definieren</h3>
-<p>Im "Instructions"-Feld beschreibst du, wer dein GPT ist. Template:</p>
-<blockquote>
-Du bist [Name], ein KI-Assistent für [Unternehmen]. Du hilfst [Zielgruppe] mit [Aufgabe]. Du antwortest immer auf Deutsch, in einem [Tonalität]-Stil. Du weißt folgendes über unser Unternehmen: [wichtige Infos]. Du antwortest nie mit mehr als [X] Sätzen pro Antwort, außer du wirst explizit nach mehr gefragt.
-</blockquote>
+<p>Was es nicht ist: Ein vollautomatischer Agent der selbstständig Aufgaben erledigt. Es antwortet auf Fragen. Es schreibt Texte wenn du es bittest. Es analysiert Dokumente die du hochlädst. Aber es startet keine Prozesse, schickt keine E-Mails, bucht keine Termine — nicht ohne technisches Zusatz-Setup das deutlich komplexer ist.</p>
 
-<h3>Schritt 3: Wissensdaten hochladen</h3>
-<p>Erstelle ein Dokument mit allem was dein GPT wissen soll: Produkte, Preise, FAQ, Prozesse. Als PDF hochladen. Der GPT liest es und nutzt es als Referenz.</p>
+<p>Diese Erwartung falsch zu setzen ist der Fehler den ich am häufigsten beobachte. Und er frustriert Leute unnötig.</p>
 
-<h3>Schritt 4: Conversation Starters</h3>
-<p>Definiere 4 Starter-Prompts, die häufige Use Cases abdecken. Das leitet Nutzer direkt zum Wert.</p>
+<h2>Der einzige Teil der wirklich zählt: die Instructions</h2>
 
-<h3>Schritt 5: Testen und verfeinern</h3>
-<p>Teste 10–20 realistische Anfragen. Dort wo die Antworten nicht passen: Instructions anpassen. Das ist der wichtigste Schritt und braucht meistens 2–3 Iterationen.</p>
+<p>Technisch gesehen hat ein Custom GPT viele Einstellungen. In der Praxis entscheidet fast alles das "Instructions"-Feld. Das ist der Text in dem du dem GPT sagst wer er ist.</p>
 
-<h2>Die 3 Custom GPTs die ich jedem empfehle</h2>
-<ol>
-  <li><strong>Angebots-Assistent</strong> — kennt deine Leistungen und Preise, erstellt Angebots-Entwürfe</li>
-  <li><strong>Content-Assistent</strong> — kennt deine Brand-Voice, schreibt Posts in deinem Stil</li>
-  <li><strong>Kunden-Onboarding-Assistent</strong> — Beantwortet die 20 häufigsten Fragen neuer Kunden</li>
-</ol>
+<p>Die häufigsten Fehler dabei:</p>
 
-<h2>Ein Beispiel aus der Praxis</h2>
-<p>Für einen meiner Kunden (Coaching-Business) habe ich einen Custom GPT gebaut, der neue Klienten durch einen strukturierten Onboarding-Fragebogen führt. Ergebnis: 70% weniger Onboarding-E-Mails, und die ersten Antworten der coaches sind deutlich detaillierter weil der GPT schon alle Grundinfos gesammelt hat.</p>
+<p>Zu kurz. "Du bist ein hilfreicher Assistent für mein Business." Das sagt nichts. Das GPT hat keine Ahnung was dein Business ist, wer deine Kunden sind, wie du kommunizierst.</p>
+
+<p>Zu lang und unstrukturiert. 2.000 Wörter Fließtext den das Modell dann nicht konsequent verarbeitet. Das passiert mir selbst manchmal. Besser: Klare Abschnitte, kurze Sätze, konkrete Regeln.</p>
+
+<p>Was funktioniert: Ich baue meine Instructions immer in vier Blöcken auf. Erstens: Wer bist du. Zweitens: Wer sind die Nutzer und was wollen sie. Drittens: Was darfst du, was nicht. Viertens: Wie klingst du — mit konkreten Beispielen.</p>
+
+<h2>Das Wissen das den Unterschied macht</h2>
+
+<p>Du kannst dem GPT Dokumente hochladen — PDFs, Word-Dateien, Excel-Tabellen. Es liest sie und nutzt sie als Referenz wenn jemand fragt.</p>
+
+<p>Ich baue für jeden Custom GPT ein "Wissensdokument" — ein einziges PDF das alles Wichtige enthält. Meine Leistungen, meine Preise, häufige Kundenfragen und Antworten, Formulierungen die ich verwende und welche ich vermeide. Das Modell greift darauf zurück und klingt dann viel weniger generisch.</p>
+
+<p>Der Trick dabei: Das Dokument muss gut geschrieben sein. Ein schlecht strukturiertes Dokument produziert schlecht strukturierte Antworten. Das GPT kann aus schlechtem Input keinen guten Output machen.</p>
+
+<h2>Wie ich teste ob ein Custom GPT wirklich funktioniert</h2>
+
+<p>Ich schicke ihm Fragen die ich von echten Kunden kenne. Nicht die einfachen — die schwierigen. Die Grenzfälle. Die komischen Formulierungen die Leute manchmal wählen.</p>
+
+<p>Wenn das GPT bei drei von zehn Testfragen schlechte Antworten gibt: Instructions überarbeiten. Noch mal testen. Das ist kein Zeichen dass es nicht funktioniert — das ist der normale Prozess.</p>
+
+<p>Die Faustregel die ich mir gegeben habe: Erst wenn ich 20 Testfragen gestellt habe und wirklich zufrieden bin, zeige ich es einem Kunden.</p>
+
+<h2>Welche Custom GPTs wirklich Sinn ergeben</h2>
+
+<p>Nach allem was ich gebaut habe: Die nützlichsten sind die unspektakulärsten. Nicht "mein KI-Assistent der alles kann" — sondern "mein Angebots-Generator der meine Preise kennt und Textentwürfe in meinem Ton schreibt".</p>
+
+<p>Drei die ich wirklich empfehle: Einer der deine Standard-Kundenkommunikation übernimmt. Einer der deinen Social-Media-Content in deiner Stimme schreibt. Einer der neue Kunden durch einen Onboarding-Fragebogen führt.</p>
+
+<p>Alle drei sind in einem Tag aufgesetzt wenn du weißt was du tust. Und alle drei sparen ab dem ersten Tag Zeit.</p>
+
+<p>Wenn du einen davon für dein Business haben willst und dir nicht sicher bist wie du anfängst — meld dich bei mir. Ich schaue mir gern gemeinsam an was für dich Sinn ergibt.</p>
     `,
   },
   {
     slug: 'seo-mit-ki-2026',
-    title: 'SEO mit KI 2026: Wie du Google-Rankings aufbaust ohne stundenlang Content zu schreiben',
-    excerpt: 'KI-gestützter SEO ist kein Trick — es ist eine strategische Pipeline. Ich zeige dir, wie du mit KI-Tools systematisch Suchmaschinenrankings aufbaust, ohne jeden Artikel manuell zu schreiben.',
+    title: 'SEO mit KI: Was ich nach 6 Monaten gelernt habe (und was nicht funktioniert)',
+    excerpt: 'Ich habe 6 Monate lang KI für SEO eingesetzt — systematisch, mit Tracking. Hier sind die ehrlichen Ergebnisse. Was hat Rankings gebracht, was war Zeitverschwendung.',
     date: '2026-03-03',
     readTime: 10,
     category: 'SEO',
     featured: false,
     content: `
-<p class="blog-lead">Google hat 2024 klargestellt: KI-generierter Content ist nicht verboten. Schlechter Content ist verboten. Der Unterschied liegt nicht im Autor, sondern in der Qualität.</p>
+<p class="blog-lead">Es gibt ungefähr tausend Artikel darüber wie man KI für SEO nutzt. Die meisten sind von Leuten geschrieben die es theoretisch beschreiben. Ich will dir erzählen was ich selbst gemacht habe, was dabei rausgekommen ist — und wo ich auf die Nase gefallen bin.</p>
 
-<h2>Die neue SEO-Realität</h2>
-<p>Wer heute SEO macht wie 2020 — Keyword stuffing, dünner Content, gekaufte Links — wird 2026 nicht ranken. Googles Helpful Content Update hat das Spielfeld verändert. Aber es hat auch neue Möglichkeiten für clevere KI-Nutzung eröffnet.</p>
+<p>Kimpress ist eine junge Website. Sechs Monate alt zum Zeitpunkt an dem ich das schreibe. Ich habe von Anfang an KI in meinen SEO-Prozess eingebaut und das Ganze getrackt. Das gibt mir zumindest eine ehrliche Datengrundlage.</p>
 
-<h2>Was mit KI funktioniert</h2>
+<h2>Erstmal: Was Google wirklich bestraft</h2>
 
-<h3>Content-Briefing und Keyword-Recherche</h3>
-<p>Perplexity AI ist mein bevorzugtes Tool für initiale Recherche. Es zeigt nicht nur Keywords, sondern erklärt die Suchintention dahinter. Kombiniert mit Ahrefs oder Semrush für Volume-Daten hast du ein Briefing in 20 Minuten statt 3 Stunden.</p>
+<p>Das Missverständnis das mich am meisten nervt: Viele glauben KI-Content ist verboten bei Google. Das ist falsch. Google hat das mehrfach klargestellt — zuletzt im Helpful Content Update. Was bestraft wird ist schlechter Content. Egal ob von KI oder Mensch geschrieben.</p>
 
-<h3>Content-Struktur und Outline</h3>
-<p>Claude is hier stark. Prompt: "Analysiere die Top-10-Artikel zu [Keyword] und erstelle eine Outline, die alle wichtigen Unterthemen abdeckt aber einen einzigartigen Winkel bietet." Das gibt dir eine Struktur, die für User und Google funktioniert.</p>
+<p>Was schlechter Content bedeutet: Artikel die nichts Neues sagen. Artikel die dieselbe Frage fünfmal umformulieren ohne sie zu beantworten. Artikel die nur für Suchmaschinen geschrieben sind und für Menschen unlesbar. Das kennt jeder von seinen eigenen Suchergebnissen.</p>
 
-<h3>First Draft + Expertenwissen</h3>
-<p>KI schreibt den Erstentwurf. Du fügst echte Erfahrung, Zahlen, Beispiele ein. Das ist der entscheidende Schritt: Dein spezifisches Wissen macht den Artikel unique. Ohne diesen Schritt hast du KI-Content wie alle anderen — und das rankt nicht.</p>
+<p>KI produziert davon sehr schnell sehr viel. Das ist das eigentliche Problem — nicht die KI an sich.</p>
 
-<h3>On-Page-Optimierung</h3>
-<p>Meta-Titel, Meta-Description, Alt-Texte, interne Verlinkung — alles Aufgaben für KI. Schema-Markup für Artikel, FAQ, How-To — wenige Minuten mit GPT-4o.</p>
+<h2>Was wirklich funktioniert hat — mit Zahlen</h2>
 
-<h2>Was nicht funktioniert</h2>
-<p><strong>Bulk-Content ohne Qualitätskontrolle:</strong> 100 KI-Artikel zum gleichen Thema-Cluster ohne menschliche Review erzeugen Cannibalisation und schaden dem ganzen Domain. </p>
-<p><strong>KI-Content ohne eigene Perspektive:</strong> Google erkennt generischen Content. E-E-A-T (Experience, Expertise, Authoritativeness, Trust) braucht echte Erfahrung. Die muss von dir kommen.</p>
+<p>Keyword-Recherche ist mein größter Zeitgewinn durch KI. Was früher 3 Stunden gedauert hat dauert heute 30 Minuten. Ich gebe Perplexity oder Claude ein Thema, bekomme einen ersten Überblick über verwandte Suchbegriffe und die Intention dahinter. Dann verifiziere ich mit Google Search Console und Search Volume-Daten.</p>
 
-<h2>Meine KI-SEO-Workflow in der Praxis</h2>
-<ol>
-  <li>Keyword-Cluster definieren (Ahrefs + Perplexity): 1h/Monat</li>
-  <li>Für jeden Artikel: Briefing mit Claude erstellen: 20 Min</li>
-  <li>First Draft: GPT-4o oder Claude: 15 Min</li>
-  <li>Eigene Perspektive, Beispiele, Daten einfügen: 45 Min</li>
-  <li>On-Page-Optimierung: GPT-4o: 10 Min</li>
-  <li>Publish und intern verlinken: 10 Min</li>
-</ol>
-<p>Total: 2h pro Artikel. Vorher: 6–8h. Das ist der echte ROI von KI-SEO.</p>
+<p>Content-Struktur: KI ist gut darin, die Fragen zu identifizieren die Nutzer zu einem Thema stellen. Wenn ich einen Artikel über n8n schreibe, gebe ich Claude einfach das Keyword und frage: "Welche Fragen stellen sich Leute dazu wirklich?" Die Antwort gibt mir die Struktur.</p>
 
-<h2>Quick Win für heute</h2>
-<p>Geh in Google Search Console und schau welche Artikel auf Position 5–15 ranken. Das sind deine niedrig hängenden Früchte. Aktualisiere diese Artikel mit KI-Unterstützung — mehr Tiefe, aktuellere Daten, bessere Struktur. In 2–4 Wochen siehst du eine Bewegung.</p>
+<p>On-Page-Elemente: Meta-Beschreibungen, Alt-Texte für Bilder, interne Verlinkungsvorschläge — alles Dinge die ich früher manuell gemacht habe und jetzt in Minuten erledigt sind.</p>
+
+<h2>Wo ich auf die Nase gefallen bin</h2>
+
+<p>Ich habe früh versucht Artikel schnell mit KI zu generieren und direkt zu publishen. Drei Artikel in drei Tagen, kaum eigene Bearbeitung. Das Ergebnis: Alle drei ranken bis heute auf Seite 6 oder schlechter. Kein organischer Traffic.</p>
+
+<p>Warum? Weil sie austauschbar sind. Jeder dieser Artikel hätte von jeder anderen KI-Agentur stammen können. Es gibt nichts darin das spezifisch für Kimpress oder für mich persönlich wäre. Google erkennt das — und priorisiert es nicht.</p>
+
+<p>Der Artikel den ich komplett selbst geschrieben habe — über KI-Automatisierung, mit echten Beispielen aus Kundengesprächen — rankst auf Seite 2. Nach drei Wochen. Das ist kein Zufall.</p>
+
+<h2>Wie mein Prozess jetzt aussieht</h2>
+
+<p>KI macht die Vorarbeit: Keyword-Analyse, Struktur, erste Rohfassung in 15 Minuten. Ich mache den Rest: Eigene Beispiele einbauen, Meinungen formulieren, Dinge sagen die ich wirklich glaube — auch wenn sie unbequem sind. Dann noch mal durch KI für On-Page-Optimierung. Fertig.</p>
+
+<p>Gesamtzeit: etwa zwei Stunden pro Artikel. Vorher war es sechs bis acht. Das ist der echte Gewinn — nicht dass KI den Artikel schreibt, sondern dass sie den langweiligen Teil übernimmt.</p>
+
+<h2>Was ich jedem rate der jetzt anfangen will</h2>
+
+<p>Google Search Console installieren und warten. Ernsthaft — ohne Tracking ist alles Raten. Du brauchst Daten um zu wissen was funktioniert.</p>
+
+<p>Dann: Schreib über Dinge die du wirklich weißt. Deine eigenen Erfahrungen, deine eigenen Fehler, deine eigenen Ergebnisse. Das kann keine KI erfinden. Und genau das ist was Google im Moment belohnt.</p>
+
+<p>Wenn du willst dass ich mir deine aktuelle Situation anschaue und dir sage wo du ansetzen solltest — ich mache das gern. Einfach schreiben.</p>
     `,
   },
 ];
