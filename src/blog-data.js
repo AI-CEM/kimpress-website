@@ -201,7 +201,7 @@ export const BLOG_POSTS = [
   {
     slug: 'chatgpt-vs-claude-welches-modell',
     title: 'ChatGPT vs. Claude 2026 — Der ehrliche Vergleich den niemand schreibt',
-    excerpt: 'Ich nutze beide täglich. Und ich muss einen alten Irrtum korrigieren: "Claude für Texte, ChatGPT für Code" war nie die ganze Wahrheit. Hier ist was wirklich stimmt.',
+    excerpt: 'Ich nutze beide täglich. Und ich korrigiere einen alten Irrtum: Claude ist nicht nur für Texte — und ChatGPT nicht einfach besser beim Coden. Hier die echte Wahrheit.',
     date: '2026-03-25',
     readTime: 7,
     category: 'KI-Tools',
@@ -209,36 +209,54 @@ export const BLOG_POSTS = [
     content: `
 <p class="blog-lead">Ich werde diese Frage mindestens dreimal pro Woche gefragt: ChatGPT oder Claude? Und meine Antwort ist immer die gleiche — kommt drauf an. Was danach kommt ist ein etwas längeres Gespräch. Das versuche ich hier aufzuschreiben. Inklusive eines Irrtums den ich früher selbst verbreitet habe.</p>
 
-<p>Zur Einordnung: Ich nutze beide Modelle täglich, seit über einem Jahr. Nicht zum Spaß — als Arbeitswerkzeug. Kimpress läuft zu einem guten Teil auf dem was diese Modelle leisten. Ich habe also ein finanzielles Interesse daran dass sie gut funktionieren, und ein sehr konkretes Bild davon wo sie es nicht tun.</p>
+<p>Zur Einordnung: Ich nutze beide täglich, seit über einem Jahr. Nicht zum Spaß — als Arbeitswerkzeug. Kimpress läuft zu einem guten Teil auf dem was diese Modelle leisten. Ich habe also ein finanzielles Interesse daran dass sie gut funktionieren, und ein sehr konkretes Bild davon wo sie es nicht tun.</p>
 
+<h2>Erstmal: Claude ist keine einzelne KI — das wissen die wenigsten</h2>
 
-<p>Zweites echtes Stärkenfeld: Strukturierte Daten rausziehen. Ich lade manchmal Tabellen oder Listen hoch die ein Kunde als Chaos-Dokument schickt, und brauche daraus sauberes JSON. ChatGPT macht das zuverlässig. Claude macht dabei manchmal seltsame Formatierungsentscheidungen.</p>
+<p>OpenAI hat ChatGPT. Anthropic hat eine ganze Modellfamilie. Und die ist beeindruckend wenn man weiß was man hat.</p>
 
-<h2>Wo Claude einfach besser klingt</h2>
+<ul>
+  <li><strong>Claude Haiku:</strong> Der Schnelle. Blitzantworten, günstig über die API. Für viele kleine Aufgaben die sich wiederholen.</li>
+  <li><strong>Claude Sonnet:</strong> Das tägliche Arbeitstier. Geschwindigkeit trifft Tiefe — für 90% meiner Aufgaben erste Wahl. Auch das Modell das im Hintergrund läuft wenn ich mit Antigravity arbeite.</li>
+  <li><strong>Claude Opus:</strong> Der Denker. Für Analysen die mehrere Ebenen brauchen. Langsamer — aber wenn es drauf ankommt spürbar stärker.</li>
+  <li><strong>Extended Thinking:</strong> Claude denkt laut nach, Schritt für Schritt, sichtbar. Für Mathe, Logik und komplexe Planung.</li>
+</ul>
 
-<p>Texte. Alles was gelesen werden soll von echten Menschen.</p>
+<p>Und dann gibt es noch <strong>Claude Code</strong> — ein separates Produkt das autonom in echten Codebases arbeitet. Nicht "Snippet tippen und zurückgeben" sondern: ganze Projekte verstehen, Fehler finden, Dateien bearbeiten. Komplett andere Kategorie als normaler Chat.</p>
 
-<p>Ich habe das irgendwann getestet: Denselben Blogartikel-Entwurf einmal mit ChatGPT und einmal mit Claude verfassen lassen, gleicher Prompt. Dann beide Texte Leuten gezeigt ohne zu sagen welcher welcher ist. Fast alle haben den Claude-Text bevorzugt. Er klingt... menschlicher. Weniger wie ein Wikipedia-Artikel, mehr wie jemand der wirklich nachgedacht hat.</p>
+<h2>Wo ChatGPT wirklich glänzt</h2>
 
-<p>Für Kundenkommunikation, für Angebotsbeschreibungen, für Social-Media-Texte: Claude. Eindeutig.</p>
+<p>Bilder. ChatGPT hat DALL-E 3 direkt integriert — du beschreibst was du willst und kriegst das Bild. Claude kann das schlicht nicht. Kein Workaround, kein Trick. Wer KI-Bilder direkt aus dem Chat will: ChatGPT.</p>
 
-<p>Was Claude außerdem gut kann: sehr lange Dokumente lesen und zusammenfassen. Ich lade manchmal Verträge oder längere Briefings hoch. Claude behält den Überblick über 50 Seiten besser als ChatGPT das in meiner Erfahrung tut.</p>
+<p>Code Interpreter. ChatGPT kann Python live im Browser ausführen, Dateien analysieren, Diagramme aus echten Daten erstellen — ohne Setup. Für Datenanalyse und schnelle Auswertungen ist das ein konkreter Vorteil den Claude so nicht hat.</p>
+
+<p>Strukturierte Daten rausziehen. Ich lade manchmal Tabellen oder Listen hoch die ein Kunde als Chaos-Dokument schickt, und brauche daraus sauberes JSON. ChatGPT macht das zuverlässig und schnell.</p>
+
+<p>Ökosystem. Mehr Drittanbieter-Tools bauen auf OpenAI auf. Wer viele fertige Plugins und Schnittstellen braucht, findet bei ChatGPT mehr Auswahl.</p>
+
+<h2>Wo Claude klar gewinnt</h2>
+
+<p>Coding — und hier muss ich einen alten Irrtum korrigieren. Ich habe früher impliziert ChatGPT sei die bessere Wahl fürs Coden. Das stimmt nicht.</p>
+
+<p>Für komplexe, mehrstufige Aufgaben, für das Verstehen und Bearbeiten größerer Codebases, für Automatisierungen die über einen einfachen Snippet hinausgehen: Claude. Konsequent. Das zeigen Benchmarks — und das ist meine tägliche Erfahrung. Ich baue meine n8n-Workflows und Automatisierungen mit Claude. Claude Code existiert als Produkt aus genau diesem Grund.</p>
+
+<p>Texte die sich menschlich anfühlen sollen. Das ist nach wie vor wahr. Ich habe das blind getestet: Denselben Entwurf einmal mit ChatGPT, einmal mit Claude verfassen lassen, gleicher Prompt. Beiden Versionen Leuten gezeigt ohne zu sagen welcher welcher ist. Fast alle haben den Claude-Text bevorzugt. Er klingt wärmer. Weniger Wikipedia, mehr echter Mensch der nachgedacht hat.</p>
+
+<p>Für Kundenkommunikation, Angebotsbeschreibungen, Social-Media-Texte, Blogartikel: Claude. Eindeutig.</p>
+
+<p>Lange Dokumente verstehen. Verträge, lange Briefings, komplexe Recherche — Claude verliert den Überblick über 50 Seiten deutlich seltener als ChatGPT in meiner Erfahrung.</p>
 
 <h2>Was beide nicht können — und das ist wichtig</h2>
 
-<p>Beide Modelle halluzinieren. Das bedeutet: Sie erfinden manchmal Fakten die falsch sind, mit der gleichen Selbstsicherheit wie bei richtigen Fakten. Das ist keine Kleinigkeit.</p>
+<p>Beide halluzinieren. Sie erfinden manchmal Fakten die falsch sind, mit der gleichen Selbstsicherheit wie bei richtigen Fakten. Das ist keine Kleinigkeit.</p>
 
-<p>Ich prüfe alles was ich aus KI-Texten übernehme das faktisch sein soll. Zahlen, Namen, Studien — alles. Das kostet Zeit, aber es ist nicht verhandelbar. Wer das nicht tut und KI-Content ungeprüft veröffentlicht, hat früher oder später ein Problem.</p>
+<p>Alles was faktisch sein soll: prüfen. Immer. Zahlen, Namen, Studien. Wer das nicht tut hat früher oder später ein Problem — beruflich oder reputationsmäßig.</p>
 
-<p>Und beide Modelle kennen keine aktuelle Lage wenn sie offline sind. ChatGPT hat Webzugang — Claude im Standard nicht. Das spielt eine Rolle wenn du aktuelle Informationen brauchst.</p>
+<h2>Meine ehrliche Empfehlung</h2>
 
-<h2>Meine tatsächliche Empfehlung</h2>
+<p>Für die meisten Selbstständigen, Coaches und kleinen Unternehmen mit denen ich arbeite: Claude Sonnet als Einstieg. Stärkere Texte, sehr gutes Coding, natürlichere Konversation.</p>
 
-<p>Wenn ich nur eines wählen müsste: Für die meisten Menschen die kein starkes technisches Profil haben, würde ich Claude empfehlen. Die Texte sind besser, die Bedienung ist angenehm, und für 80% der Anwendungsfälle im Alltag ist es das stärkere Werkzeug.</p>
-
-<p>Wenn du viel mit Code, Daten oder Automatisierungen arbeitest: Dann willst du ChatGPT. Oder du nimmst beide — das ist was ich tue.</p>
-
-<p>20 € im Monat für jedes Abo. 40 € insgesamt. Für mich die beste Investition die ich monatlich tätige, mit großem Abstand.</p>
+<p>Wenn du regelmäßig mit Daten arbeitest oder KI-Bilder direkt aus dem Chat brauchst: ChatGPT Plus dazu. 40 € im Monat für beide. Für mich die Investition mit dem besten ROI die ich kenne — mit großem Abstand.</p>
     `,
   },
   {
