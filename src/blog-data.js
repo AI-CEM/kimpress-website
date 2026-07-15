@@ -368,19 +368,19 @@ export const BLOG_POSTS = [
     `,
   },
   {
-    slug: 'seo-mit-ki-2026',
-    title: 'SEO mit KI: Was ich nach 6 Monaten gelernt habe (und was nicht funktioniert)',
-    excerpt: 'Ich habe 6 Monate lang KI für SEO eingesetzt — systematisch, mit Tracking. Hier sind die ehrlichen Ergebnisse. Was hat Rankings gebracht, was war Zeitverschwendung.',
+    slug: 'seo-geo-mit-ki-2026',
+    title: 'SEO & GEO mit KI: Was wirklich funktioniert — und was kompletter Zeitverschwendung ist',
+    excerpt: 'Ich habe über Monate KI für SEO und GEO getestet — bei Kundenprojekten, eigenen Profilen, Testaccounts. Hier sind die ehrlichen Ergebnisse. Was hat Rankings gebracht, was war Bullshit.',
     date: '2026-03-03',
     readTime: 10,
     category: 'SEO',
     featured: false,
     content: `
-<p class="blog-lead">Es gibt ungefähr tausend Artikel darüber wie man KI für SEO nutzt. Die meisten sind von Leuten geschrieben die es theoretisch beschreiben. Ich will dir erzählen was ich selbst gemacht habe, was dabei rausgekommen ist — und wo ich auf die Nase gefallen bin.</p>
+<p class="blog-lead">Es gibt ungefähr tausend Artikel darüber wie man KI für SEO und GEO nutzt. Die meisten sind von Leuten geschrieben die es theoretisch beschreiben. Ich will dir erzählen was ich selbst erlebt habe — bei Kundenprojekten, eigenen Testaccounts, verschiedenen Branchen. Und wo ich dabei auf die Nase gefallen bin.</p>
 
-<p>Kimpress ist eine junge Website. Sechs Monate alt zum Zeitpunkt an dem ich das schreibe. Ich habe von Anfang an KI in meinen SEO-Prozess eingebaut und das Ganze getrackt. Das gibt mir zumindest eine ehrliche Datengrundlage.</p>
+<p>GEO — Generative Engine Optimization — ist übrigens der neuere Bruder von SEO. Es geht darum in KI-Suchmaschinen wie Google AI Overview, ChatGPT Search oder Perplexity zitiert und empfohlen zu werden. Das ist der Bereich der mich gerade am meisten beschäftigt, weil er sich so rasant entwickelt.</p>
 
-<h2>Erstmal: Was Google wirklich bestraft</h2>
+<h2>Was Google und KI-Suchmaschinen wirklich bestrafen</h2>
 
 <p>Das Missverständnis das mich am meisten nervt: Viele glauben KI-Content ist verboten bei Google. Das ist falsch. Google hat das mehrfach klargestellt — zuletzt im Helpful Content Update. Was bestraft wird ist schlechter Content. Egal ob von KI oder Mensch geschrieben.</p>
 
@@ -404,11 +404,11 @@ export const BLOG_POSTS = [
 
 <p>Der Artikel den ich komplett selbst geschrieben habe — über KI-Automatisierung, mit echten Beispielen aus Kundengesprächen — rankst auf Seite 2. Nach drei Wochen. Das ist kein Zufall.</p>
 
-<h2>Wie mein Prozess jetzt aussieht</h2>
+<h2>Wie mein Prozess heute aussieht</h2>
 
-<p>KI macht die Vorarbeit: Keyword-Analyse, Struktur, erste Rohfassung in 15 Minuten. Ich mache den Rest: Eigene Beispiele einbauen, Meinungen formulieren, Dinge sagen die ich wirklich glaube — auch wenn sie unbequem sind. Dann noch mal durch KI für On-Page-Optimierung. Fertig.</p>
+<p>KI macht den Rohstoff: Keyword-Analyse, Struktur, ersten Draft — das dauert keine 2 Minuten. Dann komme ich: Eigene Beispiele, echte Meinungen, Dinge die ich wirklich glaube. Dann nochmal kurz durch KI für Meta-Beschreibung, Alt-Texte, Schema-Markup. Fertig.</p>
 
-<p>Gesamtzeit: etwa zwei Stunden pro Artikel. Vorher war es sechs bis acht. Das ist der echte Gewinn — nicht dass KI den Artikel schreibt, sondern dass sie den langweiligen Teil übernimmt.</p>
+<p>Gesamtzeit: 15 bis 20 Minuten pro Artikel. Das ist der echte Gewinn — nicht dass KI den Artikel schreibt, sondern dass sie alles Mechanische übernimmt und ich mich nur noch auf das konzentriere was wirklich zählt: den eigenen Blickwinkel.</p>
 
 <h2>Was ich jedem rate der jetzt anfangen will</h2>
 
