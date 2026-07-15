@@ -24,17 +24,28 @@
   <link rel="icon" type="image/svg+xml" href="/kimpress-logo.svg" />
   <link rel="stylesheet" href="/src/style.css" />
 
-  <!-- JSON-LD Schema for SEO / GEO -->
+  <!-- JSON-LD Schema Block 1: Organization (enables Google logo in search results) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
+    "@type": "Organization",
+    "@id": "https://www.kimpress.de/#organization",
     "name": "Kimpress",
-    "image": "https://kimpress.de/og-image.webp",
-    "@id": "https://kimpress.de/#agentur",
-    "url": "https://kimpress.de",
+    "url": "https://www.kimpress.de",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.kimpress.de/kimpress-logo.png",
+      "width": 282,
+      "height": 87
+    },
+    "image": "https://www.kimpress.de/og-image.webp",
+    "email": "hallo@kimpress.de",
     "telephone": "+49 1575 7221636",
-    "priceRange": "$$",
+    "founder": {
+      "@type": "Person",
+      "name": "Cem Görül",
+      "jobTitle": "Founder & AI Operator"
+    },
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Max-Pechstein-Straße 37",
@@ -42,32 +53,119 @@
       "postalCode": "22115",
       "addressCountry": "DE"
     },
+    "sameAs": [
+      "https://www.instagram.com/kimpress.de",
+      "https://www.tiktok.com/@kimpress.de",
+      "https://www.youtube.com/@kimpress",
+      "https://www.linkedin.com/company/kimpress"
+    ],
+    "description": "Kimpress ist die KI-Agentur aus Hamburg für den DACH-Raum — spezialisiert auf KI-Content, KI-Videos, n8n/Make Workflow-Automatisierung und Generative Engine Optimization (GEO)."
+  }
+  </script>
+
+  <!-- JSON-LD Schema Block 2: LocalBusiness / ProfessionalService (for local ranking) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "@id": "https://www.kimpress.de/#agentur",
+    "name": "Kimpress — KI-Agentur Hamburg",
+    "url": "https://www.kimpress.de",
+    "image": "https://www.kimpress.de/og-image.webp",
+    "telephone": "+49 1575 7221636",
+    "email": "hallo@kimpress.de",
+    "priceRange": "€€",
+    "currenciesAccepted": "EUR",
+    "paymentAccepted": "Banküberweisung, PayPal",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Max-Pechstein-Straße 37",
+      "addressLocality": "Hamburg",
+      "postalCode": "22115",
+      "addressRegion": "Hamburg",
+      "addressCountry": "DE"
+    },
     "geo": {
       "@type": "GeoCoordinates",
       "latitude": 53.5358,
       "longitude": 10.1558
     },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      }
+    ],
+    "areaServed": [
+      { "@type": "City", "name": "Hamburg" },
+      { "@type": "Country", "name": "Deutschland" }
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "KI-Dienstleistungen",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "KI-Content Erstellung", "description": "Professionelle KI-Videos, Ad Images und Social Media Content für Unternehmen." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "n8n & Make Workflow-Automatisierung", "description": "Automatisierung von Geschäftsprozessen mit n8n, Make und KI-Agenten." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "KI-Website & SEO/GEO", "description": "Moderne KI-Websites mit Generative Engine Optimization für bessere Sichtbarkeit in KI-Suchen." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "KI-Chatbots & Assistenten", "description": "Maßgeschneiderte KI-Chatbots für Kundenservice und Lead-Generierung." } }
+      ]
+    },
+    "knowsAbout": [
+      "KI-Agentur Hamburg", "KI Content Agentur", "Deutsche KI Agentur",
+      "Künstliche Intelligenz Marketing", "KI-Workflow-Automatisierung",
+      "Generative Engine Optimization", "n8n Make Automatisierung",
+      "KI-Videos TikTok Reels", "KI-Chatbots"
+    ],
     "sameAs": [
       "https://www.instagram.com/kimpress.de",
       "https://www.tiktok.com/@kimpress.de",
-      "https://www.youtube.com/@kimpress"
-    ],
-    "description": "Kimpress ist die führende KI-Agentur in Hamburg für den DACH-Raum. Spezialisiert auf KI-Content Erstellung (KI-Videos für TikTok & Reels), KI-Workflow-Automatisierung (Make & n8n) und GEO (Generative Engine Optimization) zur Indexierung durch KI-Suchmaschinen wie Gemini und ChatGPT.",
-    "knowsAbout": [
-      "Künstliche Intelligenz",
-      "KI-Agentur Deutschland",
-      "KI-Content Agentur",
-      "Generative Engine Optimization",
-      "KI-Workflow-Automatisierung",
-      "KI-Chatbots & Assistenten",
-      "SEO & GEO",
-      "Make & n8n Workflows"
-    ],
-    "founder": {
-      "@type": "Person",
-      "name": "Cem Görül",
-      "jobTitle": "Founder & AI Operator"
-    }
+      "https://www.youtube.com/@kimpress",
+      "https://www.linkedin.com/company/kimpress"
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD Schema Block 3: FAQPage (triggers AI Overview citations) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Was ist Kimpress?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Kimpress ist eine KI-Agentur aus Hamburg, die Unternehmen, Coaches und Creator mit KI-Content, Automatisierungen und KI-Websites dabei hilft, online sichtbar zu werden und Kunden zu gewinnen."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Was macht eine KI-Agentur in Hamburg?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Eine KI-Agentur in Hamburg wie Kimpress unterstützt lokale Unternehmen mit KI-generierten Videos, automatisierten Marketing-Workflows (n8n, Make), KI-Chatbots und Generative Engine Optimization (GEO), um in KI-Suchmaschinen wie Google AI, ChatGPT und Perplexity gefunden zu werden."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Für wen eignet sich Kimpress?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Kimpress richtet sich an KMU, Coaches, Freelancer, Agenturen und Creator im DACH-Raum, die KI gezielt für Marketing, Content-Produktion und Prozessautomatisierung einsetzen möchten."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Was kostet eine KI-Agentur?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Kimpress bietet einen Einstieg ab 119 € mit dem AI Performance Starter-Kit: 3 KI-Videos, 5 Ad Images, Bio-Optimierung und Video-Skripte. Individuelle Retainer-Pakete für langfristige Zusammenarbeit beginnen ab 499 € monatlich."
+        }
+      }
+    ]
   }
   </script>
 </head>
