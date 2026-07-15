@@ -200,22 +200,17 @@ export const BLOG_POSTS = [
   },
   {
     slug: 'chatgpt-vs-claude-welches-modell',
-    title: 'ChatGPT vs. Claude: Mein ehrlicher Vergleich nach einem Jahr täglicher Nutzung',
-    excerpt: 'Ich nutze beide täglich — und ich sage dir welches Modell wofür taugt. Kein Sponsored Content, keine PR-Sprache. Nur was ich in der Praxis gelernt habe.',
+    title: 'ChatGPT vs. Claude 2026 — Der ehrliche Vergleich den niemand schreibt',
+    excerpt: 'Ich nutze beide täglich. Und ich muss einen alten Irrtum korrigieren: "Claude für Texte, ChatGPT für Code" war nie die ganze Wahrheit. Hier ist was wirklich stimmt.',
     date: '2026-03-25',
-    readTime: 6,
+    readTime: 7,
     category: 'KI-Tools',
     featured: false,
     content: `
-<p class="blog-lead">Ich werde diese Frage mindestens dreimal pro Woche gefragt: ChatGPT oder Claude? Und meine Antwort ist immer die gleiche — kommt drauf an. Was danach kommt ist ein etwas längeres Gespräch. Das versuche ich hier aufzuschreiben.</p>
+<p class="blog-lead">Ich werde diese Frage mindestens dreimal pro Woche gefragt: ChatGPT oder Claude? Und meine Antwort ist immer die gleiche — kommt drauf an. Was danach kommt ist ein etwas längeres Gespräch. Das versuche ich hier aufzuschreiben. Inklusive eines Irrtums den ich früher selbst verbreitet habe.</p>
 
 <p>Zur Einordnung: Ich nutze beide Modelle täglich, seit über einem Jahr. Nicht zum Spaß — als Arbeitswerkzeug. Kimpress läuft zu einem guten Teil auf dem was diese Modelle leisten. Ich habe also ein finanzielles Interesse daran dass sie gut funktionieren, und ein sehr konkretes Bild davon wo sie es nicht tun.</p>
 
-<h2>Wo ChatGPT mich nie im Stich lässt</h2>
-
-<p>Code. Immer wieder Code. Ich bin kein Entwickler von Haus aus — ich habe mir das meiste selbst beigebracht. Und wenn ich in einem n8n-Workflow einen JavaScript-Snippet brauche der Daten umformatiert, oder wenn ich auf der Kimpress-Website etwas anpassen will das mich im CSS überfordert: ChatGPT. Jedes Mal.</p>
-
-<p>Was es dabei so gut macht ist nicht nur dass der Code funktioniert — sondern dass es mir erklärt warum. Das hilft mir beim Lernen. Claude macht das auch, aber irgendwie fühlt sich ChatGPT bei technischen Sachen präziser an. Weniger "kreativ", mehr "korrekt".</p>
 
 <p>Zweites echtes Stärkenfeld: Strukturierte Daten rausziehen. Ich lade manchmal Tabellen oder Listen hoch die ein Kunde als Chaos-Dokument schickt, und brauche daraus sauberes JSON. ChatGPT macht das zuverlässig. Claude macht dabei manchmal seltsame Formatierungsentscheidungen.</p>
 
