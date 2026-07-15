@@ -8,66 +8,78 @@ export const BLOG_POSTS = [
   {
     slug: 'ki-agentur-hamburg',
     title: 'KI-Agentur Hamburg: Was kostet KI-Marketing wirklich? (2026)',
-    excerpt: 'Du suchst eine KI-Agentur in Hamburg — aber was bekommst du wofür? Ich erkläre dir als Gründer von Kimpress, was eine KI-Agentur kostet, was sie leisten kann und wann sie sich für dein Business lohnt.',
+    excerpt: 'Ich hab Kimpress in Hamburg gegründet — mit 25 Euro Gewerbeanmeldung und einem Laptop. Hier erzähle ich dir ehrlich, was eine KI-Agentur kostet, was sie kann und wann sie sich für dich lohnt.',
     date: '2026-07-16',
     readTime: 8,
     category: 'SEO',
     featured: true,
     content: `
-<p class="blog-lead">Hamburg hat eine wachsende Szene an KI-Agenturen — von großen Beratungshäusern bis zu spezialisierten Solo-Operatoren. Als Gründer von Kimpress, einer KI-Agentur aus Hamburg, bekomme ich täglich dieselben Fragen: Was macht ihr eigentlich genau? Was kostet das? Und lohnt sich das für ein kleines Unternehmen? Hier sind die ehrlichen Antworten.</p>
+<p class="blog-lead">Ich sitze gerade in meinem Büro in Billstedt — Hamburg, 22115, für die die das nicht kennen: östliches Hamburg, weit weg von der Alster, nah an der Realität. Hier habe ich Kimpress gegründet. Mit einer 25-Euro-Gewerbeanmeldung, einem Laptop und der Überzeugung, dass KI-Marketing nicht nur für Konzerne mit sechsstelligem Budget sein muss.</p>
 
-<h2>Was macht eine KI-Agentur in Hamburg?</h2>
-<p>Eine KI-Agentur ist kein klassisches Softwarehaus und auch keine normale Marketingagentur. Sie sitzt genau dazwischen: Sie nutzt Werkzeuge der künstlichen Intelligenz, um Aufgaben zu automatisieren, die früher entweder sehr teuer oder sehr zeitaufwendig waren.</p>
-<p>In der Praxis bedeutet das für Hamburger KMU und Unternehmen:</p>
+<p>Seitdem werde ich fast täglich gefragt: Was macht ihr eigentlich? Was kostet das? Und ist das was für mich? Ich beantworte das jetzt einmal — so ehrlich wie möglich.</p>
+
+<h2>Was eine KI-Agentur in Hamburg wirklich macht</h2>
+
+<p>Vergiss erstmal alles was du über "Agenturen" zu wissen glaubst. Keine ellenlangen Onboarding-Prozesse. Kein Strategie-Deck mit 47 Folien. Kein "wir melden uns in drei Wochen mit einem Konzept".</p>
+
+<p>Was wir tun: Wir nehmen dein Business, schauen wo KI dir sofort etwas abnehmen kann — und bauen das. Fertig. Die vier Bereiche in denen das bei unseren Kunden am meisten bringt:</p>
+
 <ul>
-  <li><strong>KI-Content-Produktion:</strong> Videos, Ad-Bilder und Social-Media-Posts, die mit KI in Stunden statt Wochen produziert werden — angepasst an dein Branding.</li>
-  <li><strong>Workflow-Automatisierung:</strong> Repetitive Aufgaben wie E-Mail-Sortierung, Lead-Qualifizierung oder Datenübertragung werden durch Tools wie n8n oder Make vollautomatisch erledigt.</li>
-  <li><strong>KI-Chatbots & Assistenten:</strong> Kundenservice-Bots, die rund um die Uhr antworten, Anfragen vorqualifizieren und direkt ins CRM eintragen.</li>
-  <li><strong>GEO (Generative Engine Optimization):</strong> Dafür sorgen, dass dein Unternehmen in KI-Suchmaschinen wie Google AI Overview, ChatGPT und Perplexity gefunden und zitiert wird.</li>
+  <li><strong>Videos und Bilder für Social Media &amp; Ads:</strong> KI-generierte Kurzvideos (10 Sekunden, deutsches Voiceover, dein Logo) und Ad-Bilder für Meta, LinkedIn oder Google. Was früher eine Videoproduktion für 1.500 € war, kostet heute einen Bruchteil davon — wenn man weiß wie.</li>
+  <li><strong>Prozesse die sich selbst erledigen:</strong> Dein Postfach sortiert sich allein. Leads werden automatisch qualifiziert. Termine bestätigen sich ohne dein Zutun. Das klingt nach Science-Fiction — ist es aber nicht, wenn man n8n richtig einrichtet.</li>
+  <li><strong>KI-Chatbots die wirklich helfen:</strong> Nicht die nervigen Pop-ups die nach 3 Sekunden aufploppen. Sondern Assistenten die Kundenfragen beantworten können, Termine vorqualifizieren und Kontaktdaten sauber ins System eintragen.</li>
+  <li><strong>Gefunden werden — auch von KI-Suchmaschinen:</strong> Das ist mein persönliches Steckenpferd. GEO nennt sich das — Generative Engine Optimization. Dafür sorgen, dass ChatGPT, Gemini oder Perplexity dich empfehlen wenn jemand "KI-Agentur Hamburg" eintippt.</li>
 </ul>
 
-<h2>Was kostet eine KI-Agentur in Hamburg?</h2>
-<p>Das ist die Frage, die sich die meisten stellen — und bei der die Antworten extrem weit auseinander gehen.</p>
-<p>Große Unternehmensberatungen und KI-Agenturen mit 10+ Mitarbeitern berechnen für Strategieprojekte schnell 5.000 bis 20.000 € — und das oft, bevor auch nur eine einzige Automatisierung läuft. Diese Preise sind für viele Hamburger KMU und Selbstständige schlicht unrealistisch.</p>
-<p>Bei Kimpress haben wir uns bewusst dagegen entschieden. Unser Modell: Schlanke Pakete mit echtem Ergebnis ab dem ersten Tag.</p>
+<h2>Was kostet das — und warum liegen die Preise so weit auseinander?</h2>
+
+<p>Ich hab mich damals umgeschaut, bevor ich selbst gegründet hab. Was ich gesehen habe: Preise zwischen 119 € und 25.000 € für "KI-Beratung". Beides ist real. Beides hat seine Berechtigung. Die Frage ist nur: Was brauchst du?</p>
+
+<p>Große Unternehmensberatungen nehmen 10.000 bis 20.000 € — und dann bekommst du in der Regel einen dicken Bericht darüber was du theoretisch mit KI machen könntest. Das ist manchmal sinnvoll. Für einen Hamburger Handwerksbetrieb, eine Coaching-Praxis oder einen Selbstständigen ist es das meistens nicht.</p>
+
+<p>Unser Modell ist ein anderes. Bei Kimpress gibt es zwei Einstiegspunkte:</p>
+
 <ul>
-  <li><strong>Einstieg:</strong> Das AI Performance Starter-Kit gibt es ab 119 € — 3 KI-Videos, 5 Ad-Bilder, Bio-Optimierung und Video-Skripte. Ideal um KI-Content ohne großes Risiko auszuprobieren.</li>
-  <li><strong>Retainer:</strong> Monatliche Zusammenarbeit für laufenden Content, Automatisierungen und GEO-Aufbau ab 499 € netto/Monat.</li>
+  <li><strong>119 € einmalig:</strong> Das AI Performance Starter-Kit. Drei KI-Videos, fünf Ad-Bilder, Bio-Optimierung für Instagram, TikTok und LinkedIn plus die fertigen Skripte dazu. Für Leute die erstmal testen wollen ob KI-Content zu ihrem Business passt — bevor sie größere Budgets einsetzen.</li>
+  <li><strong>Ab 499 € im Monat:</strong> Für die die eine echte Zusammenarbeit wollen. Laufender Content, Automatisierungen, GEO-Aufbau. Wir sind dann so etwas wie dein ausgelagertes KI-Team.</li>
 </ul>
 
-<h2>Wann lohnt sich eine KI-Agentur — und wann nicht?</h2>
-<p>Ich bin ehrlich: KI ist kein Allheilmittel. Es gibt Situationen, in denen du dein Geld besser anders investierst.</p>
-<p><strong>Eine KI-Agentur lohnt sich, wenn du...</strong></p>
-<ul>
-  <li>...regelmäßig Content für Social Media, Ads oder deine Website brauchst, aber keine Zeit oder kein internes Team hast.</li>
-  <li>...repetitive manuelle Aufgaben hast, die dich oder deine Mitarbeiter täglich wertvolle Zeit kosten.</li>
-  <li>...in Google und KI-Suchmaschinen gefunden werden willst, ohne eine 5-stellige Agentur zu bezahlen.</li>
-</ul>
-<p><strong>Eine KI-Agentur lohnt sich noch nicht, wenn du...</strong></p>
-<ul>
-  <li>...noch kein klares Angebot oder keine definierte Zielgruppe hast.</li>
-  <li>...denkst, KI ersetzt die grundlegende Marketingstrategie. Sie beschleunigt Execution — keine Strategie.</li>
-</ul>
+<p>Zur Einordnung: Eine klassische Marketingagentur in Hamburg nimmt für Social-Media-Management schnell 1.500 bis 3.000 € im Monat. Dafür bekommst du dann oft 8 bis 12 Posts die sich alle gleich anfühlen. Ich sage nicht dass das schlecht ist — aber der Vergleich zeigt wo KI gerade steht.</p>
 
-<h2>KI-Agenturen Hamburg: Womit unterscheiden wir uns?</h2>
-<p>Es gibt inzwischen mehrere KI-Agenturen in Hamburg. Was unterscheidet Kimpress?</p>
-<p>Wir sind kein Beratungshaus das dir eine Powerpoint-Präsentation liefert. Wir produzieren. Wenn du heute anfragst, hast du morgen einen ersten Asset in der Hand — kein Konzeptpapier, kein Strategiemeeting, kein monatelanger Onboarding-Prozess.</p>
-<p>Das ist möglich weil wir als schlankes Team mit modernen KI-Tools arbeiten, die in den letzten zwei Jahren eine Qualitätsstufe erreicht haben, die noch vor kurzem fünf-köpfige Kreativteams erfordert hätte.</p>
+<h2>Für wen lohnt es sich — und für wen nicht</h2>
 
-<h2>Häufige Fragen zu KI-Agenturen in Hamburg</h2>
+<p>Hier kommt der ehrliche Teil den viele Agenturen weglassen, weil er potenzielle Kunden abschreckt.</p>
 
-<h3>Gibt es KI-Agenturen in Hamburg die auch für kleine Unternehmen erschwinglich sind?</h3>
-<p>Ja. Kimpress ist genau dafür gemacht. Unser Einstiegspaket beginnt bei 119 €, monatliche Pakete ab 499 €. Wir richten uns explizit an KMU, Coaches, Freelancer und Creator — nicht an Konzerne.</p>
+<p>KI-Marketing funktioniert nicht wenn das Fundament fehlt. Wenn du noch nicht weißt was du verkaufst, an wen und warum die bei dir kaufen sollten — dann hilft dir kein KI-Video der Welt. Dann brauchst du erst eine Strategie, keine Automatisierung.</p>
 
-<h3>Wie lange dauert es, bis KI-Marketing Ergebnisse zeigt?</h3>
-<p>KI-Content (Videos, Ad-Bilder) ist sofort einsatzbereit — oft innerhalb von 24–48 Stunden. SEO und GEO-Ergebnisse brauchen 4–12 Wochen. Workflow-Automatisierungen sparen ab Tag 1 Zeit.</p>
+<p>Aber wenn das klar ist? Dann ist KI im Moment das effizienteste Werkzeug das ich kenne. Ich sage das nicht weil ich KI-Agenturbetreiber bin. Ich sage das weil ich selbst täglich damit arbeite und sehe was dabei rauskommt.</p>
 
-<h3>Brauche ich technisches Vorwissen für eine Zusammenarbeit?</h3>
-<p>Nein. Du lieferst uns dein Branding, dein Angebot und deine Zielgruppe. Wir kümmern uns um den Rest.</p>
+<p>Gut geeignet bist du wenn du regelmäßig Content brauchst, aber kein Team und keine Zeit hast. Oder wenn du merkst, dass du Stunden mit Aufgaben verbringst die sich eigentlich wiederholen. Oder wenn du bei Google oder in KI-Suchanfragen nicht gefunden wirst, obwohl du eigentlich genau das anbietest was die Leute suchen.</p>
 
-<h2>Fazit: Die richtige KI-Agentur für dich in Hamburg</h2>
-<p>Hamburg hat mittlerweile eine gute Auswahl an KI-Agenturen — von Enterprise-Beratungen bis zu spezialisierten Boutique-Agenturen wie Kimpress. Die Wahl hängt davon ab, was du brauchst: Strategie-Consulting oder direkte Produktion mit schnellem Ergebnis.</p>
-<p>Wenn du herausfinden willst, welche KI-Lösung für dein spezifisches Business am meisten Sinn ergibt — schreib uns einfach. Das erste Gespräch ist kostenlos und unverbindlich.</p>
+<h2>Warum ich ausgerechnet in Billstedt eine KI-Agentur aufgemacht habe</h2>
+
+<p>Das fragen mich viele. Nicht Eimsbüttel, nicht Altona, nicht irgendwo mit Wasserblick. Billstedt.</p>
+
+<p>Weil KI-Marketing nichts mit Standort zu tun hat. Wir arbeiten remote, digital, für Kunden in Hamburg, in Deutschland und im Rest des DACH-Raums. Und weil ich glaube dass Innovation nicht nur in hippen Co-Working-Spaces passiert wo der Flat White 5,50 € kostet.</p>
+
+<p>Das war auch die Idee hinter Kimpress von Anfang an: Qualität die vorher nur große Budgets kaufen konnten — zugänglich machen für alle die wirklich etwas aufbauen wollen.</p>
+
+<h2>Die Fragen die ich am häufigsten bekomme</h2>
+
+<h3>Gibt es KI-Agenturen in Hamburg die auch für kleine Unternehmen bezahlbar sind?</h3>
+<p>Ja — das wäre dann wir. Einstieg ab 119 €, monatliche Zusammenarbeit ab 499 €. Kein Mindest-Vertragslaufzeit, kein verstecktes Kleingedrucktes.</p>
+
+<h3>Wie lange bis man erste Ergebnisse sieht?</h3>
+<p>KI-Videos und Bilder: sofort, oft innerhalb von 24 Stunden. SEO und GEO: realistisch 4 bis 12 Wochen. Automatisierungen: ab dem ersten Tag spürbar.</p>
+
+<h3>Muss ich mich mit KI auskennen?</h3>
+<p>Nein. Du schickst uns dein Logo, deine Farben und sagst uns was du verkaufst. Den Rest machen wir.</p>
+
+<h2>Wie es weitergeht</h2>
+
+<p>Wenn du neugierig bist — einfach schreiben. Kein Sales-Call, kein Pitch-Deck, kein Druck. Ich schaue mir an was du machst und sage dir ehrlich ob und wie KI dir helfen kann. Wenn nicht, sage ich das auch.</p>
+
+<p>Das ist halt der Vorteil wenn man in Billstedt sitzt und nicht im Glasturm.</p>
     `,
   },
   {
@@ -77,7 +89,7 @@ export const BLOG_POSTS = [
     date: '2026-07-10',
     readTime: 7,
     category: 'Automatisierung',
-    featured: true,
+    featured: false,
     content: `
 <p class="blog-lead">Jeder Dienstleister kennt das: Am Morgen wartet ein volles Postfach. Support-Tickets, Neukunden-Anfragen, Rechnungen und Spam liegen ungeordnet nebeneinander. Die manuelle Vorsortierung kostet dich und dein Team täglich wertvolle Zeit. Die Lösung: Ein automatisierter n8n-Workflow gepaart mit künstlicher Intelligenz.</p>
 
@@ -116,43 +128,63 @@ Antworte ausschließlich im JSON-Format mit der Kategorie und einer kurzen Zusam
   {
     slug: 'ki-automatisierung-kmu-2026',
     title: 'KI-Automatisierung für KMU: Was 2026 wirklich funktioniert',
-    excerpt: 'Viele Unternehmen reden über KI — nur wenige nutzen sie wirklich gewinnbringend. Ich zeige dir, welche Automatisierungen für KMU im DACH-Raum heute sofort Wirkung bringen.',
+    excerpt: 'Ehrlich gesagt: Die meisten KI-Projekte im Mittelstand scheitern. Nicht weil KI nichts taugt — sondern weil sie am falschen Fleck eingesetzt wird. Hier ist was wirklich funktioniert.',
     date: '2026-04-01',
     readTime: 8,
     category: 'Automatisierung',
     featured: false,
     content: `
-<p class="blog-lead">Ehrliche Frage: Wie viele Stunden hast du diese Woche damit verbracht, Kontaktdaten aus E-Mails in dein CRM zu kopieren, Termine manuell zu bestätigen oder Rechnungen abzugleichen? Zu viele. Genau hier liegt der Fehler: Viele KMU jagen utopischen KI-Projekten nach, während die echten Zeitfresser im operativen Alltag liegen.</p>
+<p class="blog-lead">Ich hatte letzte Woche ein Gespräch mit einem Handwerksmeister aus Wandsbek. Gutes Business, 12 Mitarbeiter, solide Auftragslage. Er hatte vor einem Jahr 8.000 € in eine "KI-Lösung" investiert. Was er dafür bekommen hat: einen Chatbot auf der Website den keiner nutzt, und ein PDF mit Empfehlungen das er nie umgesetzt hat. Er war frustriert. Zurecht.</p>
 
-<h2>Warum die meisten KI-Projekte im Mittelstand scheitern</h2>
-<p>Wenn ich mit inhabergeführten Unternehmen oder Dienstleistern hier in Hamburg spreche, höre ich oft dieselbe Story: "Wir haben viel Geld für eine teure Beratung bezahlt, am Ende haben wir einen Chatbot auf der Webseite, den niemand nutzt." Das frustriert &mdash; und zwar zurecht.</p>
-<p>KI-Automatisierung ist kein Selbstzweck. Sie ist erfolgreich, wenn sie dir und deinem Team ab Tag 1 lästige Routinearbeit abnimmt. Und das geht meistens deutlich einfacher, als du denkst.</p>
+<p>Sowas höre ich ständig. Und ich verstehe es. KI ist gerade ein riesiges Schlagwort — und wo große Versprechen sind, gibt es auch viele die sie machen ohne liefern zu können.</p>
 
-<h2>Drei Automatisierungen mit sofortigem ROI (Return on Investment)</h2>
+<p>Also lass mich dir sagen was tatsächlich funktioniert. Nicht theoretisch. Sondern in der Praxis, bei echten Betrieben.</p>
 
-<h3>1. Das intelligente Postfach (E-Mail-Klassifizierung)</h3>
-<p>Dein Postfach ist wahrscheinlich dein größter Zeitfresser. Mit einer n8n- oder Make-Pipeline und einem smarten LLM im Hintergrund sortieren wir eingehende E-Mails vollautomatisch:</p>
-<ul>
-  <li>Anfragen werden nach Relevanz klassifiziert (z.B. "Neukunde", "Support", "Spam").</li>
-  <li>Die KI entwirft direkt einen passenden Antwortentwurf in deiner persönlichen Brand-Voice.</li>
-  <li>Wichtige Leads triggern sofort eine Push-Nachricht auf dein Handy.</li>
-</ul>
-<p><strong>Zeitersparnis in der Praxis:</strong> Mindestens 60 Minuten pro Tag. Bei einem typischen Stundensatz hat sich dieses Setup oft schon nach 10 Tagen amortisiert.</p>
+<h2>Warum die meisten KI-Projekte gegen die Wand fahren</h2>
 
-<h3>2. Die Content-Recycling-Maschine</h3>
-<p>Du schreibst einen guten Artikel oder nimmst ein Video auf. Statt es einmal zu posten und zu hoffen, bauen wir eine automatisierte Content-Pipeline:</p>
-<ul>
-  <li>Dein Rohmaterial (Text oder Video) wird hochgeladen.</li>
-  <li>Die KI generiert daraus passgenaue LinkedIn-Beiträge, Instagram-Captions und TikTok-Skripte.</li>
-  <li>Alles wird automatisch in deinen Entwürfen bei Buffer oder Later abgelegt.</li>
-</ul>
-<p>Du steckst einmalig 30 Minuten in den Input &mdash; die KI erledigt die tagelange Formatierungsarbeit für alle Plattformen.</p>
+<p>Das Problem ist fast immer dasselbe. Unternehmen fangen mit den falschen Fragen an. "Wie können wir KI einsetzen?" ist die falsche Frage. Die richtige lautet: "Welche Aufgabe kostet uns gerade am meisten Zeit — und wie oft wiederholt sie sich?"</p>
 
-<h3>3. Lead-Qualifizierung über WhatsApp</h3>
-<p>WhatsApp hat im DACH-Raum Öffnungsraten von über 95%. Ein einfacher, strukturierter WhatsApp-Assistent nimmt Anfragen von deiner Website entgegen, stellt die wichtigsten Fragen zur Vorqualifizierung (Budget, Projektart) und trägt die Daten sauber in dein CRM ein. Erst wenn der Lead qualifiziert ist, schaltet sich ein Mensch ein.</p>
+<p>KI ist gut darin, Dinge schnell und zuverlässig zu wiederholen. Sie ist schlecht darin, kreative Probleme zu lösen die noch niemand definiert hat. Wenn du das verstehst, verändert sich der ganze Blick auf das Thema.</p>
 
-<h2>Mein Fazit als Solo Operator</h2>
-<p>Fang klein an. Versuche nicht, deine gesamte Firma auf einmal zu revolutionieren. Starte mit einem einzigen Workflow, der dir heute 30 Minuten spart. Morgen mit dem nächsten. Wenn du wissen willst, welche Routineaufgabe in deinem Business das größte Potenzial hat &mdash; lass uns einfach 15 Minuten unverbindlich sprechen. Ich schaue mir deine Prozesse an und sage dir direkt, was machbar ist.</p>
+<h2>Drei Sachen die sofort was bringen — kein Bullshit</h2>
+
+<h3>1. Das Postfach das sich selbst sortiert</h3>
+
+<p>Ich nenne das immer das "schlafende Geld" im Mittelstand. Jeder Betrieb ab 5 Leuten hat das Problem: Zu viele E-Mails, zu wenig Struktur, zu viel Zeit die damit verbracht wird zu entscheiden wer was bearbeitet.</p>
+
+<p>Mit n8n und einem Sprachmodell im Hintergrund lässt sich das in einem Wochenende automatisieren. Jede eingehende E-Mail wird gelesen, kategorisiert — Neukunde, Support, Rechnung, Spam — und dann weitergeleitet. Wichtige Anfragen kommen als Push aufs Handy. Der Rest landet im richtigen Ordner.</p>
+
+<p>Ein Kunde von mir spart damit täglich etwa eine Stunde. Klingt wenig. Sind aber 250 Stunden im Jahr. Bei 60 € Stundensatz macht das 15.000 €. Das Setup hat ihn einmalig 600 € gekostet.</p>
+
+<h3>2. Content der sich aus einem Satz multipliziert</h3>
+
+<p>Das hier ist mein persönlicher Favorit weil ich es selbst täglich nutze. Du nimmst einen Gedanken — eine Erkenntnis, ein Kundengespräch, eine Beobachtung — und aus diesem einen Rohstoff entstehen automatisch ein LinkedIn-Post, eine Instagram-Caption, ein TikTok-Skript und eine E-Mail-Newsletter-Version.</p>
+
+<p>Nicht perfekt auf Knopfdruck. Aber 80% fertig. Den Rest machst du in 5 Minuten. Was vorher ein Nachmittag war, ist jetzt eine halbe Stunde.</p>
+
+<p>Das Wichtige dabei: Die KI schreibt nicht für dich. Sie formatiert was du ihr gibst. Der Input muss von dir kommen — sonst klingt alles gleich, und das merken Leute sofort.</p>
+
+<h3>3. Leads die sich selbst vorqualifizieren</h3>
+
+<p>WhatsApp hat in Deutschland Öffnungsraten von über 90%. Eine einfache automatisierte Konversation — die Leute durch 4, 5 Fragen führt bevor sie mit dir sprechen — spart enorm viel Zeit bei der Erstberatung. Budget, Zeitrahmen, was sie suchen: alles liegt schon vor dem ersten echten Gespräch auf dem Tisch.</p>
+
+<p>Das klingt technisch. Ist es aber nicht. Mit den richtigen Tools ist sowas in zwei Tagen aufgesetzt.</p>
+
+<h2>Was ich Betrieben rate die gerade anfangen wollen</h2>
+
+<p>Nicht alles auf einmal. Wirklich. Ich hab selbst den Fehler gemacht am Anfang — drei Projekte gleichzeitig, keins davon richtig fertig. Das bringt nichts.</p>
+
+<p>Such dir eine einzige Aufgabe die dich regelmäßig nervt. Idealerweise eine die sich täglich oder wöchentlich wiederholt. Automatisier die. Schau was passiert. Dann kommt die nächste.</p>
+
+<p>So baut man sich in sechs Monaten ein System das wirklich trägt — statt ein 8.000 € PDF das in der Schublade liegt.</p>
+
+<h2>Was wenn ich keine Ahnung von Technik habe?</h2>
+
+<p>Dann bist du in guter Gesellschaft. Die meisten meiner Kunden sind keine Entwickler. Handwerker, Coaches, Berater, kleine Agenturen. Kein einziger hat mir je einen Workflow in Code geschrieben.</p>
+
+<p>Das ist auch nicht nötig. Die Tools heute sind visuell, zieh-und-ablege, und wer einen Laptop bedienen kann kommt damit klar. Und für alles andere gibt es uns.</p>
+
+<p>Wenn du wissen willst wo bei dir das größte Potenzial liegt — schreib mir einfach. Ich schaue mir deinen Betrieb an und sage dir direkt was sinnvoll ist. Kein Pitch, keine Agenda.</p>
     `,
   },
   {
@@ -186,7 +218,7 @@ Antworte ausschließlich im JSON-Format mit der Kategorie und einer kurzen Zusam
 </ul>
 
 <h2>Meine Empfehlung für dein Business</h2>
-<p>Wenn du primär **Marketingtexte, Blogartikel und E-Mails** schreibst: Wähle **Claude**. Wenn du primär **Daten auswertest, Code benötigst oder Workflows baust**: Wähle **ChatGPT**. Am besten ist es jedoch, beide im Verbund zu nutzen &mdash; genau das tun wir bei Kimpress, um für jedes Projekt das optimale Ergebnis zu garantieren.</p>
+<p>Wenn du primär Marketingtexte, Blogartikel und E-Mails schreibst: Wähle Claude. Wenn du primär Daten auswertest, Code benötigst oder Workflows baust: Wähle ChatGPT. Am besten ist es jedoch, beide im Verbund zu nutzen &mdash; genau das tun wir bei Kimpress, um für jedes Projekt das optimale Ergebnis zu garantieren.</p>
     `,
   },
   {
