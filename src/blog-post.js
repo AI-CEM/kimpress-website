@@ -41,7 +41,7 @@ function renderPost(post) {
         <h1 class="post-header__title">${post.title}</h1>
         <div class="post-header__meta">
           <div class="post-author">
-            <img class="post-author__avatar" src="/images/characters/cemgpt-portrait.webp" alt="Cem Görül" style="object-fit: cover;" loading="lazy" />
+            <img class="post-author__avatar" src="/images/characters/portrait-01.png" alt="Cem Görül" style="object-fit: cover;" loading="lazy" />
             <div>
               <div class="post-author__name">Cem Görül</div>
               <div class="post-author__role">Kimpress — KI-Agentur</div>
@@ -66,7 +66,7 @@ function renderPost(post) {
 
         <!-- Author box -->
         <div class="post-authorbox">
-          <img class="post-author__avatar post-author__avatar--lg" src="/images/characters/cemgpt-portrait.webp" alt="Cem Görül" style="object-fit: cover;" loading="lazy" />
+          <img class="post-author__avatar post-author__avatar--lg" src="/images/characters/portrait-01.png" alt="Cem Görül" style="object-fit: cover;" loading="lazy" />
           <div class="post-authorbox__text">
             <div class="post-authorbox__name">Cem Görül</div>
             <div class="post-authorbox__bio">KI-Agentur Kimpress · Hamburg. Über 12 Jahre Digital Marketing, heute spezialisiert auf KI-Automatisierung für KMU im DACH-Raum.</div>
