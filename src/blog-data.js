@@ -6,6 +6,102 @@
 
 export const BLOG_POSTS = [
   {
+    slug: 'n8n-postfach-triage-lokal-bauen',
+    title: 'Postfach-Triage mit n8n: So baust du deinen KI-Mitarbeiter lokal (inklusive der Fuck-ups)',
+    excerpt: 'Theorie ist Müll. Wir haben den n8n Triage-Bot komplett lokal aufgebaut. Hier ist die ungeschönte Doku – inklusive der Momente, in denen gar nichts mehr ging.',
+    date: '2026-07-16',
+    readTime: 6,
+    category: 'Automatisierung',
+    featured: true,
+    content: `
+<p class="blog-lead">Alle reden über KI-Automatisierung. Die Realität sieht oft so aus: Du kaufst einen Kurs, startest motiviert und nach 10 Minuten scheiterst du an der Kommandozeile. Wir haben heute den "Postfach-Triage-Bot" für Kimpress lokal aufgebaut. Und ich zeige dir jetzt den echten, ungeschönten Prozess.</p>
+
+<p>Das Ziel war simpel: E-Mails via Gmail reinholen, durch Google Gemini jagen und hart in vier Kategorien labeln: LEAD, KUNDE, RECHNUNG, MÜLL. Keine halben Sachen.</p>
+
+<h2>Schritt 1: Der npm Fuck-up</h2>
+
+<p>Plan war: "Installier n8n mal eben lokal via npm". Klang gut. Die Realität auf dem Mac? <code>npm: command not found</code>. Klassiker. Kein Node, kein npm. Nichts.</p>
+
+<p>Anstatt aufzugeben, haben wir das Fundament von Grund auf hochgezogen. NVM (Node Version Manager) per curl gezogen, Node v20 installiert. Danach lief die <code>npm install n8n</code> Installation sauber durch. Merke: Setz niemals voraus, dass die Basics da sind. Kontrolliere dein Backend.</p>
+
+<h2>Schritt 2: Das Gmail OAuth Labyrinth</h2>
+
+<p>Google macht es einem nicht leicht. Um die Gmail API anzuzapfen, brauchst du eine OAuth2-App in der Google Cloud Console. Du erstellst ein Projekt, aktivierst die Gmail API, legst den OAuth-Zustimmungsbildschirm an (Setz ihn auf "Extern" und Testmodus, sonst landest du in der Google-Prüfungshölle) und generierst die Client-ID und das Secret. Das trägst du dann in n8n ein. Es ist nervig, aber zwingend notwendig für echte Datensicherheit.</p>
+
+<h2>Schritt 3: Der Workflow & der gnadenlose Prompt</h2>
+
+<p>Der n8n Workflow ist schlank. Trigger: Neue E-Mail. Dann ab in die Gemini-Node. Hier ist der System-Prompt, den wir nutzen. Er lässt der KI absolut keinen Spielraum für Fehler:</p>
+
+<blockquote>"Du bist der Postfach-Triage-Assistent für Cem von Kimpress. Analysiere die E-Mail und weise genau EINE der folgenden Kategorien zu: LEAD, KUNDE, RECHNUNG, MÜLL. Antworte AUSSCHLIESSLICH mit dem exakten Namen der Kategorie. Keine weiteren Zeichen oder Erklärungen."</blockquote>
+
+<p>Danach ein Switch-Node, der je nach Antwort das exakte Gmail-Label auf die ursprüngliche E-Mail klatscht. Fertig.</p>
+
+<h2>Das Fazit</h2>
+
+<p>Es hat geruckelt, aber das Ding steht. Ein Bot, der lokal läuft, meine Daten nicht über Zapier-Server schickt und mir jeden Morgen das manuelle Sortieren erspart.</p>
+
+<p>Wenn du diesen Workflow für dein eigenes Business brauchst, aber keine Lust auf Kommandozeilen-Fehler hast – meld dich. Wir bauen das für dich auf. Richtig.</p>
+    `,
+  },
+  {
+    slug: 'ki-musikvideo-erstellen-workflow',
+    title: 'Vergiss leblose KI-Sänger: Der harte Workflow für hyperrealistische Musikvideos',
+    excerpt: 'Ich sag es dir direkt: Die meisten KI-Musikvideos da draußen sehen aus wie billige Plastikpuppen mit Sprachfehler. Wenn du ein Video willst, das mit echten Millionen-Budgets mithalten kann, musst du tiefer ins Backend gehen.',
+    date: '2026-07-16',
+    readTime: 6,
+    category: 'KI-Tools',
+    featured: true,
+    content: `
+<p class="blog-lead">Ich sag es dir direkt: Die meisten KI-Musikvideos da draußen sehen aus wie billige Plastikpuppen mit Sprachfehler. Du kennst diese weichgespülten Tutorials. Da klatscht jemand ein Audiofile auf ein starres Midjourney-Bild, nennt das stolz "KI Content Erstellung" und feiert sich dafür auf LinkedIn. Bullshit. Wenn du ein Musikvideo erstellen willst, das mit echten Millionen-Budgets mithalten kann, musst du tiefer ins Backend gehen.</p>
+
+<p>Als KI Agentur aus Hamburg bauen wir Workflows, die in der harten Praxis abliefern. Hier ist der exakte Prozess, wie du eine KI-Künstlerin erschaffst, die mit perfektem Lip-Sync und echter Mimik performt.</p>
+
+<h3>1. Das Audio-Fundament (Suno)</h3>
+<p>Hol dir deinen Track über Suno. Nutze ein klares Prompt. Beispiel: "Pop-Song mit Jazz-Undertones". Wenn dir die zündende Idee fehlt, jag das Prompt vorher durch Gemini oder Claude, um es anzureichern. Der Track muss von Anfang an sitzen, sonst bricht dir später die ganze KI Content Maschine zusammen.</p>
+
+<h3>2. Charakter-Konsistenz erzwingen</h3>
+<p>Das größte Problem bei der KI Video Erstellung: Deine KI-Figur sieht in jedem Shot anders aus. Die Lösung ist ein "Character Reference Sheet" in 4K.</p>
+<p>Wir nutzen dafür Open Art. Du generierst deine Sängerin aus allen erdenklichen Winkeln. Ab jetzt wird dieses Sheet bei jedem neuen Shot als harte Referenz mitgeschickt. Vertrau mir, das rettet dein Projekt. Deine Sängerin behält exakt dasselbe Gesicht, egal ob sie ein rotes Satinkleid trägt oder backstage sitzt.</p>
+
+<h3>3. Burst Mode für echte Kameraführung</h3>
+<p>Ein Video mit nur einer einzigen starren Einstellung ist extrem langweilig. Du brauchst Close-Ups, Totale, Side-Profiles.</p>
+<p>Der Hack: Nutze den "Burst Mode" (Text-with-Reference in Open Art, Model: Seedance 2.0).</p>
+<ul>
+  <li>Schreib ins Prompt: "Generate 20 shots in rapid fire..."</li>
+  <li>Tagge dein Charakter-Sheet und dein Set-Design.</li>
+  <li>Lade das kurze Video herunter.</li>
+  <li>Wirf die MP4 in Claude und lass dir die 20 Keyframes extrahieren.</li>
+</ul>
+<p>Das Ergebnis? Du hast dein komplettes Storyboard mit dutzenden Kamerawinkeln.</p>
+
+<h3>4. Der Lip-Sync Trick (Schwarze MP4-Files)</h3>
+<p>Jetzt wird es richtig technisch. Die meisten Tools scheitern am Lip-Sync, weil sie mit reinen MP3-Dateien überfordert sind oder viel zu lange Segmente bekommen.</p>
+<ul>
+  <li>Schneide deinen Track in kurze Stücke (z.B. 0-6 Sekunden) mit leichter Überlappung.</li>
+  <li>Exportiere diese Audioschnipsel zusammen mit einem komplett schwarzen Bild als leere MP4-Datei.</li>
+</ul>
+<p>Das Seedance 2.0 Modell verarbeitet diese leeren MP4s extrem präzise und liefert dir astreine Lippenbewegungen.</p>
+
+<h3>5. Regie führen wie ein Profi</h3>
+<p>Wirf dein Keyframe und die schwarze Audio-MP4 in Open Art.</p>
+<ul>
+  <li>Schreib die exakten Lyrics in den Prompt. Das ist absolute Pflicht für den perfekten Lip-Sync.</li>
+  <li>Definiere die Kamera gnadenlos präzise: "Start with a close-up shot of the woman wearing the red dress...". Überlässt du der KI die Kameraführung, macht sie blind irgendwas.</li>
+  <li>Fehlt die Emotion? Füge "she gestures with her hands" hinzu. Das zwingt das Modell zu echter Körpersprache.</li>
+</ul>
+<p>Zieh die fertigen Clips in deine Timeline, synchronisiere sie mit der Original-Spur. Fertig ist dein Video.</p>
+
+<h2>Proof of Concept: Kiro21</h2>
+<p>Wir theoretisieren hier übrigens gar nicht erst rum, sondern schrauben täglich an solchen Projekten. Vor sechs Monaten haben wir unseren eigenen KI-generierten deutschen Rapper aufgesetzt: <strong>Kiro21</strong>. Damals lief das Setup auf einem völlig anderen Tech-Stack – wir haben Google Whisk, Nano Banana und Veo3 bis ans absolute Limit gepusht. Das Projekt lag kurz auf Eis, aber wir fahren die Server demnächst wieder hoch. Zieh dir das Ergebnis rein und check das Level ab, von dem wir hier sprechen: <a href="https://www.tiktok.com/@kiro21official" target="_blank" rel="noopener">Kiro21 auf TikTok</a></p>
+
+<p>Die Tools ändern sich permanent, aber das technische Fundament bleibt hartes Handwerk.</p>
+
+<p>Du willst eine eigene <strong>KI Content Maschine</strong> für dein Business aufbauen, hast aber andere Prioritäten, als das alles selbst zusammenzuschrauben? Du suchst als Unternehmen im DACH-Raum eine spezialisierte <strong>KI Agentur</strong>, die Automatisierung wirklich versteht, anstatt sinnlose Retainer an Lifestyle-Agenturen zu überweisen?</p>
+
+<p>Lass uns reden. Buch dir 15 Minuten im Zoom. Wir schauen uns dein Backend an.</p>
+    `,
+  },
+  {
     slug: 'ki-agentur-hamburg',
     title: 'KI-Agentur Hamburg: Was kostet KI-Marketing wirklich? (2026)',
     excerpt: 'Ich hab Kimpress in Hamburg gegründet — mit 25 Euro Gewerbeanmeldung und einem Laptop. Hier erzähle ich dir ehrlich, was eine KI-Agentur kostet, was sie kann und wann sie sich für dich lohnt.',
