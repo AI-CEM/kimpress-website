@@ -327,13 +327,18 @@ function initSyntheticMind() {
 function scrollAnimations() {
   if (reduced) return;
 
+  const safeFrom = (selector, vars) => {
+    if (document.querySelector(selector)) {
+      gsap.from(selector, vars);
+    }
+  };
+
   // Hero entrance — immediate, no conflict with IntersectionObserver
-  gsap.from('.hero__headline',  { opacity: 0, y: 40, duration: 1,   ease: 'power3.out', delay: 0.15 });
-  gsap.from('.hero__subline',   { opacity: 0, y: 30, duration: 1,   ease: 'power3.out', delay: 0.35 });
+  safeFrom('.hero__headline',  { opacity: 0, y: 40, duration: 1,   ease: 'power3.out', delay: 0.15 });
+  safeFrom('.hero__subline',   { opacity: 0, y: 30, duration: 1,   ease: 'power3.out', delay: 0.35 });
   // Animate the full actions container so both buttons enter together (prevents vertical offset)
-  gsap.from('.hero__actions',   { opacity: 0, y: 20, duration: 0.8, ease: 'power3.out', delay: 0.55 });
-  gsap.from('.hero__badge',     { opacity: 0, y: 12, duration: 0.7, ease: 'power3.out', delay: 0.65 });
-  gsap.from('.hero__trust',     { opacity: 0, y: 16, duration: 0.8, ease: 'power3.out', delay: 0.75 });
+  safeFrom('.hero__actions',   { opacity: 0, y: 20, duration: 0.8, ease: 'power3.out', delay: 0.55 });
+  safeFrom('.hero__badge',     { opacity: 0, y: 12, duration: 0.7, ease: 'power3.out', delay: 0.65 });
 
   // Section titles — these do NOT have .sr class so no conflict
   document.querySelectorAll('.section__title, .section__label, .section__subtitle').forEach((el) => {
@@ -344,15 +349,15 @@ function scrollAnimations() {
   });
 
   // Kontakt section — no .sr class on these elements
-  gsap.from('.kontakt__text', {
+  safeFrom('.kontakt__text', {
     scrollTrigger: { trigger: '.kontakt', start: 'top 80%', toggleActions: 'play none none none' },
     opacity: 0, y: 24, duration: 0.7, ease: 'power3.out',
   });
-  gsap.from('.kontakt__sub', {
+  safeFrom('.kontakt__sub', {
     scrollTrigger: { trigger: '.kontakt', start: 'top 85%', toggleActions: 'play none none none' },
     opacity: 0, y: 16, duration: 0.6, delay: 0.1, ease: 'power3.out',
   });
-  gsap.from('.kontakt__buttons', {
+  safeFrom('.kontakt__buttons', {
     scrollTrigger: { trigger: '.kontakt', start: 'top 75%', toggleActions: 'play none none none' },
     opacity: 0, y: 16, duration: 0.7, delay: 0.2, ease: 'power3.out',
   });
