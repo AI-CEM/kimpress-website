@@ -2,67 +2,73 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://kimpress.de/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://kimpress.de/blog.html</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://kimpress.de/blog-post.html?post=n8n-postfach-triage-lokal-bauen</loc>
-    <lastmod>2026-07-16</lastmod>
+    <loc>https://kimpress.de/blog-post.html?slug=ki-api-token-limits-umgehen-2026</loc>
+    <lastmod>2026-07-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://kimpress.de/blog-post.html?post=ki-musikvideo-erstellen-workflow</loc>
-    <lastmod>2026-07-16</lastmod>
+    <loc>https://kimpress.de/blog-post.html?slug=n8n-postfach-triage-lokal-bauen</loc>
+    <lastmod>2026-07-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://kimpress.de/blog-post.html?post=ki-agentur-hamburg</loc>
-    <lastmod>2026-07-16</lastmod>
+    <loc>https://kimpress.de/blog-post.html?slug=ki-musikvideo-erstellen-workflow</loc>
+    <lastmod>2026-07-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://kimpress.de/blog-post.html?post=ki-automatisierung-kmu-2026</loc>
-    <lastmod>2026-07-16</lastmod>
+    <loc>https://kimpress.de/blog-post.html?slug=ki-agentur-hamburg</loc>
+    <lastmod>2026-07-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://kimpress.de/blog-post.html?post=n8n-workflow-automatisierung-kmu-anleitung</loc>
-    <lastmod>2026-07-16</lastmod>
+    <loc>https://kimpress.de/blog-post.html?slug=ki-automatisierung-kmu-2026</loc>
+    <lastmod>2026-07-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://kimpress.de/blog-post.html?post=chatgpt-vs-claude-welches-modell</loc>
-    <lastmod>2026-07-16</lastmod>
+    <loc>https://kimpress.de/blog-post.html?slug=n8n-workflow-automatisierung-kmu-anleitung</loc>
+    <lastmod>2026-07-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://kimpress.de/blog-post.html?post=social-media-autopilot-ki</loc>
-    <lastmod>2026-07-16</lastmod>
+    <loc>https://kimpress.de/blog-post.html?slug=chatgpt-vs-claude-welches-modell</loc>
+    <lastmod>2026-07-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://kimpress.de/blog-post.html?post=custom-gpt-bauen-anleitung</loc>
-    <lastmod>2026-07-16</lastmod>
+    <loc>https://kimpress.de/blog-post.html?slug=social-media-autopilot-ki</loc>
+    <lastmod>2026-07-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://kimpress.de/blog-post.html?post=seo-geo-mit-ki-2026</loc>
-    <lastmod>2026-07-16</lastmod>
+    <loc>https://kimpress.de/blog-post.html?slug=custom-gpt-bauen-anleitung</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kimpress.de/blog-post.html?slug=seo-geo-mit-ki-2026</loc>
+    <lastmod>2026-07-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

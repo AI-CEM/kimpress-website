@@ -179,7 +179,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initNavScroll();
   initMobileMenu();
 
-  const slug = new URLSearchParams(window.location.search).get('slug');
+  const params = new URLSearchParams(window.location.search);
+  const slug = params.get('slug') || params.get('post');
   const post = slug ? getPostBySlug(slug) : null;
 
   if (!post) {

@@ -31,7 +31,7 @@ const generateSitemap = () => {
   // Blog posts
   for (const post of BLOG_POSTS) {
     xml += `  <url>\n`;
-    xml += `    <loc>${DOMAIN}/blog-post.html?post=${post.slug}</loc>\n`;
+    xml += `    <loc>${DOMAIN}/blog-post.html?slug=${post.slug}</loc>\n`;
     xml += `    <lastmod>${TODAY}</lastmod>\n`;
     xml += `    <changefreq>monthly</changefreq>\n`;
     xml += `    <priority>0.7</priority>\n`;
