@@ -16,7 +16,7 @@ export const BLOG_POSTS = [
     content: `
 <p class="blog-lead">Sehen wir den Tatsachen ins Auge: 95 % aller KI-Agenten-Demos, die in den letzten zwei Jahren über LinkedIn und Twitter getrieben wurden, waren instabile Basteleien. Hübsch anzusehen in einem 30-Sekunden-Screenrecording, aber im echten Betriebsalltag ein Albtraum aus abgebrochenen API-Calls, wirren Halluzinationen und dreistelligen Monatsrechnungen für Token.</p>
 
-<p>Als ich 2017 mit einer 25-Euro-Gewerbeanmeldung und einem klapprigen MacBook Air angefangen habe, Workflows für Kunden zu bauen, galt eine Regel: Was im Betrieb nicht 100-prozentig verlässlich läuft, fliegt raus. Und genau an dieser Hürde sind KI-Agenten bisher gescheitert.</p>
+<p>Als ich damals mit einer 25-Euro-Gewerbeanmeldung und einem klapprigen MacBook Air angefangen habe, digitale Systeme und Workflows für Kunden zu bauen, galt eine Regel: Was im Betrieb nicht 100-prozentig verlässlich läuft, fliegt raus. Und genau an dieser Hürde sind KI-Agenten bisher gescheitert.</p>
 
 <p>Diese Woche hat sich das Blatt gewendet. Zwei Entwicklungen sind gleichzeitig zusammengekommen, die KI-Agenten vom Experimentierstatus direkt in die Serienreife katapultieren: Die native <strong>MCP-Client-Integration</strong> im <em>Tools Agent</em> Ökosystem von n8n und der dramatische Preisverfall bei extrem schnellen Modell-APIs wie <strong>Gemini 3.6 Flash</strong> und <strong>GPT-5.6 Terra</strong>.</p>
 
