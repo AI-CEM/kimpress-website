@@ -46,6 +46,15 @@ export function initChatbot() {
     });
   }
 
+  const privacyLink = document.getElementById('bot-privacy-link');
+  if (privacyLink) {
+    privacyLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      const dsBtn = document.getElementById('open-datenschutz');
+      if (dsBtn) dsBtn.click();
+    });
+  }
+
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     const query = input.value.trim();
@@ -672,8 +681,8 @@ function createBotDOM() {
             <span class="bot-status-light"></span>
           </div>
           <div>
-            <div class="bot-title">Kimpress KI-Operator <span class="bot-ver">v3.0</span></div>
-            <div class="bot-subtitle">ONLINE &middot; DIREKTE VERBINDUNG</div>
+            <div class="bot-title">Kimpress KI-Operator <span class="bot-ver">BETA</span></div>
+            <div class="bot-subtitle">AUTOMATISIERTER KI-ASSISTENT &middot; TESTBETRIEB</div>
           </div>
         </div>
         <button id="bot-close" class="bot-close-btn" aria-label="Schließen">&#x2715;</button>
@@ -707,9 +716,9 @@ function createBotDOM() {
         </button>
       </form>
 
-      <!-- Transparency Footer -->
+      <!-- Transparency & DSGVO Legal Disclaimer Footer -->
       <div class="bot-panel__footer">
-        <span>Transparenz gem. EU AI Act &bull; 100% DSGVO</span>
+        <span>🤖 Automatisierter KI-Assistent (EU AI Act Art. 50). Bitte keine sensiblen Daten eingeben. Es gilt unsere <a href="#" id="bot-privacy-link" style="color:#FF4D4D;text-decoration:underline;">Datenschutzerklärung</a>.</span>
       </div>
     </div>
   `;
