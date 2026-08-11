@@ -1,5 +1,6 @@
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { initChatbot } from './chatbot.js';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -766,28 +767,29 @@ function initFooterServiceLinks() {
   });
 }
 
-function initSpecialOffer() {
-  const specialCta = document.getElementById('open-special-offer');
-  if (!specialCta) return;
+function initPricingMatrix() {
+  const pricingCtas = document.querySelectorAll('.open-pricing-modal');
+  pricingCtas.forEach(cta => {
+    cta.addEventListener('click', (e) => {
+      e.preventDefault();
+      const tierName = cta.getAttribute('data-tier') || 'KI-Systeme & Automatisierung';
+      const modal = document.getElementById('modal-contact');
+      if (modal) {
+        modal.classList.add('open');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
 
-  specialCta.addEventListener('click', (e) => {
-    e.preventDefault();
-    const modal = document.getElementById('modal-contact');
-    if (modal) {
-      modal.classList.add('open');
-      modal.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
+        const msgField = document.getElementById('fm');
+        if (msgField) {
+          msgField.value = `Hi Cem, ich interessiere mich für das Paket "${tierName}" und möchte ein Erstgespräch / Angebot anfragen.`;
+        }
 
-      const msgField = document.getElementById('fm');
-      if (msgField) {
-        msgField.value = "Hi Cem, ich interessiere mich für das limitierte Launch-Special (AI Performance Starter-Kit für 119 €) und möchte anfragen.";
+        const nameField = document.getElementById('fn');
+        if (nameField) {
+          setTimeout(() => nameField.focus(), 150);
+        }
       }
-
-      const nameField = document.getElementById('fn');
-      if (nameField) {
-        setTimeout(() => nameField.focus(), 150);
-      }
-    }
+    });
   });
 }
 
@@ -803,7 +805,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initServiceOverlays();   // service deep-dive overlays
   initContactForm();       // contact form submission
   initFooterServiceLinks();// footer service buttons → open overlays
-  initSpecialOffer();      // launch special CTA popup handler
+  initPricingMatrix();     // high-ticket B2B pricing modal prefill handler
+  initChatbot();           // Kimpress Neural AI Operator Chatbot HUD
 
 
   // Open modals via URL query parameter (e.g. ?open=impressum)
