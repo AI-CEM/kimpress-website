@@ -36,44 +36,48 @@ REGELN:
 - Antworte präzise, knackig (max 3-5 kurze Sätze oder Stichpunkte) auf Deutsch.
 - Nutze Zeilenumbrüche für gute Lesbarkeit im Chat-Window.`;
 
-  // Try Gemini API if GEMINI_API_KEY is available
-  const geminiKey = process.env.GEMINI_API_KEY || (apiKey && apiKey.startsWith('AIzaSy') ? apiKey : null);
+  // Active Gemini API Key (from Vercel Environment Variables)
+  const geminiKey = process.env.GEMINI_API_KEY || process.env.GROQ_API_KEY;
 
   if (geminiKey) {
-    try {
-      const geminiRes = await fetch(
-        `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${geminiKey}`,
-        {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            contents: [
-              {
-                role: 'user',
-                parts: [
-                  { text: `${systemPrompt}\n\nFrage des Nutzers: ${message}` }
-                ]
+    // Try Gemini 3.5 Flash Model Endpoint
+    const modelsToTry = ['gemini-3.5-flash', 'gemini-3.5-flash-lite', 'gemini-flash-latest'];
+    for (const modelName of modelsToTry) {
+      try {
+        const geminiRes = await fetch(
+          `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${geminiKey}`,
+          {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              contents: [
+                {
+                  role: 'user',
+                  parts: [
+                    { text: `${systemPrompt}\n\nFrage des Nutzers: ${message}` }
+                  ]
+                }
+              ],
+              generationConfig: {
+                temperature: 0.7,
+                maxOutputTokens: 500
               }
-            ],
-            generationConfig: {
-              temperature: 0.7,
-              maxOutputTokens: 500
-            }
-          })
-        }
-      );
+            })
+          }
+        );
 
-      if (geminiRes.ok) {
-        const data = await geminiRes.json();
-        const reply = data.candidates?.[0]?.content?.parts?.[0]?.text;
-        if (reply) {
-          return res.status(200).json({ output: reply, source: 'gemini' });
+        if (geminiRes.ok) {
+          const data = await geminiRes.json();
+          const reply = data.candidates?.[0]?.content?.parts?.[0]?.text;
+          if (reply) {
+            return res.status(200).json({ output: reply, source: `gemini (${modelName})` });
+          }
+        } else {
+          console.warn(`Gemini API Model ${modelName} Error:`, await geminiRes.text());
         }
-      } else {
-        console.warn('Gemini API Error:', await geminiRes.text());
+      } catch (err) {
+        console.error(`Gemini API (${modelName}) Exception:`, err);
       }
-    } catch (err) {
-      console.error('Gemini API Fetch Exception:', err);
     }
   }
 
