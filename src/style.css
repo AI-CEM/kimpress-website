@@ -5629,49 +5629,58 @@ button.btn {
 
 .bot-trigger__avatar-box {
   position: relative;
-  width: 30px;
-  height: 30px;
+  width: 38px;
+  height: 38px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  border-radius: 50%;
+  overflow: hidden;
 }
 
 .bot-trigger__avatar-img {
-  width: 30px;
-  height: 30px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
   object-fit: cover;
+  object-position: center 22%;
+  transform: scale(1.35);
   border: 1.5px solid var(--color-primary, #FF0000);
-  box-shadow: 0 0 8px rgba(255, 0, 0, 0.4);
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.4);
 }
 
 .bot-trigger__status-dot {
   position: absolute;
   bottom: -1px;
   right: -1px;
-  width: 8px;
-  height: 8px;
+  width: 9px;
+  height: 9px;
   background: #00FF66;
   border-radius: 50%;
   border: 1.5px solid #0A0A0A;
   box-shadow: 0 0 6px #00FF66;
+  z-index: 2;
 }
 
 .bot-avatar--face {
   position: relative;
-  width: 44px;
-  height: 44px;
+  width: 52px;
+  height: 52px;
   flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 2px solid var(--color-primary, #FF0000);
+  box-shadow: 0 0 16px rgba(255, 0, 0, 0.4);
 }
 
 .bot-avatar__face-img {
-  width: 44px;
-  height: 44px;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid var(--color-primary, #FF0000);
-  box-shadow: 0 0 14px rgba(255, 0, 0, 0.35);
+  object-position: center 22%;
+  transform: scale(1.35);
 }
 
 .bot-panel--ibm {
