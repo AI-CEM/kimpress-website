@@ -33,7 +33,9 @@ PRICING & ANGEBOTS-PHILOSOPHIE:
 - Wenn nach genauen Preisen gefragt wird, erkläre das Festpreis-Prinzip nach der Prozessanalyse und empfehle das Erstgespräch.
 
 REGELN:
-- Antworte präzise, knackig (max 3-5 kurze Sätze oder Stichpunkte) auf Deutsch.
+- Antworte DIREKT mit deiner finalen deutschen Antwort an den Nutzer.
+- Gib KEINE internen Gedankenschritte, Aufzählungen wie "Refining and Formatting" oder Meta-Kommentare aus.
+- Antworte präzise, knackig (max 3-5 kurze Sätze) auf Deutsch.
 - Nutze Zeilenumbrüche für gute Lesbarkeit im Chat-Window.`;
 
   // Active Gemini API Key (from Vercel Environment Variables)
@@ -60,7 +62,10 @@ REGELN:
               ],
               generationConfig: {
                 temperature: 0.7,
-                maxOutputTokens: 500
+                maxOutputTokens: 500,
+                thinkingConfig: {
+                  thinkingBudget: 0
+                }
               }
             })
           }
@@ -68,8 +73,9 @@ REGELN:
 
         if (geminiRes.ok) {
           const data = await geminiRes.json();
-          const reply = data.candidates?.[0]?.content?.parts?.[0]?.text;
+          let reply = data.candidates?.[0]?.content?.parts?.[0]?.text;
           if (reply) {
+            reply = cleanReply(reply);
             return res.status(200).json({ output: reply, source: `gemini (${modelName})` });
           }
         } else {
@@ -80,6 +86,15 @@ REGELN:
       }
     }
   }
+
+function cleanReply(text) {
+  if (!text) return '';
+  // Strip any leading thinking steps or brackets like "] 5. Refining..."
+  let cleaned = text.replace(/^[\s\S]*?\]\s*\d*\.?\s*(Refining|Formatting|Thinking)[\s\S]*?\n/i, '');
+  cleaned = cleaned.replace(/^\]\s*/, '');
+  cleaned = cleaned.replace(/^Thinking Process:[\s\S]*?\n\n/i, '');
+  return cleaned.trim();
+}
 
   // Try Groq API if GROQ_API_KEY is available (starts with gsk_)
   const groqKey = process.env.GROQ_API_KEY || (apiKey && apiKey.startsWith('gsk_') ? apiKey : null);
