@@ -632,34 +632,20 @@ export function initChatbot() {
 
   function initContextObserver(hintPill) {
     if (!hintPill) return;
-    
-    let timer = null;
-    let hasShown = false;
 
-    function showHint() {
-      if (hasShown || hasInteracted || isOpen) return;
-      hasShown = true;
-      hintPill.classList.add('active');
+    // Show ONLY after 8 seconds of quiet reading time on page
+    setTimeout(() => {
+      if (!hasInteracted && !isOpen) {
+        hintPill.classList.add('active');
 
-      // Auto-hide after 8 seconds of display if user hasn't interacted
-      setTimeout(() => {
-        if (!hasInteracted && !isOpen) {
-          hintPill.classList.remove('active');
-        }
-      }, 8000);
-    }
-
-    // 1. Psychological Delay Trigger: 7.5 seconds after page load
-    timer = setTimeout(showHint, 7500);
-
-    // 2. Scroll-Depth Trigger: Show if user scrolls down 300px early
-    function onScroll() {
-      if (window.scrollY > 300) {
-        showHint();
-        window.removeEventListener('scroll', onScroll);
+        // Auto-hide after 7 seconds of display
+        setTimeout(() => {
+          if (!hasInteracted && !isOpen) {
+            hintPill.classList.remove('active');
+          }
+        }, 7000);
       }
-    }
-    window.addEventListener('scroll', onScroll, { passive: true });
+    }, 8000);
   }
 
   function escapeHTML(str) {
@@ -688,7 +674,7 @@ function createBotDOM() {
     <!-- Floating Trigger with Cem Avatar Face -->
     <div id="bot-hint-pill" class="bot-hint-pill" aria-live="polite">
       <span class="bot-hint-dot"></span>
-      <span class="bot-hint-text">⚡ SYSTEM_OPERATOR: Wie viel Zeit verliert dein Team pro Woche? [ROI-Check]</span>
+      <span class="bot-hint-text">⚡ Berechne deine Ersparnis [ROI]</span>
     </div>
 
     <button id="bot-trigger" class="bot-trigger" aria-label="KI-Operator öffnen">
