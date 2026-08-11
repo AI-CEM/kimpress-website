@@ -12,7 +12,7 @@ import { gsap } from 'gsap';
  * - GSAP HUD Animations & Neural Canvas Particles
  */
 
-let N8N_WEBHOOK_URL = 'http://localhost:5678/webhook/kimpress-chat'; 
+let N8N_WEBHOOK_URL = '/api/chat'; 
 
 export function initChatbot() {
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
