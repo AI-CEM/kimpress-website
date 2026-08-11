@@ -472,7 +472,7 @@ export function initChatbot() {
     if (q.includes('preis') || q.includes('kosten') || q.includes('budget') || q.includes('pauschale') || q.includes('angebot') || q.includes('paket') || q.includes('geld') || q.includes('stundensatz')) {
       return {
         type: 'text',
-        text: `**100% Festpreise ohne Überraschungen:**\n\n- **AI Performance Starter-Kit (ab 119 €):** Schneller Einstieg für KI-Content, Social-Vorlagen oder kompakte Bot-Setups.\n- **Custom Automatisierungs-Systeme:** Festpreisangebot nach kostenloser Prozess-Analyse.\n\nKeine Stunden-Mogelei, kein Knebelvertrag. Du kennst die genaue Investition vor Projektstart.`
+        text: `**100% Transparente Festpreise ohne Stundensatz-Mogelei:**\n\nJede KI- & n8n-Workflow-Automatisierung kalkulieren wir nach einer gemeinsamen Prozessanalyse als verbindliches Pauschalangebot.\n\n- **Kein Stundensatz-Versteckspiel:** Du kennst die Investition auf den Cent genau vor der ersten Zeile Code.\n- **0 € Nebenkosten:** Schlüsselfertiges Setup inklusive 30 Tage Support & Übergabe.\n- **Maximale Flexibilität:** Keine starren Knebelverträge.`
       };
     }
 
@@ -480,7 +480,7 @@ export function initChatbot() {
     if (q.includes('cem') || q.includes('wer') || q.includes('inhaber') || q.includes('gründer') || q.includes('über') || q.includes('team') || q.includes('operator')) {
       return {
         type: 'text',
-        text: `**Wer hinter Kimpress steckt:**\n\nCem Görül baut seit über 15 Jahren digitale Systeme – damals noch zeilenweise per Hand. Als der Hype um KI losging, sah er vor allem eines: *Agenturen, die Buzzwords verkaufen und Junioren an Kundenprojekte setzen.*\n\nCem hat Kimpress als pragmatische Gegenbewegung gegründet: **1 Operator, maximale Backend-Power.** Du arbeitest ohne Wasserkopf direkt mit dem Gründer, der deine Systeme persönlich entwickelt und absichert.`
+        text: `**Operator Identity — Cem Görül:**\n\nCem Görül baut seit über 15 Jahren digitale Backend-Systeme. Als der Hype um KI losging, gründete er Kimpress als pragmatische Gegenbewegung:\n\n⚡ **1 Operator, maximale Backend-Power.** Du sprichst ohne Agentur-Wasserkopf direkt mit dem Entwickler, der deine n8n-Workflows und KI-Systeme persönlich baut und absichert.`
       };
     }
 
@@ -488,7 +488,7 @@ export function initChatbot() {
     if (q.includes('service') || q.includes('leistung') || q.includes('content') || q.includes('video') || q.includes('website') || q.includes('seo') || q.includes('geo')) {
       return {
         type: 'text',
-        text: `**Unsere 6 Kern-Leistungen:**\n\n1️⃣ **KI-Content:** High-converting Ads, Social-Videos & Texte.\n2️⃣ **n8n Workflows:** Daten-Sync, Lead-Routing & KI-Triage.\n3️⃣ **KI-Websites & GEO:** Sichtbarkeit in Perplexity, ChatGPT & Google AI.\n4️⃣ **KI-Chatbots:** Maßgeschneiderte Kunden- & Support-Assistenten.\n5️⃣ **Social Automation:** Automatisierter Publishing-Pipeline.\n6️⃣ **KI-Beratung:** Custom GPTs & Mitarbeiterschulung.`
+        text: `**Unsere Kern-Systeme & Infrastruktur:**\n\n1️⃣ **Prozess-Automatisierung:** n8n & Make Workflows, Lead-Triage & CRM-Sync.\n2️⃣ **Deterministische KI-Assistenten:** Chatbots & RAG-Knowledge-Bots ohne Halluzinationen.\n3️⃣ **GEO & KI-Websites:** Optimierte Sichtbarkeit in Perplexity, ChatGPT & Google AI.\n4️⃣ **KI-Content Studio:** Skalierbare Social-Media-Pipelines & Ad-Visuals.\n5️⃣ **Custom GPTs & Training:** Prompt-Bibliotheken & Mitarbeiter-Schulung.`
       };
     }
 
@@ -496,15 +496,15 @@ export function initChatbot() {
     if (q.includes('ablauf') || q.includes('prozess') || q.includes('start') || q.includes('schritte') || q.includes('zusammenarbeit') || q.includes('wie läuft')) {
       return {
         type: 'text',
-        text: `**So einfach läuft die Zusammenarbeit:**\n\n1️⃣ **Kostenlose Prozessanalyse (15 Min):** Wir identifizieren deine größten Zeitfresser.\n2️⃣ **Festpreis-Angebot:** Verbindlicher Fahrplan ohne Nebenkosten.\n3️⃣ **Build & Integration:** Wir bauen die n8n/KI-Systeme in 48h bis 7 Tagen.\n4️⃣ **Übergabe & 30 Tage Support:** Schulung deines Teams + Nachbetreuung.`
+        text: `**So läuft die Zusammenarbeit ab:**\n\n1️⃣ **Kostenlose Prozessanalyse (15 Min):** Wir identifizieren deine größten Zeitfresser.\n2️⃣ **Festpreis-Blueprint:** Verbindlicher Fahrplan & Systemkarte ohne Nebenkosten.\n3️⃣ **Build & Integration:** Schlüsselfertige n8n/KI-Entwicklung in 3 bis 14 Tagen.\n4️⃣ **Übergabe & 30 Tage Support:** Schulung deines Teams + Hypercare-Nachbetreuung.`
       };
     }
 
     // 5. Häufige Fragen / FAQ & Objections
-    if (q.includes('faq') || q.includes('frage') || q.includes('verbindung') || q.includes('tools') || q.includes('schnittstelle') || q.includes('api') || q.includes('garantie')) {
+    if (q.includes('faq') || q.includes('frage') || q.includes('verbindung') || q.includes('tools') || q.includes('schnittstelle') || q.includes('api') || q.includes('garantie') || q.includes('tech')) {
       return {
         type: 'text',
-        text: `**Häufig gestellte Fragen (FAQ):**\n\n- **Welche Tools werden angebunden?** HubSpot, Airtable, Make, n8n, Slack, WhatsApp, SevDesk/Lexoffice, OpenAI, Gemini, Claude u.v.m.\n- **Brauche ich eigenes Programmierwissen?** Nein! Du erhältst schlüsselfertige Systeme.\n- **Gibt es Garantien?** Ja, 30 Tage Betreuung und Korrektur-Garantie inklusive.`
+        text: `**Häufig gestellte Fragen (FAQ):**\n\n- **Welche Tools werden angebunden?** HubSpot, Salesforce, Outlook/Gmail, Notion, n8n, Make, Slack, WhatsApp, SevDesk, Lexoffice, OpenAI, Gemini, Claude, Supabase.\n- **Brauche ich eigenes Programmierwissen?** Nein! Du erhältst ein schlüsselfertiges System.\n- **Gibt es Support?** Ja, 30 Tage Betreuung und Garantie inklusive.`
       };
     }
 
@@ -512,7 +512,7 @@ export function initChatbot() {
     if (q.includes('dsgvo') || q.includes('datenschutz') || q.includes('sicher') || q.includes('cookie') || q.includes('server')) {
       return {
         type: 'text',
-        text: `**Datenschutz & DSGVO:**\n\nKimpress arbeitet nach höchsten Standards:\n- Keine Cookie-Banner notwendig\n- Schriftarten selbst gehostet\n- Verläufe im \`sessionStorage\` (wird nach Tab-Schließen gelöscht)\n- Einhaltung der EU AI Act Transparenzpflichten.`
+        text: `**Datenschutz & DSGVO:**\n\nKimpress arbeitet nach höchsten Standards:\n- Keine Cookie-Banner notwendig (keine Tracking-Cookies)\n- Fonts & Libraries 100% selbst gehostet (keine Google-Fonts-Falle)\n- Verläufe im \`sessionStorage\` (wird beim Tab-Schließen gelöscht)\n- Einhaltung der EU AI Act Transparenzpflichten (Art. 50).`
       };
     }
 
@@ -520,14 +520,14 @@ export function initChatbot() {
     if (q.includes('kontakt') || q.includes('termin') || q.includes('anfrage') || q.includes('mail') || q.includes('telefon') || q.includes('buchen')) {
       return {
         type: 'text',
-        text: `Du erreichst Cem Görül direkt:\n\n📧 **E-Mail:** hallo@kimpress.de\n📞 **Telefon:** +49 1575 7221636\n📍 **Standort:** Hamburg\n\nKlicke unten auf das Kontaktformular für ein unverbindliches Gespräch.`
+        text: `Du erreichst Cem Görül direkt:\n\n📧 **E-Mail:** hallo@kimpress.de\n📞 **Telefon:** +49 1575 7221636\n📍 **Standort:** Hamburg\n\nNutze unser Kontaktformular auf der Seite für eine direkte Anfrage.`
       };
     }
 
     // Default Fallback
     return {
       type: 'text',
-      text: `Danke für deine Frage! Ich bin dein **Kimpress KI-Operator**.\n\nFrag mich gerne zu **n8n Workflows**, unseren **Festpreisen**, dem **ROI-Rechner** oder wie **Cem Görül** deinen Betrieb automatisieren kann.`
+      text: `Danke für deine Anfrage! Ich bin Cems **Kimpress KI-Operator**.\n\nFrag mich gerne zu **n8n Workflows**, unseren **Festpreisen**, dem **ROI-Rechner** oder wie **Cem Görül** deine Prozesse automatisiert.`
     };
   }
 
@@ -543,162 +543,129 @@ export function initChatbot() {
       canvas.height = canvas.parentElement.clientHeight;
     }
     resize();
-    window.addEventListener('resize', resize, { passive: true });
+    window.addEventListener('resize', resize);
 
-    const nodes = Array.from({ length: 18 }, () => ({
+    const particles = Array.from({ length: 18 }, () => ({
       x: Math.random() * (canvas.width || 300),
       y: Math.random() * (canvas.height || 80),
       vx: (Math.random() - 0.5) * 0.4,
       vy: (Math.random() - 0.5) * 0.4,
-      r: 1.5 + Math.random() * 1.5,
+      r: Math.random() * 1.5 + 0.5
     }));
 
-    function draw() {
-      if (reduced || !isOpen) {
-        requestAnimationFrame(draw);
-        return;
-      }
+    function anim() {
+      if (!canvas.parentElement) return;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = 'rgba(255, 0, 0, 0.4)';
+      ctx.strokeStyle = 'rgba(255, 0, 0, 0.08)';
 
-      for (let i = 0; i < nodes.length; i++) {
-        for (let j = i + 1; j < nodes.length; j++) {
-          const dx = nodes[i].x - nodes[j].x;
-          const dy = nodes[i].y - nodes[j].y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
+      particles.forEach((p, i) => {
+        p.x += p.vx;
+        p.y += p.vy;
+        if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+        if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fill();
+
+        for (let j = i + 1; j < particles.length; j++) {
+          const p2 = particles[j];
+          const dist = Math.hypot(p.x - p2.x, p.y - p2.y);
           if (dist < 60) {
             ctx.beginPath();
-            ctx.moveTo(nodes[i].x, nodes[i].y);
-            ctx.lineTo(nodes[j].x, nodes[j].y);
-            ctx.strokeStyle = `rgba(255, 0, 0, ${(1 - dist / 60) * 0.25})`;
-            ctx.lineWidth = 0.8;
+            ctx.moveTo(p.x, p.y);
+            ctx.lineTo(p2.x, p2.y);
             ctx.stroke();
           }
         }
-      }
-
-      nodes.forEach(n => {
-        n.x += n.vx;
-        n.y += n.vy;
-        if (n.x < 0 || n.x > canvas.width) n.vx *= -1;
-        if (n.y < 0 || n.y > canvas.height) n.vy *= -1;
-
-        ctx.beginPath();
-        ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(255, 60, 60, 0.6)';
-        ctx.shadowColor = 'rgba(255, 0, 0, 0.8)';
-        ctx.shadowBlur = 4;
-        ctx.fill();
-        ctx.shadowBlur = 0;
       });
-
-      requestAnimationFrame(draw);
+      requestAnimationFrame(anim);
     }
-    draw();
+    anim();
   }
 
-  // --- CONTEXT OBSERVER ---
-  function initContextObserver(hintEl) {
-    if (!hintEl || reduced) return;
-
-    const hints = [
-      { section: 'services', text: '⚡ Fragen zu n8n Workflows?' },
-      { section: 'proof', text: '📈 Möchtest du deinen ROI berechnen?' },
-      { section: 'faq', text: '💡 KI-Operator für deine Fragen da!' }
-    ];
-
-    let shownSections = new Set();
-
-    const observer = new IntersectionObserver((entries) => {
-      if (isOpen || hasInteracted) return;
-
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const id = entry.target.id;
-          const matched = hints.find(h => h.section === id);
-          if (matched && !shownSections.has(id)) {
-            shownSections.add(id);
-            hintEl.querySelector('.bot-hint-text').textContent = matched.text;
-            hintEl.classList.add('active');
-
-            setTimeout(() => {
-              hintEl.classList.remove('active');
-            }, 6000);
-          }
-        }
-      });
-    }, { threshold: 0.4 });
-
-    hints.forEach(h => {
-      const el = document.getElementById(h.section);
-      if (el) observer.observe(el);
-    });
+  function initContextObserver(hintPill) {
+    if (!hintPill) return;
+    let timer = setTimeout(() => {
+      if (!hasInteracted) hintPill.classList.add('active');
+    }, 6000);
   }
-}
 
-// Helpers
-function escapeHTML(str) {
-  return str.replace(/[&<>"']/g, match => {
-    const map = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' };
-    return map[match];
-  });
-}
+  function escapeHTML(str) {
+    return str
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
+  }
 
-function formatMarkdown(str) {
-  let html = escapeHTML(str);
-  html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-  html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
-  html = html.replace(/`([^`]+)`/g, '<code class="bot-inline-code">$1</code>');
-  html = html.replace(/\n/g, '<br>');
-  return html;
-}
+  function formatMarkdown(str) {
+    let html = escapeHTML(str);
+    html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+    html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
+    html = html.replace(/`([^`]+)`/g, '<code class="bot-inline-code">$1</code>');
+    html = html.replace(/\n/g, '<br>');
+    return html;
+  }
 
-// Build HTML Structure
+// Build HTML Structure (IBM Carbon / Industrial Tech Style)
 function createBotDOM() {
   const root = document.createElement('div');
   root.id = 'kimpress-bot-root';
   root.innerHTML = `
-    <!-- Floating Trigger -->
+    <!-- Floating Trigger with Cem Avatar Face -->
     <div id="bot-hint-pill" class="bot-hint-pill" aria-live="polite">
       <span class="bot-hint-dot"></span>
       <span class="bot-hint-text">Moin! Frag den KI-Operator...</span>
     </div>
 
     <button id="bot-trigger" class="bot-trigger" aria-label="KI-Operator öffnen">
-      <span class="bot-trigger__icon">🤖</span>
+      <div class="bot-trigger__avatar-box">
+        <img src="/images/characters/operator-cem.jpg" alt="Cem Görül — Kimpress KI Operator" class="bot-trigger__avatar-img" />
+        <span class="bot-trigger__status-dot"></span>
+      </div>
       <span class="bot-trigger__text">KI-Operator</span>
       <span class="bot-trigger__badge">⚡</span>
     </button>
 
-    <!-- Chat Panel HUD -->
-    <div id="bot-panel" class="bot-panel" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Kimpress KI-Operator Chat">
+    <!-- Chat Panel HUD (IBM Carbon Design Language) -->
+    <div id="bot-panel" class="bot-panel bot-panel--ibm" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Kimpress KI-Operator Chat">
       <canvas id="bot-header-canvas" class="bot-panel__canvas"></canvas>
       
       <!-- Panel Header -->
       <div class="bot-panel__header">
         <div class="bot-operator-info">
-          <div class="bot-avatar">
-            <span class="bot-avatar__img">🤖</span>
+          <div class="bot-avatar bot-avatar--face">
+            <img src="/images/characters/operator-cem.jpg" alt="Cem Görül — Operator Face" class="bot-avatar__face-img" />
             <span class="bot-status-light"></span>
           </div>
           <div>
-            <div class="bot-title">Kimpress KI-Operator <span class="bot-ver">BETA</span></div>
-            <div class="bot-subtitle">AUTOMATISIERTER KI-ASSISTENT &middot; TESTBETRIEB</div>
+            <div class="bot-title">KIMPRESS // OPERATOR_ENGINE <span class="bot-ver">BETA</span></div>
+            <div class="bot-subtitle">SYS_ID: CEM_GOERUL &middot; REALTIME HUD</div>
           </div>
         </div>
         <button id="bot-close" class="bot-close-btn" aria-label="Schließen">&#x2715;</button>
       </div>
 
+      <!-- System Status Bar -->
+      <div class="bot-system-bar">
+        <span class="bot-sys-tag">&gt; CONNECTED: n8n Workflow Engine</span>
+        <span class="bot-sys-meta">0% Loss</span>
+      </div>
+
       <!-- Messages Stream -->
       <div id="bot-messages" class="bot-panel__messages"></div>
 
-      <!-- Quick Action Chips -->
+      <!-- Quick Action Chips (IBM Monospace Style) -->
       <div id="bot-quick-chips" class="bot-quick-chips">
-        <button class="bot-chip" data-action="roi">🧮 Advanced ROI-Rechner</button>
-        <button class="bot-chip" data-action="n8n">⚙️ n8n Workflows</button>
-        <button class="bot-chip" data-action="preis">💰 Festpreise</button>
-        <button class="bot-chip" data-action="cem">👤 Über Cem</button>
-        <button class="bot-chip" data-action="ablauf">🤝 Wie läuft's ab?</button>
-        <button class="bot-chip" data-action="faq">❓ Häufige Fragen</button>
+        <button class="bot-chip" data-action="roi">[01] ROI_RECHNER</button>
+        <button class="bot-chip" data-action="n8n">[02] N8N_WORKFLOWS</button>
+        <button class="bot-chip" data-action="preis">[03] FESTPREISE</button>
+        <button class="bot-chip" data-action="cem">[04] OPERATOR_CEM</button>
+        <button class="bot-chip" data-action="faq">[05] TECH_STACK</button>
+        <button class="bot-chip" data-action="dsgvo">[06] DSGVO_INFO</button>
       </div>
 
       <!-- Input Bar -->
@@ -723,4 +690,5 @@ function createBotDOM() {
     </div>
   `;
   document.body.appendChild(root);
+}
 }

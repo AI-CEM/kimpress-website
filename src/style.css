@@ -5582,6 +5582,102 @@ button.btn {
 }
 
 /* ==========================================================================
+   IBM CARBON // OPERATOR AVATAR & HUD SYSTEM
+   ========================================================================== */
+
+.bot-trigger__avatar-box {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.bot-trigger__avatar-img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1.5px solid var(--color-primary, #FF0000);
+  box-shadow: 0 0 8px rgba(255, 0, 0, 0.4);
+}
+
+.bot-trigger__status-dot {
+  position: absolute;
+  bottom: -1px;
+  right: -1px;
+  width: 8px;
+  height: 8px;
+  background: #00FF66;
+  border-radius: 50%;
+  border: 1.5px solid #0A0A0A;
+  box-shadow: 0 0 6px #00FF66;
+}
+
+.bot-avatar--face {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+}
+
+.bot-avatar__face-img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--color-primary, #FF0000);
+  box-shadow: 0 0 14px rgba(255, 0, 0, 0.35);
+}
+
+.bot-panel--ibm {
+  background: rgba(10, 10, 14, 0.97) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(255, 0, 0, 0.12) !important;
+}
+
+.bot-system-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(18, 18, 24, 0.95);
+  border-bottom: 1px solid rgba(255, 0, 0, 0.2);
+  padding: 6px 16px;
+  font-family: monospace, var(--font-mono);
+  font-size: 0.68rem;
+}
+
+.bot-sys-tag {
+  color: #FF4D4D;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.bot-sys-meta {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.65rem;
+}
+
+.bot-quick-chips .bot-chip {
+  font-family: monospace, var(--font-mono) !important;
+  font-size: 0.72rem !important;
+  letter-spacing: 0.5px !important;
+  border-radius: 4px !important;
+  background: rgba(255, 255, 255, 0.04) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.bot-quick-chips .bot-chip:hover {
+  background: rgba(255, 0, 0, 0.18) !important;
+  border-color: rgba(255, 0, 0, 0.4) !important;
+  color: #FFFFFF !important;
+}
+
+
+/* ==========================================================================
    HIGH-TICKET B2B PRICING MATRIX (MATRIX DARK CYBER AESTHETIC)
    ========================================================================== */
 
