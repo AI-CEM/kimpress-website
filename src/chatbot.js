@@ -274,60 +274,60 @@ export function initChatbot() {
     messagesContainer.scrollTop = messagesContainer.scrollHeight;
   }
 
-  // --- UPGRADED 3-SLIDER INTERACTIVE ROI CALCULATOR ---
+  // --- UPGRADED 3-SLIDER INDUSTRIAL CYBER ROI SIMULATOR ---
   function renderROICalculator() {
     removeTypingIndicator();
     const container = document.createElement('div');
     container.className = 'bot-msg bot-msg--bot bot-msg--custom';
     
     container.innerHTML = `
-      <div class="bot-bubble bot-card-roi">
+      <div class="bot-bubble bot-card-roi bot-card-roi--ibm">
         <div class="bot-card-roi__header">
-          <span class="bot-card-roi__badge">⚡ ADVANCED ROI & AMORTISATIONS-RECHNER</span>
-          <h4>Berechne deinen Netto-Gewinn durch Automatisierung</h4>
+          <span class="bot-card-roi__badge">[SYS_SIMULATOR // CAPITAL_RECOVERY_ENGINE]</span>
+          <h4 style="font-family:monospace;margin-top:6px;font-size:0.85rem;color:#FFF;">ROTTING_CAPITAL & RECOVERY SIMULATOR</h4>
         </div>
         
         <div class="bot-card-roi__slider-group">
           <div class="bot-roi-label">
-            <span>Teamgröße:</span>
-            <strong id="roi-val-team">4 Personen</strong>
+            <span style="font-family:monospace;">[01_TEAM_HEADCOUNT]</span>
+            <strong id="roi-val-team" style="font-family:monospace;color:#FF4D4D;">4 OPERATORS</strong>
           </div>
           <input type="range" id="roi-slider-team" min="1" max="50" value="4" class="bot-roi-slider" />
         </div>
 
         <div class="bot-card-roi__slider-group">
           <div class="bot-roi-label">
-            <span>Routinearbeit / Woche:</span>
-            <strong id="roi-val-hours">10 Std. / Person</strong>
+            <span style="font-family:monospace;">[02_ROUTINE_LEAK_HRS]</span>
+            <strong id="roi-val-hours" style="font-family:monospace;color:#FF4D4D;">10 HRS / WEEK</strong>
           </div>
           <input type="range" id="roi-slider-hours" min="2" max="35" value="10" class="bot-roi-slider" />
         </div>
 
         <div class="bot-card-roi__slider-group">
           <div class="bot-roi-label">
-            <span>Kosten pro Stunde:</span>
-            <strong id="roi-val-rate">65 € / Std.</strong>
+            <span style="font-family:monospace;">[03_HOURLY_COST_RATE]</span>
+            <strong id="roi-val-rate" style="font-family:monospace;color:#FF4D4D;">65 € / HR</strong>
           </div>
           <input type="range" id="roi-slider-rate" min="30" max="150" value="65" step="5" class="bot-roi-slider" />
         </div>
 
-        <div class="bot-card-roi__result">
+        <div class="bot-card-roi__result" style="background:rgba(14,14,20,0.95);border:1px solid rgba(255,0,0,0.25);">
           <div class="bot-roi-res-item">
-            <span class="bot-roi-res-lbl">Gesparte Arbeitszeit</span>
-            <span class="bot-roi-res-val" id="roi-res-hours">1.440 Std. / Jahr</span>
+            <span class="bot-roi-res-lbl" style="font-family:monospace;">[TIME_WASTED_YEARLY]</span>
+            <span class="bot-roi-res-val" id="roi-res-hours" style="font-family:monospace;font-size:0.9rem;">1.440 HRS</span>
           </div>
           <div class="bot-roi-res-item bot-roi-res-item--highlight">
-            <span class="bot-roi-res-lbl">Jährlicher Netto-Gewinn</span>
-            <span class="bot-roi-res-val" id="roi-res-money">93.600 €</span>
+            <span class="bot-roi-res-lbl" style="font-family:monospace;">[NET_CAPITAL_RECOVERED]</span>
+            <span class="bot-roi-res-val" id="roi-res-money" style="font-family:monospace;color:#00FF66;text-shadow:0 0 10px rgba(0,255,102,0.4);">93.600 €</span>
           </div>
         </div>
 
-        <div class="bot-roi-amort">
-          ⏱️ <span>Typische Amortisationszeit deiner Investition: <strong id="roi-res-days" style="color:#00FF66;">ca. 9 Tage</strong></span>
+        <div class="bot-roi-amort" style="font-family:monospace;background:rgba(0,255,102,0.06);border:1px solid rgba(0,255,102,0.3);">
+          ⚡ <span>AMORTISATIONS_SPEED: <strong id="roi-res-days" style="color:#00FF66;">CA. 9 TAGE</strong></span>
         </div>
 
-        <button class="btn btn--primary btn--sm bot-roi-cta" id="roi-cta-btn" style="width:100%;margin-top:12px;justify-content:center;">
-          Kostenloses Prozess-Audit vereinbaren →
+        <button class="btn btn--primary btn--sm bot-roi-cta" id="roi-cta-btn" style="width:100%;margin-top:12px;justify-content:center;font-family:monospace;letter-spacing:1px;">
+          [ INITIATE SYSTEM AUDIT ➔ ]
         </button>
       </div>
     `;
@@ -351,17 +351,17 @@ export function initChatbot() {
       const hours = parseInt(hoursSlider.value, 10);
       const rate = parseInt(rateSlider.value, 10);
 
-      teamVal.textContent = `${team} ${team === 1 ? 'Person' : 'Personen'}`;
-      hoursVal.textContent = `${hours} Std. / Person`;
-      rateVal.textContent = `${rate} € / Std.`;
+      teamVal.textContent = `${team} ${team === 1 ? 'OPERATOR' : 'OPERATORS'}`;
+      hoursVal.textContent = `${hours} HRS / WEEK`;
+      rateVal.textContent = `${rate} € / HR`;
 
       const savedHoursYear = Math.round(team * hours * 48 * 0.75);
       const savedMoneyYear = Math.round(savedHoursYear * rate);
       const amortDays = Math.max(3, Math.round((2500 / (savedMoneyYear / 365))));
 
-      resHours.textContent = `${savedHoursYear.toLocaleString('de-DE')} Std. / Jahr`;
+      resHours.textContent = `${savedHoursYear.toLocaleString('de-DE')} HRS`;
       resMoney.textContent = `${savedMoneyYear.toLocaleString('de-DE')} €`;
-      resDays.textContent = `ca. ${amortDays} Tage`;
+      resDays.textContent = `CA. ${amortDays} TAGE`;
     }
 
     teamSlider.addEventListener('input', updateCalculations);
@@ -391,58 +391,61 @@ export function initChatbot() {
     const container = document.createElement('div');
     container.className = 'bot-msg bot-msg--bot bot-msg--custom';
     container.innerHTML = `
-      <div class="bot-bubble bot-card-blueprint">
+      <div class="bot-bubble bot-card-blueprint bot-card-blueprint--ibm">
         <div class="bot-bp-header">
-          <div class="bot-bp-tag">⚙️ LIVE n8n WORKFLOW CANVAS</div>
-          <span class="bot-bp-status"><span class="bp-dot"></span> Active Engine</span>
+          <div class="bot-bp-tag">[SYS_BLUEPRINT // N8N_ENGINE_MAP]</div>
+          <span class="bot-bp-status"><span class="bp-dot"></span> LIVE REALTIME</span>
         </div>
-        <div class="bot-bp-title">Multi-Channel Lead Triage & CRM Sync</div>
+        <div class="bot-bp-title" style="font-family:monospace;font-size:0.82rem;color:#AAA;margin-bottom:12px;">MULTI-CHANNEL LEAD TRIAGE & CRM SYNC</div>
         
-        <div class="bot-n8n-canvas">
+        <div class="bot-n8n-canvas" style="position:relative;overflow:hidden;">
           <div class="n8n-col">
-            <div class="n8n-node n8n-node--trigger">
+            <div class="n8n-node n8n-node--trigger" style="border-color:#FF8800;background:rgba(255,136,0,0.1);">
               <span class="n8n-icon">⚡</span>
               <div class="n8n-info">
-                <strong>Webhook</strong>
-                <small>Form / E-Mail Entry</small>
+                <strong style="font-family:monospace;font-size:0.7rem;">INBOUND_SIGNAL</strong>
+                <small style="font-family:monospace;color:#FFAA44;">Webhook / WhatsApp</small>
               </div>
             </div>
           </div>
 
-          <div class="n8n-wire"><span>▶</span></div>
+          <div class="n8n-wire"><span class="n8n-pulse-dot"></span>▶</div>
 
           <div class="n8n-col">
-            <div class="n8n-node n8n-node--ai">
-              <span class="n8n-icon">🤖</span>
+            <div class="n8n-node n8n-node--ai" style="border-color:#FF0000;background:rgba(255,0,0,0.15);">
+              <span class="n8n-icon">🧠</span>
               <div class="n8n-info">
-                <strong>Gemini 2.5 Flash</strong>
-                <small>Intent & Sentiment</small>
+                <strong style="font-family:monospace;font-size:0.7rem;">GEMINI 3.5 LLM</strong>
+                <small style="font-family:monospace;color:#FF6666;">Intent & Sentiment</small>
               </div>
             </div>
           </div>
 
-          <div class="n8n-wire"><span>▶</span></div>
+          <div class="n8n-wire"><span class="n8n-pulse-dot"></span>▶</div>
 
           <div class="n8n-col n8n-col--multi">
-            <div class="n8n-node n8n-node--crm">
+            <div class="n8n-node n8n-node--crm" style="border-color:#0099FF;background:rgba(0,153,255,0.1);">
               <span class="n8n-icon">💼</span>
               <div class="n8n-info">
-                <strong>HubSpot CRM</strong>
-                <small>Auto Lead Create</small>
+                <strong style="font-family:monospace;font-size:0.68rem;">HUBSPOT / SEVDESK</strong>
+                <small style="font-family:monospace;color:#66C2FF;">Auto CRM Write</small>
               </div>
             </div>
-            <div class="n8n-node n8n-node--slack">
+            <div class="n8n-node n8n-node--slack" style="border-color:#00FF66;background:rgba(0,255,102,0.1);">
               <span class="n8n-icon">💬</span>
               <div class="n8n-info">
-                <strong>Slack Alert</strong>
-                <small>CEO Priority Channel</small>
+                <strong style="font-family:monospace;font-size:0.68rem;">HIGH-PRIO ALERT</strong>
+                <small style="font-family:monospace;color:#66FF99;">Slack / Telegram</small>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="bot-bp-footer">
-          <span>⚡ Durchlaufzeit: &lt; 850ms &bull; 0% Datenverlust</span>
+        <!-- Monospace Live System Diagnostics Ticker -->
+        <div class="bot-bp-ticker" style="font-family:monospace;font-size:0.65rem;color:#71717A;background:rgba(8,8,12,0.9);padding:8px 12px;border-radius:6px;border:1px solid rgba(255,255,255,0.06);margin-top:8px;line-height:1.4;">
+          <div style="color:#00FF66;">&gt; [14:55:01] SYS_OK: Webhook payload parsed (&lt;18ms)</div>
+          <div style="color:#FF4D4D;">&gt; [14:55:02] GEMINI_3.5_ANALYSIS: Intent = High-Ticket B2B Lead</div>
+          <div style="color:#A1A1AA;">&gt; [14:55:02] CRM_WRITE: Contact created #8492 &middot; SLACK_ALERT: Sent</div>
         </div>
       </div>
     `;
