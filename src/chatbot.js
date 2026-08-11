@@ -473,7 +473,7 @@ export function initChatbot() {
         (q.includes('preis') || q.includes('kosten') || q.includes('teuer') || q.includes('geld') || q.includes('budget') || q.includes('wie viel') || q.includes('was kostet'))) {
       return {
         type: 'text',
-        text: `🎬 **KI-Content & Video-Unterstützung:**\n\nBei Content setzen wir auf pragmatische Lösungen statt überteuerter API-Pipelines:\n- **Format:** KI-gestützte Skripte, Hooks, Video-Ideen & Vorlagen für Shorts/Reels.\n- **Transparente Preise:** Vorlagen & Erstellung kalkulieren wir als fairen Festpreis nach einer 15-Min. Prozessanalyse.`
+        text: `🎬 **KI-Content Studio & Video-Erstellung (Haupt-Kernstärke):**\n\nBei Kimpress setzen wir auf pragmatische, bezahlbare Lösungen statt überteuerter API-Pipelines:\n- **Formate:** Short-Form Videos (TikTok, Reels, Shorts), KI-Skripte, Hooks & Ad-Visuals.\n- **Festpreise:** Transparente Angebote nach einer kurzen 15-Min. Prozessanalyse.`
       };
     }
 
@@ -482,7 +482,7 @@ export function initChatbot() {
         (q.includes('preis') || q.includes('kosten') || q.includes('teuer') || q.includes('geld') || q.includes('budget') || q.includes('wie viel') || q.includes('was kostet'))) {
       return {
         type: 'text',
-        text: `⚙️ **n8n Workflow- & Bot-Automatisierung:**\n\n- **Schlüsselfertige Systeme:** WhatsApp-Info-Bots, Postfach-Triage & Tool-Anbindungen (CRM, Mail, SevDesk, Supabase).\n- **Festpreis-Garantie:** Nach einer 15-minütigen Prozessanalyse erhältst du einen festen Fahrplan ohne unvorhergesehene Nebenkosten (inkl. 30 Tage Support & Übergabe).`
+        text: `⚙️ **n8n Workflow- & API-Automatisierung:**\n\n- **Maßgeschneiderte Systeme:** Individuelle Tool-Anbindungen (CRM, Mail, SevDesk, Supabase, APIs) für deine Prozesse.\n- **Festpreis-Garantie:** Nach einer 15-minütigen Prozessanalyse erhältst du einen festen Fahrplan ohne unvorhergesehene Nebenkosten (inkl. 30 Tage Support & Übergabe).`
       };
     }
 
@@ -490,23 +490,23 @@ export function initChatbot() {
     if (q.includes('preis') || q.includes('kosten') || q.includes('pauschale') || q.includes('budget') || q.includes('stundensatz') || q.includes('geld') || q.includes('teuer') || q.includes('wie viel') || q.includes('was kostet')) {
       return {
         type: 'text',
-        text: `💰 **100% Transparente Festpreise ohne Stundensatz-Mogelei:**\n\nJedes KI- & Workflow-Projekt kalkulieren wir nach einer gemeinsamen Prozessanalyse als verbindliches Pauschalangebot.\n\n- **Kein Stundensatz-Versteckspiel:** Du kennst die Investition auf den Cent genau vor der ersten Zeile Code.\n- **0 € Nebenkosten:** Schlüsselfertiges Setup inklusive 30 Tage Support & Übergabe.\n\nWorüber möchtest du Genaueres erfahren? (z.B. WhatsApp-Bots, n8n-Workflows oder E-Mail-Triage)?`
+        text: `💰 **100% Transparente Festpreise ohne Stundensatz-Mogelei:**\n\nJedes KI- & Workflow-Projekt kalkulieren wir nach einer gemeinsamen Prozessanalyse als verbindliches Pauschalangebot.\n\n- **Kein Stundensatz-Versteckspiel:** Du kennst die Investition auf den Cent genau vor der ersten Zeile Code.\n- **0 € Nebenkosten:** Schlüsselfertiges Setup inklusive 30 Tage Support & Übergabe.\n\nWorüber möchtest du Genaueres erfahren? (z.B. KI-Content, Short-Form Videos oder n8n-Workflows)?`
       };
     }
 
-    // 4. Dedicated Content Info
+    // 4. Dedicated Content Studio Info
     if (q.includes('content') || q.includes('video') || q.includes('reels') || q.includes('tiktok') || q.includes('shorts') || q.includes('skript')) {
       return {
         type: 'text',
-        text: `📽️ **KI-Content & Skripte:**\n\nWir unterstützen dich pragmatisch mit KI-Skripten, Hooks & Video-Vorlagen für Social Media – schlank, bezahlbar und ohne teure, überdimensionierte API-Pipelines.`
+        text: `📽️ **KI-Content Studio (Haupt-Kernstärke):**\n\nWir produzieren conversion-starke KI-Skripte, Hooks, Visuals und Short-Form Videos (Reels, TikToks, Shorts) – pragmatisch, schnell und ohne überdimensionierte API-Kosten.`
       };
     }
 
-    // 5. Dedicated n8n Workflow & WhatsApp Bot Info
-    if (q.includes('n8n') || q.includes('make') || q.includes('workflow') || q.includes('automatisierung') || q.includes('backend') || q.includes('bot') || q.includes('whatsapp')) {
+    // 5. Dedicated n8n Workflow & API Info
+    if (q.includes('n8n') || q.includes('make') || q.includes('workflow') || q.includes('automatisierung') || q.includes('backend') || q.includes('bot') || q.includes('whatsapp') || q.includes('api')) {
       return {
         type: 'text',
-        text: `💬 **WhatsApp-Bots & n8n Workflows (Kernkompetenz):**\n\nWir bauen n8n-basierte KI-Info-Bots, die 24/7 Kundenfragen zu deinen Produkten, Preisen & FAQs auf WhatsApp oder deiner Website beantworten. Zudem automatisieren wir E-Mail-Triage und CRM-Datenfluss.`
+        text: `⚙️ **n8n Workflow- & API-Automatisierung:**\n\nWir verbinden deine bestehenden Tools (CRM, Mail, SevDesk, Slack, Supabase) über n8n, um manuelle Datenübertragung, E-Mail-Triage und Routinearbeiten komplett zu eliminieren.`
       };
     }
 
