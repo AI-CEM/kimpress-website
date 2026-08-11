@@ -464,63 +464,105 @@ export function initChatbot() {
     return null;
   }
 
-  // --- ENRICHED COMPREHENSIVE KNOWLEDGE BASE ---
+  // --- ENRICHED FINE-GRAINED KNOWLEDGE BASE & SMART ROUTER ---
   function generateAIResponse(query) {
     const q = query.toLowerCase();
 
-    // 1. Preise & Kosten
-    if (q.includes('preis') || q.includes('kosten') || q.includes('budget') || q.includes('pauschale') || q.includes('angebot') || q.includes('paket') || q.includes('geld') || q.includes('stundensatz')) {
+    // 1. Specific Content / Video Pricing & Costs
+    if ((q.includes('video') || q.includes('content') || q.includes('reels') || q.includes('tiktok') || q.includes('shorts') || q.includes('10s') || q.includes('skript')) && 
+        (q.includes('preis') || q.includes('kosten') || q.includes('teuer') || q.includes('geld') || q.includes('budget') || q.includes('wie viel') || q.includes('was kostet'))) {
       return {
         type: 'text',
-        text: `**100% Transparente Festpreise ohne Stundensatz-Mogelei:**\n\nJede KI- & n8n-Workflow-Automatisierung kalkulieren wir nach einer gemeinsamen Prozessanalyse als verbindliches Pauschalangebot.\n\n- **Kein Stundensatz-Versteckspiel:** Du kennst die Investition auf den Cent genau vor der ersten Zeile Code.\n- **0 € Nebenkosten:** Schlüsselfertiges Setup inklusive 30 Tage Support & Übergabe.\n- **Maximale Flexibilität:** Keine starren Knebelverträge.`
+        text: `🎬 **KI-Content Studio & Video-Produktion:**\n\n- **Formate:** High-Converting Short-Form Videos (9:16 für TikTok, Reels, Shorts), Ad-Visuals & Skripte.\n- **Kosten & Pakete:** Die Preisgestaltung richtet sich nach dem monatlichen Content-Volumen (z. B. einzelne Test-Videos vs. vollautomatisierte 12-Video-Monatspipelines inkl. n8n-Publishing-Automation).\n\nJedes Content-Projekt kalkulieren wir als verbindlichen Festpreis nach einer kurzen 15-Min. Prozessanalyse.`
       };
     }
 
-    // 2. Authentischer Text über Cem Görül (Behind-the-Scenes)
-    if (q.includes('cem') || q.includes('wer') || q.includes('inhaber') || q.includes('gründer') || q.includes('über') || q.includes('team') || q.includes('operator')) {
+    // 2. Specific Workflow / n8n / Process Pricing & Costs
+    if ((q.includes('n8n') || q.includes('workflow') || q.includes('automatisierung') || q.includes('bot') || q.includes('system') || q.includes('backend')) && 
+        (q.includes('preis') || q.includes('kosten') || q.includes('teuer') || q.includes('geld') || q.includes('budget') || q.includes('wie viel') || q.includes('was kostet'))) {
       return {
         type: 'text',
-        text: `**Operator Identity — Cem Görül:**\n\nCem Görül baut seit über 15 Jahren digitale Backend-Systeme. Als der Hype um KI losging, gründete er Kimpress als pragmatische Gegenbewegung:\n\n⚡ **1 Operator, maximale Backend-Power.** Du sprichst ohne Agentur-Wasserkopf direkt mit dem Entwickler, der deine n8n-Workflows und KI-Systeme persönlich baut und absichert.`
+        text: `⚙️ **n8n Workflow- & Backend-Automatisierung:**\n\n- **Schlüsselfertige Systeme:** Anbindung deiner Software (CRM, Mail, SevDesk, Supabase, APIs) an n8n & KI-Modelle.\n- **Festpreis-Garantie:** Nach einer 15-minütigen Prozessanalyse erhältst du einen festen Projekt-Fahrplan ohne unvorhergesehene Nebenkosten (inkl. 30 Tage Support & Übergabe).`
       };
     }
 
-    // 3. Services Deep Dive
-    if (q.includes('service') || q.includes('leistung') || q.includes('content') || q.includes('video') || q.includes('website') || q.includes('seo') || q.includes('geo')) {
+    // 3. General Pricing / Festpreis Intent
+    if (q.includes('preis') || q.includes('kosten') || q.includes('pauschale') || q.includes('budget') || q.includes('stundensatz') || q.includes('geld') || q.includes('teuer') || q.includes('wie viel') || q.includes('was kostet')) {
       return {
         type: 'text',
-        text: `**Unsere Kern-Systeme & Infrastruktur:**\n\n1️⃣ **Prozess-Automatisierung:** n8n & Make Workflows, Lead-Triage & CRM-Sync.\n2️⃣ **Deterministische KI-Assistenten:** Chatbots & RAG-Knowledge-Bots ohne Halluzinationen.\n3️⃣ **GEO & KI-Websites:** Optimierte Sichtbarkeit in Perplexity, ChatGPT & Google AI.\n4️⃣ **KI-Content Studio:** Skalierbare Social-Media-Pipelines & Ad-Visuals.\n5️⃣ **Custom GPTs & Training:** Prompt-Bibliotheken & Mitarbeiter-Schulung.`
+        text: `💰 **100% Transparente Festpreise ohne Stundensatz-Mogelei:**\n\nJedes KI- & Workflow-Projekt kalkulieren wir nach einer gemeinsamen Prozessanalyse als verbindliches Pauschalangebot.\n\n- **Kein Stundensatz-Versteckspiel:** Du kennst die Investition auf den Cent genau vor der ersten Zeile Code.\n- **0 € Nebenkosten:** Schlüsselfertiges Setup inklusive 30 Tage Support & Übergabe.\n\nWorüber möchtest du Genaueres erfahren? (z.B. KI-Content, n8n-Workflows oder KI-Assistenten)?`
       };
     }
 
-    // 4. Ablauf & Prozess
-    if (q.includes('ablauf') || q.includes('prozess') || q.includes('start') || q.includes('schritte') || q.includes('zusammenarbeit') || q.includes('wie läuft')) {
+    // 4. Dedicated Content Studio Info
+    if (q.includes('content') || q.includes('video') || q.includes('reels') || q.includes('tiktok') || q.includes('shorts') || q.includes('skript')) {
       return {
         type: 'text',
-        text: `**So läuft die Zusammenarbeit ab:**\n\n1️⃣ **Kostenlose Prozessanalyse (15 Min):** Wir identifizieren deine größten Zeitfresser.\n2️⃣ **Festpreis-Blueprint:** Verbindlicher Fahrplan & Systemkarte ohne Nebenkosten.\n3️⃣ **Build & Integration:** Schlüsselfertige n8n/KI-Entwicklung in 3 bis 14 Tagen.\n4️⃣ **Übergabe & 30 Tage Support:** Schulung deines Teams + Hypercare-Nachbetreuung.`
+        text: `📽️ **KI-Content Studio:**\n\nWir produzieren markenkonforme Videos, Visuals und Skripte mit modernsten KI-Modellen (Gemini, Claude, Veo, Midjourney) und binden auf Wunsch eine vollautomatische Publishing-Pipeline (Notion/n8n) an.`
       };
     }
 
-    // 5. Häufige Fragen / FAQ & Objections
-    if (q.includes('faq') || q.includes('frage') || q.includes('verbindung') || q.includes('tools') || q.includes('schnittstelle') || q.includes('api') || q.includes('garantie') || q.includes('tech')) {
+    // 5. Dedicated n8n Workflow Info
+    if (q.includes('n8n') || q.includes('make') || q.includes('workflow') || q.includes('automatisierung') || q.includes('backend') || q.includes('zapier')) {
       return {
         type: 'text',
-        text: `**Häufig gestellte Fragen (FAQ):**\n\n- **Welche Tools werden angebunden?** HubSpot, Salesforce, Outlook/Gmail, Notion, n8n, Make, Slack, WhatsApp, SevDesk, Lexoffice, OpenAI, Gemini, Claude, Supabase.\n- **Brauche ich eigenes Programmierwissen?** Nein! Du erhältst ein schlüsselfertiges System.\n- **Gibt es Support?** Ja, 30 Tage Betreuung und Garantie inklusive.`
+        text: `⚙️ **Prozess-Automatisierung mit n8n & Make:**\n\nWir verbinden deine bestehenden Tools (CRM, Mail, SevDesk, Slack) über n8n, um manuelle Datenübertragung, E-Mail-Triage und Routinearbeiten komplett zu eliminieren.`
       };
     }
 
-    // 6. DSGVO & Sicherheit
-    if (q.includes('dsgvo') || q.includes('datenschutz') || q.includes('sicher') || q.includes('cookie') || q.includes('server')) {
+    // 6. Dedicated Website / SEO / GEO Info
+    if (q.includes('website') || q.includes('webseite') || q.includes('seo') || q.includes('geo') || q.includes('perplexity') || q.includes('chatgpt search')) {
       return {
         type: 'text',
-        text: `**Datenschutz & DSGVO:**\n\nKimpress arbeitet nach höchsten Standards:\n- Keine Cookie-Banner notwendig (keine Tracking-Cookies)\n- Fonts & Libraries 100% selbst gehostet (keine Google-Fonts-Falle)\n- Verläufe im \`sessionStorage\` (wird beim Tab-Schließen gelöscht)\n- Einhaltung der EU AI Act Transparenzpflichten (Art. 50).`
+        text: `🌐 **KI-Websites & GEO (Generative Engine Optimization):**\n\nWir entwickeln blitzschnelle, conversion-starke Websites, die gezielt dafür optimiert sind, von KI-Suchmaschinen wie Perplexity, ChatGPT Search und Google AI empfohlen zu werden.`
       };
     }
 
-    // 7. Kontakt
+    // 7. Dedicated Chatbot / Voicebot Info
+    if (q.includes('chatbot') || q.includes('bot') || q.includes('voicebot') || q.includes('whatsapp') || q.includes('assistent') || q.includes('rag')) {
+      return {
+        type: 'text',
+        text: `🤖 **Deterministische KI-Assistenten & Chatbots:**\n\nSmarte WhatsApp- und Web-Assistenten mit Anbindung an deine Firmendatenbanken (RAG). Null Halluzinationen im Kundenkontakt, 24/7 aktiv.`
+      };
+    }
+
+    // 8. Dedicated Operator Cem Profile
+    if (q.includes('cem') || q.includes('wer') || q.includes('inhaber') || q.includes('gründer') || q.includes('über') || q.includes('operator')) {
+      return {
+        type: 'text',
+        text: `👨‍💻 **Operator Identity — Cem Görül:**\n\nCem Görül baut seit über 15 Jahren digitale Backend-Systeme. Als der Hype um KI losging, gründete er Kimpress als pragmatische Gegenbewegung:\n\n⚡ **1 Operator, maximale Backend-Power.** Du sprichst direkt mit dem Entwickler, der deine n8n-Workflows und KI-Systeme persönlich baut und absichert.`
+      };
+    }
+
+    // 9. Dedicated Ablauf / Prozess Info
+    if (q.includes('ablauf') || q.includes('prozess') || q.includes('schritte') || q.includes('wie läuft') || q.includes('zusammenarbeit') || q.includes('start')) {
+      return {
+        type: 'text',
+        text: `🤝 **So läuft die Zusammenarbeit ab:**\n\n1️⃣ **Kostenlose Prozessanalyse (15 Min):** Engpässe identifizieren.\n2️⃣ **Festpreis-Blueprint:** Verbindlicher Fahrplan & Systemkarte.\n3️⃣ **Build & Integration:** Schlüsselfertiger Bau in 3 bis 14 Tagen.\n4️⃣ **Übergabe & 30 Tage Support:** Schulung & Nachbetreuung.`
+      };
+    }
+
+    // 10. Dedicated Tech Stack & Tools Info
+    if (q.includes('tools') || q.includes('schnittstelle') || q.includes('api') || q.includes('hubspot') || q.includes('salesforce') || q.includes('sevdesk') || q.includes('lexoffice') || q.includes('tech')) {
+      return {
+        type: 'text',
+        text: `🔌 **Schnittstellen & Tech-Stack:**\n\nWir binden nahezu jedes moderne Tool über API/n8n an: HubSpot, Salesforce, Outlook, Gmail, Notion, Slack, WhatsApp, SevDesk, Lexoffice, Supabase, OpenAI, Gemini & Claude.`
+      };
+    }
+
+    // 11. Dedicated DSGVO Info
+    if (q.includes('dsgvo') || q.includes('datenschutz') || q.includes('sicherheit') || q.includes('cookie')) {
+      return {
+        type: 'text',
+        text: `🛡️ **Datenschutz & DSGVO:**\n\nKimpress arbeitet nach höchsten Standards:\n- Keine Tracking-Cookies\n- Fonts & Libraries 100% selbst gehostet\n- Verläufe im sessionStorage (Tab-Schließung löscht Daten)\n- Einhaltung der EU AI Act Transparenzpflichten (Art. 50).`
+      };
+    }
+
+    // 12. Dedicated Contact Info
     if (q.includes('kontakt') || q.includes('termin') || q.includes('anfrage') || q.includes('mail') || q.includes('telefon') || q.includes('buchen')) {
       return {
         type: 'text',
-        text: `Du erreichst Cem Görül direkt:\n\n📧 **E-Mail:** hallo@kimpress.de\n📞 **Telefon:** +49 1575 7221636\n📍 **Standort:** Hamburg\n\nNutze unser Kontaktformular auf der Seite für eine direkte Anfrage.`
+        text: `📞 **Direkter Kontakt:**\n\n📧 E-Mail: hallo@kimpress.de\n📞 Telefon: +49 1575 7221636\n📍 Standort: Hamburg\n\nKlicke im Menü oder unten auf "Jetzt anfragen" für ein Erstgespräch.`
       };
     }
 
