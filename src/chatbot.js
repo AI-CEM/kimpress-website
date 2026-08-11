@@ -132,7 +132,7 @@ export function initChatbot() {
     }
 
     appendBotBubble(
-      `⚡ **Moin! Ich bin der Kimpress KI-Operator.**\n\nIch liefere dir direkte Antworten zu KI-Automatisierung, n8n Workflows, Festpreisen und wie wir manuelle Routinearbeit in deinem Betrieb eliminieren.\n\nWorüber sprechen wir?`,
+      `⚡ **SYSTEM_STATUS: OPERATOR_ONLINE // HAMBURG**\n\n**Willkommen im Backend von Kimpress.**\n\nWährend die meisten Unternehmen wertvolle Arbeitszeit in manuellen Routinen verbrennen oder von überteuerten Agenturen ausgebremst werden, bauen wir schlüsselfertige **n8n KI-Workflows & Content-Pipelines**, die deinen Betrieb rund um die Uhr entlasten.\n\n- **[01] ROI-SIMULATOR:** Berechne deinen exakten Zeit- & Kapital-Gewinn.\n- **[02] SYSTEM-BLUEPRINT:** Sieh dir unsere n8n Workflow-Architektur an.\n- **[03] FESTPREISE:** Verbindliche Pauschalangebote ohne Stundensatz-Mogelei.\n\n**Wo liegt aktuell der größte Engpass in deinem Business?**`,
       true,
       false
     );
@@ -688,7 +688,7 @@ function createBotDOM() {
     <!-- Floating Trigger with Cem Avatar Face -->
     <div id="bot-hint-pill" class="bot-hint-pill" aria-live="polite">
       <span class="bot-hint-dot"></span>
-      <span class="bot-hint-text">Moin! Frag den KI-Operator...</span>
+      <span class="bot-hint-text">⚡ SYSTEM_OPERATOR: Wie viel Zeit verliert dein Team pro Woche? [ROI-Check]</span>
     </div>
 
     <button id="bot-trigger" class="bot-trigger" aria-label="KI-Operator öffnen">
