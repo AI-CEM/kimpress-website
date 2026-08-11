@@ -132,7 +132,7 @@ export function initChatbot() {
     }
 
     appendBotBubble(
-      `⚡ **SYSTEM_STATUS: OPERATOR_ONLINE // HAMBURG**\n\n**Willkommen im Backend von Kimpress.**\n\nWährend die meisten Unternehmen wertvolle Arbeitszeit in manuellen Routinen verbrennen oder von überteuerten Agenturen ausgebremst werden, bauen wir schlüsselfertige **n8n KI-Workflows & Content-Pipelines**, die deinen Betrieb rund um die Uhr entlasten.\n\n- **[01] ROI-SIMULATOR:** Berechne deinen exakten Zeit- & Kapital-Gewinn.\n- **[02] SYSTEM-BLUEPRINT:** Sieh dir unsere n8n Workflow-Architektur an.\n- **[03] FESTPREISE:** Verbindliche Pauschalangebote ohne Stundensatz-Mogelei.\n\n**Wo liegt aktuell der größte Engpass in deinem Business?**`,
+      `**[SYS_ONLINE // OPERATOR_ENGINE]**\n\n**Willkommen im Backend von Kimpress.**\n\nWährend die meisten Unternehmen wertvolle Arbeitszeit in manuellen Routinen verbrennen, bauen wir schlüsselfertige **n8n KI-Workflows & Content-Pipelines**, die deinen Betrieb rund um die Uhr entlasten.\n\n- **[01] ROI-SIMULATOR:** Berechne deinen exakten Zeit- & Kapital-Gewinn.\n- **[02] SYSTEM-BLUEPRINT:** Sieh dir unsere n8n Workflow-Architektur an.\n- **[03] FESTPREISE:** Verbindliche Pauschalangebote ohne Stundensatz-Mogelei.\n\n**Wo liegt aktuell der größte Engpass in deinem Business?**`,
       true,
       false
     );
@@ -157,11 +157,13 @@ export function initChatbot() {
       removeTypingIndicator();
       if (intentResult.type === 'roi') {
         renderROICalculator();
+      } else if (intentResult.type === 'appointment') {
+        renderAppointmentCard(userText);
       } else if (intentResult.type === 'blueprint') {
         appendBotBubble(intentResult.text, true, true);
         renderBlueprintCard();
       }
-      saveMessage('bot', intentResult.text || 'ROI Rechner gestartet.');
+      saveMessage('bot', intentResult.text || 'Aktion gestartet.');
       return;
     }
 
@@ -175,26 +177,102 @@ export function initChatbot() {
         });
         if (res.ok) {
           const data = await res.json();
-          const reply = data.output || data.message || data.text;
-          if (reply) {
+          const replyText = data.output || data.message || data.text;
+          if (replyText) {
             removeTypingIndicator();
-            appendBotBubble(reply, true, true);
-            saveMessage('bot', reply);
+            appendBotBubble(replyText, true, true);
+            saveMessage('bot', replyText);
             return;
           }
         }
       } catch (err) {
-        console.warn('n8n Webhook connection failed, using local AI engine fallback.', err);
+        console.warn('n8n Webhook connection fallback to local intelligence:', err);
       }
     }
 
-    // Fallback: Local Knowledge Engine
-    setTimeout(() => {
-      const response = generateAIResponse(userText);
-      removeTypingIndicator();
-      appendBotBubble(response.text, true, true);
-      saveMessage('bot', response.text);
-    }, 400 + Math.random() * 300);
+    // Fallback Local Knowledge Base
+    const fallbackResponse = generateAIResponse(userText);
+    removeTypingIndicator();
+    if (fallbackResponse.type === 'roi') {
+      renderROICalculator();
+    } else if (fallbackResponse.type === 'blueprint') {
+      appendBotBubble(fallbackResponse.text, true, true);
+      renderBlueprintCard();
+    } else {
+      appendBotBubble(fallbackResponse.text, true, true);
+    }
+    saveMessage('bot', fallbackResponse.text || 'Antwort gesendet.');
+  }
+
+  function checkSpecialIntents(query) {
+    const q = query.toLowerCase();
+    if (q.includes('roi') || q.includes('rechner') || q.includes('lohnt') || q.includes('ersparnis') || q.includes('rechnen') || q.includes('gewinn')) {
+      return { type: 'roi' };
+    }
+    if (q.includes('morgen') || q.includes('heute') || q.includes('uhr') || q.includes('termin') || q.includes('buchen') || q.includes('call') || q.includes('erstgespräch') || q.includes('treffen') || q.includes('kalender') || q.includes('gespräch')) {
+      return { type: 'appointment' };
+    }
+    if (q.includes('n8n') || q.includes('make') || q.includes('workflow') || q.includes('automatisierung') || q.includes('prozess') || q.includes('zapier')) {
+      return {
+        type: 'blueprint',
+        text: `[SYS_ARCHITECTURE // N8N_ENGINE]\n\nHier ist der reale n8n Canvas-Blueprint für deinen automatisierten Backend-Workflow:`
+      };
+    }
+    return null;
+  }
+
+  function renderAppointmentCard(timeQuery) {
+    removeTypingIndicator();
+    const container = document.createElement('div');
+    container.className = 'bot-msg bot-msg--bot bot-msg--custom';
+    
+    container.innerHTML = `
+      <div class="bot-bubble bot-card-blueprint bot-card-roi--ibm" style="border-color:#00FF66;box-shadow:0 0 25px rgba(0,255,102,0.15);">
+        <div class="bot-bp-header">
+          <span class="bot-bp-tag" style="color:#00FF66;">[SYS_APPOINTMENT // TERMIN_ANFRAGE]</span>
+        </div>
+        <div style="font-family:monospace;font-size:0.82rem;color:#FFF;margin-bottom:8px;">15-MINUTEN PROZESSANALYSE MIT CEM GÖRÜL</div>
+        <p style="font-family:monospace;font-size:0.72rem;color:#AAA;margin-bottom:10px;line-height:1.4;">
+          Dein Wunschtermin wird direkt an Cems Postfach (hallo@kimpress.de) übertragen:
+        </p>
+
+        <form id="bot-appt-form" action="https://formspree.io/f/xvgaapqn" method="POST" style="display:flex;flex-direction:column;gap:8px;">
+          <input type="text" name="Wunschtermin" value="${escapeHTML(timeQuery)}" required class="bot-input" style="font-family:monospace;font-size:0.75rem;background:rgba(0,0,0,0.5);border:1px solid rgba(0,255,102,0.4);color:#00FF66;padding:8px 10px;border-radius:4px;" />
+          <input type="email" name="Email" placeholder="Deine E-Mail-Adresse für den Call-Link..." required class="bot-input" style="font-family:monospace;font-size:0.75rem;background:rgba(0,0,0,0.5);border:1px solid rgba(255,255,255,0.15);color:#FFF;padding:8px 10px;border-radius:4px;" />
+          <input type="hidden" name="_subject" value="🚨 Neue Terminanfrage via KI-Operator Chatbot" />
+          <button type="submit" class="btn btn--primary btn--sm" style="width:100%;font-family:monospace;justify-content:center;letter-spacing:1px;font-size:0.75rem;margin-top:4px;">
+            [ ➔ TERMIN JETZT ABSENDEN ]
+          </button>
+        </form>
+
+        <div id="bot-appt-status" style="display:none;font-family:monospace;font-size:0.72rem;color:#00FF66;margin-top:8px;">
+          ✓ Terminanfrage gesendet! Cem meldet sich in Kürze per E-Mail.
+        </div>
+      </div>
+    `;
+    messagesContainer.appendChild(container);
+    scrollToBottom();
+
+    const apptForm = container.querySelector('#bot-appt-form');
+    const statusMsg = container.querySelector('#bot-appt-status');
+    if (apptForm) {
+      apptForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const formData = new FormData(apptForm);
+        try {
+          await fetch('https://formspree.io/f/xvgaapqn', {
+            method: 'POST',
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+          });
+          apptForm.style.display = 'none';
+          statusMsg.style.display = 'block';
+        } catch (err) {
+          apptForm.style.display = 'none';
+          statusMsg.style.display = 'block';
+        }
+      });
+    }
   }
 
   function appendUserBubble(text, save = true) {
@@ -458,121 +536,136 @@ export function initChatbot() {
     if (q.includes('roi') || q.includes('rechner') || q.includes('lohnt') || q.includes('ersparnis') || q.includes('rechnen') || q.includes('gewinn')) {
       return { type: 'roi' };
     }
+    if (q.includes('morgen') || q.includes('heute') || q.includes('uhr') || q.includes('termin') || q.includes('buchen') || q.includes('call') || q.includes('erstgespräch') || q.includes('treffen') || q.includes('kalender') || q.includes('gespräch')) {
+      return { type: 'appointment' };
+    }
     if (q.includes('n8n') || q.includes('make') || q.includes('workflow') || q.includes('automatisierung') || q.includes('prozess') || q.includes('zapier')) {
       return {
         type: 'blueprint',
-        text: `**Workflow-Automatisierung mit n8n & Make:**\n\nManuelle Datenübertragung, E-Mail-Verteilung oder Kunden-Onboarding sind Zeitfresser. Wir bauen Backend-Systeme, die deine Tools nahtlos verbinden und KI-Entscheidungen treffen.\n\nHier ist ein realistisches n8n Canvas-Beispiel aus unserer Praxis:`
+        text: `[SYS_ARCHITECTURE // N8N_ENGINE]\n\nHier ist der reale n8n Canvas-Blueprint für deinen automatisierten Backend-Workflow:`
       };
     }
     return null;
   }
 
   // --- ENRICHED FINE-GRAINED KNOWLEDGE BASE & SMART ROUTER ---
-  function generateAIResponse(query) {
-    const q = query.toLowerCase();
-
-    // 1. Specific Content / Video Pricing & Costs
-    if ((q.includes('video') || q.includes('content') || q.includes('reels') || q.includes('tiktok') || q.includes('shorts') || q.includes('10s') || q.includes('skript')) && 
-        (q.includes('preis') || q.includes('kosten') || q.includes('teuer') || q.includes('geld') || q.includes('budget') || q.includes('wie viel') || q.includes('was kostet'))) {
+  function generateAIResponse(q) {
+    // 0. Security Guardrail: Block Out-of-Scope / Trivia questions
+    if (q.includes('wetter') || q.includes('rezept') || q.includes('hausaufgabe') || q.includes('fußball') || q.includes('bundesliga') || q.includes('politik') || q.includes('präsident')) {
       return {
         type: 'text',
-        text: `🎬 **KI-Content Studio & Video-Erstellung (Haupt-Kernstärke):**\n\nBei Kimpress setzen wir auf pragmatische, bezahlbare Lösungen statt überteuerter API-Pipelines:\n- **Formate:** Short-Form Videos (TikTok, Reels, Shorts), KI-Skripte, Hooks & Ad-Visuals.\n- **Festpreise:** Transparente Angebote nach einer kurzen 15-Min. Prozessanalyse.`
+        text: `[SYS_GUARDRAIL // SCOPE_LIMIT]\n\nIch bin als Kimpress KI-Operator ausschließlich auf KI-Automatisierung, n8n Workflows & Content-Systeme von Kimpress spezialisiert.\n\nFür Fragen außerhalb unserer Systeme wende dich bitte an hallo@kimpress.de.\n\nWorüber möchtest du sprechen (z.B. [01] ROI-Rechner, [02] n8n Workflows oder [03] Festpreise)?`
+      };
+    }
+    // 1. E-Mail Triage & Inbox Automation
+    if (q.includes('mail') || q.includes('postfach') || q.includes('inbox') || q.includes('sortieren') || q.includes('nachricht') || q.includes('outlook') || q.includes('gmail')) {
+      return {
+        type: 'text',
+        text: `[SYS_DIAGNOSTIC // TRIAGE_PARSER]\n\nAnalyse: Manuelle E-Mail-Sortierung ist der größte lautlose Zeitfresser im Tagesgeschäft. Typischer Verlust: 10–18 Std./Woche pro Team.\n\nUnsere n8n System-Architektur löst das deterministisch:\n\n1. **[INBOUND]** Mail-Gateway empfängt E-Mails (Outlook / Gmail / IMAP).\n2. **[PARSE_LLM]** Gemini 2.5 Flash analysiert Intent, Dringlichkeit & Lead-Score in < 400ms.\n3. **[AUTOMATED_ACTION]**\n   - High-Ticket Leads -> Auto-Create im CRM (HubSpot/SevDesk) + Instant Alert an Slack/WhatsApp.\n   - Routinen -> Automatische Antwort-Entwürfe oder Auto-Labeling.\n\n**Ergebnis:** 90% weniger Zeit im Postfach, 0 verpasste High-Ticket Anfragen.\n\nWelches Mail-System (Outlook, Gmail oder eigener Server) nutzt ihr aktuell?`
       };
     }
 
-    // 2. Specific Workflow / n8n / Process Pricing & Costs
+    // 2. Specific Content / Video Pricing & Costs
+    if ((q.includes('video') || q.includes('content') || q.includes('reels') || q.includes('tiktok') || q.includes('shorts') || q.includes('skript')) && 
+        (q.includes('preis') || q.includes('kosten') || q.includes('teuer') || q.includes('geld') || q.includes('budget') || q.includes('wie viel') || q.includes('was kostet'))) {
+      return {
+        type: 'text',
+        text: `[FINANCIAL_ENGINE // CONTENT_STUDIO]\n\nWir produzieren conversion-starken KI-Content für Social Media und Performance Ads – pragmatisch, schnell und ohne überdimensionierte Retainer:\n\n- **Formate:** Short-Form Videos (TikTok, Reels, Shorts), KI-Skripte, Hooks & Ad-Visuals.\n- **Transparenz:** Verbindliche Festpreise nach einer kurzen 15-Minuten System-Analyse.\n\nMöchtest du ein konkretes Video-Paket anfragen?`
+      };
+    }
+
+    // 3. Specific Workflow / n8n / Process Pricing & Costs
     if ((q.includes('n8n') || q.includes('workflow') || q.includes('automatisierung') || q.includes('bot') || q.includes('system') || q.includes('backend')) && 
         (q.includes('preis') || q.includes('kosten') || q.includes('teuer') || q.includes('geld') || q.includes('budget') || q.includes('wie viel') || q.includes('was kostet'))) {
       return {
         type: 'text',
-        text: `⚙️ **n8n Workflow- & API-Automatisierung:**\n\n- **Maßgeschneiderte Systeme:** Individuelle Tool-Anbindungen (CRM, Mail, SevDesk, Supabase, APIs) für deine Prozesse.\n- **Festpreis-Garantie:** Nach einer 15-minütigen Prozessanalyse erhältst du einen festen Fahrplan ohne unvorhergesehene Nebenkosten (inkl. 30 Tage Support & Übergabe).`
+        text: `[FINANCIAL_ENGINE // WORKFLOW_PRICING]\n\nJedes Automatisierungsprojekt kalkulieren wir nach einer kurzen Prozessanalyse als verbindliches Pauschalangebot:\n\n- **Festpreis-Garantie:** Du kennst die Investition auf den Cent genau vor der ersten Zeile Code.\n- **0 € Nebenkosten:** Schlüsselfertiges Setup inklusive 30 Tage Betreuung & Team-Schulung.\n\nSollen wir deine Ersparnis im ROI-Rechner simulieren?`
       };
     }
 
-    // 3. General Pricing / Festpreis Intent
+    // 4. General Pricing Intent
     if (q.includes('preis') || q.includes('kosten') || q.includes('pauschale') || q.includes('budget') || q.includes('stundensatz') || q.includes('geld') || q.includes('teuer') || q.includes('wie viel') || q.includes('was kostet')) {
       return {
         type: 'text',
-        text: `💰 **100% Transparente Festpreise ohne Stundensatz-Mogelei:**\n\nJedes KI- & Workflow-Projekt kalkulieren wir nach einer gemeinsamen Prozessanalyse als verbindliches Pauschalangebot.\n\n- **Kein Stundensatz-Versteckspiel:** Du kennst die Investition auf den Cent genau vor der ersten Zeile Code.\n- **0 € Nebenkosten:** Schlüsselfertiges Setup inklusive 30 Tage Support & Übergabe.\n\nWorüber möchtest du Genaueres erfahren? (z.B. KI-Content, Short-Form Videos oder n8n-Workflows)?`
+        text: `[FINANCIAL_ENGINE // PAUSCHALANGEBOTE]\n\nWir arbeiten zu 100% mit transparenten Festpreisen – ohne Stundensatz-Mogelei oder Knebelverträge:\n\n- **Kein Versteckspiel:** Verbindlicher Fahrplan & Preisgarantie vor Projektstart.\n- **Lieferzeit:** Schlüsselfertige Übergabe in 3 bis 14 Tagen.\n\nFür welches System interessierst du dich genau (z.B. E-Mail-Triage, CRM-Sync oder KI-Content)?`
       };
     }
 
-    // 4. Dedicated Content Studio Info
+    // 5. Dedicated Content Studio Info
     if (q.includes('content') || q.includes('video') || q.includes('reels') || q.includes('tiktok') || q.includes('shorts') || q.includes('skript')) {
       return {
         type: 'text',
-        text: `📽️ **KI-Content Studio (Haupt-Kernstärke):**\n\nWir produzieren conversion-starke KI-Skripte, Hooks, Visuals und Short-Form Videos (Reels, TikToks, Shorts) – pragmatisch, schnell und ohne überdimensionierte API-Kosten.`
+        text: `[SYS_MEDIA // CONTENT_PIPELINE]\n\nWir produzieren conversion-starke KI-Skripte, Hooks, Visuals und Short-Form Videos (Reels, TikToks, Shorts) – markenkonform, schnell und plattformoptimiert.`
       };
     }
 
-    // 5. Dedicated n8n Workflow & API Info
-    if (q.includes('n8n') || q.includes('make') || q.includes('workflow') || q.includes('automatisierung') || q.includes('backend') || q.includes('bot') || q.includes('whatsapp') || q.includes('api')) {
+    // 6. Dedicated n8n Workflow & API Info
+    if (q.includes('n8n') || q.includes('make') || q.includes('workflow') || q.includes('automatisierung') || q.includes('backend') || q.includes('zapier')) {
       return {
         type: 'text',
-        text: `⚙️ **n8n Workflow- & API-Automatisierung:**\n\nWir verbinden deine bestehenden Tools (CRM, Mail, SevDesk, Slack, Supabase) über n8n, um manuelle Datenübertragung, E-Mail-Triage und Routinearbeiten komplett zu eliminieren.`
+        text: `[SYS_ARCHITECTURE // WORKFLOW_ENGINE]\n\nWir verbinden deine bestehenden Tools (CRM, Mail, SevDesk, Slack, Supabase) über n8n, um manuelle Datenübertragung, E-Mail-Triage und Routinearbeiten komplett zu eliminieren.`
       };
     }
 
-    // 6. Dedicated Website / SEO / GEO Info
+    // 7. Dedicated Website / SEO / GEO Info
     if (q.includes('website') || q.includes('webseite') || q.includes('seo') || q.includes('geo') || q.includes('perplexity') || q.includes('chatgpt search')) {
       return {
         type: 'text',
-        text: `🌐 **KI-Websites & GEO (Generative Engine Optimization):**\n\nWir entwickeln blitzschnelle, conversion-starke Websites, die gezielt dafür optimiert sind, von KI-Suchmaschinen wie Perplexity, ChatGPT Search und Google AI empfohlen zu werden.`
+        text: `[SYS_WEB // GEO_ENGINE]\n\nWir entwickeln blitzschnelle, conversion-starke Websites, die gezielt dafür optimiert sind, von KI-Suchmaschinen wie Perplexity, ChatGPT Search und Google AI empfohlen zu werden.`
       };
     }
 
-    // 7. Dedicated Chatbot / Voicebot Info
+    // 8. Dedicated Chatbot / Voicebot Info
     if (q.includes('chatbot') || q.includes('bot') || q.includes('voicebot') || q.includes('whatsapp') || q.includes('assistent') || q.includes('rag')) {
       return {
         type: 'text',
-        text: `🤖 **Deterministische KI-Assistenten & Chatbots:**\n\nSmarte WhatsApp- und Web-Assistenten mit Anbindung an deine Firmendatenbanken (RAG). Null Halluzinationen im Kundenkontakt, 24/7 aktiv.`
+        text: `[SYS_BOT // DETERMINISTIC_ASSISTANT]\n\nDeterministische Web- & WhatsApp-Assistenten mit Anbindung an deine Firmendatenbanken (RAG). Null Halluzinationen im Kundenkontakt, 24/7 aktiv.`
       };
     }
 
-    // 8. Dedicated Operator Cem Profile
+    // 9. Dedicated Operator Cem Profile
     if (q.includes('cem') || q.includes('wer') || q.includes('inhaber') || q.includes('gründer') || q.includes('über') || q.includes('operator')) {
       return {
         type: 'text',
-        text: `👨‍💻 **Operator Identity — Cem Görül:**\n\nCem Görül baut seit über 15 Jahren digitale Backend-Systeme. Als der Hype um KI losging, gründete er Kimpress als pragmatische Gegenbewegung:\n\n⚡ **1 Operator, maximale Backend-Power.** Du sprichst direkt mit dem Entwickler, der deine n8n-Workflows und KI-Systeme persönlich baut und absichert.`
+        text: `[OPERATOR_PROFILE // CEM_GOERUL]\n\nCem Görül baut seit über 15 Jahren digitale Backend-Systeme. Kimpress ist die pragmatische Gegenbewegung zu überblähten Agenturen:\n\n- **1 Operator, volle Senior-Entwickler-Power**\n- Direkter Draht zum Architekten – kein Junior-Wasserkopf\n- Systeme laufen schlüsselfertig auf deiner Infrastruktur`
       };
     }
 
-    // 9. Dedicated Ablauf / Prozess Info
+    // 10. Dedicated Ablauf / Prozess Info
     if (q.includes('ablauf') || q.includes('prozess') || q.includes('schritte') || q.includes('wie läuft') || q.includes('zusammenarbeit') || q.includes('start')) {
       return {
         type: 'text',
-        text: `🤝 **So läuft die Zusammenarbeit ab:**\n\n1️⃣ **Kostenlose Prozessanalyse (15 Min):** Engpässe identifizieren.\n2️⃣ **Festpreis-Blueprint:** Verbindlicher Fahrplan & Systemkarte.\n3️⃣ **Build & Integration:** Schlüsselfertiger Bau in 3 bis 14 Tagen.\n4️⃣ **Übergabe & 30 Tage Support:** Schulung & Nachbetreuung.`
+        text: `[SYS_PROCESS // ROADMAP]\n\n1. **Prozessanalyse (15 Min):** Engpässe identifizieren.\n2. **Festpreis-Blueprint:** Verbindlicher Fahrplan & Systemkarte.\n3. **Build & Integration:** Schlüsselfertiger Bau in 3 bis 14 Tagen.\n4. **Übergabe & 30 Tage Support:** Schulung & Nachbetreuung.`
       };
     }
 
-    // 10. Dedicated Tech Stack & Tools Info
+    // 11. Dedicated Tech Stack & Tools Info
     if (q.includes('tools') || q.includes('schnittstelle') || q.includes('api') || q.includes('hubspot') || q.includes('salesforce') || q.includes('sevdesk') || q.includes('lexoffice') || q.includes('tech')) {
       return {
         type: 'text',
-        text: `🔌 **Schnittstellen & Tech-Stack:**\n\nWir binden nahezu jedes moderne Tool über API/n8n an: HubSpot, Salesforce, Outlook, Gmail, Notion, Slack, WhatsApp, SevDesk, Lexoffice, Supabase, OpenAI, Gemini & Claude.`
+        text: `[SYS_INTEGRATION // TECH_STACK]\n\nWir binden nahezu jedes moderne Tool über API/n8n an: HubSpot, Salesforce, Outlook, Gmail, Notion, Slack, WhatsApp, SevDesk, Lexoffice, Supabase, OpenAI, Gemini & Claude.`
       };
     }
 
-    // 11. Dedicated DSGVO Info
+    // 12. Dedicated DSGVO Info
     if (q.includes('dsgvo') || q.includes('datenschutz') || q.includes('sicherheit') || q.includes('cookie')) {
       return {
         type: 'text',
-        text: `🛡️ **Datenschutz & DSGVO:**\n\nKimpress arbeitet nach höchsten Standards:\n- Keine Tracking-Cookies\n- Fonts & Libraries 100% selbst gehostet\n- Verläufe im sessionStorage (Tab-Schließung löscht Daten)\n- Einhaltung der EU AI Act Transparenzpflichten (Art. 50).`
+        text: `[SYS_SECURITY // DSGVO_COMPLIANCE]\n\nKimpress arbeitet nach höchsten Standards:\n- Keine Tracking-Cookies\n- Fonts & Libraries 100% selbst gehostet\n- Verläufe im sessionStorage (Tab-Schließung löscht Daten)\n- Einhaltung der EU AI Act Transparenzpflichten (Art. 50).`
       };
     }
 
-    // 12. Dedicated Contact Info
+    // 13. Contact Info
     if (q.includes('kontakt') || q.includes('termin') || q.includes('anfrage') || q.includes('mail') || q.includes('telefon') || q.includes('buchen')) {
       return {
         type: 'text',
-        text: `📞 **Direkter Kontakt:**\n\n📧 E-Mail: hallo@kimpress.de\n📞 Telefon: +49 1575 7221636\n📍 Standort: Hamburg\n\nKlicke im Menü oder unten auf "Jetzt anfragen" für ein Erstgespräch.`
+        text: `[SYS_CONTACT // DIRECT_LINE]\n\n📧 E-Mail: hallo@kimpress.de\n📞 Telefon: +49 1575 7221636\n📍 Standort: Hamburg\n\nKlicke oben im Menü oder unten auf "Jetzt anfragen" für ein Erstgespräch.`
       };
     }
 
-    // Default Fallback
     return {
       type: 'text',
-      text: `Danke für deine Anfrage! Ich bin Cems **Kimpress KI-Operator**.\n\nFrag mich gerne zu **n8n Workflows**, unseren **Festpreisen**, dem **ROI-Rechner** oder wie **Cem Görül** deine Prozesse automatisiert.`
+      text: `[SYS_OPERATOR // READY]\n\nIch kenne die Architektur aller Kimpress-Systeme (n8n Workflows, E-Mail-Triage, CRM-Sync, KI-Content).\n\nNenne mir deinen aktuellen Engpass (z.B. "Postfach-Triage", "Manuelle Datenübertragung" oder "Festpreise") – und ich zeige dir die exakte Lösung.`
     };
   }
 
