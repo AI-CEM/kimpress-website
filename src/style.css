@@ -5902,3 +5902,122 @@ button.btn {
   text-align: center;
   justify-content: center;
 }
+
+/* ===================================================
+   MATRIX DEEP DIVE VISUAL SHOWCASE MODE STYLES
+   =================================================== */
+
+.showcase-glow-purple {
+  box-shadow: 0 0 40px rgba(168, 85, 247, 0.25), 0 0 80px rgba(168, 85, 247, 0.1);
+  border: 1px solid rgba(168, 85, 247, 0.4);
+}
+
+.showcase-glow-emerald {
+  box-shadow: 0 0 40px rgba(0, 200, 83, 0.25), 0 0 80px rgba(0, 200, 83, 0.1);
+  border: 1px solid rgba(0, 200, 83, 0.4);
+}
+
+.showcase-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+  background: #09090b;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.showcase-card:hover {
+  transform: translateY(-6px) scale(1.015);
+}
+
+.showcase-card:hover .showcase-overlay-bg {
+  opacity: 0.85;
+}
+
+.showcase-card:hover .showcase-play-btn {
+  transform: translate(-50%, -50%) scale(1.1);
+  background: rgba(255, 255, 255, 0.95);
+  color: #000000;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
+}
+
+.showcase-play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(9, 9, 11, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 20;
+}
+
+.showcase-pulse {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid rgba(168, 85, 247, 0.6);
+  animation: showcasePulseRing 2s infinite;
+}
+
+.showcase-pulse-emerald {
+  border-color: rgba(0, 200, 83, 0.6);
+}
+
+@keyframes showcasePulseRing {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+/* Glassmorphism Badge */
+.glass-badge {
+  background: rgba(9, 9, 11, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Lightbox Modal */
+.showcase-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(5, 5, 5, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.showcase-modal.active {
+  display: flex;
+  opacity: 1;
+}
+
+.showcase-modal-content {
+  position: relative;
+  max-width: 900px;
+  width: 100%;
+  background: #09090b;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 1.25rem;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.9);
+}

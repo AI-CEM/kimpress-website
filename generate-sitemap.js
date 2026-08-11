@@ -16,6 +16,8 @@ const generateSitemap = () => {
   // Static pages
   const staticPages = [
     { url: '/', priority: '1.0' },
+    { url: '/n8n-ki-agentur-deutschland.html', priority: '0.9' },
+    { url: '/ki-content-agentur-deutschland.html', priority: '0.9' },
     { url: '/blog.html', priority: '0.8' }
   ];
 

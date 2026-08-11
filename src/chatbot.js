@@ -632,9 +632,34 @@ export function initChatbot() {
 
   function initContextObserver(hintPill) {
     if (!hintPill) return;
-    let timer = setTimeout(() => {
-      if (!hasInteracted) hintPill.classList.add('active');
-    }, 6000);
+    
+    let timer = null;
+    let hasShown = false;
+
+    function showHint() {
+      if (hasShown || hasInteracted || isOpen) return;
+      hasShown = true;
+      hintPill.classList.add('active');
+
+      // Auto-hide after 8 seconds of display if user hasn't interacted
+      setTimeout(() => {
+        if (!hasInteracted && !isOpen) {
+          hintPill.classList.remove('active');
+        }
+      }, 8000);
+    }
+
+    // 1. Psychological Delay Trigger: 7.5 seconds after page load
+    timer = setTimeout(showHint, 7500);
+
+    // 2. Scroll-Depth Trigger: Show if user scrolls down 300px early
+    function onScroll() {
+      if (window.scrollY > 300) {
+        showHint();
+        window.removeEventListener('scroll', onScroll);
+      }
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
   }
 
   function escapeHTML(str) {
@@ -668,7 +693,7 @@ function createBotDOM() {
 
     <button id="bot-trigger" class="bot-trigger" aria-label="KI-Operator öffnen">
       <div class="bot-trigger__avatar-box">
-        <img src="/images/characters/operator-cem.jpg" alt="Cem Görül — Kimpress KI Operator" class="bot-trigger__avatar-img" />
+        <img src="/images/characters/operator-avatar.jpg" alt="Cem Görül — Kimpress KI Operator" class="bot-trigger__avatar-img" />
         <span class="bot-trigger__status-dot"></span>
       </div>
       <span class="bot-trigger__text">KI-Operator</span>
@@ -683,7 +708,7 @@ function createBotDOM() {
       <div class="bot-panel__header">
         <div class="bot-operator-info">
           <div class="bot-avatar bot-avatar--face">
-            <img src="/images/characters/operator-cem.jpg" alt="Cem Görül — Operator Face" class="bot-avatar__face-img" />
+            <img src="/images/characters/operator-avatar.jpg" alt="Cem Görül — Operator Face" class="bot-avatar__face-img" />
             <span class="bot-status-light"></span>
           </div>
           <div>
