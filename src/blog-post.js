@@ -69,7 +69,7 @@ function renderPost(post) {
           <img class="post-author__avatar post-author__avatar--lg" src="/images/characters/portrait-01.png" alt="Cem Görül" style="object-fit: cover;" loading="lazy" />
           <div class="post-authorbox__text">
             <div class="post-authorbox__name">Cem Görül</div>
-            <div class="post-authorbox__bio">KI-Agentur Kimpress · Hamburg. Über 12 Jahre Digital Marketing, heute spezialisiert auf KI-Automatisierung für KMU im DACH-Raum.</div>
+            <div class="post-authorbox__bio">KI-Agentur Kimpress · Hamburg. Über 15 Jahre Erfahrung in Webentwicklung, Marketing &amp; KI-Automatisierung für KMU im DACH-Raum.</div>
             <a href="/#kontakt" class="btn btn--primary" style="margin-top:1rem">Direktkontakt →</a>
           </div>
         </div>
