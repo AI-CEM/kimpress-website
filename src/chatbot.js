@@ -131,11 +131,7 @@ export function initChatbot() {
       }
     }
 
-    appendBotBubble(
-      `**[SYS_ONLINE // OPERATOR_ENGINE]**\n\n**Willkommen im Backend von Kimpress.**\n\nWährend die meisten Unternehmen wertvolle Arbeitszeit in manuellen Routinen verbrennen, bauen wir schlüsselfertige **n8n KI-Workflows & Content-Pipelines**, die deinen Betrieb rund um die Uhr entlasten.\n\n- **[01] ROI-SIMULATOR:** Berechne deinen exakten Zeit- & Kapital-Gewinn.\n- **[02] SYSTEM-BLUEPRINT:** Sieh dir unsere n8n Workflow-Architektur an.\n- **[03] FESTPREISE:** Verbindliche Pauschalangebote ohne Stundensatz-Mogelei.\n\n**Wo liegt aktuell der größte Engpass in deinem Business?**`,
-      true,
-      false
-    );
+    renderWelcomeHeroCard();
   }
 
   function saveMessage(role, text) {
@@ -271,6 +267,104 @@ export function initChatbot() {
           apptForm.style.display = 'none';
           statusMsg.style.display = 'block';
         }
+      });
+    }
+  }
+
+  // --- SCROLLSTOPPER WELCOME HERO CARD ---
+  function renderWelcomeHeroCard() {
+    const container = document.createElement('div');
+    container.className = 'bot-msg bot-msg--bot bot-msg--custom';
+    container.innerHTML = `
+      <div class="bot-card-hero">
+        <div class="bot-hero__badge">
+          <span class="bot-hero__pulse"></span>
+          KIMPRESS // OPERATOR_ENGINE v3.0
+        </div>
+
+        <h3 class="bot-hero__title">
+          Eliminiere manuelle Routinearbeit &amp; skaliere deine Kapazität mit KI.
+        </h3>
+
+        <p class="bot-hero__desc">
+          Keine überteuerten Agenturen, kein Junior-Wasserkopf. Schlüsselfertige n8n-Workflows &amp; KI-Pipelines direkt vom Senior-Operator aus Hamburg.
+        </p>
+
+        <div class="bot-hero__grid">
+          <!-- Option 1: ROI Simulator -->
+          <div class="bot-hero__tile" id="hero-tile-roi" role="button" tabindex="0">
+            <div class="bot-hero__tile-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00FF66" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 20V10M18 20V4M6 20v-4"/>
+              </svg>
+            </div>
+            <div class="bot-hero__tile-content">
+              <span class="bot-hero__tile-tag" style="color:#00FF66;">[01] CAPITAL_RECOVERY</span>
+              <strong>ROI &amp; Ersparnis berechnen</strong>
+              <small>Verlust &amp; Amortisationszeit simulieren ➔</small>
+            </div>
+          </div>
+
+          <!-- Option 2: n8n Workflow Blueprint -->
+          <div class="bot-hero__tile" id="hero-tile-n8n" role="button" tabindex="0">
+            <div class="bot-hero__tile-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FF4D4D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/>
+                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+              </svg>
+            </div>
+            <div class="bot-hero__tile-content">
+              <span class="bot-hero__tile-tag" style="color:#FF4D4D;">[02] BACKEND_ENGINE</span>
+              <strong>n8n Workflow-Blueprint</strong>
+              <small>Realtime Triage &amp; CRM Sync ➔</small>
+            </div>
+          </div>
+
+          <!-- Option 3: Festpreise -->
+          <div class="bot-hero__tile" id="hero-tile-price" role="button" tabindex="0">
+            <div class="bot-hero__tile-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#66C2FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <div class="bot-hero__tile-content">
+              <span class="bot-hero__tile-tag" style="color:#66C2FF;">[03] 100% PAUSCHAL</span>
+              <strong>Transparente Festpreise</strong>
+              <small>0 € Nebenkosten &amp; 30 Tage Support ➔</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="bot-hero__footer">
+          <span>Oder nenne direkt deinen größten Engpass im Chat:</span>
+        </div>
+      </div>
+    `;
+    messagesContainer.appendChild(container);
+    scrollToBottom();
+
+    // Tile Click Handlers
+    const roiTile = container.querySelector('#hero-tile-roi');
+    if (roiTile) {
+      roiTile.addEventListener('click', () => {
+        renderROICalculator();
+        saveMessage('user', '[01] ROI_RECHNER');
+      });
+    }
+
+    const n8nTile = container.querySelector('#hero-tile-n8n');
+    if (n8nTile) {
+      n8nTile.addEventListener('click', () => {
+        appendBotBubble('[SYS_ARCHITECTURE // N8N_ENGINE]\n\nHier ist der reale n8n Canvas-Blueprint für deinen automatisierten Backend-Workflow:', true, true);
+        renderBlueprintCard();
+        saveMessage('user', '[02] N8N_WORKFLOWS');
+      });
+    }
+
+    const priceTile = container.querySelector('#hero-tile-price');
+    if (priceTile) {
+      priceTile.addEventListener('click', () => {
+        handleUserMessage('Was kostet KI-Automatisierung bei Kimpress?');
       });
     }
   }

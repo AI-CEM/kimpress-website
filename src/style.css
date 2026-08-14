@@ -5487,6 +5487,136 @@ button.btn {
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.7), 0 0 25px rgba(255, 0, 0, 0.15) !important;
 }
 
+/* ==========================================================================
+   SCROLLSTOPPER CHATBOT HERO WELCOME CARD
+   ========================================================================== */
+
+.bot-card-hero {
+  background: rgba(10, 10, 14, 0.98);
+  border: 1px solid rgba(255, 0, 0, 0.35);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8), 0 0 30px rgba(255, 0, 0, 0.15);
+  border-radius: 12px;
+  padding: 18px;
+  margin: 4px 0;
+}
+
+.bot-hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 0, 0, 0.12);
+  border: 1px solid rgba(255, 0, 0, 0.3);
+  color: #FF4D4D;
+  font-family: monospace, var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+
+.bot-hero__pulse {
+  width: 6px;
+  height: 6px;
+  background: #FF0000;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #FF0000;
+  animation: heroPulse 1.5s infinite alternate;
+}
+
+@keyframes heroPulse {
+  0% { opacity: 0.4; transform: scale(0.9); }
+  100% { opacity: 1; transform: scale(1.2); }
+}
+
+.bot-hero__title {
+  font-family: var(--font-heading, sans-serif);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.35;
+  margin: 0 0 8px 0;
+}
+
+.bot-hero__desc {
+  font-size: 0.78rem;
+  color: #A1A1AA;
+  line-height: 1.45;
+  margin: 0 0 14px 0;
+}
+
+.bot-hero__grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.bot-hero__tile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(18, 18, 24, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 10px 12px;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bot-hero__tile:hover {
+  background: rgba(26, 26, 36, 0.95);
+  border-color: rgba(255, 0, 0, 0.4);
+  transform: translateX(4px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4), 0 0 15px rgba(255, 0, 0, 0.1);
+}
+
+.bot-hero__tile-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.bot-hero__tile-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.bot-hero__tile-tag {
+  font-family: monospace, var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.bot-hero__tile-content strong {
+  font-size: 0.82rem;
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+.bot-hero__tile-content small {
+  font-size: 0.7rem;
+  color: #A1A1AA;
+}
+
+.bot-hero__footer {
+  font-family: monospace, var(--font-mono);
+  font-size: 0.68rem;
+  color: #71717A;
+  text-align: center;
+  border-top: 1px dashed rgba(255, 255, 255, 0.08);
+  padding-top: 10px;
+}
+
 .bot-bp-footer {
   font-size: 0.68rem;
   color: #A1A1AA;
