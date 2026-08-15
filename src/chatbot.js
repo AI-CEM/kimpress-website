@@ -630,8 +630,16 @@ export function initChatbot() {
     if (q.includes('roi') || q.includes('rechner') || q.includes('lohnt') || q.includes('ersparnis') || q.includes('rechnen') || q.includes('gewinn')) {
       return { type: 'roi' };
     }
-    if (q.includes('morgen') || q.includes('heute') || q.includes('uhr') || q.includes('termin') || q.includes('buchen') || q.includes('call') || q.includes('erstgespräch') || q.includes('treffen') || q.includes('kalender') || q.includes('gespräch')) {
+    if (q.includes('morgen') || q.includes('heute') || q.includes('uhr') || q.includes('termin') || q.includes('buchen') || q.includes('call') || q.includes('erstgespräch') || q.includes('treffen') || q.includes('kalender')) {
       return { type: 'appointment' };
+    }
+    if (q.includes('angebot') || q.includes('anfragen') || q.includes('kaufen') || q.includes('buchen') || q.includes('preis') || q.includes('kosten') || q.includes('paket') || q.includes('starter-kit') || q.includes('beauftragen')) {
+      let service = 'KI-Systeme & Automatisierung';
+      if (q.includes('content') || q.includes('video') || q.includes('reels') || q.includes('tiktok')) service = 'KI-Content & Short-Form Video Studio';
+      else if (q.includes('n8n') || q.includes('workflow') || q.includes('triage') || q.includes('mail')) service = 'n8n Workflow-Automatisierung & CRM Sync';
+      else if (q.includes('website') || q.includes('seo') || q.includes('geo')) service = 'GEO & KI-Optimierte Performance Website';
+      else if (q.includes('bot') || q.includes('chatbot') || q.includes('voice')) service = 'Deterministischer KI-Chatbot / Voicebot';
+      return { type: 'checkout', serviceName: service };
     }
     if (q.includes('n8n') || q.includes('make') || q.includes('workflow') || q.includes('automatisierung') || q.includes('prozess') || q.includes('zapier')) {
       return {
@@ -640,6 +648,66 @@ export function initChatbot() {
       };
     }
     return null;
+  }
+
+  function renderCheckoutCard(serviceName, needText) {
+    removeTypingIndicator();
+    const container = document.createElement('div');
+    container.className = 'bot-msg bot-msg--bot bot-msg--custom';
+    
+    container.innerHTML = `
+      <div class="bot-bubble bot-card-blueprint bot-card-roi--ibm" style="border-color:#FF0000;box-shadow:0 0 30px rgba(255,0,0,0.22);">
+        <div class="bot-bp-header">
+          <span class="bot-bp-tag" style="color:#FF4D4D;">[CONVERSATIONAL_CHECKOUT // LEAD_CAPTURE]</span>
+          <span class="bot-bp-status"><span class="bp-dot"></span> EXPERT_PRIO</span>
+        </div>
+        <div style="font-family:monospace;font-size:0.85rem;color:#FFF;margin-bottom:6px;font-weight:700;">
+          DIREKTANFRAGE: ${escapeHTML(serviceName)}
+        </div>
+        <p style="font-family:monospace;font-size:0.72rem;color:#AAA;margin-bottom:10px;line-height:1.4;">
+          Sende deine Anforderung direkt an Cem Görül (1 Operator Model). Du erhältst ein verbindliches Festpreisangebot ohne Stundensatz-Mogelei:
+        </p>
+
+        <form id="bot-checkout-form" action="https://formspree.io/f/xvgaapqn" method="POST" style="display:flex;flex-direction:column;gap:8px;">
+          <input type="text" name="Service" value="${escapeHTML(serviceName)}" readonly class="bot-input" style="font-family:monospace;font-size:0.75rem;background:rgba(255,0,0,0.12);border:1px solid rgba(255,0,0,0.4);color:#FF6666;padding:8px 10px;border-radius:4px;font-weight:700;" />
+          <input type="text" name="NeedSummary" value="${escapeHTML(needText)}" placeholder="Deine Anforderung / Engpass" class="bot-input" style="font-family:monospace;font-size:0.75rem;background:rgba(0,0,0,0.5);border:1px solid rgba(255,255,255,0.15);color:#FFF;padding:8px 10px;border-radius:4px;" />
+          <input type="email" name="Email" placeholder="Deine E-Mail-Adresse für das Angebot..." required class="bot-input" style="font-family:monospace;font-size:0.75rem;background:rgba(0,0,0,0.5);border:1px solid rgba(255,255,255,0.15);color:#FFF;padding:8px 10px;border-radius:4px;" />
+          <input type="tel" name="Telefon" placeholder="Telefonnummer (optional für Rückruf)..." class="bot-input" style="font-family:monospace;font-size:0.75rem;background:rgba(0,0,0,0.5);border:1px solid rgba(255,255,255,0.15);color:#FFF;padding:8px 10px;border-radius:4px;" />
+          <input type="hidden" name="_subject" value="🚨 Neue B2B Chatbot-Direktanfrage (${escapeHTML(serviceName)})" />
+          
+          <button type="submit" class="btn btn--primary btn--sm" style="width:100%;font-family:monospace;justify-content:center;letter-spacing:1px;font-size:0.75rem;margin-top:4px;">
+            [ ➔ JETZT VERBINDLICH ANFRAGEN ]
+          </button>
+        </form>
+
+        <div id="bot-checkout-status" style="display:none;font-family:monospace;font-size:0.72rem;color:#00FF66;margin-top:8px;">
+          ✓ Anfrage erfolgreich übermittelt! Cem analysiert dein Anliegen persönlich und meldet sich in Kürze per E-Mail.
+        </div>
+      </div>
+    `;
+    messagesContainer.appendChild(container);
+    scrollToBottom();
+
+    const checkoutForm = container.querySelector('#bot-checkout-form');
+    const statusMsg = container.querySelector('#bot-checkout-status');
+    if (checkoutForm) {
+      checkoutForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const formData = new FormData(checkoutForm);
+        try {
+          await fetch('https://formspree.io/f/xvgaapqn', {
+            method: 'POST',
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+          });
+          checkoutForm.style.display = 'none';
+          statusMsg.style.display = 'block';
+        } catch (err) {
+          checkoutForm.style.display = 'none';
+          statusMsg.style.display = 'block';
+        }
+      });
+    }
   }
 
   // --- ENRICHED FINE-GRAINED KNOWLEDGE BASE & SMART ROUTER ---
