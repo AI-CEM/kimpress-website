@@ -298,11 +298,6 @@ return [{ json: { retryCount: retryCount, totalDelaySeconds: totalDelay } }];</c
   },
   {
     slug: 'ki-content-creation-workflows-2026',
-    title: 'Das ultimative KI-Agenten Tutorial 2026: 6 funktionierende Code-Snippets gegen ungeprüften Prompt-Müll',
-    excerpt: 'Schluss mit Prompt-Geblubber. Hier sind 6 lauffähige Code-Snippets & Architektur-Blueprints für OpenAI, Gemini 3.7, Claude C2PA, Ollama, ElevenLabs & n8n – direkt aus der Kimpress-Praxis.',
-    date: '2026-08-21',
-    readTime: 12,
-    category: 'Automatisierung',
     featured: true,
     content: `
 <p class="blog-lead">99 % aller KI-Tutorials im Netz haben dasselbe Problem: Sie stammen von Prompt-Postern auf LinkedIn, die noch nie eine Zeile Produktions-Code geschrieben haben. Du kopierst den Beispiel-Code, wirfst ihn in deine Konsole und landest sofort in einem Haufen von <code>SyntaxError</code>, veralteten SDK-Aufrufen oder fehlenden Dependency-Importen.</p>

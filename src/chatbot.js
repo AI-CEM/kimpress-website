@@ -155,6 +155,9 @@ export function initChatbot() {
         renderROICalculator();
       } else if (intentResult.type === 'appointment') {
         renderAppointmentCard(userText);
+      } else if (intentResult.type === 'checkout') {
+        if (intentResult.text) appendBotBubble(intentResult.text, true, true);
+        renderCheckoutCard(intentResult.serviceName || 'KI-Systeme & Automatisierung', userText);
       } else if (intentResult.type === 'blueprint') {
         appendBotBubble(intentResult.text, true, true);
         renderBlueprintCard();
@@ -633,13 +636,18 @@ export function initChatbot() {
     if (q.includes('morgen') || q.includes('heute') || q.includes('uhr') || q.includes('termin') || q.includes('buchen') || q.includes('call') || q.includes('erstgespräch') || q.includes('treffen') || q.includes('kalender')) {
       return { type: 'appointment' };
     }
-    if (q.includes('angebot') || q.includes('anfragen') || q.includes('kaufen') || q.includes('buchen') || q.includes('preis') || q.includes('kosten') || q.includes('paket') || q.includes('starter-kit') || q.includes('beauftragen')) {
+    if (q.includes('angebot') || q.includes('anfragen') || q.includes('kaufen') || q.includes('buchen') || q.includes('preis') || q.includes('kosten') || q.includes('festpreis') || q.includes('paket') || q.includes('starter-kit') || q.includes('beauftragen') || q.includes('[03]')) {
       let service = 'KI-Systeme & Automatisierung';
       if (q.includes('content') || q.includes('video') || q.includes('reels') || q.includes('tiktok')) service = 'KI-Content & Short-Form Video Studio';
       else if (q.includes('n8n') || q.includes('workflow') || q.includes('triage') || q.includes('mail')) service = 'n8n Workflow-Automatisierung & CRM Sync';
       else if (q.includes('website') || q.includes('seo') || q.includes('geo')) service = 'GEO & KI-Optimierte Performance Website';
       else if (q.includes('bot') || q.includes('chatbot') || q.includes('voice')) service = 'Deterministischer KI-Chatbot / Voicebot';
-      return { type: 'checkout', serviceName: service };
+      
+      return {
+        type: 'checkout',
+        serviceName: service,
+        text: `[FINANCIAL_ENGINE // TRANSPARENT_PRICING]\n\nWir arbeiten zu 100% mit verbindlichen Pauschalangeboten – ohne Stundensatz-Mogelei, Retainer-Fallen oder versteckte Nebenkosten:\n\n- **Festpreis-Garantie:** Verbindliche Kalkulation nach 15-Min. Prozessanalyse.\n- **Lieferzeit:** Schlüsselfertige Übergabe in 3 bis 14 Tagen inkl. 30 Tage Support.\n- **0 € Nebenkosten:** Keine unvorhergesehenen Agentur-Abrechnungen.\n\nDu kannst dein Wunschsystem oder deine Anforderung hier direkt verbindlich anfragen:`
+      };
     }
     if (q.includes('n8n') || q.includes('make') || q.includes('workflow') || q.includes('automatisierung') || q.includes('prozess') || q.includes('zapier')) {
       return {
