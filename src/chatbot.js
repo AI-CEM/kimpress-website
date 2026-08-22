@@ -801,11 +801,11 @@ export function initChatbot() {
       };
     }
 
-    // 9. Dedicated Operator Cem Profile
-    if (q.includes('cem') || q.includes('wer') || q.includes('inhaber') || q.includes('gründer') || q.includes('über') || q.includes('operator')) {
+    // 9. Dedicated Operator Cem Profile & Founding Date
+    if (q.includes('cem') || q.includes('wer') || q.includes('inhaber') || q.includes('gründer') || q.includes('über') || q.includes('operator') || q.includes('gegründet') || q.includes('gründung') || q.includes('februar')) {
       return {
         type: 'text',
-        text: `[OPERATOR_PROFILE // CEM_GOERUL]\n\nCem Görül baut seit über 15 Jahren digitale Backend-Systeme. Kimpress ist die pragmatische Gegenbewegung zu überblähten Agenturen:\n\n- **1 Operator, volle Senior-Entwickler-Power**\n- Direkter Draht zum Architekten – kein Junior-Wasserkopf\n- Systeme laufen schlüsselfertig auf deiner Infrastruktur`
+        text: `[OPERATOR_PROFILE // CEM_GOERUL]\n\nCem Görül hat Kimpress Ende Februar 2024 in Hamburg (Billstedt) gegründet. Mit über 15 Jahren Senior-Erfahrung in Webentwicklung & Digitalisierung ist Kimpress die pragmatische Gegenbewegung zu überblähten Agenturen:\n\n- **Gründung:** Ende Februar 2024 in Hamburg (Billstedt)\n- **1 Operator Model:** Volle Senior-Entwickler-Power, kein Junior-Wasserkopf\n- **Systeme:** Schlüsselfertige n8n Workflows & KI-Pipelines`
       };
     }
 
