@@ -1,5 +1,5 @@
 // Vercel Serverless Function: POST /api/chat
-// Kimpress Neural AI Operator — Realtime LLM Route Handler
+// Kimpress Neural AI Operator — Resilient Edge LLM Route Handler (2030 Standard)
 
 export default async function handler(req, res) {
   // CORS & Method Check
@@ -11,8 +11,6 @@ export default async function handler(req, res) {
   if (!message || typeof message !== 'string') {
     return res.status(400).json({ error: 'Message parameter is required.' });
   }
-
-  const apiKey = process.env.GEMINI_API_KEY || process.env.GROQ_API_KEY;
 
   // System Prompt for Kimpress KI-Operator
   const systemPrompt = `Du bist Cems KI-Operator auf kimpress.de — der inhabergeführten KI- & Automatisierungsagentur aus Hamburg von Gründer Cem Görül.
@@ -27,10 +25,11 @@ DEINE THEMEN UND FACHWISSEN:
 2. Workflow-Automatisierung & API-Schnittstellen: Maßgeschneiderte n8n-Workflows, Tool-Anbindungen (CRM, Mail, SevDesk, Supabase) & individuelle API-Systeme.
 3. Pragmatische KI-Websites & GEO: Blitzschnelle, conversion-starke Websites, optimiert für KI-Suchmaschinen (Perplexity, ChatGPT Search, Google AI).
 
-PRICING & ANGEBOTS-PHILOSOPHIE:
-- Bei Kimpress setzen wir auf pragmatische, bezahlbare Lösungen statt überteuerter API-Pipelines.
-- Transparente Festpreise nach kostenloser 15-Min. Prozessanalyse.
-- 0 € unvorhergesehene Nebenkosten, schlüsselfertiges Setup inkl. 30 Tage Support.
+PRICING & ANGEBOTS-PHILOSOPHIE (HIGH-TICKET B2B):
+- KI-Content Engine (Retainer): 1.950 € / Monat (12x KI-Videos, Skripte, automatische Pipeline).
+- Workflow-Automatisierung (n8n Sprints): Ab 2.500 € (Festpreis für maßgeschneiderte Workflows).
+- KI-Assistenten & Bots: Ab 3.500 € (Festpreis für RAG & Voicebots).
+- Kostenlose 15-Minuten Prozess-Analyse zur Qualifizierung.
 
 REGELN:
 - Antworte DIREKT mit deiner finalen deutschen Antwort an den Nutzer.
@@ -38,19 +37,23 @@ REGELN:
 - Antworte präzise, knackig (max 3-5 kurze Sätze) auf Deutsch.
 - Nutze Zeilenumbrüche für gute Lesbarkeit im Chat-Window.`;
 
-  // Active Gemini API Key (from Vercel Environment Variables)
-  const geminiKey = process.env.GEMINI_API_KEY || process.env.GROQ_API_KEY;
+  const apiKey = process.env.GEMINI_API_KEY || process.env.GROQ_API_KEY;
+  const geminiKey = process.env.GEMINI_API_KEY;
 
   if (geminiKey) {
-    // Try Gemini 3.5 Flash Model Endpoint
-    const modelsToTry = ['gemini-3.5-flash', 'gemini-3.5-flash-lite', 'gemini-flash-latest'];
+    // Valid 2026/2030 Gemini API model sequence
+    const modelsToTry = ['gemini-2.0-flash', 'gemini-1.5-flash', 'gemini-1.5-pro'];
     for (const modelName of modelsToTry) {
       try {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 6000); // 6s timeout per model
+
         const geminiRes = await fetch(
           `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${geminiKey}`,
           {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
+            signal: controller.signal,
             body: JSON.stringify({
               contents: [
                 {
@@ -62,14 +65,13 @@ REGELN:
               ],
               generationConfig: {
                 temperature: 0.7,
-                maxOutputTokens: 500,
-                thinkingConfig: {
-                  thinkingBudget: 0
-                }
+                maxOutputTokens: 500
               }
             })
           }
         );
+
+        clearTimeout(timeoutId);
 
         if (geminiRes.ok) {
           const data = await geminiRes.json();
@@ -78,35 +80,28 @@ REGELN:
             reply = cleanReply(reply);
             return res.status(200).json({ output: reply, source: `gemini (${modelName})` });
           }
-        } else {
-          console.warn(`Gemini API Model ${modelName} Error:`, await geminiRes.text());
         }
       } catch (err) {
-        console.error(`Gemini API (${modelName}) Exception:`, err);
+        console.warn(`Gemini API (${modelName}) exception/timeout:`, err.message || err);
       }
     }
   }
 
-function cleanReply(text) {
-  if (!text) return '';
-  // Strip any leading thinking steps or brackets like "] 5. Refining..."
-  let cleaned = text.replace(/^[\s\S]*?\]\s*\d*\.?\s*(Refining|Formatting|Thinking)[\s\S]*?\n/i, '');
-  cleaned = cleaned.replace(/^\]\s*/, '');
-  cleaned = cleaned.replace(/^Thinking Process:[\s\S]*?\n\n/i, '');
-  return cleaned.trim();
-}
-
-  // Try Groq API if GROQ_API_KEY is available (starts with gsk_)
+  // Fallback: Try Groq API if GROQ_API_KEY is available (starts with gsk_ or GROQ_API_KEY)
   const groqKey = process.env.GROQ_API_KEY || (apiKey && apiKey.startsWith('gsk_') ? apiKey : null);
 
   if (groqKey) {
     try {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 6000);
+
       const groqRes = await fetch('https://api.groq.com/openai/v1/chat/completions', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${groqKey}`,
           'Content-Type': 'application/json'
         },
+        signal: controller.signal,
         body: JSON.stringify({
           model: 'llama-3.3-70b-versatile',
           messages: [
@@ -118,18 +113,29 @@ function cleanReply(text) {
         })
       });
 
+      clearTimeout(timeoutId);
+
       if (groqRes.ok) {
         const data = await groqRes.json();
-        const reply = data.choices?.[0]?.message?.content;
+        let reply = data.choices?.[0]?.message?.content;
         if (reply) {
-          return res.status(200).json({ output: reply, source: 'groq' });
+          reply = cleanReply(reply);
+          return res.status(200).json({ output: reply, source: 'groq (llama-3.3-70b)' });
         }
       }
     } catch (err) {
-      console.error('Groq API Fetch Exception:', err);
+      console.warn('Groq API Fetch Exception:', err.message || err);
     }
   }
 
-  // If no server key or APIs failed, return 503 so client falls back gracefully
+  // Fallback response if all API endpoints fail or are unconfigured
   return res.status(503).json({ error: 'LLM API service temporarily unavailable.' });
+}
+
+function cleanReply(text) {
+  if (!text) return '';
+  let cleaned = text.replace(/^[\s\S]*?\]\s*\d*\.?\s*(Refining|Formatting|Thinking)[\s\S]*?\n/i, '');
+  cleaned = cleaned.replace(/^\]\s*/, '');
+  cleaned = cleaned.replace(/^Thinking Process:[\s\S]*?\n\n/i, '');
+  return cleaned.trim();
 }

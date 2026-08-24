@@ -27,9 +27,62 @@ function relatedCard(post) {
 function renderPost(post) {
   const color = categoryColor(post.category);
   const related = getRelatedPosts(post.slug, 3);
+  const postUrl = `https://kimpress.de/blog-post.html?slug=${post.slug}`;
 
   document.getElementById('post-meta-title').textContent = `${post.title} — Kimpress Blog`;
   document.getElementById('post-meta-desc').setAttribute('content', post.excerpt);
+
+  const canonicalTag = document.getElementById('canonical-tag');
+  if (canonicalTag) canonicalTag.setAttribute('href', postUrl);
+
+  // Dynamic JSON-LD BlogPosting Schema Injector (2030 Standard GEO Engine)
+  const existingSchema = document.getElementById('dynamic-post-schema');
+  if (existingSchema) existingSchema.remove();
+
+  const schemaScript = document.createElement('script');
+  schemaScript.type = 'application/ld+json';
+  schemaScript.id = 'dynamic-post-schema';
+  schemaScript.textContent = JSON.stringify({
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "@id": `${postUrl}#article`,
+        "mainEntityOfPage": postUrl,
+        "headline": post.title,
+        "description": post.excerpt,
+        "datePublished": post.date,
+        "author": {
+          "@type": "Person",
+          "@id": "https://kimpress.de/#founder",
+          "name": "Cem Görül",
+          "url": "https://kimpress.de"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "@id": "https://kimpress.de/#organization",
+          "name": "Kimpress",
+          "url": "https://kimpress.de",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://kimpress.de/kimpress-logo.png"
+          }
+        },
+        "articleSection": post.category,
+        "inLanguage": "de-DE"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${postUrl}#breadcrumb`,
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://kimpress.de" },
+          { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://kimpress.de/blog.html" },
+          { "@type": "ListItem", "position": 3, "name": post.title, "item": postUrl }
+        ]
+      }
+    ]
+  });
+  document.head.appendChild(schemaScript);
 
   const main = document.getElementById('post-main');
   main.innerHTML = `

@@ -674,8 +674,8 @@ export function initChatbot() {
     container.innerHTML = `
       <div class="bot-bubble bot-card-blueprint bot-card-roi--ibm" style="border-color:#FF0000;box-shadow:0 0 30px rgba(255,0,0,0.22);">
         <div class="bot-bp-header">
-          <span class="bot-bp-tag" style="color:#FF4D4D;">[CONVERSATIONAL_CHECKOUT // LEAD_CAPTURE]</span>
-          <span class="bot-bp-status"><span class="bp-dot"></span> EXPERT_PRIO</span>
+          <span class="bot-bp-tag" style="color:#FF4D4D;">[DIREKTANFRAGE // FESTPREIS-ANGEBOT]</span>
+          <span class="bot-bp-status"><span class="bp-dot"></span> EXPERTEN-PRIORITÄT</span>
         </div>
         <div style="font-family:monospace;font-size:0.85rem;color:#FFF;margin-bottom:6px;font-weight:700;">
           DIREKTANFRAGE: ${escapeHTML(serviceName)}
