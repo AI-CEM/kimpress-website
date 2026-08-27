@@ -16,7 +16,7 @@ export const BLOG_POSTS = [
     content: `
 <p class="blog-lead">99 % aller KI-Tutorials im Netz haben dasselbe Problem: Sie stammen von Prompt-Postern auf LinkedIn, die noch nie eine Zeile Produktions-Code geschrieben haben. Du kopierst den Beispiel-Code, wirfst ihn in deine Konsole und landest sofort in einem Haufen von <code>SyntaxError</code>, veralteten SDK-Aufrufen oder fehlenden Dependency-Importen.</p>
 
-<p>Als ich Ende Februar 2026 Kimpress in Hamburg-Billstedt gegründet habe – gestartet mit 15+ Jahren Erfahrung, 25 Euro Gewerbeanmeldung und meinem alten 2017er MacBook Air – gab es eine eiserne Regel: Was im Terminal nicht auf Anhieb funktioniert, bringt dir keinen einzigen Euro Gewinn im Tagesgeschäft.</p>
+<p>Als ich Ende Februar 2026 Kimpress in Hamburg gegründet habe – gestartet mit 15+ Jahren Erfahrung, 25 Euro Gewerbeanmeldung und meinem alten 2017er MacBook Air – gab es eine eiserne Regel: Was im Terminal nicht auf Anhieb funktioniert, bringt dir keinen einzigen Euro Gewinn im Tagesgeschäft.</p>
 
 <p>In diesem Master-Tutorial räumen wir auf. Du bekommst <strong>6 lauffähige, im Terminal getestete Code-Snippets und Ultimate-Level System-Prompts</strong> für die wichtigsten Modelle und Plattformen – und zu jedem Snippet erklären wir exakt das **Problem**, die **Lösung**, was der Code **Zeile für Zeile bewirkt** und welchen **Business-Nutzen** du damit erzielst.</p>
 

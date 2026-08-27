@@ -901,7 +901,7 @@ export function initChatbot() {
     if (q.includes('cem') || q.includes('wer') || q.includes('inhaber') || q.includes('gründer') || q.includes('über') || q.includes('operator') || q.includes('gegründet') || q.includes('gründung') || q.includes('februar')) {
       return {
         type: 'text',
-        text: `Cem Görül hat Kimpress Ende Februar 2024 in Hamburg (Billstedt) gegründet. Mit über 15 Jahren Senior-Erfahrung in Webentwicklung & Digitalisierung ist Kimpress die pragmatische Gegenbewegung zu überblähten Agenturen:\n\n- Volle Senior-Entwickler-Power direkt vom Gründer\n- Direkter Draht ohne Junior-Wasserkopf\n- Schlüsselfertige n8n-Workflows und KI-Pipelines`
+        text: `Cem Görül hat Kimpress Ende Februar 2026 in Hamburg gegründet. Mit über 15 Jahren Senior-Erfahrung in Webentwicklung & Digitalisierung ist Kimpress die pragmatische Gegenbewegung zu überblähten Agenturen:\n\n- Volle Senior-Entwickler-Power direkt vom Gründer\n- Direkter Draht ohne Junior-Wasserkopf\n- Schlüsselfertige n8n-Workflows und KI-Pipelines`
       };
     }
 
@@ -933,7 +933,7 @@ export function initChatbot() {
     if (q.includes('kontakt') || q.includes('termin') || q.includes('anfrage') || q.includes('mail') || q.includes('telefon') || q.includes('buchen')) {
       return {
         type: 'text',
-        text: `Du erreichst uns direkt unter:\n\n📧 E-Mail: hallo@kimpress.de\n📞 Telefon: +49 1575 7221636\n📍 Standort: Hamburg-Billstedt\n\nSchreib uns einfach oder buche direkt ein 15-minütiges Kennenlernen.`
+        text: `Du erreichst uns direkt unter:\n\n📧 E-Mail: hallo@kimpress.de\n📞 Telefon: +49 1575 7221636\n📍 Standort: Hamburg\n\nSchreib uns einfach oder buche direkt ein 15-minütiges Kennenlernen.`
       };
     }
 
