@@ -5866,7 +5866,7 @@ button.btn {
 
 .pricing-section {
   padding: 100px 0;
-  background: var(--color-bg, #0A0A0A);
+  background: transparent;
   position: relative;
   z-index: 1;
 }
@@ -5891,7 +5891,7 @@ button.btn {
 }
 
 .pricing-card {
-  background: rgba(18, 18, 22, 0.85);
+  background: rgba(10, 10, 14, 0.45);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 16px;
   padding: 40px 30px;
@@ -5899,7 +5899,8 @@ button.btn {
   flex-direction: column;
   position: relative;
   transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 }
 
 .pricing-card:hover {
@@ -5910,7 +5911,7 @@ button.btn {
 
 /* Featured / Hero Card Styling (Tier 2) */
 .pricing-card--featured {
-  background: rgba(26, 15, 18, 0.95);
+  background: rgba(25, 10, 12, 0.55);
   border: 2px solid var(--color-primary, #FF0000);
   box-shadow: 0 0 35px rgba(255, 0, 0, 0.22);
   transform: scale(1.03);
