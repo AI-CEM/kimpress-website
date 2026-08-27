@@ -482,6 +482,39 @@ function initModals() {
       }
     });
   }
+
+  // Handle service-specific modal triggers with pre-filled templates
+  document.querySelectorAll('.modal-trigger-service').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      const modal = document.getElementById('modal-contact');
+      const titleEl = document.getElementById('modal-contact-title');
+      const serviceInput = document.getElementById('fservice');
+      const msgArea = document.getElementById('fm');
+
+      const sTitle = btn.dataset.serviceTitle || 'KI-Beratung anfragen';
+      const sVal = btn.dataset.serviceVal || 'Allgemeine KI-Anfrage';
+      const sTemplate = btn.dataset.serviceTemplate || '';
+
+      if (titleEl) titleEl.textContent = sTitle;
+      if (serviceInput) serviceInput.value = sVal;
+      if (msgArea && sTemplate) {
+        msgArea.value = sTemplate;
+      }
+
+      if (modal) {
+        modal.classList.add('open');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        setTimeout(() => {
+          if (msgArea) {
+            msgArea.focus();
+            msgArea.setSelectionRange(msgArea.value.length, msgArea.value.length);
+          }
+        }, 150);
+      }
+    });
+  });
 }
 
 /* ===================================================

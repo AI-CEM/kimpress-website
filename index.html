@@ -611,7 +611,7 @@
           </ul>
 
           <div class="pricing-card__footer">
-            <a href="#kontakt" class="btn btn--outline btn--full">SEO/GEO anfragen</a>
+            <button type="button" class="btn btn--outline btn--full modal-trigger-service" data-service-title="Anfrage: SEO &amp; GEO Dominanz" data-service-val="SEO &amp; GEO Dominanz" data-service-template="Moin Cem, wir wollen unsere Sichtbarkeit bei Google, Perplexity &amp; ChatGPT erhöhen. Unsere Website: ">SEO/GEO anfragen</button>
           </div>
         </article>
 
@@ -637,7 +637,7 @@
           </ul>
 
           <div class="pricing-card__footer">
-            <a href="#kontakt" class="btn btn--primary btn--full">Content Engine anfragen</a>
+            <button type="button" class="btn btn--primary btn--full modal-trigger-service" data-service-title="Anfrage: KI Content Studio" data-service-val="KI Content Studio" data-service-template="Moin Cem, wir interessieren uns für das KI Content Studio (9:16 &amp; 16:9 KI-Videos &amp; Custom Musik). Unsere Marke/Branche: ">Content Engine anfragen</button>
           </div>
         </article>
 
@@ -661,7 +661,7 @@
           </ul>
 
           <div class="pricing-card__footer">
-            <a href="#kontakt" class="btn btn--outline btn--full">Automatisierung anfragen</a>
+            <button type="button" class="btn btn--outline btn--full modal-trigger-service" data-service-title="Anfrage: KI &amp; Workflow Automatisierung" data-service-val="KI &amp; Workflow Automatisierung" data-service-template="Moin Cem, wir wollen unsere internen Prozesse mit n8n &amp; Make automatisieren. Unsere aktuellen Tools: ">Automatisierung anfragen</button>
           </div>
         </article>
 
@@ -793,6 +793,7 @@
       <div class="modal-title" id="modal-contact-title">KI-Beratung anfragen</div>
       <div class="modal-sub">Ich melde mich pers&ouml;nlich innerhalb von 24 Stunden bei dir.</div>
       <form class="modal-form" id="contact-form" novalidate>
+        <input type="hidden" id="fservice" name="service" value="Allgemeine KI-Anfrage" />
         <div class="form-group">
           <label class="form-label" for="fn">Name *</label>
           <input class="form-input" type="text" id="fn" name="name" autocomplete="name" placeholder="Max Mustermann" required />
