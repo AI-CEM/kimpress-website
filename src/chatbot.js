@@ -817,11 +817,19 @@ export function initChatbot() {
         (q.includes('preis') || q.includes('kosten') || q.includes('teuer') || q.includes('geld') || q.includes('budget') || q.includes('wie viel') || q.includes('was kostet') || /\d+\s*(videos?|reels?|shorts?|clips?)/i.test(q))) {
       return {
         type: 'text',
-        text: `Für individuelle Video-Projekte (z.B. 2–4 Test-Videos) kalkulieren wir faire Pauschalen ab ca. 350–500 € pro fertig produziertem KI-Video inklusive Skript, Hook-Testing, KI-Visuals & Sounddesign.\n\nFür regelmäßigen Content gibt es unsere **KI-Content Engine** mit 12x Videos/Monat ab 1.950 € / Monat.\n\nMöchtest du ein konkretes Angebot für deine Videos anfragen?`
+        text: `Für individuelle Video-Projekte (z.B. 2–4 Test-Videos) kalkulieren wir faire Pauschalen ab ca. 350–500 € pro fertig produziertem KI-Video inklusive Skript, Hook-Testing, KI-Visuals & Sounddesign.\n\nFür regelmäßigen Content gibt es unsere **KI-Content Engine** mit 12x Videos/Monat ab 1.950 € / Monat (~162 € pro Video).\n\nMöchtest du ein konkretes Angebot für deine Videos anfragen?`
       };
     }
 
-    // 2.1 Content creation general inquiry
+    // 2.1 Specific Video Deliverables & Specs (e.g. "350 für was", "wieviel cuts", "wieviel min", "was für ein video", "was ist enthalten")
+    if (q.includes('cut') || q.includes('min') || q.includes('sek') || q.includes('länge') || q.includes('dauer') || q.includes('was für') || q.includes('was ist drin') || q.includes('was ist enthalten') || q.includes('enthalten') || q.includes('spezifikation') || q.includes('wie lange') || q.includes('wie viele cuts') || q.includes('lieferumfang')) {
+      return {
+        type: 'text',
+        text: `Hier sind die exakten Spezifikationen für jedes KI-Video (z.B. im Test-Paket ab 350 € oder in der Content Engine):\n\n- **Format & Länge:** 9:16 Vertikal Full HD (1080x1920 MP4), 20 bis 45 Sekunden optimiert für maximale Retention (TikTok, Reels, Shorts, LinkedIn).\n- **Schnitt & Pacing:** Schneller, dynamischer Social-Media-Schnitt mit ca. 12–18 Schnitten pro Video (alle 1,5–3 Sek. visueller Cut, Zoom, Transition oder B-Roll).\n- **Visuals:** Wahlweise fotorealistischer Talking-Head KI-Avatar oder cinematische KI-B-Roll (Veo3 / Midjourney).\n- **Audio & Captions:** Deutsches Studio-Voiceover, dynamische animierte High-Contrast Untertitel (Hormozi-Style) & Sound-Effekte (SFX).\n- **Skript & Copy:** Verkaufspsychologisches AIDA-Skript inkl. 3 conversion-starker Hook-Variationen für die ersten 3 Sekunden.\n- **Rechte:** 100% uneingeschränkte kommerzielle Nutzungsrechte.\n\nMöchtest du ein konkretes Video-Paket für deine Marke anfragen?`
+      };
+    }
+
+    // 2.2 Content creation general inquiry
     if (q === 'content creation' || q === 'content' || q === 'videos' || q === 'reels' || q === 'tiktok' || q === 'ki videos' || q === 'social media') {
       return {
         type: 'text',
