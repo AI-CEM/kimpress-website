@@ -134,11 +134,16 @@ export function initChatbot() {
     renderWelcomeHeroCard();
   }
 
-  function saveMessage(role, text) {
-    let history = [];
+  function getChatHistory() {
     try {
-      history = JSON.parse(sessionStorage.getItem('kimpress_chat_history') || '[]');
-    } catch { history = []; }
+      return JSON.parse(sessionStorage.getItem('kimpress_chat_history') || '[]');
+    } catch {
+      return [];
+    }
+  }
+
+  function saveMessage(role, text) {
+    let history = getChatHistory();
     history.push({ role, text, time: new Date().toISOString() });
     sessionStorage.setItem('kimpress_chat_history', JSON.stringify(history.slice(-20)));
   }
@@ -152,8 +157,10 @@ export function initChatbot() {
     if (intentResult) {
       removeTypingIndicator();
       if (intentResult.type === 'roi') {
+        if (intentResult.text) appendBotBubble(intentResult.text, true, true);
         renderROICalculator();
       } else if (intentResult.type === 'appointment') {
+        if (intentResult.text) appendBotBubble(intentResult.text, true, true);
         renderAppointmentCard(userText);
       } else if (intentResult.type === 'checkout') {
         if (intentResult.text) appendBotBubble(intentResult.text, true, true);
@@ -161,6 +168,8 @@ export function initChatbot() {
       } else if (intentResult.type === 'blueprint') {
         appendBotBubble(intentResult.text, true, true);
         renderBlueprintCard();
+      } else if (intentResult.type === 'text') {
+        appendBotBubble(intentResult.text, true, true);
       }
       saveMessage('bot', intentResult.text || 'Aktion gestartet.');
       return;
@@ -169,10 +178,11 @@ export function initChatbot() {
     // Try Live n8n / Gemini API if configured
     if (N8N_WEBHOOK_URL) {
       try {
+        const history = getChatHistory();
         const res = await fetch(N8N_WEBHOOK_URL, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ message: userText, timestamp: new Date().toISOString() })
+          body: JSON.stringify({ message: userText, history: history.slice(-6), timestamp: new Date().toISOString() })
         });
         if (res.ok) {
           const data = await res.json();
@@ -204,7 +214,57 @@ export function initChatbot() {
   }
 
   function checkSpecialIntents(query) {
-    const q = query.toLowerCase();
+    const q = query.toLowerCase().trim();
+    const history = getChatHistory();
+    const lastBotMsg = [...history].reverse().find(m => m.role === 'bot')?.text?.toLowerCase() || '';
+
+    // 1. Conversational Affirmation Handling ("ja", "gerne", "klar", "yes", "bitte", "mach das", "los gehts", etc.)
+    const isAffirmative = /^(ja|ja gerne|ja bitte|klar|gerne|bitte|yes|ok|okay|mach das|los gehts|genau|gerne doch|auf jeden fall|super|jop|jo|definitiv|gerne ja)$/i.test(q) || q.startsWith('ja ') || q.startsWith('gerne ');
+
+    if (isAffirmative) {
+      if (lastBotMsg.includes('content') || lastBotMsg.includes('video') || lastBotMsg.includes('reels') || lastBotMsg.includes('tiktok') || lastBotMsg.includes('shorts')) {
+        return {
+          type: 'checkout',
+          serviceName: 'KI-Content & Short-Form Video Studio',
+          text: `Klasse! Sende hier kurz deine Kontaktdaten oder Anforderung ab, damit Cem dir das passende Content-Angebot zusammenstellen kann:`
+        };
+      }
+      if (lastBotMsg.includes('n8n') || lastBotMsg.includes('workflow') || lastBotMsg.includes('triage') || lastBotMsg.includes('mail') || lastBotMsg.includes('crm') || lastBotMsg.includes('automatisierung')) {
+        return {
+          type: 'checkout',
+          serviceName: 'n8n Workflow-Automatisierung & CRM Sync',
+          text: `Perfekt! Sende Cem hier kurz deinen aktuellen Engpass, und du erhältst ein verbindliches Festpreisangebot:`
+        };
+      }
+      if (lastBotMsg.includes('termin') || lastBotMsg.includes('call') || lastBotMsg.includes('erstgespräch') || lastBotMsg.includes('kennenlernen')) {
+        return {
+          type: 'appointment',
+          text: `Top! Trage hier deinen Wunschtermin für das 15-minütige Erstgespräch mit Cem ein:`
+        };
+      }
+      if (lastBotMsg.includes('roi') || lastBotMsg.includes('rechner') || lastBotMsg.includes('ersparnis')) {
+        return {
+          type: 'roi',
+          text: `Hier ist der Ersparnis-Simulator für dein Team:`
+        };
+      }
+      // General affirmative fallback
+      return {
+        type: 'checkout',
+        serviceName: 'KI-Systeme & Automatisierung',
+        text: `Sehr gerne! Trage hier kurz deine Kontaktdaten und deine Anforderung für dein Festpreisangebot ein:`
+      };
+    }
+
+    // 2. Conversational Decline / Negative Handling ("nein", "nicht jetzt", "später", "nein danke", "danke nein")
+    const isNegative = /^(nein|nicht jetzt|später|nein danke|danke nein|vielleicht später|kein bedarf)$/i.test(q);
+    if (isNegative) {
+      return {
+        type: 'text',
+        text: `Alles klar! Wenn du später Fragen zu n8n-Workflows, E-Mail-Triage oder KI-Content hast, melde dich jederzeit gerne hier oder per E-Mail an hallo@kimpress.de.`
+      };
+    }
+
     if (q.includes('roi') || q.includes('rechner') || q.includes('lohnt') || q.includes('ersparnis') || q.includes('rechnen') || q.includes('gewinn')) {
       return { type: 'roi' };
     }
@@ -752,12 +812,20 @@ export function initChatbot() {
       };
     }
 
-    // 2. Specific Content / Video Pricing & Costs
+    // 2. Specific Content / Video Pricing & Costs (e.g. "wie teuer für 2 videos", "was kosten videos", "video preise")
     if ((q.includes('video') || q.includes('content') || q.includes('reels') || q.includes('tiktok') || q.includes('shorts') || q.includes('skript')) && 
-        (q.includes('preis') || q.includes('kosten') || q.includes('teuer') || q.includes('geld') || q.includes('budget') || q.includes('wie viel') || q.includes('was kostet'))) {
+        (q.includes('preis') || q.includes('kosten') || q.includes('teuer') || q.includes('geld') || q.includes('budget') || q.includes('wie viel') || q.includes('was kostet') || /\d+\s*(videos?|reels?|shorts?|clips?)/i.test(q))) {
       return {
         type: 'text',
-        text: `Wir produzieren conversion-starken KI-Content für Social Media und Performance Ads – pragmatisch, schnell und ohne überdimensionierte Retainer:\n\n- Short-Form Videos (TikTok, Reels, Shorts), KI-Skripte & Hooks\n- Transparente Festpreise nach einer kurzen 15-Minuten Prozessanalyse\n\nMöchtest du ein konkretes Content-Paket anfragen?`
+        text: `Für individuelle Video-Projekte (z.B. 2–4 Test-Videos) kalkulieren wir faire Pauschalen ab ca. 350–500 € pro fertig produziertem KI-Video inklusive Skript, Hook-Testing, KI-Visuals & Sounddesign.\n\nFür regelmäßigen Content gibt es unsere **KI-Content Engine** mit 12x Videos/Monat ab 1.950 € / Monat.\n\nMöchtest du ein konkretes Angebot für deine Videos anfragen?`
+      };
+    }
+
+    // 2.1 Content creation general inquiry
+    if (q === 'content creation' || q === 'content' || q === 'videos' || q === 'reels' || q === 'tiktok' || q === 'ki videos' || q === 'social media') {
+      return {
+        type: 'text',
+        text: `Wir produzieren performanten KI-Content für Social Media und Ads: Short-Form Videos (Reels, TikToks, Shorts), conversion-starke Skripte, Hooks und Visuals.\n\nSuchst du regelmäßigen monatlichen Content (12x Videos/Monat) oder einzelne Test-Videos für deine Marke?`
       };
     }
 
@@ -782,7 +850,7 @@ export function initChatbot() {
     if (q.includes('content') || q.includes('video') || q.includes('reels') || q.includes('tiktok') || q.includes('shorts') || q.includes('skript')) {
       return {
         type: 'text',
-        text: `Wir produzieren conversion-starke KI-Skripte, Hooks, Visuals und Short-Form Videos (Reels, TikToks, Shorts) – markenkonform, schnell und plattformoptimiert.`
+        text: `Wir produzieren conversion-starke KI-Skripte, Hooks, Visuals und Short-Form Videos (Reels, TikToks, Shorts) – markenkonform, schnell und plattformoptimiert.\n\nMöchtest du ein konkretes Video-Paket anfragen?`
       };
     }
 

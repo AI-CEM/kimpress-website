@@ -7,7 +7,7 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { message } = req.body || {};
+  const { message, history } = req.body || {};
   if (!message || typeof message !== 'string') {
     return res.status(400).json({ error: 'Message parameter is required.' });
   }
@@ -25,25 +25,56 @@ DEINE THEMEN UND FACHWISSEN:
 2. Workflow-Automatisierung & Schnittstellen: Maßgeschneiderte n8n-Workflows, Tool-Anbindungen (CRM, Mail, SevDesk, Supabase) & individuelle API-Systeme.
 3. Pragmatische KI-Websites & GEO: Blitzschnelle, conversion-starke Websites, optimiert für KI-Suchmaschinen (Perplexity, ChatGPT Search, Google AI).
 
-PRICING & ANGEBOTS-PHILOSOPHIE:
+PRICING & ANGEBOTS-RICHTWERTE:
+- Einzelne Test-Videos (z.B. 2–4 Videos): Faire Pauschalen ab ca. 350–500 € pro fertig produziertem KI-Video (inkl. Skript, Schnitt & Sound).
+- KI-Content Engine (Monatlicher Retainer): 1.950 € / Monat für 12x fertige Videos inklusive Strategie & Schnitt.
+- Workflow-Automatisierung (n8n): Ab 2.500 € schlüsselfertiger Festpreis.
 - Transparente Festpreise nach kostenloser 15-Minuten Prozess-Analyse.
-- Keine versteckten Kosten, schlüsselfertiges Setup inklusive 30 Tage Betreuung.
 
 STRIKTE REGELN:
 - Antworte IMMER direkt, sympathisch und menschlich auf Deutsch (z.B. mit "Moin!").
 - Verwende NIEMALS eckige Klammern wie [SYS_...] oder Pseudo-Code-Header im Chat!
+- Behalte den Kontext der vorangegangenen Nachrichten im Blick. Wenn der Nutzer mit "ja", "gerne" oder "klar" auf ein Angebot antwortet, bestätige das freundlich und biete ihm die Kontaktaufnahme / das Erstgespräch an.
 - Halte die Antworten auf den Punkt (max. 3-4 prägnante Sätze).`;
 
   const apiKey = process.env.GEMINI_API_KEY || process.env.GROQ_API_KEY;
   const geminiKey = process.env.GEMINI_API_KEY;
 
   if (geminiKey) {
-    // Valid 2026/2030 Gemini API model sequence
+    // Valid Gemini API model sequence
     const modelsToTry = ['gemini-2.0-flash', 'gemini-1.5-flash', 'gemini-1.5-pro'];
     for (const modelName of modelsToTry) {
       try {
         const controller = new AbortController();
         const timeoutId = setTimeout(() => controller.abort(), 6000); // 6s timeout per model
+
+        // Build multi-turn context
+        const formattedContents = [
+          {
+            role: 'user',
+            parts: [{ text: `SYSTEM-ANWEISUNG:\n${systemPrompt}` }]
+          },
+          {
+            role: 'model',
+            parts: [{ text: 'Verstanden. Ich bin bereit als Cems KI-Operator auf kimpress.de präzise und sympathisch zu antworten.' }]
+          }
+        ];
+
+        if (Array.isArray(history) && history.length > 0) {
+          const recentHistory = history.slice(-6);
+          for (const item of recentHistory) {
+            if (!item.text) continue;
+            formattedContents.push({
+              role: item.role === 'user' ? 'user' : 'model',
+              parts: [{ text: item.text }]
+            });
+          }
+        }
+
+        formattedContents.push({
+          role: 'user',
+          parts: [{ text: message }]
+        });
 
         const geminiRes = await fetch(
           `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${geminiKey}`,
@@ -52,14 +83,7 @@ STRIKTE REGELN:
             headers: { 'Content-Type': 'application/json' },
             signal: controller.signal,
             body: JSON.stringify({
-              contents: [
-                {
-                  role: 'user',
-                  parts: [
-                    { text: `${systemPrompt}\n\nFrage des Nutzers: ${message}` }
-                  ]
-                }
-              ],
+              contents: formattedContents,
               generationConfig: {
                 temperature: 0.7,
                 maxOutputTokens: 500
@@ -84,13 +108,30 @@ STRIKTE REGELN:
     }
   }
 
-  // Fallback: Try Groq API if GROQ_API_KEY is available (starts with gsk_ or GROQ_API_KEY)
+  // Fallback: Try Groq API if GROQ_API_KEY is available
   const groqKey = process.env.GROQ_API_KEY || (apiKey && apiKey.startsWith('gsk_') ? apiKey : null);
 
   if (groqKey) {
     try {
       const controller = new AbortController();
       const timeoutId = setTimeout(() => controller.abort(), 6000);
+
+      const groqMessages = [
+        { role: 'system', content: systemPrompt }
+      ];
+
+      if (Array.isArray(history) && history.length > 0) {
+        const recentHistory = history.slice(-6);
+        for (const item of recentHistory) {
+          if (!item.text) continue;
+          groqMessages.push({
+            role: item.role === 'user' ? 'user' : 'assistant',
+            content: item.text
+          });
+        }
+      }
+
+      groqMessages.push({ role: 'user', content: message });
 
       const groqRes = await fetch('https://api.groq.com/openai/v1/chat/completions', {
         method: 'POST',
@@ -101,10 +142,7 @@ STRIKTE REGELN:
         signal: controller.signal,
         body: JSON.stringify({
           model: 'llama-3.3-70b-versatile',
-          messages: [
-            { role: 'system', content: systemPrompt },
-            { role: 'user', content: message }
-          ],
+          messages: groqMessages,
           temperature: 0.7,
           max_tokens: 500
         })
