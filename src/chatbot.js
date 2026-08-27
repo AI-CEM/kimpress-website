@@ -1046,7 +1046,7 @@ function createBotDOM() {
 
     <button id="bot-trigger" class="bot-trigger" aria-label="KI-Operator öffnen">
       <div class="bot-trigger__avatar-box">
-        <img src="/images/characters/operator-avatar.jpg" alt="Cem Görül — Kimpress KI Operator" class="bot-trigger__avatar-img" />
+        <img src="/images/characters/operator-avatar.webp" alt="Cem Görül — Kimpress KI Operator" class="bot-trigger__avatar-img" width="63" height="63" loading="lazy" />
         <span class="bot-trigger__status-dot"></span>
       </div>
       <span class="bot-trigger__text">KI-Operator</span>
@@ -1061,7 +1061,7 @@ function createBotDOM() {
       <div class="bot-panel__header">
         <div class="bot-operator-info">
           <div class="bot-avatar bot-avatar--face">
-            <img src="/images/characters/operator-avatar.jpg" alt="Cem Görül — Operator Face" class="bot-avatar__face-img" />
+            <img src="/images/characters/operator-avatar.webp" alt="Cem Görül — Operator Face" class="bot-avatar__face-img" width="40" height="40" loading="lazy" />
             <span class="bot-status-light"></span>
           </div>
           <div>
