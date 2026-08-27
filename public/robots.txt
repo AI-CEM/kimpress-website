@@ -16,5 +16,11 @@ Allow: /
 User-agent: ClaudeBot
 Allow: /
 
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
 Sitemap: https://kimpress.de/sitemap.xml
 
