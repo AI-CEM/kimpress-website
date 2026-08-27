@@ -232,8 +232,15 @@ export function initChatbot() {
       if (lastBotMsg.includes('n8n') || lastBotMsg.includes('workflow') || lastBotMsg.includes('triage') || lastBotMsg.includes('mail') || lastBotMsg.includes('crm') || lastBotMsg.includes('automatisierung')) {
         return {
           type: 'checkout',
-          serviceName: 'n8n Workflow-Automatisierung & CRM Sync',
+          serviceName: 'KI & Workflow Automatisierung',
           text: `Perfekt! Sende Cem hier kurz deinen aktuellen Engpass, und du erhältst ein verbindliches Festpreisangebot:`
+        };
+      }
+      if (lastBotMsg.includes('seo') || lastBotMsg.includes('geo') || lastBotMsg.includes('website') || lastBotMsg.includes('webseite') || lastBotMsg.includes('ranking')) {
+        return {
+          type: 'checkout',
+          serviceName: 'SEO & GEO Dominanz',
+          text: `Top! Sende hier kurz deine Domain oder Anforderung für die Potenzial-Analyse:`
         };
       }
       if (lastBotMsg.includes('termin') || lastBotMsg.includes('call') || lastBotMsg.includes('erstgespräch') || lastBotMsg.includes('kennenlernen')) {
@@ -265,18 +272,52 @@ export function initChatbot() {
       };
     }
 
+    // 3. PRIORITY: Pricing & Festpreis Intent (MUST BE EVALUATED BEFORE GENERAL TOOL NAMES!)
+    const isPricing = q.includes('preis') || q.includes('kosten') || q.includes('festpreis') || q.includes('festpreiss') || q.includes('pauschal') || q.includes('angebot') || q.includes('paket') || q.includes('wie teuer') || q.includes('was kostet') || q.includes('wie viel') || q.includes('budget') || q.includes('stundensatz') || q.includes('kaufen') || q.includes('beauftragen') || q.includes('[03]');
+
+    if (isPricing) {
+      let service = 'KI-Systeme & Automatisierung';
+      let pricingText = '';
+
+      if (q.includes('content') || q.includes('video') || q.includes('reels') || q.includes('tiktok') || q.includes('shorts') || q.includes('skript')) {
+        service = 'KI Content Studio';
+        pricingText = `Wir arbeiten zu 100% mit transparenten Festpreisen & planbaren Monats-Engines:\n\n- **Einzelne Test-Videos (2–4 Videos):** Faire Pauschalen ab ca. 350–500 € pro fertig produziertem KI-Video (inkl. Skript, Schnitt & Sound).\n- **KI-Content Engine (Monats-Retainer):** 1.950 € / Monat für 12x fertige Videos inklusive Strategie & Auto-Posting (~162 € pro Video).\n- **Enterprise Studio:** Ab 3.500 € / Monat für 24x Videos.\n\nDu kannst dein Wunschpaket hier direkt anfragen:`;
+      } else if (q.includes('n8n') || q.includes('workflow') || q.includes('triage') || q.includes('mail') || q.includes('crm') || q.includes('automatisierung') || q.includes('backend')) {
+        service = 'KI & Workflow Automatisierung';
+        pricingText = `Wir entwickeln maßgeschneiderte Backend-Workflows zu verbindlichen Projekt-Festpreisen:\n\n- **Projekt-Sprints:** Schlüsselfertige n8n- & Make-Workflows ab 2.500 € Festpreis nach 15-Minuten Prozess-Mapping.\n- **0 € Nebenkosten:** Festpreis-Garantie inklusive 30 Tage Hypercare, Monitoring & SLA auf EU-Servern.\n- **Lieferzeit:** Fertigstellung meist in 3 bis 14 Tagen.\n\nSende uns hier direkt deine Prozess-Anforderung für eine verbindliche Kalkulation:`;
+      } else if (q.includes('seo') || q.includes('geo') || q.includes('website') || q.includes('webseite') || q.includes('perplexity') || q.includes('google')) {
+        service = 'SEO & GEO Dominanz';
+        pricingText = `Wir bringen deine Brand auf Platz 1 bei Google und in KI-Antworten (Perplexity, SearchGPT, Google AI Overviews):\n\n- **Projekt-Festpreis:** Individuell nach Website-Umfang und Vektorraum-Optimierung.\n- **Leistungen:** Generative Engine Optimization (GEO), Schema.org Entity Resolution & Sub-50ms High-Speed SEO.\n\nTrage hier deine Domain oder Anforderung für eine Potenzial-Analyse ein:`;
+      } else {
+        service = 'KI-Systeme & Automatisierung';
+        pricingText = `Wir arbeiten zu 100% mit transparenten Festpreisen – ohne Stundensatz-Mogelei, Retainer-Fallen oder versteckte Nebenkosten:\n\n- **01 // SEO & GEO Dominanz:** Projekt-Festpreis nach 15-Min. Potenzial-Analyse.\n- **02 // KI Content Studio:** Monats-Engine ab 1.950 € / Monat (12x Videos) oder Test-Videos ab 350 €.\n- **03 // KI & Workflow Automatisierung:** Verbindliche n8n-Sprints ab 2.500 € Festpreis.\n\nDu kannst dein Wunschsystem oder deine Anforderung hier direkt anfragen:`;
+      }
+
+      return {
+        type: 'checkout',
+        serviceName: service,
+        text: pricingText
+      };
+    }
+
+    // 4. ROI Calculator Intent
     if (q.includes('roi') || q.includes('rechner') || q.includes('lohnt') || q.includes('ersparnis') || q.includes('rechnen') || q.includes('gewinn')) {
       return { type: 'roi' };
     }
+
+    // 5. Appointment Intent
     if (q.includes('morgen') || q.includes('heute') || q.includes('uhr') || q.includes('termin') || q.includes('buchen') || q.includes('call') || q.includes('erstgespräch') || q.includes('treffen') || q.includes('kalender') || q.includes('gespräch')) {
       return { type: 'appointment' };
     }
-    if (q.includes('n8n') || q.includes('make') || q.includes('workflow') || q.includes('automatisierung') || q.includes('prozess') || q.includes('zapier')) {
+
+    // 6. Blueprint Intent (ONLY IF NOT PRICING!)
+    if (q.includes('n8n') || q.includes('make') || q.includes('blueprint') || q.includes('architektur') || q.includes('canvas') || q.includes('zapier')) {
       return {
         type: 'blueprint',
         text: `Hier ist der reale n8n Canvas-Blueprint für deinen automatisierten Backend-Workflow:`
       };
     }
+
     return null;
   }
 
@@ -694,36 +735,6 @@ export function initChatbot() {
     `;
     messagesContainer.appendChild(container);
     scrollToBottom();
-  }
-
-  function checkSpecialIntents(query) {
-    const q = query.toLowerCase();
-    if (q.includes('roi') || q.includes('rechner') || q.includes('lohnt') || q.includes('ersparnis') || q.includes('rechnen') || q.includes('gewinn')) {
-      return { type: 'roi' };
-    }
-    if (q.includes('morgen') || q.includes('heute') || q.includes('uhr') || q.includes('termin') || q.includes('buchen') || q.includes('call') || q.includes('erstgespräch') || q.includes('treffen') || q.includes('kalender')) {
-      return { type: 'appointment' };
-    }
-    if (q.includes('angebot') || q.includes('anfragen') || q.includes('kaufen') || q.includes('buchen') || q.includes('preis') || q.includes('kosten') || q.includes('festpreis') || q.includes('paket') || q.includes('starter-kit') || q.includes('beauftragen') || q.includes('[03]')) {
-      let service = 'KI-Systeme & Automatisierung';
-      if (q.includes('content') || q.includes('video') || q.includes('reels') || q.includes('tiktok')) service = 'KI-Content & Short-Form Video Studio';
-      else if (q.includes('n8n') || q.includes('workflow') || q.includes('triage') || q.includes('mail')) service = 'n8n Workflow-Automatisierung & CRM Sync';
-      else if (q.includes('website') || q.includes('seo') || q.includes('geo')) service = 'GEO & KI-Optimierte Performance Website';
-      else if (q.includes('bot') || q.includes('chatbot') || q.includes('voice')) service = 'Deterministischer KI-Chatbot / Voicebot';
-      
-      return {
-        type: 'checkout',
-        serviceName: service,
-        text: `Wir arbeiten zu 100% mit verbindlichen Pauschalangeboten – ohne Stundensatz-Mogelei, Retainer-Fallen oder versteckte Nebenkosten:\n\n- **Festpreis-Garantie:** Verbindliche Kalkulation nach 15-Min. Prozessanalyse.\n- **Lieferzeit:** Schlüsselfertige Übergabe in 3 bis 14 Tagen inkl. 30 Tage Support.\n- **0 € Nebenkosten:** Keine unvorhergesehenen Agentur-Abrechnungen.\n\nDu kannst dein Wunschsystem oder deine Anforderung hier direkt anfragen:`
-      };
-    }
-    if (q.includes('n8n') || q.includes('make') || q.includes('workflow') || q.includes('automatisierung') || q.includes('prozess') || q.includes('zapier')) {
-      return {
-        type: 'blueprint',
-        text: `Hier ist der reale n8n Canvas-Blueprint für deinen automatisierten Backend-Workflow:`
-      };
-    }
-    return null;
   }
 
   function renderCheckoutCard(serviceName, needText) {
