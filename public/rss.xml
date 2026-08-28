@@ -7,13 +7,6 @@
   <language>de-de</language>
   <atom:link href="https://kimpress.de/rss.xml" rel="self" type="application/rss+xml" />
   <item>
-    <title>RAG Reverse Engineering: Die 5 Vektor- &amp; Cross-Encoder-Algorithmen für Platz 1 in ChatGPT &amp; Perplexity</title>
-    <link>https://kimpress.de/blog-post.html?slug=rag-reverse-engineering-share-of-model-2026</link>
-    <guid>https://kimpress.de/blog-post.html?slug=rag-reverse-engineering-share-of-model-2026</guid>
-    <description>Schluss mit oberflächlichen SEO-Tipps. So funktionieren RAG-Pipelines, Vector-Embedding-Density, Reciprocal Rank Fusion und Cross-Encoder Re-Ranking im Backend von KI-Suchmaschinen 2026.</description>
-    <pubDate>Fri, 28 Aug 2026 00:00:00 GMT</pubDate>
-  </item>
-  <item>
     <title>Das ultimative KI-Agenten Tutorial 2026: 6 funktionierende Code-Snippets gegen ungeprüften Prompt-Müll</title>
     <link>https://kimpress.de/blog-post.html?slug=ki-agenten-tutorial-code-guide-2026</link>
     <guid>https://kimpress.de/blog-post.html?slug=ki-agenten-tutorial-code-guide-2026</guid>

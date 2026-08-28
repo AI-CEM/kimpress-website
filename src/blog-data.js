@@ -6,91 +6,13 @@
 
 export const BLOG_POSTS = [
   {
-    slug: 'rag-reverse-engineering-share-of-model-2026',
-    title: 'RAG Reverse Engineering: Die 5 Vektor- & Cross-Encoder-Algorithmen für Platz 1 in ChatGPT & Perplexity',
-    excerpt: 'Schluss mit oberflächlichen SEO-Tipps. So funktionieren RAG-Pipelines, Vector-Embedding-Density, Reciprocal Rank Fusion und Cross-Encoder Re-Ranking im Backend von KI-Suchmaschinen 2026.',
-    date: '2026-08-28',
-    readTime: 12,
-    category: 'SEO',
-    featured: true,
-    content: `
-<p class="blog-lead">Vergiss die oberflächlichen Marketing-Tipps über "Answer Blocks" oder "Füge ein paar Schema.org Tags ein". Wenn du 2026 wissen willst, warum ChatGPT, Perplexity, Gemini oder Google AI Overviews deine Konkurrenz empfehlen und dein Unternehmen ignorieren, musst du das Backend der RAG-Architekturen (Retrieval-Augmented Generation) verstehen. Hier ist das mathematische Reverse-Engineering der 5 Algorithmen-Pipelines, die über deinen Share of Model (SoM) entscheiden.</p>
-
-<p>Als ich 2017 Kimpress gegründet habe – mit 25 Euro Gewerbeanmeldung im östlichen Hamburg –, lief SEO nach einfachen Regeln ab: Keywords in die H1, ein paar Backlinks kaufen und abwarten. 2026 existiert diese Welt nicht mehr. 57 % aller B2B-Suchanfragen sind Zero-Click-Suchen. Entscheidungsträger fragen LLMs direkt. Wer nicht in den synthetischen Antworten landet, existiert nicht.</p>
-
-<p>Die Frage ist nicht mehr: "Wie ranke ich auf Google?", sondern: <strong>"Wie manipuliere ich die mathematische Vektor-Kosinus-Ähnlichkeit und Cross-Encoder Re-Ranker zu meinen Gunsten?"</strong> Let's dive deep.</p>
-
-<h2>1. Vektor-Dichte & Latent Space Alignment (Dense Retrieval)</h2>
-
-<p>Wenn ein Nutzer bei Perplexity oder ChatGPT Search eine Frage eingibt, konvertiert ein Embedding-Modell (wie <code>text-embedding-3-large</code> oder <code>BGE-M3</code>) diese Frage in einen hochdimensionalen Vektor im latenten Raum.</p>
-
-<p>Der Search-Agent berechnet dann die <strong>Kosinus-Ähnlichkeit</strong> zwischen dem Vektor der Frage und den Vektoren deiner Website-Chunks:</p>
-
-<pre><code>Cosine Similarity = (A · B) / (||A|| ||B||)</code></pre>
-
-<h3>Der Denkfehler der meisten Marketer:</h3>
-<p>Wer seine Texte mit blumigen Adjektiven ("innovativ", "führend", "ganzheitliche Synergien") vollstopft, <strong>verdünnt die mathematische Vektor-Dichte</strong>. Der Vektor rückt im geometrischen Raum ab von der konkreten Problemstellung des Nutzers.</p>
-
-<h3>Die Algorithmen-Lösung (Vector Clustering):</h3>
-<p>Wir strukturieren Content in <strong>Entity-Attribute-Value (EAV) Blöcken</strong>. Statt Prosa liefern wir semantische Vektor-Cluster mit einer <em>Information Density Score</em> nahe 1.0. Das garantiert, dass dein Text bei der ersten Kosinus-Ähnlichkeitssuche unter den Top 50 Chunks landet.</p>
-
-<h2>2. Reciprocal Rank Fusion (RRF): Hybrid Search (Dense + Sparse)</h2>
-
-<p>Keine moderne KI-Suchmaschine verlässt sich rein auf Vektorsuche. Vektoren verstehen zwar die Bedeutung ("Semantik"), verpassen aber oft exakte Eigennamen oder spezifische Modell-Bezeichnungen. Deshalb nutzen Systeme wie Perplexity Sonar <strong>Hybrid Search</strong>: 50 % Vektorsuche + 50 % BM25/SPLADE (Exakte Keyword-Frequenz).</p>
-
-<p>Beide Trefferlisten werden über den <strong>Reciprocal Rank Fusion (RRF) Algorithmus</strong> verschmolzen:</p>
-
-<pre><code>RRF_Score(d) = Σ [ 1 / (k + r_m(d)) ]</code></pre>
-
-<h3>Die Algorithmen-Lösung (Sub-Query Triple Injections):</h3>
-<p>Reine Semantik verliert im RRF-Algorithmus gegen Texte, die <strong>sowohl</strong> den Vektor-Raum abdecken <strong>als auch</strong> exakte N-Gramm-Kombinationen (2-3 Wörter) enthalten. Wenn du exakte Wissens-Triples nach dem Schema <code>[Subject] -> [Predicate] -> [Object]</code> (z. B. <code>[Kimpress] -> [befähigt] -> [n8n Prozessautomatisierung]</code>) einbaust, schießt dein RRF-Score auf Platz 1 der Retrieval-Phase.</p>
-
-<h2>3. Cross-Encoder Re-Ranking (Der echte Türsteher)</h2>
-
-<p>Aus den 100 gescrapten Chunks wählt das LLM im Backend nicht einfach die ersten Treffer. Jetzt schaltet sich das teuerste Element der Pipeline ein: der <strong>Cross-Encoder Re-Ranker</strong> (z. B. Cohere Rerank v3 oder BGE-Reranker-v2).</p>
-
-<p>Anders als Bi-Encoder vergleicht der Cross-Encoder die Suchfrage und deinen Textabschnitt <em>simultan</em> über alle Attention-Knoten hinweg. Er misst zwei Dinge:</p>
-<ol>
-  <li><strong>Perplexität (Überraschungswert):</strong> Ist der Satzbau unklar oder geschwurbelt? ➔ Chunk wird verworfen.</li>
-  <li><strong>Information Gain:</strong> Fügt dieser Abschnitt echte, neue Fakten hinzu? ➔ Score steigt.</li>
-</ol>
-
-<h3>Die Algorithmen-Lösung (Zero-Perplexity Chunking):</h3>
-<p>Wir schreiben in autonomen, in sich geschlossenen 200-Token-Markdown-Modulen. Jedes Modul enthält <em>Query-Sub-Intent + Evidenz + Datenpunkt</em>. Wenn der Cross-Encoder dieses Modul prüft, ist die Information Loss = 0. Das Modul überlebt das Re-Ranking zu 99 %.</p>
-
-<h2>4. Attention Heads & "Lost-in-the-Middle" Manipulation</h2>
-
-<p>Selbst wenn dein Chunk beim LLM ankommt, heißt das nicht, dass es ihn zitiert. Transformer-Modelle leiden unter der <strong>U-förmigen Attention-Kurve</strong> ("Lost in the Middle"). In einem langen Context Window schenken die Attention Heads den <strong>ersten 10 %</strong> und den <strong>letzten 10 %</strong> der Daten über 90 % der Aufmerksamkeit. Der Mittelteil verblasst.</p>
-
-<h3>Die Algorithmen-Lösung (Structural Anchor Positioning):</h3>
-<p>Wer seine Kernthesen oder Markenverweise mitten im Fließtext versteckt, wird vom LLM im Generierungs-Schritt ignoriert. Wir platzieren Entity-Claims an den <strong>strukturellen Chunk-Grenzen</strong> (H2-Headern, List-Tops und Summary-Tables). Wenn der RAG-Chunker die Seite zerschneidet, landet die Kernbotschaft automatisch an der Spitze des LLM-Aufmerksamkeitsfensters.</p>
-
-<h2>5. Parametric Knowledge Graph Triplet Grounding (Pre-Training Bias)</h2>
-
-<p>Das ist die höchste Disziplin. Wenn ein LLM (wie Claude 3.7 oder GPT-4o) <em>ohne Live-Websuche</em> antwortet, greift es auf sein <strong>Parametrisches Gedächtnis</strong> zurück. Es berechnet die mathematische Wahrscheinlichkeit des nächsten Tokens:</p>
-
-<pre><code>P(Kimpress | B2B KI-Agentur Hamburg)</code></pre>
-
-<h3>Die Algorithmen-Lösung (Entity Co-Occurrence Matrix):</h3>
-<p>Damit KIs dich <em>ohne Websuche</em> empfehlen, müssen deine Marke und deine Nischen-Keywords in Millionen von Trainings-Dokumenten (GitHub, Reddit, Wikipedia, Branchenverzeichnisse, News) in einem engen Token-Abstand (Context Distance &lt; 50 Tokens) co-existieren.</p>
-
-<p>Wir bauen keine klassischen Backlinks für Google, sondern <strong>Co-Occurrence Triples auf Autoritäts-Nodes</strong>, um die Kanten-Gewichtung im Knowledge Graph des LLMs permanent zu deinen Gunsten zu verschieben.</p>
-
-<h2>Fazit: GEO ist Mathematik, kein Hokuspokus</h2>
-
-<p>Wer 2026 noch glaubt, GEO sei "ein bisschen Content-Optimierung", hat den Wandel verpasst. Es ist das gezielte Engineering von RAG-Pipelines, Vector Embedding Densities und Cross-Encoder Re-Rankings.</p>
-
-<p>Wenn du wissen willst, wie dein Unternehmen in Perplexity &amp; ChatGPT auf Platz 1 dieser mathematischen Pipeline landet – sprich uns bei Kimpress direkt an. Wir zeigen dir die harten Daten.</p>
-`
-  },
-  {
     slug: 'ki-agenten-tutorial-code-guide-2026',
     title: 'Das ultimative KI-Agenten Tutorial 2026: 6 funktionierende Code-Snippets gegen ungeprüften Prompt-Müll',
     excerpt: 'Schluss mit Prompt-Geblubber. Hier sind 6 lauffähige Code-Snippets & Ultimate-Level System Prompts für OpenAI, Gemini 3.7, Claude C2PA, Ollama, ElevenLabs & n8n – direkt aus der Kimpress-Praxis.',
     date: '2026-08-21',
     readTime: 12,
     category: 'Automatisierung',
-    featured: false,
+    featured: true,
     content: `
 <p class="blog-lead">99 % aller KI-Tutorials im Netz haben dasselbe Problem: Sie stammen von Prompt-Postern auf LinkedIn, die noch nie eine Zeile Produktions-Code geschrieben haben. Du kopierst den Beispiel-Code, wirfst ihn in deine Konsole und landest sofort in einem Haufen von <code>SyntaxError</code>, veralteten SDK-Aufrufen oder fehlenden Dependency-Importen.</p>
 
@@ -858,72 +780,72 @@ return [{ json: { retryCount: retryCount, totalDelaySeconds: totalDelay } }];</c
     category: 'KI Marketing',
     featured: true,
     content: `
-<p class="blog-lead">Ende Februar 2026 habe ich Kimpress in Hamburg gegründet. Mein gesamtes Startkapital: 15 Jahre Erfahrung, 25 Euro für die Gewerbeanmeldung und ein altes 2017er MacBook Air. Wer so minimalistisch startet, hat absolut null Puffer für theoretische Spielereien. Jeder Workflow muss sofort abliefern. Code, der im Terminal crasht und ungelöst bleibt, bringt im harten Tagesgeschäft exakt null Euro Umsatz.</p>
+<p class="blog-lead">Ich sitze gerade in meinem Büro in Billstedt — Hamburg, 22115, für die die das nicht kennen: östliches Hamburg, weit weg von der Alster, nah an der Realität. Hier habe ich Kimpress gegründet. Mit einer 25-Euro-Gewerbeanmeldung, einem Laptop und der Überzeugung, dass KI-Marketing nicht nur für Konzerne mit sechsstelligem Budget sein muss.</p>
 
-<p>Seitdem werde ich fast täglich gefragt: Was macht ihr als KI-Agentur eigentlich? Was kostet KI-Marketing? Und ist das überhaupt was für mich? Ich beantworte das jetzt einmal — völlig ungeschönt.</p>
+<p>Seitdem werde ich fast täglich gefragt: Was macht ihr eigentlich? Was kostet das? Und ist das was für mich? Ich beantworte das jetzt einmal — so ehrlich wie möglich.</p>
 
 <h2>Was eine KI-Agentur in Hamburg wirklich macht</h2>
 
-<p>Vergiss erstmal alles, was du über traditionelle "Agenturen" zu wissen glaubst. Wir verzichten auf ellenlange Onboarding-Prozesse. Wir bauen absolut null Strategie-Decks mit 47 Folien. Sätze wie "Wir melden uns in drei Wochen mit einem Konzept" existieren bei uns einfach nicht.</p>
+<p>Vergiss erstmal alles was du über "Agenturen" zu wissen glaubst. Keine ellenlangen Onboarding-Prozesse. Kein Strategie-Deck mit 47 Folien. Kein "wir melden uns in drei Wochen mit einem Konzept".</p>
 
-<p>Was wir tun: Wir nehmen dein Business, schauen wo KI-Automatisierung dir sofort harte Arbeit abnehmen kann — und bauen das Backend. Fertig. Die vier Bereiche, in denen das bei unseren Kunden im DACH-Raum am meisten bringt:</p>
-
-<ul>
-  <li><strong>Videos und Bilder für Social Media &amp; Ads:</strong> KI-generierte Kurzvideos (10 Sekunden, deutsches Voiceover, dein Logo) und performante Ad-Bilder für Meta, LinkedIn oder Google. Was früher eine Videoproduktion für 1.500 € war, kostet heute einen Bruchteil davon — wenn man den Workflow beherrscht.</li>
-  <li><strong>Prozesse die sich selbst erledigen:</strong> Dein Postfach sortiert sich allein. Leads werden vollautomatisch qualifiziert. Termine bestätigen sich ohne dein Zutun. Das klingt nach Science-Fiction — ist es aber absolut nicht, wenn man n8n richtig aufsetzt.</li>
-  <li><strong>KI-Chatbots die wirklich helfen:</strong> Wir hassen diese nervigen Pop-ups, die nach 3 Sekunden aufploppen. Wir bauen Assistenten, die komplexe Kundenfragen beantworten, Termine vorqualifizieren und Kontaktdaten sauber ins CRM eintragen.</li>
-  <li><strong>Gefunden werden — auch von KI-Suchmaschinen:</strong> Das ist mein persönliches Steckenpferd. GEO nennt sich das — Generative Engine Optimization. Wir sorgen dafür, dass ChatGPT, Gemini oder Perplexity dich direkt empfehlen, wenn jemand nach deinen Leistungen sucht.</li>
-</ul>
-
-<h2>Was kostet KI-Marketing — und warum schwanken die Preise extrem?</h2>
-
-<p>Ich hab mich damals umgeschaut, bevor ich selbst gegründet hab. Was ich gesehen habe: Preise zwischen 119 € und 25.000 € für "KI-Beratung". Beides ist real. Beides hat seine Berechtigung. Die Frage ist nur: Was brauchst du wirklich?</p>
-
-<p>Große Unternehmensberatungen nehmen 10.000 bis 20.000 € — und dann bekommst du oft einen dicken Bericht darüber, was du theoretisch mit KI machen könntest. Das ist manchmal sinnvoll. Für einen Hamburger Handwerksbetrieb, eine Coaching-Praxis oder einen ehrlichen Mittelständler ist es meistens komplett überflüssig.</p>
-
-<p>Unser Modell als pragmatische KI-Agentur ist ein anderes. Bei Kimpress gibt es zwei Einstiegspunkte:</p>
+<p>Was wir tun: Wir nehmen dein Business, schauen wo KI dir sofort etwas abnehmen kann — und bauen das. Fertig. Die vier Bereiche in denen das bei unseren Kunden am meisten bringt:</p>
 
 <ul>
-  <li><strong>119 € einmalig:</strong> Das AI Performance Starter-Kit. Drei KI-Videos, fünf Ad-Bilder, Bio-Optimierung für Instagram, TikTok und LinkedIn plus die fertigen Skripte dazu. Für Leute, die erstmal testen wollen, ob KI-Content Leads für ihr Business zieht.</li>
-  <li><strong>Ab 499 € im Monat:</strong> Für alle, die eine echte Zusammenarbeit wollen. Laufender Content, KI-Automatisierungen, GEO-Aufbau. Wir fungieren dann wie dein externes KI-Entwicklerteam.</li>
+  <li><strong>Videos und Bilder für Social Media &amp; Ads:</strong> KI-generierte Kurzvideos (10 Sekunden, deutsches Voiceover, dein Logo) und Ad-Bilder für Meta, LinkedIn oder Google. Was früher eine Videoproduktion für 1.500 € war, kostet heute einen Bruchteil davon — wenn man weiß wie.</li>
+  <li><strong>Prozesse die sich selbst erledigen:</strong> Dein Postfach sortiert sich allein. Leads werden automatisch qualifiziert. Termine bestätigen sich ohne dein Zutun. Das klingt nach Science-Fiction — ist es aber nicht, wenn man n8n richtig einrichtet.</li>
+  <li><strong>KI-Chatbots die wirklich helfen:</strong> Nicht die nervigen Pop-ups die nach 3 Sekunden aufploppen. Sondern Assistenten die Kundenfragen beantworten können, Termine vorqualifizieren und Kontaktdaten sauber ins System eintragen.</li>
+  <li><strong>Gefunden werden — auch von KI-Suchmaschinen:</strong> Das ist mein persönliches Steckenpferd. GEO nennt sich das — Generative Engine Optimization. Dafür sorgen, dass ChatGPT, Gemini oder Perplexity dich empfehlen wenn jemand "KI-Agentur Hamburg" eintippt.</li>
 </ul>
 
-<p>Zur Einordnung: Eine klassische Marketingagentur in Hamburg nimmt für Social-Media-Management schnell 1.500 bis 3.000 € im Monat. Dafür bekommst du dann oft 8 bis 12 Posts, die sich alle gleich anfühlen. Das zeigt deutlich, wo KI gerade in Sachen Kosteneffizienz steht.</p>
+<h2>Was kostet das — und warum liegen die Preise so weit auseinander?</h2>
 
-<h2>Für wen lohnt es sich — und für wen absolut nicht</h2>
+<p>Ich hab mich damals umgeschaut, bevor ich selbst gegründet hab. Was ich gesehen habe: Preise zwischen 119 € und 25.000 € für "KI-Beratung". Beides ist real. Beides hat seine Berechtigung. Die Frage ist nur: Was brauchst du?</p>
 
-<p>Hier kommt der harte Teil, den viele Agenturen weglassen, weil er potenzielle Kunden abschreckt.</p>
+<p>Große Unternehmensberatungen nehmen 10.000 bis 20.000 € — und dann bekommst du in der Regel einen dicken Bericht darüber was du theoretisch mit KI machen könntest. Das ist manchmal sinnvoll. Für einen Hamburger Handwerksbetrieb, eine Coaching-Praxis oder einen Selbstständigen ist es das meistens nicht.</p>
 
-<p>KI-Marketing funktioniert niemals, wenn das Fundament fehlt. Wenn du noch nicht weißt, was du verkaufst, an wen und warum Leute bei dir kaufen sollten — dann rettet dich auch das beste KI-Video der Welt nicht. Dann brauchst du erst eine solide Business-Strategie, bevor du an Automatisierung denkst.</p>
+<p>Unser Modell ist ein anderes. Bei Kimpress gibt es zwei Einstiegspunkte:</p>
 
-<p>Aber wenn das klar ist? Dann ist KI im Moment das effizienteste Werkzeug am Markt. Ich sage das nicht nur, weil ich eine KI-Agentur betreibe. Ich sage das, weil ich selbst jeden Tag tief im Code stecke und die Ergebnisse sehe.</p>
+<ul>
+  <li><strong>119 € einmalig:</strong> Das AI Performance Starter-Kit. Drei KI-Videos, fünf Ad-Bilder, Bio-Optimierung für Instagram, TikTok und LinkedIn plus die fertigen Skripte dazu. Für Leute die erstmal testen wollen ob KI-Content zu ihrem Business passt — bevor sie größere Budgets einsetzen.</li>
+  <li><strong>Ab 499 € im Monat:</strong> Für die die eine echte Zusammenarbeit wollen. Laufender Content, Automatisierungen, GEO-Aufbau. Wir sind dann so etwas wie dein ausgelagertes KI-Team.</li>
+</ul>
 
-<p>Gut geeignet bist du, wenn du regelmäßig Content brauchst, dir aber schlichtweg das Team und die Zeit dafür fehlen. Oder wenn du merkst, dass du Stunden mit Aufgaben verbringst, die sich eigentlich ständig wiederholen. Oder wenn du bei Google oder in KI-Suchanfragen unsichtbar bist, obwohl du eigentlich genau das anbietest, was die Leute suchen.</p>
+<p>Zur Einordnung: Eine klassische Marketingagentur in Hamburg nimmt für Social-Media-Management schnell 1.500 bis 3.000 € im Monat. Dafür bekommst du dann oft 8 bis 12 Posts die sich alle gleich anfühlen. Ich sage nicht dass das schlecht ist — aber der Vergleich zeigt wo KI gerade steht.</p>
+
+<h2>Für wen lohnt es sich — und für wen nicht</h2>
+
+<p>Hier kommt der ehrliche Teil den viele Agenturen weglassen, weil er potenzielle Kunden abschreckt.</p>
+
+<p>KI-Marketing funktioniert nicht wenn das Fundament fehlt. Wenn du noch nicht weißt was du verkaufst, an wen und warum die bei dir kaufen sollten — dann hilft dir kein KI-Video der Welt. Dann brauchst du erst eine Strategie, keine Automatisierung.</p>
+
+<p>Aber wenn das klar ist? Dann ist KI im Moment das effizienteste Werkzeug das ich kenne. Ich sage das nicht weil ich KI-Agenturbetreiber bin. Ich sage das weil ich selbst täglich damit arbeite und sehe was dabei rauskommt.</p>
+
+<p>Gut geeignet bist du wenn du regelmäßig Content brauchst, aber kein Team und keine Zeit hast. Oder wenn du merkst, dass du Stunden mit Aufgaben verbringst die sich eigentlich wiederholen. Oder wenn du bei Google oder in KI-Suchanfragen nicht gefunden wirst, obwohl du eigentlich genau das anbietest was die Leute suchen.</p>
 
 <h2>Warum ich ausgerechnet in Billstedt eine KI-Agentur aufgemacht habe</h2>
 
-<p>Das fragen mich viele. Nicht Eimsbüttel, nicht Altona, nicht irgendwo mit Wasserblick. Sondern Hamburg-Billstedt.</p>
+<p>Das fragen mich viele. Nicht Eimsbüttel, nicht Altona, nicht irgendwo mit Wasserblick. Billstedt.</p>
 
-<p>Weil harte Tech-Arbeit nichts mit Standort zu tun hat. Wir arbeiten remote, digital, für Kunden in Hamburg, in ganz Deutschland und im Rest des DACH-Raums. Und weil ich fest daran glaube, dass echte Innovation nicht nur in hippen Co-Working-Spaces passiert, wo der Flat White 5,50 € kostet.</p>
+<p>Weil KI-Marketing nichts mit Standort zu tun hat. Wir arbeiten remote, digital, für Kunden in Hamburg, in Deutschland und im Rest des DACH-Raums. Und weil ich glaube dass Innovation nicht nur in hippen Co-Working-Spaces passiert wo der Flat White 5,50 € kostet.</p>
 
-<p>Das war auch die Grundidee hinter Kimpress: Qualität, die vorher nur riesige Budgets kaufen konnten, für die Leute zugänglich machen, die wirklich hart an ihrem Business arbeiten.</p>
+<p>Das war auch die Idee hinter Kimpress von Anfang an: Qualität die vorher nur große Budgets kaufen konnten — zugänglich machen für alle die wirklich etwas aufbauen wollen.</p>
 
-<h2>Die Fragen, die ich am häufigsten bekomme</h2>
+<h2>Die Fragen die ich am häufigsten bekomme</h2>
 
-<h3>Gibt es KI-Agenturen in Hamburg, die für kleine Unternehmen bezahlbar sind?</h3>
-<p>Ja — das wären dann wir. Einstieg ab 119 €, monatliche Zusammenarbeit ab 499 €. Wir verzichten komplett auf Mindestvertragslaufzeiten und verstecktes Kleingedrucktes.</p>
+<h3>Gibt es KI-Agenturen in Hamburg die auch für kleine Unternehmen bezahlbar sind?</h3>
+<p>Ja — das wäre dann wir. Einstieg ab 119 €, monatliche Zusammenarbeit ab 499 €. Keine Mindestvertragslaufzeit, kein verstecktes Kleingedrucktes.</p>
 
 <h3>Wie lange bis man erste Ergebnisse sieht?</h3>
-<p>KI-Videos und Bilder: sofort, oft innerhalb von 24 Stunden. SEO und GEO: realistisch 4 bis 12 Wochen. Automatisierungen (wie n8n): ab dem ersten Tag massiv spürbar.</p>
+<p>KI-Videos und Bilder: sofort, oft innerhalb von 24 Stunden. SEO und GEO: realistisch 4 bis 12 Wochen. Automatisierungen: ab dem ersten Tag spürbar.</p>
 
 <h3>Muss ich mich mit KI auskennen?</h3>
-<p>Überhaupt nicht. Du schickst uns dein Logo, deine Farben und sagst uns, was du verkaufst. Die harte Technik im Hintergrund übernehmen wir.</p>
+<p>Nein. Du schickst uns dein Logo, deine Farben und sagst uns was du verkaufst. Den Rest machen wir.</p>
 
 <h2>Wie es weitergeht</h2>
 
-<p>Wenn du neugierig bist — schreib einfach. Wir hassen aggressive Sales-Calls, wir bauen null Pitch-Decks, wir machen absolut null Druck. Ich schaue mir dein Backend an und sage dir ehrlich, wo KI dir helfen kann. Und falls es bei dir aktuell wenig Sinn ergibt, sag ich dir das genauso direkt.</p>
+<p>Wenn du neugierig bist — einfach schreiben. Kein Sales-Call, kein Pitch-Deck, kein Druck. Ich schaue mir an was du machst und sage dir ehrlich ob und wie KI dir helfen kann. Wenn nicht, sage ich das auch.</p>
 
-<p>Das ist halt der große Vorteil, wenn man sein Büro in Billstedt hat und nicht im elitären Glasturm sitzt.</p>
+<p>Das ist halt der Vorteil wenn man in Billstedt sitzt und nicht im Glasturm.</p>
     `,
   },
   {
