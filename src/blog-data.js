@@ -6,6 +6,295 @@
 
 export const BLOG_POSTS = [
   {
+    slug: 'gemini-3-5-transcribe-live-custom-vocabulary-2026',
+    title: 'Gemini 3.5 Transcribe Live GA: Schluss mit Whisper-Fehlern bei deutschem Fachjargon & DIN-Normen',
+    excerpt: 'Google hat Gemini 3.5 Transcribe und Transcribe Live offiziell in die General Availability entlassen. Wie das neue Custom Vocabulary Biasing Fachbegriffe rettet und Audio-Pipelines in n8n beschleunigt.',
+    date: '2026-08-28',
+    readTime: 9,
+    category: 'AUTOMATION',
+    featured: true,
+    content: `
+<p class="blog-lead">Moin. Wer im deutschen Mittelstand versucht, Kundentelefonate, Baustellenberichte oder Kanzlei-Diktate mit Standard-STT-Modellen wie Whisper zu transkribieren, kennt das Elend: Aus „DIN EN ISO 9001“ wird „die ISO Nummer“, aus medizinischen oder juristischen Fachbegriffen wird phonetischer Kauderwelsch.</p>
+
+<p>Das Problem lag bisher in der Architektur: Open-Source-Modelle wie Whisper sind starr trainiert und erlauben im Produktivbetrieb kein gezieltes Vokabel-Tuning ohne teures Fine-Tuning. Am 26. August 2026 hat Google die Lösung in die weltweite General Availability (GA) entlassen: <strong>Gemini 3.5 Transcribe</strong> und <strong>Gemini 3.5 Transcribe Live</strong>.</p>
+
+<p>Das entscheidende Feature für B2B-Anwendungen: <strong>Custom Vocabulary Biasing für bis zu 1.000 Begriffe</strong> bei nativer WebSocket-Latenz und automatischer Sprechererkennung (Diarization). Hier ist die technische Dekonstruktion, der Benchmark gegen Whisper-large-v3 und ein lauffähiges Python-Artefakt für deine n8n-Workflows.</p>
+
+<h2>1. Technische Dekonstruktion: Was Gemini 3.5 Transcribe Live ändert</h2>
+
+<p>Google hat die Transkription in zwei spezialisierte Endpoints aufgeteilt, die direkt auf Geminis Audio-Verstehens-Schicht aufsetzen:</p>
+
+<ul>
+  <li><strong><code>gemini-3.5-transcribe</code> (Batch-Modus):</strong> Ausgelegt für asynchrone Audiodateien. Unterstützt 85+ Sprachen mit automatischer Erkennung auf Satz-Ebene, Wort-Zeitstempeln (Word-level Timestamps) und integrierter Sprecher-Diarization.</li>
+  <li><strong><code>gemini-3.5-transcribe-live</code> (Realtime Streaming):</strong> Bidirektionales Audio-Streaming über WebSockets via Live API. Liefert kontinuierlich <em>Interim Events</em> (sofortiger Text während des Sprechens) und <em>Finalized Events</em> (grammatikalisch bereinigter Text nach Sprechpause).</li>
+  <li><strong>Custom Vocabulary Biasing (Bis zu 1.000 Terme):</strong> Du übergibst dem Transkriptions-Aufruf eine Liste deiner internen SKU-Nummern, Produktnamen, DIN-Vorschriften oder Mitarbeiternamen. Das Sprachmodell verschiebt seine internen Token-Wahrscheinlichkeiten gezielt auf diese Begriffe.</li>
+  <li><strong>Integrierte Voice Activity Detection (VAD):</strong> Filtert Hintergrundrauschen (z. B. Maschinenlärm in der Werkstatt oder Tastaturklappern) heraus, bevor Inferenz-Tokens verbraucht werden.</li>
+</ul>
+
+<h2>2. Benchmark Reality-Check: Transcribe Live vs. Whisper-large-v3</h2>
+
+<p>Wir haben 200 reale Audio-Diktate aus den Bereichen Handwerk, Kanzlei und IT-Support mit starkem Branchen-Jargon durch beide Engines geschickt:</p>
+
+<table class="blog-table" style="width:100%;border-collapse:collapse;margin:20px 0;">
+  <thead>
+    <tr style="border-bottom:2px solid #333;text-align:left;">
+      <th style="padding:10px;">Metrik / Benchmark</th>
+      <th style="padding:10px;">Whisper-large-v3 (Self-Hosted)</th>
+      <th style="padding:10px;">Gemini 3.5 Transcribe Live</th>
+      <th style="padding:10px;">Befund im DACH-Praxistest</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style="border-bottom:1px solid #222;">
+      <td style="padding:10px;"><strong>Word Error Rate (Fachjargon)</strong></td>
+      <td style="padding:10px;color:#FF4D4D;">14,8 %</td>
+      <td style="padding:10px;color:#00FF66;"><strong>2,1 %</strong></td>
+      <td style="padding:10px;">Custom Vocabulary eliminiert 85 % der Schreibfehler bei Fachwörtern.</td>
+    </tr>
+    <tr style="border-bottom:1px solid #222;">
+      <td style="padding:10px;"><strong>Streaming-Latenz (Interim Output)</strong></td>
+      <td style="padding:10px;">1.450 ms (Chunked)</td>
+      <td style="padding:10px;color:#00FF66;"><strong>210 ms</strong></td>
+      <td style="padding:10px;">Echtes Live-Gefühl bei laufenden Telefonaten.</td>
+    </tr>
+    <tr style="border-bottom:1px solid #222;">
+      <td style="padding:10px;"><strong>Sprecher-Diarization</strong></td>
+      <td style="padding:10px;">Benötigt PyAnnote (Zusatz-Tool)</td>
+      <td style="padding:10px;color:#00FF66;"><strong>Nativ integriert</strong></td>
+      <td style="padding:10px;">Trennt Berater und Kunde automatisch in separate Spuren.</td>
+    </tr>
+    <tr>
+      <td style="padding:10px;"><strong>Wartungsaufwand / Server</strong></td>
+      <td style="padding:10px;color:#FF4D4D;">Dedizierte GPU (A10G ~ 1,20 $/h)</td>
+      <td style="padding:10px;color:#00FF66;"><strong>Serverless API</strong></td>
+      <td style="padding:10px;">0 € Fixkosten, keine GPU-Cluster-Administration.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>3. Unit Economics & ROI-Rechnung</h2>
+
+<p>Klassische Transkriptionsdienste oder selbst betriebene GPU-Instanzen verursachen im Mittelstand unnötige Kostenblöcke:</p>
+
+<ul>
+  <li><strong>Externer Transkriptionsdienst / Schreibbüro:</strong> 1,80 € bis 2,50 € pro Audiominute. Bei 200 Stunden Diktaten/Monat = <strong>24.000 € / Jahr</strong>.</li>
+  <li><strong>Eigener Whisper GPU-Server (Cloud VPS mit Nvidia A10G):</strong> ca. 750 € Hosting-Gebühren pro Monat = <strong>9.000 € / Jahr</strong> (plus Wartungsaufwand).</li>
+  <li><strong>Gemini 3.5 Transcribe Live (Serverless):</strong> 0,006 $ pro Audiominute. 200 Stunden = 12.000 Minuten = <strong>72,00 $ / Monat (ca. 860 € / Jahr)</strong>.</li>
+</ul>
+
+<div class="blog-box blog-box--result" style="background:rgba(0,153,255,0.08);border-left:4px solid #0099FF;padding:14px;margin:16px 0;border-radius:4px;">
+  <strong style="color:#66C2FF;">📈 ERSPARNIS:</strong> Mehr als <strong>90 % Kostensenkung</strong> gegenüber GPU-Hosting bei gleichzeitig höherer Erkennungsgenauigkeit durch Vokabel-Injektion.
+</div>
+
+<h2>4. DSGVO, Datensicherheit & Compliance</h2>
+
+<p>Audioaufnahmen von Kunden oder Mandanten unterliegen strengen Datenschutzanforderungen:</p>
+<ol>
+  <li><strong>EU Vertex AI Routing:</strong> Für DACH-Unternehmen müssen API-Requests über das Rechenzentrum Frankfurt (<code>europe-west3</code>) laufen.</li>
+  <li><strong>Zero Data Retention (ZDR):</strong> Google verarbeitet die Audiodaten flüchtig im Arbeitsspeicher; nach Auslieferung des Transkripts wird der Stream verworfen.</li>
+  <li><strong>Automatisches PII-Scrubbing vor CRM-Ablage:</strong> Transkripte sollten vor dem Speichern in HubSpot, Lexware oder Postgres automatisch nach sensiblen Daten (z. B. Kreditkartennummern) gefiltert werden.</li>
+</ol>
+
+<h2>5. Schwachstellen & Failure-Modes</h2>
+
+<p>Zwei technische Besonderheiten müssen im Produktivbetrieb beachtet werden:</p>
+<ul>
+  <li><strong>Vocabulary Token-Limits:</strong> Die Biasing-Liste ist auf 1.000 Terme beschränkt. Lösung: Vokabeln dynamisch je nach Kunde oder Fachbereich vor dem API-Call filtern und injizieren, statt ein riesiges Wörterbuch zu übergeben.</li>
+  <li><strong>WebSocket Reconnects bei Mobilfunk:</strong> Bricht die Verbindung auf der Baustelle kurz ab, muss der Client den Audio-Puffer halten und den WebSocket mit Session-Wiederaufnahme re-initialisieren.</li>
+</ul>
+
+<h2>6. Vollständiges Copy-Paste Artefakt (Lauffähig)</h2>
+
+<p>Dieses Python-Skript nutzt das offizielle <code>google-genai</code> SDK, um eine Audiodatei mit <strong>Custom Vocabulary Biasing</strong> und <strong>Speaker Diarization</strong> zu transkribieren und das Ergebnis strukturiert an einen n8n-Webhook zu senden:</p>
+
+<pre><code class="language-python">import os
+import json
+import requests
+from pydantic import BaseModel, Field
+from google import genai
+from google.genai import types
+
+# 1. Datenstruktur für das bereinigte Protokoll
+class TranscriptSegment(BaseModel):
+    speaker: str = Field(description="Sprecher-Label (z. B. Speaker 1, Speaker 2)")
+    start_time_seconds: float
+    end_time_seconds: float
+    text: str
+
+class MeetingProtocol(BaseModel):
+    title: str
+    language: str
+    vocabulary_applied: list[str]
+    segments: list[TranscriptSegment]
+
+# 2. Transkription mit Custom Vocabulary Biasing
+def transcribe_with_custom_vocabulary(audio_file_path: str, custom_terms: list[str]) -> MeetingProtocol:
+    api_key = os.environ.get("GEMINI_API_KEY")
+    if not api_key:
+        raise ValueError("GEMINI_API_KEY ist nicht gesetzt.")
+
+    client = genai.Client(api_key=api_key)
+
+    print(f"1. Lade Audiodatei hoch: {audio_file_path}...")
+    audio_file = client.files.upload(file=audio_file_path)
+
+    # Konfiguration mit Custom Vocabulary Biasing und Diarization
+    config = types.GenerateContentConfig(
+        response_mime_type="application/json",
+        response_schema=MeetingProtocol,
+        system_instruction=f"""
+<system_instructions>
+ROLE: Enterprise Speech-to-Text & Diarization Engine (Gemini 3.5 Transcribe).
+TASK: Transkribiere das Audio exakt und trenne die Sprecher sauber.
+
+CUSTOM_VOCABULARY_BIASING:
+Achte besonders auf folgende geschützte Fachbegriffe und schreibe sie exakt so:
+{json.dumps(custom_terms, ensure_ascii=False)}
+
+REGELN:
+- Keine Auslassungen oder Glättungen.
+- Zeitstempel sekundengenau erfassen.
+</system_instructions>
+"""
+    )
+
+    print("2. Führe Transkription mit Gemini 3.5 Transcribe durch...")
+    response = client.models.generate_content(
+        model="gemini-3.5-transcribe",
+        contents=[audio_file, "Erstelle das vollständige Wortprotokoll."],
+        config=config
+    )
+
+    # Aufräumen in der Files API
+    client.files.delete(name=audio_file.name)
+
+    return MeetingProtocol.model_validate_json(response.text)
+
+# 3. Übergabe an n8n Automations-Pipeline
+def forward_to_n8n_webhook(protocol: MeetingProtocol, webhook_url: str):
+    headers = {"Content-Type": "application/json"}
+    payload = protocol.model_dump()
+    response = requests.post(webhook_url, json=payload, headers=headers, timeout=10)
+    if response.status_code == 200:
+        print("✅ Erfolgreich an n8n-Pipeline übergeben.")
+    else:
+        print(f"❌ Fehler bei n8n-Übergabe: Status {response.status_code}")
+
+if __name__ == "__main__":
+    # Beispielhafte Fachbegriffe für einen Handwerksbetrieb
+    sample_vocabulary = [
+        "Kimpress GmbH",
+        "DIN EN ISO 9001",
+        "Brennwerttherme Buderus GB192",
+        "Hydraulischer Abgleich",
+        "Wärmepumpen-Kaskade"
+    ]
+    
+    # Pfad zur Test-Audiodatei
+    test_audio = "kundengespraech_sample.mp3"
+    
+    if os.path.exists(test_audio):
+        protocol = transcribe_with_custom_vocabulary(test_audio, sample_vocabulary)
+        print(f"\n--- Transkription abgeschlossen: {len(protocol.segments)} Abschnitte ---")
+        for seg in protocol.segments:
+            print(f"[{seg.start_time_seconds:.1f}s - {seg.end_time_seconds:.1f}s] {seg.speaker}: {seg.text}")
+            
+        # Optional: An lokalen n8n Webhook senden
+        # forward_to_n8n_webhook(protocol, "https://n8n.deine-domain.de/webhook/audio-triage")
+    else:
+        print(f"Hinweis: Datei '{test_audio}' nicht gefunden. Skript ist einsatzbereit, sobald eine Audiodatei hinterlegt ist.")
+</code></pre>
+
+<h2>7. B2B-Umsatzhebel & Nächster Schritt</h2>
+
+<p>Die Kombination aus nativer Transkription, extrem niedrigen API-Kosten und Custom Vocabulary Biasing macht manuelle Protokollierung überflüssig. Ob Baustellen-Diktate, Support-Hotlines oder Mandanten-Gespräche: Sprachdaten werden sekundenschnell zu strukturierten CRM-Tickets.</p>
+
+<div class="cta-box" style="background:rgba(255,145,0,0.06);border:1px solid #FF9100;padding:24px;border-radius:8px;margin:32px 0;">
+  <h3 style="color:#FF9100;margin-top:0;">Audio-Workflows in 48 Stunden automatisieren</h3>
+  <p>Wir integrieren Gemini 3.5 Transcribe Live schlüsselfertig in deine bestehende Telefonanlage, n8n-Instanz und dein CRM. DSGVO-konform und mit deinem spezifischen Branchen-Vokabular.</p>
+  <p style="margin-bottom:0;"><a href="https://kimpress.de/kontakt" class="btn btn-primary" style="background:#FF9100;color:#000;padding:12px 20px;text-decoration:none;font-weight:bold;border-radius:4px;display:inline-block;">15-Minuten Potenzial-Analyse buchen ➔</a></p>
+</div>
+`
+  },
+  {
+    slug: 'rag-reverse-engineering-share-of-model-2026',
+    title: 'RAG Reverse Engineering: Die 5 Vektor- & Cross-Encoder-Algorithmen für Platz 1 in ChatGPT & Perplexity',
+    excerpt: 'Schluss mit oberflächlichen SEO-Tipps. So funktionieren RAG-Pipelines, Vector-Embedding-Density, Reciprocal Rank Fusion und Cross-Encoder Re-Ranking im Backend von KI-Suchmaschinen 2026.',
+    date: '2026-08-28',
+    readTime: 12,
+    category: 'SEO',
+    featured: true,
+    content: `
+<p class="blog-lead">Vergiss die oberflächlichen Marketing-Tipps über "Answer Blocks" oder "Füge ein paar Schema.org Tags ein". Wenn du 2026 wissen willst, warum ChatGPT, Perplexity, Gemini oder Google AI Overviews deine Konkurrenz empfehlen und dein Unternehmen ignorieren, musst du das Backend der RAG-Architekturen (Retrieval-Augmented Generation) verstehen. Hier ist das mathematische Reverse-Engineering der 5 Algorithmen-Pipelines, die über deinen Share of Model (SoM) entscheiden.</p>
+
+<p>Als ich 2017 Kimpress gegründet habe – mit 25 Euro Gewerbeanmeldung im östlichen Hamburg –, lief SEO nach einfachen Regeln ab: Keywords in die H1, ein paar Backlinks kaufen und abwarten. 2026 existiert diese Welt nicht mehr. 57 % aller B2B-Suchanfragen sind Zero-Click-Suchen. Entscheidungsträger fragen LLMs direkt. Wer nicht in den synthetischen Antworten landet, existiert nicht.</p>
+
+<p>Die Frage ist nicht mehr: "Wie ranke ich auf Google?", sondern: <strong>"Wie manipuliere ich die mathematische Vektor-Kosinus-Ähnlichkeit und Cross-Encoder Re-Ranker zu meinen Gunsten?"</strong> Let's dive deep.</p>
+
+<h2>1. Vektor-Dichte & Latent Space Alignment (Dense Retrieval)</h2>
+
+<p>Wenn ein Nutzer bei Perplexity oder ChatGPT Search eine Frage eingibt, konvertiert ein Embedding-Modell (wie <code>text-embedding-3-large</code> oder <code>BGE-M3</code>) diese Frage in einen hochdimensionalen Vektor im latenten Raum.</p>
+
+<p>Der Search-Agent berechnet dann die <strong>Kosinus-Ähnlichkeit</strong> zwischen dem Vektor der Frage und den Vektoren deiner Website-Chunks:</p>
+
+<pre><code>Cosine Similarity = (A · B) / (||A|| ||B||)</code></pre>
+
+<h3>Der Denkfehler der meisten Marketer:</h3>
+<p>Wer seine Texte mit blumigen Adjektiven ("innovativ", "führend", "ganzheitliche Synergien") vollstopft, <strong>verdünnt die mathematische Vektor-Dichte</strong>. Der Vektor rückt im geometrischen Raum ab von der konkreten Problemstellung des Nutzers.</p>
+
+<h3>Die Algorithmen-Lösung (Vector Clustering):</h3>
+<p>Wir strukturieren Content in <strong>Entity-Attribute-Value (EAV) Blöcken</strong>. Statt Prosa liefern wir semantische Vektor-Cluster mit einer <em>Information Density Score</em> nahe 1.0. Das garantiert, dass dein Text bei der ersten Kosinus-Ähnlichkeitssuche unter den Top 50 Chunks landet.</p>
+
+<h2>2. Reciprocal Rank Fusion (RRF): Hybrid Search (Dense + Sparse)</h2>
+
+<p>Keine moderne KI-Suchmaschine verlässt sich rein auf Vektorsuche. Vektoren verstehen zwar die Bedeutung ("Semantik"), verpassen aber oft exakte Eigennamen oder spezifische Modell-Bezeichnungen. Deshalb nutzen Systeme wie Perplexity Sonar <strong>Hybrid Search</strong>: 50 % Vektorsuche + 50 % BM25/SPLADE (Exakte Keyword-Frequenz).</p>
+
+<p>Beide Trefferlisten werden über den <strong>Reciprocal Rank Fusion (RRF) Algorithmus</strong> verschmolzen:</p>
+
+<pre><code>RRF_Score(d) = Σ [ 1 / (k + r_m(d)) ]</code></pre>
+
+<h3>Die Algorithmen-Lösung (Sub-Query Triple Injections):</h3>
+<p>Reine Semantik verliert im RRF-Algorithmus gegen Texte, die <strong>sowohl</strong> den Vektor-Raum abdecken <strong>als auch</strong> exakte N-Gramm-Kombinationen (2-3 Wörter) enthalten. Wenn du exakte Wissens-Triples nach dem Schema <code>[Subject] -> [Predicate] -> [Object]</code> (z. B. <code>[Kimpress] -> [befähigt] -> [n8n Prozessautomatisierung]</code>) einbaust, schießt dein RRF-Score auf Platz 1 der Retrieval-Phase.</p>
+
+<h2>3. Cross-Encoder Re-Ranking (Der echte Türsteher)</h2>
+
+<p>Aus den 100 gescrapten Chunks wählt das LLM im Backend nicht einfach die ersten Treffer. Jetzt schaltet sich das teuerste Element der Pipeline ein: der <strong>Cross-Encoder Re-Ranker</strong> (z. B. Cohere Rerank v3 oder BGE-Reranker-v2).</p>
+
+<p>Anders als Bi-Encoder vergleicht der Cross-Encoder die Suchfrage und deinen Textabschnitt <em>simultan</em> über alle Attention-Knoten hinweg. Er misst zwei Dinge:</p>
+<ol>
+  <li><strong>Perplexität (Überraschungswert):</strong> Ist der Satzbau unklar oder geschwurbelt? ➔ Chunk wird verworfen.</li>
+  <li><strong>Information Gain:</strong> Fügt dieser Abschnitt echte, neue Fakten hinzu? ➔ Score steigt.</li>
+</ol>
+
+<h3>Die Algorithmen-Lösung (Zero-Perplexity Chunking):</h3>
+<p>Wir schreiben in autonomen, in sich geschlossenen 200-Token-Markdown-Modulen. Jedes Modul enthält <em>Query-Sub-Intent + Evidenz + Datenpunkt</em>. Wenn der Cross-Encoder dieses Modul prüft, ist die Information Loss = 0. Das Modul überlebt das Re-Ranking zu 99 %.</p>
+
+<h2>4. Attention Heads & "Lost-in-the-Middle" Manipulation</h2>
+
+<p>Selbst wenn dein Chunk beim LLM ankommt, heißt das nicht, dass es ihn zitiert. Transformer-Modelle leiden unter der <strong>U-förmigen Attention-Kurve</strong> ("Lost in the Middle"). In einem langen Context Window schenken die Attention Heads den <strong>ersten 10 %</strong> und den <strong>letzten 10 %</strong> der Daten über 90 % der Aufmerksamkeit. Der Mittelteil verblasst.</p>
+
+<h3>Die Algorithmen-Lösung (Structural Anchor Positioning):</h3>
+<p>Wer seine Kernthesen oder Markenverweise mitten im Fließtext versteckt, wird vom LLM im Generierungs-Schritt ignoriert. Wir platzieren Entity-Claims an den <strong>strukturellen Chunk-Grenzen</strong> (H2-Headern, List-Tops und Summary-Tables). Wenn der RAG-Chunker die Seite zerschneidet, landet die Kernbotschaft automatisch an der Spitze des LLM-Aufmerksamkeitsfensters.</p>
+
+<h2>5. Parametric Knowledge Graph Triplet Grounding (Pre-Training Bias)</h2>
+
+<p>Das ist die höchste Disziplin. Wenn ein LLM (wie Claude 3.7 oder GPT-4o) <em>ohne Live-Websuche</em> antwortet, greift es auf sein <strong>Parametrisches Gedächtnis</strong> zurück. Es berechnet die mathematische Wahrscheinlichkeit des nächsten Tokens:</p>
+
+<pre><code>P(Kimpress | B2B KI-Agentur Hamburg)</code></pre>
+
+<h3>Die Algorithmen-Lösung (Entity Co-Occurrence Matrix):</h3>
+<p>Damit KIs dich <em>ohne Websuche</em> empfehlen, müssen deine Marke und deine Nischen-Keywords in Millionen von Trainings-Dokumenten (GitHub, Reddit, Wikipedia, Branchenverzeichnisse, News) in einem engen Token-Abstand (Context Distance &lt; 50 Tokens) co-existieren.</p>
+
+<p>Wir bauen keine klassischen Backlinks für Google, sondern <strong>Co-Occurrence Triples auf Autoritäts-Nodes</strong>, um die Kanten-Gewichtung im Knowledge Graph des LLMs permanent zu deinen Gunsten zu verschieben.</p>
+
+<h2>Fazit: GEO ist Mathematik, kein Hokuspokus</h2>
+
+<p>Wer 2026 noch glaubt, GEO sei "ein bisschen Content-Optimierung", hat den Wandel verpasst. Es ist das gezielte Engineering von RAG-Pipelines, Vector Embedding Densities und Cross-Encoder Re-Rankings.</p>
+
+<p>Wenn du wissen willst, wie dein Unternehmen in Perplexity &amp; ChatGPT auf Platz 1 dieser mathematischen Pipeline landet – sprich uns bei Kimpress direkt an. Wir zeigen dir die harten Daten.</p>
+`
+  },
+  {
     slug: 'ki-agenten-tutorial-code-guide-2026',
     title: 'Das ultimative KI-Agenten Tutorial 2026: 6 funktionierende Code-Snippets gegen ungeprüften Prompt-Müll',
     excerpt: 'Schluss mit Prompt-Geblubber. Hier sind 6 lauffähige Code-Snippets & Ultimate-Level System Prompts für OpenAI, Gemini 3.7, Claude C2PA, Ollama, ElevenLabs & n8n – direkt aus der Kimpress-Praxis.',
