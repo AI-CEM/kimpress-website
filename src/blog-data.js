@@ -212,7 +212,7 @@ if __name__ == "__main__":
 <div class="cta-box" style="background:rgba(255,145,0,0.06);border:1px solid #FF9100;padding:24px;border-radius:8px;margin:32px 0;">
   <h3 style="color:#FF9100;margin-top:0;">Audio-Workflows in 48 Stunden automatisieren</h3>
   <p>Wir integrieren Gemini 3.5 Transcribe Live schlüsselfertig in deine bestehende Telefonanlage, n8n-Instanz und dein CRM. DSGVO-konform und mit deinem spezifischen Branchen-Vokabular.</p>
-  <p style="margin-bottom:0;"><a href="https://kimpress.de/kontakt" class="btn btn-primary" style="background:#FF9100;color:#000;padding:12px 20px;text-decoration:none;font-weight:bold;border-radius:4px;display:inline-block;">15-Minuten Potenzial-Analyse buchen ➔</a></p>
+  <p style="margin-bottom:0;"><a href="/#kontakt" class="btn btn--primary" style="background:#FF9100;color:#000;padding:12px 20px;text-decoration:none;font-weight:bold;border-radius:4px;display:inline-block;">15-Minuten Potenzial-Analyse buchen ➔</a></p>
 </div>
 `
   },
@@ -673,7 +673,7 @@ return [{ json: { retryCount: retryCount, totalDelaySeconds: totalDelay } }];</c
 
 <p>Kein 60-minütiger Verkaufs-Pitch. Wir setzen uns 15 Minuten in den Zoom-Call, schauen uns deine Codebase oder deine Automatisierungs-Pläne an und klären direkt, wie wir das sauber umsetzen.</p>
 
-<p>👉 <strong><a href="https://kimpress.de/kontakt">Jetzt 15-Minuten Erstgespräch mit Cem buchen</a></strong></p>
+<p>👉 <strong><a href="/#kontakt">Jetzt 15-Minuten Erstgespräch mit Cem buchen</a></strong></p>
     `
   },
   {
@@ -797,7 +797,7 @@ return [{ json: { retryCount: retryCount, totalDelaySeconds: totalDelay } }];</c
 
 <p>Kein Berater-Blabla, keine teuren Agentur-Retainer für Standard-Texte. Wir setzen uns 15 Minuten in den Zoom-Call, prüfen deine aktuellen Prozesse und klären, wie eine maßgeschneiderte Content-Engine für dein Unternehmen aussieht.</p>
 
-<p>👉 <strong><a href="https://kimpress.de/kontakt">Jetzt 15-Minuten Erstgespräch mit Cem buchen</a></strong></p>
+<p>👉 <strong><a href="/#kontakt">Jetzt 15-Minuten Erstgespräch mit Cem buchen</a></strong></p>
     `
   },
   {
@@ -915,7 +915,7 @@ return [{ json: { retryCount: retryCount, totalDelaySeconds: totalDelay } }];</c
 
 <p>Kein 60-minütiger Verkaufs-Pitch, keine PowerPoint-Schlachten. Wir setzen uns 15 Minuten in den Zoom-Call, schauen uns deine aktuellen Engpässe an und ich sage dir direkt, ob und wie wir das sauber mit n8n umsetzen können.</p>
 
-<p>👉 <strong><a href="https://kimpress.de/kontakt">Jetzt 15-Minuten Erstgespräch mit Cem buchen</a></strong></p>
+<p>👉 <strong><a href="/#kontakt">Jetzt 15-Minuten Erstgespräch mit Cem buchen</a></strong></p>
     `
   },
   {
