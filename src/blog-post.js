@@ -29,11 +29,35 @@ function renderPost(post) {
   const related = getRelatedPosts(post.slug, 3);
   const postUrl = `https://kimpress.de/blog-post.html?slug=${post.slug}`;
 
-  document.getElementById('post-meta-title').textContent = `${post.title} — Kimpress Blog`;
-  document.getElementById('post-meta-desc').setAttribute('content', post.excerpt);
+  document.title = `${post.title} — Kimpress Blog`;
+  const metaTitle = document.getElementById('post-meta-title');
+  if (metaTitle) metaTitle.textContent = `${post.title} — Kimpress Blog`;
 
-  const canonicalTag = document.getElementById('canonical-tag');
-  if (canonicalTag) canonicalTag.setAttribute('href', postUrl);
+  const metaDesc = document.getElementById('post-meta-desc');
+  if (metaDesc) metaDesc.setAttribute('content', post.excerpt);
+
+  let canonicalTag = document.getElementById('canonical-tag');
+  if (canonicalTag) {
+    canonicalTag.setAttribute('href', postUrl);
+  } else {
+    canonicalTag = document.createElement('link');
+    canonicalTag.rel = 'canonical';
+    canonicalTag.id = 'canonical-tag';
+    canonicalTag.href = postUrl;
+    document.head.appendChild(canonicalTag);
+  }
+
+  // Open Graph & Twitter Tags dynamic update
+  const ogTitle = document.getElementById('og-title');
+  if (ogTitle) ogTitle.setAttribute('content', `${post.title} — Kimpress Blog`);
+  const ogDesc = document.getElementById('og-desc');
+  if (ogDesc) ogDesc.setAttribute('content', post.excerpt);
+  const ogUrl = document.getElementById('og-url');
+  if (ogUrl) ogUrl.setAttribute('content', postUrl);
+  const twTitle = document.getElementById('tw-title');
+  if (twTitle) twTitle.setAttribute('content', `${post.title} — Kimpress Blog`);
+  const twDesc = document.getElementById('tw-desc');
+  if (twDesc) twDesc.setAttribute('content', post.excerpt);
 
   // Dynamic JSON-LD BlogPosting Schema Injector (2030 Standard GEO Engine)
   const existingSchema = document.getElementById('dynamic-post-schema');
