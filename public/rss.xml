@@ -7,6 +7,13 @@
   <language>de-de</language>
   <atom:link href="https://kimpress.de/rss.xml" rel="self" type="application/rss+xml" />
   <item>
+    <title>n8n 2.38.1 Reverse Engineering: Wie PR #37206 kaputte PDFs in KI-Agenten repariert (inkl. Workflow)</title>
+    <link>https://kimpress.de/blog-post.html?slug=n8n-agent-binary-data-pdf-automation-2026</link>
+    <guid>https://kimpress.de/blog-post.html?slug=n8n-agent-binary-data-pdf-automation-2026</guid>
+    <description>Bisher zerstörte n8n Binärdaten, sobald KI-Agenten große PDF-Rechnungen über Tools abriefen. Die Dekonstruktion von Commit b54500d, tool-result-guard.ts und die produktionsreife Dokumenten-Pipeline.</description>
+    <pubDate>Fri, 04 Sep 2026 00:00:00 GMT</pubDate>
+  </item>
+  <item>
     <title>Gemini 3.5 Transcribe Live GA: Schluss mit Whisper-Fehlern bei deutschem Fachjargon &amp; DIN-Normen</title>
     <link>https://kimpress.de/blog-post.html?slug=gemini-3-5-transcribe-live-custom-vocabulary-2026</link>
     <guid>https://kimpress.de/blog-post.html?slug=gemini-3-5-transcribe-live-custom-vocabulary-2026</guid>
