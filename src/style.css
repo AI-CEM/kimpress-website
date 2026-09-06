@@ -5978,7 +5978,7 @@ button.btn {
   font-size: 0.95rem;
   color: rgba(255, 255, 255, 0.7);
   line-height: 1.5;
-  min-height: 72px;
+  min-height: 95px;
   margin-bottom: 24px;
 }
 
@@ -5987,7 +5987,7 @@ button.btn {
   border-top: 1px dashed rgba(255, 255, 255, 0.1);
   border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
   margin-bottom: 30px;
-  min-height: 125px;
+  min-height: 130px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -6018,6 +6018,9 @@ button.btn {
   color: #FF4D4D;
   margin-top: 8px;
   font-weight: 500;
+  min-height: 2.4rem;
+  display: flex;
+  align-items: center;
 }
 
 .pricing-card__features {
