@@ -27,7 +27,7 @@ function relatedCard(post) {
 function renderPost(post) {
   const color = categoryColor(post.category);
   const related = getRelatedPosts(post.slug, 3);
-  const postUrl = `https://kimpress.de/blog-post.html?slug=${post.slug}`;
+  const postUrl = `https://www.kimpress.de/blog-post.html?slug=${post.slug}`;
 
   document.title = `${post.title} — Kimpress Blog`;
   const metaTitle = document.getElementById('post-meta-title');
@@ -78,18 +78,18 @@ function renderPost(post) {
         "datePublished": post.date,
         "author": {
           "@type": "Person",
-          "@id": "https://kimpress.de/#founder",
+          "@id": "https://www.kimpress.de/#founder",
           "name": "Cem Görül",
-          "url": "https://kimpress.de"
+          "url": "https://www.kimpress.de"
         },
         "publisher": {
           "@type": "Organization",
-          "@id": "https://kimpress.de/#organization",
+          "@id": "https://www.kimpress.de/#organization",
           "name": "Kimpress",
-          "url": "https://kimpress.de",
+          "url": "https://www.kimpress.de",
           "logo": {
             "@type": "ImageObject",
-            "url": "https://kimpress.de/kimpress-logo.png"
+            "url": "https://www.kimpress.de/kimpress-logo.png"
           }
         },
         "articleSection": post.category,
@@ -99,8 +99,8 @@ function renderPost(post) {
         "@type": "BreadcrumbList",
         "@id": `${postUrl}#breadcrumb`,
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://kimpress.de" },
-          { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://kimpress.de/blog.html" },
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kimpress.de" },
+          { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.kimpress.de/blog.html" },
           { "@type": "ListItem", "position": 3, "name": post.title, "item": postUrl }
         ]
       }

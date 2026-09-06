@@ -6,7 +6,7 @@ import { BLOG_POSTS } from './src/blog-data.js';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const DOMAIN = 'https://kimpress.de';
+const DOMAIN = 'https://www.kimpress.de';
 const TODAY = new Date().toISOString().split('T')[0];
 
 const generateSitemap = () => {

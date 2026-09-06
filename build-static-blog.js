@@ -6,7 +6,7 @@ import { BLOG_POSTS, getRelatedPosts } from './src/blog-data.js';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const DOMAIN = 'https://kimpress.de';
+const DOMAIN = 'https://www.kimpress.de';
 
 function escapeHtml(str) {
   if (!str) return '';

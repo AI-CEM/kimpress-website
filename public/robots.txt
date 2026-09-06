@@ -22,5 +22,5 @@ Allow: /
 User-agent: Amazonbot
 Allow: /
 
-Sitemap: https://kimpress.de/sitemap.xml
+Sitemap: https://www.kimpress.de/sitemap.xml
 

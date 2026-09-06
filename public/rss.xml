@@ -2,112 +2,112 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
   <title>Kimpress — KI Agentur Hamburg &amp; KI Automatisierung</title>
-  <link>https://kimpress.de</link>
+  <link>https://www.kimpress.de</link>
   <description>Deutschlands pragmatischste KI Agentur aus Hamburg. KI-Automatisierung, n8n Workflows &amp; KI-Content.</description>
   <language>de-de</language>
-  <atom:link href="https://kimpress.de/rss.xml" rel="self" type="application/rss+xml" />
+  <atom:link href="https://www.kimpress.de/rss.xml" rel="self" type="application/rss+xml" />
   <item>
     <title>Gemini 3.5 Transcribe Live GA: Schluss mit Whisper-Fehlern bei deutschem Fachjargon &amp; DIN-Normen</title>
-    <link>https://kimpress.de/blog-post.html?slug=gemini-3-5-transcribe-live-custom-vocabulary-2026</link>
-    <guid>https://kimpress.de/blog-post.html?slug=gemini-3-5-transcribe-live-custom-vocabulary-2026</guid>
+    <link>https://www.kimpress.de/blog-post.html?slug=gemini-3-5-transcribe-live-custom-vocabulary-2026</link>
+    <guid>https://www.kimpress.de/blog-post.html?slug=gemini-3-5-transcribe-live-custom-vocabulary-2026</guid>
     <description>Google hat Gemini 3.5 Transcribe und Transcribe Live offiziell in die General Availability entlassen. Wie das neue Custom Vocabulary Biasing Fachbegriffe rettet und Audio-Pipelines in n8n beschleunigt.</description>
     <pubDate>Fri, 28 Aug 2026 00:00:00 GMT</pubDate>
   </item>
   <item>
     <title>RAG Reverse Engineering: Die 5 Vektor- &amp; Cross-Encoder-Algorithmen für Platz 1 in ChatGPT &amp; Perplexity</title>
-    <link>https://kimpress.de/blog-post.html?slug=rag-reverse-engineering-share-of-model-2026</link>
-    <guid>https://kimpress.de/blog-post.html?slug=rag-reverse-engineering-share-of-model-2026</guid>
+    <link>https://www.kimpress.de/blog-post.html?slug=rag-reverse-engineering-share-of-model-2026</link>
+    <guid>https://www.kimpress.de/blog-post.html?slug=rag-reverse-engineering-share-of-model-2026</guid>
     <description>Schluss mit oberflächlichen SEO-Tipps. So funktionieren RAG-Pipelines, Vector-Embedding-Density, Reciprocal Rank Fusion und Cross-Encoder Re-Ranking im Backend von KI-Suchmaschinen 2026.</description>
     <pubDate>Fri, 28 Aug 2026 00:00:00 GMT</pubDate>
   </item>
   <item>
     <title>Das ultimative KI-Agenten Tutorial 2026: 6 funktionierende Code-Snippets gegen ungeprüften Prompt-Müll</title>
-    <link>https://kimpress.de/blog-post.html?slug=ki-agenten-tutorial-code-guide-2026</link>
-    <guid>https://kimpress.de/blog-post.html?slug=ki-agenten-tutorial-code-guide-2026</guid>
+    <link>https://www.kimpress.de/blog-post.html?slug=ki-agenten-tutorial-code-guide-2026</link>
+    <guid>https://www.kimpress.de/blog-post.html?slug=ki-agenten-tutorial-code-guide-2026</guid>
     <description>Schluss mit Prompt-Geblubber. Hier sind 6 lauffähige Code-Snippets &amp; Ultimate-Level System Prompts für OpenAI, Gemini Flash, Claude C2PA, Ollama, ElevenLabs &amp; n8n – direkt aus der Kimpress-Praxis.</description>
     <pubDate>Fri, 21 Aug 2026 00:00:00 GMT</pubDate>
   </item>
   <item>
     <title>KI Content Creation 2026: Die multimodale n8n-Pipeline gegen "AI Slop" &amp; SEO-Verlust</title>
-    <link>https://kimpress.de/blog-post.html?slug=ki-content-creation-workflows-2026</link>
-    <guid>https://kimpress.de/blog-post.html?slug=ki-content-creation-workflows-2026</guid>
+    <link>https://www.kimpress.de/blog-post.html?slug=ki-content-creation-workflows-2026</link>
+    <guid>https://www.kimpress.de/blog-post.html?slug=ki-content-creation-workflows-2026</guid>
     <description>Klassisches SEO verliert an Boden, generischer KI-Müll wird abgestraft und Kunden suchen in Perplexity. So baust du 2026 eine multimodale Content-Engine mit echtem ROI und EU AI Act Compliance.</description>
     <pubDate>Fri, 14 Aug 2026 00:00:00 GMT</pubDate>
   </item>
   <item>
     <title>n8n MCP &amp; Model-Pricing 2026: Warum KI-Agenten erst jetzt serienreif sind (inkl. Workflow)</title>
-    <link>https://kimpress.de/blog-post.html?slug=n8n-mcp-ki-agenten-produktion-2026</link>
-    <guid>https://kimpress.de/blog-post.html?slug=n8n-mcp-ki-agenten-produktion-2026</guid>
+    <link>https://www.kimpress.de/blog-post.html?slug=n8n-mcp-ki-agenten-produktion-2026</link>
+    <guid>https://www.kimpress.de/blog-post.html?slug=n8n-mcp-ki-agenten-produktion-2026</guid>
     <description>Vergiss instabile Prompt-Basteleien. Dank nativem n8n MCP-Standard und API-Kosten unter 2 Cent pro Run sind KI-Agenten 2026 endlich einsatzbereit. Hier ist die echte Praxis-Architektur.</description>
     <pubDate>Tue, 04 Aug 2026 00:00:00 GMT</pubDate>
   </item>
   <item>
     <title>Schluss mit Message-Limits: So nutzt du 2026 alle KI-Modelle ohne künstliche API-Drosselung</title>
-    <link>https://kimpress.de/blog-post.html?slug=ki-api-token-limits-umgehen-2026</link>
-    <guid>https://kimpress.de/blog-post.html?slug=ki-api-token-limits-umgehen-2026</guid>
+    <link>https://www.kimpress.de/blog-post.html?slug=ki-api-token-limits-umgehen-2026</link>
+    <guid>https://www.kimpress.de/blog-post.html?slug=ki-api-token-limits-umgehen-2026</guid>
     <description>ChatGPT Plus, Claude Pro, Gemini Advanced – zahlst du auch dreimal 20 Euro im Monat und stößt trotzdem an harte Limits? "API-Freedom" ist das Stichwort für 2026. So nutzt du alle Modelle ohne künstliche Token-Drosselung.</description>
     <pubDate>Thu, 16 Jul 2026 00:00:00 GMT</pubDate>
   </item>
   <item>
     <title>Postfach-Triage mit n8n: So baust du deinen KI-Mitarbeiter lokal (inklusive der Fuck-ups)</title>
-    <link>https://kimpress.de/blog-post.html?slug=n8n-postfach-triage-lokal-bauen</link>
-    <guid>https://kimpress.de/blog-post.html?slug=n8n-postfach-triage-lokal-bauen</guid>
+    <link>https://www.kimpress.de/blog-post.html?slug=n8n-postfach-triage-lokal-bauen</link>
+    <guid>https://www.kimpress.de/blog-post.html?slug=n8n-postfach-triage-lokal-bauen</guid>
     <description>Theorie ist Müll. Wir haben den n8n Triage-Bot komplett lokal aufgebaut. Hier ist die ungeschönte Doku – inklusive der Momente, in denen gar nichts mehr ging.</description>
     <pubDate>Thu, 16 Jul 2026 00:00:00 GMT</pubDate>
   </item>
   <item>
     <title>Vergiss leblose KI-Sänger: Der harte Workflow für hyperrealistische Musikvideos</title>
-    <link>https://kimpress.de/blog-post.html?slug=ki-musikvideo-erstellen-workflow</link>
-    <guid>https://kimpress.de/blog-post.html?slug=ki-musikvideo-erstellen-workflow</guid>
+    <link>https://www.kimpress.de/blog-post.html?slug=ki-musikvideo-erstellen-workflow</link>
+    <guid>https://www.kimpress.de/blog-post.html?slug=ki-musikvideo-erstellen-workflow</guid>
     <description>Ich sag es dir direkt: Die meisten KI-Musikvideos da draußen sehen aus wie billige Plastikpuppen mit Sprachfehler. Wenn du ein Video willst, das mit echten Millionen-Budgets mithalten kann, musst du tiefer ins Backend gehen.</description>
     <pubDate>Thu, 16 Jul 2026 00:00:00 GMT</pubDate>
   </item>
   <item>
     <title>KI-Agentur Hamburg: Was kostet KI-Marketing wirklich? (2026)</title>
-    <link>https://kimpress.de/blog-post.html?slug=ki-agentur-hamburg</link>
-    <guid>https://kimpress.de/blog-post.html?slug=ki-agentur-hamburg</guid>
+    <link>https://www.kimpress.de/blog-post.html?slug=ki-agentur-hamburg</link>
+    <guid>https://www.kimpress.de/blog-post.html?slug=ki-agentur-hamburg</guid>
     <description>Ich hab Kimpress in Hamburg gegründet — mit 25 Euro Gewerbeanmeldung und einem Laptop. Hier erzähle ich dir ehrlich, was eine KI-Agentur kostet, was sie kann und wann sie sich für dich lohnt.</description>
     <pubDate>Thu, 16 Jul 2026 00:00:00 GMT</pubDate>
   </item>
   <item>
     <title>KI-Automatisierung für KMU: Was 2026 wirklich funktioniert</title>
-    <link>https://kimpress.de/blog-post.html?slug=ki-automatisierung-kmu-2026</link>
-    <guid>https://kimpress.de/blog-post.html?slug=ki-automatisierung-kmu-2026</guid>
+    <link>https://www.kimpress.de/blog-post.html?slug=ki-automatisierung-kmu-2026</link>
+    <guid>https://www.kimpress.de/blog-post.html?slug=ki-automatisierung-kmu-2026</guid>
     <description>Ehrlich gesagt: Die meisten KI-Projekte im Mittelstand scheitern. Nicht weil KI nichts taugt — sondern weil sie am falschen Fleck eingesetzt wird. Hier ist was wirklich funktioniert.</description>
     <pubDate>Wed, 01 Apr 2026 00:00:00 GMT</pubDate>
   </item>
   <item>
     <title>n8n Workflow: Wie ich mein Postfach mit KI auf Autopilot gestellt habe</title>
-    <link>https://kimpress.de/blog-post.html?slug=n8n-workflow-automatisierung-kmu-anleitung</link>
-    <guid>https://kimpress.de/blog-post.html?slug=n8n-workflow-automatisierung-kmu-anleitung</guid>
+    <link>https://www.kimpress.de/blog-post.html?slug=n8n-workflow-automatisierung-kmu-anleitung</link>
+    <guid>https://www.kimpress.de/blog-post.html?slug=n8n-workflow-automatisierung-kmu-anleitung</guid>
     <description>Jeden Morgen 47 ungelesene Mails. Irgendwann hatte ich genug. Hier ist wie ich mein Postfach mit n8n automatisiert habe — und was dabei schief gelaufen ist.</description>
     <pubDate>Fri, 10 Jul 2026 00:00:00 GMT</pubDate>
   </item>
   <item>
     <title>ChatGPT vs. Claude 2026 — Der ehrliche Vergleich den niemand schreibt</title>
-    <link>https://kimpress.de/blog-post.html?slug=chatgpt-vs-claude-welches-modell</link>
-    <guid>https://kimpress.de/blog-post.html?slug=chatgpt-vs-claude-welches-modell</guid>
+    <link>https://www.kimpress.de/blog-post.html?slug=chatgpt-vs-claude-welches-modell</link>
+    <guid>https://www.kimpress.de/blog-post.html?slug=chatgpt-vs-claude-welches-modell</guid>
     <description>Ich nutze beide täglich. Und ich korrigiere einen alten Irrtum: Claude ist nicht nur für Texte — und ChatGPT nicht einfach besser beim Coden. Hier die echte Wahrheit.</description>
     <pubDate>Wed, 25 Mar 2026 00:00:00 GMT</pubDate>
   </item>
   <item>
     <title>Social Media auf Autopilot: Was wirklich funktioniert (und was nicht)</title>
-    <link>https://kimpress.de/blog-post.html?slug=social-media-autopilot-ki</link>
-    <guid>https://kimpress.de/blog-post.html?slug=social-media-autopilot-ki</guid>
+    <link>https://www.kimpress.de/blog-post.html?slug=social-media-autopilot-ki</link>
+    <guid>https://www.kimpress.de/blog-post.html?slug=social-media-autopilot-ki</guid>
     <description>Ich hab es ausprobiert: Vollautomatisch posten ohne jeden Post selbst zu schreiben. Hier ist was dabei herausgekommen — inklusive der Fehler die ich gemacht habe.</description>
     <pubDate>Wed, 18 Mar 2026 00:00:00 GMT</pubDate>
   </item>
   <item>
     <title>Custom GPT bauen: Was mir niemand vorher gesagt hat</title>
-    <link>https://kimpress.de/blog-post.html?slug=custom-gpt-bauen-anleitung</link>
-    <guid>https://kimpress.de/blog-post.html?slug=custom-gpt-bauen-anleitung</guid>
+    <link>https://www.kimpress.de/blog-post.html?slug=custom-gpt-bauen-anleitung</link>
+    <guid>https://www.kimpress.de/blog-post.html?slug=custom-gpt-bauen-anleitung</guid>
     <description>Ich habe meinen ersten Custom GPT in 2 Stunden gebaut. Er war nutzlos. Den zweiten in 4 Stunden. Er war ok. Den dritten in 6 Stunden. Der läuft heute noch. Hier ist was ich dabei gelernt habe.</description>
     <pubDate>Tue, 10 Mar 2026 00:00:00 GMT</pubDate>
   </item>
   <item>
     <title>SEO &amp; GEO mit KI: Was wirklich funktioniert — und was kompletter Zeitverschwendung ist</title>
-    <link>https://kimpress.de/blog-post.html?slug=seo-geo-mit-ki-2026</link>
-    <guid>https://kimpress.de/blog-post.html?slug=seo-geo-mit-ki-2026</guid>
+    <link>https://www.kimpress.de/blog-post.html?slug=seo-geo-mit-ki-2026</link>
+    <guid>https://www.kimpress.de/blog-post.html?slug=seo-geo-mit-ki-2026</guid>
     <description>Ich habe über Monate KI für SEO und GEO getestet — bei Kundenprojekten, eigenen Profilen, Testaccounts. Hier sind die ehrlichen Ergebnisse. Was hat Rankings gebracht, was war Bullshit.</description>
     <pubDate>Tue, 03 Mar 2026 00:00:00 GMT</pubDate>
   </item>
