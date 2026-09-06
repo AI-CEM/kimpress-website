@@ -5969,13 +5969,16 @@ button.btn {
   font-weight: 700;
   color: #FFFFFF;
   margin-bottom: 12px;
+  min-height: 2.2rem;
+  display: flex;
+  align-items: center;
 }
 
 .pricing-card__desc {
   font-size: 0.95rem;
   color: rgba(255, 255, 255, 0.7);
   line-height: 1.5;
-  min-height: 55px;
+  min-height: 72px;
   margin-bottom: 24px;
 }
 
@@ -5984,6 +5987,10 @@ button.btn {
   border-top: 1px dashed rgba(255, 255, 255, 0.1);
   border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
   margin-bottom: 30px;
+  min-height: 125px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .pricing-card__currency {
