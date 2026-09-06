@@ -195,7 +195,7 @@ if __name__ == "__main__":
     
     if os.path.exists(test_audio):
         protocol = transcribe_with_custom_vocabulary(test_audio, sample_vocabulary)
-        print(f"\n--- Transkription abgeschlossen: {len(protocol.segments)} Abschnitte ---")
+        print(f"\\n--- Transkription abgeschlossen: {len(protocol.segments)} Abschnitte ---")
         for seg in protocol.segments:
             print(f"[{seg.start_time_seconds:.1f}s - {seg.end_time_seconds:.1f}s] {seg.speaker}: {seg.text}")
             
@@ -904,8 +904,8 @@ return [{ json: { retryCount: retryCount, totalDelaySeconds: totalDelay } }];</c
 <h3>Wie wird Datenschutz (DSGVO) bei n8n KI-Agenten sichergestellt?</h3>
 <p>Der Datenschutz wird durch vorgelagerte PII-Masking-Nodes (Personally Identifiable Information) gewährleistet, die sensible Kundendaten vor der Übergabe an das LLM anonymisieren. Zudem werden ausschließlich API-Endpunkte mit Garantie für europäische Serverstandorte und ohne Nutzung der Daten für Modell-Training verwendet.</p>
 
-<h3>Benötigt man für n8n v3.0 zwingend Docker?</h3>
-<p>Ja, ab n8n Version 3.0 sind veraltete Deployment-Methoden via npm oder npx für den Produktionseinsatz abgekündigt. Ein stabiler und sicherer Betrieb erfordert ein Docker-Container-Deployment mit angebundener PostgreSQL-Datenbank.</p>
+<h3>Benötigt man für n8n Enterprise (v1.80+) zwingend Docker?</h3>
+<p>Ja, für moderne n8n Produktions-Deployments sind veraltete Methoden via npm oder npx abgekündigt. Ein stabiler und sicherer Betrieb erfordert ein Docker-Container-Deployment mit angebundener PostgreSQL-Datenbank.</p>
 
 <hr />
 
@@ -1051,7 +1051,7 @@ return [{ json: { retryCount: retryCount, totalDelaySeconds: totalDelay } }];</c
 <p>Zieh die fertigen Clips in deine Timeline, synchronisiere sie mit der Original-Spur. Fertig ist dein Video.</p>
 
 <h2>Proof of Concept: Kiro21</h2>
-<p>Wir theoretisieren hier übrigens gar nicht erst rum, sondern schrauben täglich an solchen Projekten. Vor sechs Monaten haben wir unseren eigenen KI-generierten deutschen Rapper aufgesetzt: <strong>Kiro21</strong>. Damals lief das Setup auf einem völlig anderen Tech-Stack – wir haben Google Whisk, Nano Banana und Veo3 bis ans absolute Limit gepusht. Das Projekt lag kurz auf Eis, aber wir fahren die Server demnächst wieder hoch. Zieh dir das Ergebnis rein und check das Level ab, von dem wir hier sprechen: <a href="https://www.tiktok.com/@kiro21official" target="_blank" rel="noopener">Kiro21 auf TikTok</a></p>
+<p>Wir theoretisieren hier übrigens gar nicht erst rum, sondern schrauben täglich an solchen Projekten. Vor sechs Monaten haben wir unseren eigenen KI-generierten deutschen Rapper aufgesetzt: <strong>Kiro21</strong>. Damals lief das Setup auf einem völlig anderen Tech-Stack – wir haben Google Whisk, Nano Banana und Veo 2 bis ans absolute Limit gepusht. Das Projekt lag kurz auf Eis, aber wir fahren die Server demnächst wieder hoch. Zieh dir das Ergebnis rein und check das Level ab, von dem wir hier sprechen: <a href="https://www.tiktok.com/@kiro21official" target="_blank" rel="noopener">Kiro21 auf TikTok</a></p>
 
 <p>Die Tools ändern sich permanent, aber das technische Fundament bleibt hartes Handwerk.</p>
 

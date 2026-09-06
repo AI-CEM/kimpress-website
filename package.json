@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node generate-sitemap.js && vite build && node build-static-blog.js",
+    "verify": "node verify-blog.js",
+    "build": "node verify-blog.js && node generate-sitemap.js && vite build && node build-static-blog.js",
     "preview": "vite preview"
   },
   "devDependencies": {
