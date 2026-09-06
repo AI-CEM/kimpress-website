@@ -31,43 +31,43 @@ export const BLOG_POSTS = [
   <li><strong>Integrierte Voice Activity Detection (VAD):</strong> Filtert Hintergrundrauschen (z. B. Maschinenlärm in der Werkstatt oder Tastaturklappern) heraus, bevor Inferenz-Tokens verbraucht werden.</li>
 </ul>
 
-<h2>2. Benchmark Reality-Check: Transcribe Live vs. Whisper-large-v3</h2>
+<h2>2. Architektur-Vergleich: Transcribe Live vs. Whisper-large-v3</h2>
 
-<p>Wir haben 200 reale Audio-Diktate aus den Bereichen Handwerk, Kanzlei und IT-Support mit starkem Branchen-Jargon durch beide Engines geschickt:</p>
+<p>Der direkte Vergleich zwischen einer selbst gehosteten Whisper-Pipeline und Googles nativer Serverless Speech-to-Text Architektur zeigt die entscheidenden Unterschiede für den Unternehmensbetrieb:</p>
 
 <table class="blog-table" style="width:100%;border-collapse:collapse;margin:20px 0;">
   <thead>
     <tr style="border-bottom:2px solid #333;text-align:left;">
-      <th style="padding:10px;">Metrik / Benchmark</th>
+      <th style="padding:10px;">Kriterium / Anforderung</th>
       <th style="padding:10px;">Whisper-large-v3 (Self-Hosted)</th>
       <th style="padding:10px;">Gemini 3.5 Transcribe Live</th>
-      <th style="padding:10px;">Befund im DACH-Praxistest</th>
+      <th style="padding:10px;">Befund im Praxiseinsatz</th>
     </tr>
   </thead>
   <tbody>
     <tr style="border-bottom:1px solid #222;">
-      <td style="padding:10px;"><strong>Word Error Rate (Fachjargon)</strong></td>
-      <td style="padding:10px;color:#FF4D4D;">14,8 %</td>
-      <td style="padding:10px;color:#00FF66;"><strong>2,1 %</strong></td>
-      <td style="padding:10px;">Custom Vocabulary eliminiert 85 % der Schreibfehler bei Fachwörtern.</td>
+      <td style="padding:10px;"><strong>Erkennung von Fachjargon</strong></td>
+      <td style="padding:10px;color:#FF4D4D;">Fehleranfällig ohne Fine-Tuning</td>
+      <td style="padding:10px;color:#00FF66;"><strong>Custom Vocabulary Biasing</strong></td>
+      <td style="padding:10px;">Gezielte Injektion von Firmennamen, DIN-Normen und SKUs ohne Modelltraining.</td>
     </tr>
     <tr style="border-bottom:1px solid #222;">
       <td style="padding:10px;"><strong>Streaming-Latenz (Interim Output)</strong></td>
-      <td style="padding:10px;">1.450 ms (Chunked)</td>
-      <td style="padding:10px;color:#00FF66;"><strong>210 ms</strong></td>
-      <td style="padding:10px;">Echtes Live-Gefühl bei laufenden Telefonaten.</td>
+      <td style="padding:10px;">Chunked Audio (~1–2 Sek.)</td>
+      <td style="padding:10px;color:#00FF66;"><strong>Echtzeit-WebSocket (~200 ms)</strong></td>
+      <td style="padding:10px;">Verzögerungsfreie Transkription bei laufenden Kundengesprächen.</td>
     </tr>
     <tr style="border-bottom:1px solid #222;">
       <td style="padding:10px;"><strong>Sprecher-Diarization</strong></td>
-      <td style="padding:10px;">Benötigt PyAnnote (Zusatz-Tool)</td>
+      <td style="padding:10px;">Zusatz-Pipeline nötig (z. B. PyAnnote)</td>
       <td style="padding:10px;color:#00FF66;"><strong>Nativ integriert</strong></td>
-      <td style="padding:10px;">Trennt Berater und Kunde automatisch in separate Spuren.</td>
+      <td style="padding:10px;">Automatische Trennung von Sprechern ohne komplexe Tool-Chains.</td>
     </tr>
     <tr>
-      <td style="padding:10px;"><strong>Wartungsaufwand / Server</strong></td>
-      <td style="padding:10px;color:#FF4D4D;">Dedizierte GPU (A10G ~ 1,20 $/h)</td>
+      <td style="padding:10px;"><strong>Infrastruktur &amp; Betrieb</strong></td>
+      <td style="padding:10px;color:#FF4D4D;">Dedizierte GPU (z. B. Cloud-VPS)</td>
       <td style="padding:10px;color:#00FF66;"><strong>Serverless API</strong></td>
-      <td style="padding:10px;">0 € Fixkosten, keine GPU-Cluster-Administration.</td>
+      <td style="padding:10px;">Keine Serverwartung, Pay-per-Use nach tatsächlicher Nutzung.</td>
     </tr>
   </tbody>
 </table>
@@ -227,7 +227,7 @@ if __name__ == "__main__":
     content: `
 <p class="blog-lead">Vergiss die oberflächlichen Marketing-Tipps über "Answer Blocks" oder "Füge ein paar Schema.org Tags ein". Wenn du 2026 wissen willst, warum ChatGPT, Perplexity, Gemini oder Google AI Overviews deine Konkurrenz empfehlen und dein Unternehmen ignorieren, musst du das Backend der RAG-Architekturen (Retrieval-Augmented Generation) verstehen. Hier ist das mathematische Reverse-Engineering der 5 Algorithmen-Pipelines, die über deinen Share of Model (SoM) entscheiden.</p>
 
-<p>Als ich 2017 Kimpress gegründet habe – mit 25 Euro Gewerbeanmeldung im östlichen Hamburg –, lief SEO nach einfachen Regeln ab: Keywords in die H1, ein paar Backlinks kaufen und abwarten. 2026 existiert diese Welt nicht mehr. 57 % aller B2B-Suchanfragen sind Zero-Click-Suchen. Entscheidungsträger fragen LLMs direkt. Wer nicht in den synthetischen Antworten landet, existiert nicht.</p>
+<p>Als ich mit 25 Euro Gewerbeanmeldung im östlichen Hamburg und meinem alten MacBook Air gestartet bin, lief SEO noch nach ganz einfachen Regeln ab: Keywords in die H1, ein paar Backlinks kaufen und abwarten. 2026 existiert diese Welt nicht mehr. 57 % aller B2B-Suchanfragen sind Zero-Click-Suchen. Entscheidungsträger fragen LLMs direkt. Wer nicht in den synthetischen Antworten landet, existiert nicht.</p>
 
 <p>Die Frage ist nicht mehr: "Wie ranke ich auf Google?", sondern: <strong>"Wie manipuliere ich die mathematische Vektor-Kosinus-Ähnlichkeit und Cross-Encoder Re-Ranker zu meinen Gunsten?"</strong> Let's dive deep.</p>
 
@@ -297,7 +297,7 @@ if __name__ == "__main__":
   {
     slug: 'ki-agenten-tutorial-code-guide-2026',
     title: 'Das ultimative KI-Agenten Tutorial 2026: 6 funktionierende Code-Snippets gegen ungeprüften Prompt-Müll',
-    excerpt: 'Schluss mit Prompt-Geblubber. Hier sind 6 lauffähige Code-Snippets & Ultimate-Level System Prompts für OpenAI, Gemini 3.7, Claude C2PA, Ollama, ElevenLabs & n8n – direkt aus der Kimpress-Praxis.',
+    excerpt: 'Schluss mit Prompt-Geblubber. Hier sind 6 lauffähige Code-Snippets & Ultimate-Level System Prompts für OpenAI, Gemini Flash, Claude C2PA, Ollama, ElevenLabs & n8n – direkt aus der Kimpress-Praxis.',
     date: '2026-08-21',
     readTime: 12,
     category: 'Automatisierung',
@@ -385,7 +385,7 @@ print(f"Pain Points: {', '.join(lead.key_pain_points)}")</code></pre>
   <strong style="color:#66C2FF;">📈 BUSINESS-NUTZEN:</strong> E-Mail-Anfragen werden vollautomatisch qualifiziert. High-Ticket Leads (Score &gt; 80) landen ohne Verzögerung direkt in deinem CRM.
 </div>
 
-<h2>2. Google Gemini 3.7 Flash: 1M Context Caching (Dokumenten & Video Audit)</h2>
+<h2>2. Google Gemini Flash: 1M Context Caching (Dokumenten & Video Audit)</h2>
 
 <div class="blog-box blog-box--problem" style="background:rgba(255,0,0,0.08);border-left:4px solid #FF4D4D;padding:14px;margin:16px 0;border-radius:4px;">
   <strong style="color:#FF4D4D;">❌ DAS PROBLEM:</strong> Große PDFs, Handbücher oder Schulungsvideos bei jedem einzelnen KI-Aufruf neu hochzuladen kostet unsummen an Token-Gebühren und dauert 10 bis 20 Sekunden pro Frage.
@@ -412,7 +412,7 @@ class AuditReport(BaseModel):
 # ULTIMATE MULTIMODAL SYSTEM PROMPT
 GEMINI_SYSTEM_INSTRUCTION = """
 <system_instructions>
-ROLE: Multimodal Cross-Verification Audit Engine (Gemini 3.7 Flash)
+ROLE: Multimodal Cross-Verification Audit Engine (Gemini Flash)
 TASK: Cross-analyze PDF documentation against video recording for discrepancies, timelines, and facts.
 
 ANALYSIS_METHODOLOGY:
@@ -435,7 +435,7 @@ def audit_multimodal_assets(pdf_path: str, video_path: str) -> AuditReport:
         video_file = client.files.get(name=video_file.name)
 
     cache = client.caches.create(
-        model="gemini-3.7-flash",
+        model="gemini-1.5-flash",
         config=types.CreateCachedContentConfig(
             contents=[pdf_file, video_file],
             system_instruction=GEMINI_SYSTEM_INSTRUCTION,
@@ -444,7 +444,7 @@ def audit_multimodal_assets(pdf_path: str, video_path: str) -> AuditReport:
     )
 
     response = client.models.generate_content(
-        model="gemini-3.7-flash",
+        model="gemini-1.5-flash",
         contents="Erstelle einen Audit-Bericht basierend auf den gecachten Dateien.",
         config=types.GenerateContentConfig(
             cached_content=cache.name,
@@ -470,7 +470,7 @@ def audit_multimodal_assets(pdf_path: str, video_path: str) -> AuditReport:
   <strong style="color:#66C2FF;">📈 BUSINESS-NUTZEN:</strong> Massive Kostensenkung um 75 % bei Dokumenten-Audits und superschnelle Reaktionszeiten unter 1,5 Sekunden.
 </div>
 
-<h2>3. Anthropic Claude 3.7 & EU AI Act Artikel 50 C2PA Watermarking</h2>
+<h2>3. Anthropic Claude & EU AI Act Artikel 50 C2PA Watermarking</h2>
 
 <div class="blog-box blog-box--problem" style="background:rgba(255,0,0,0.08);border-left:4px solid #FF4D4D;padding:14px;margin:16px 0;border-radius:4px;">
   <strong style="color:#FF4D4D;">❌ DAS PROBLEM:</strong> Der EU AI Act (Art. 50) verlangt seit August 2026, dass KI-generierte Bilder & Medien maschinenlesbar gekennzeichnet werden. Wer unbezeichnete Visuals nutzt, riskiert abmahnrechtliche Bußgelder.
@@ -531,7 +531,7 @@ def apply_eu_ai_act_c2pa(input_path: str, output_path: str, cert_path: str, key_
 <h2>4. Open-Weight Models: GBNF Grammars für 100 % lokales JSON</h2>
 
 <div class="blog-box blog-box--problem" style="background:rgba(255,0,0,0.08);border-left:4px solid #FF4D4D;padding:14px;margin:16px 0;border-radius:4px;">
-  <strong style="color:#FF4D4D;">❌ DAS PROBLEM:</strong> Unternehmenskritische Daten dürfen US-Cloud-KIs oft nicht verlassen. Wer Open-Source KIs (Llama 4) lokal betreibt, leidet ohne Schutz unter unvollständigem oder kaputtem JSON.
+  <strong style="color:#FF4D4D;">❌ DAS PROBLEM:</strong> Unternehmenskritische Daten dürfen US-Cloud-KIs oft nicht verlassen. Wer Open-Source KIs (wie Llama 3.3 oder Mistral) lokal betreibt, leidet ohne Schutz unter unvollständigem oder kaputtem JSON.
 </div>
 
 <div class="blog-box blog-box--solution" style="background:rgba(0,255,102,0.08);border-left:4px solid #00FF66;padding:14px;margin:16px 0;border-radius:4px;">
@@ -662,7 +662,7 @@ return [{ json: { retryCount: retryCount, totalDelaySeconds: totalDelay } }];</c
 <h3>Was verlangt der EU AI Act Artikel 50 für KI-generierte Bilder?</h3>
 <p>Artikel 50 verlangt die maschinenlesbare Kennzeichnung von synthetischen Medien. Dies wird technisch über kryptographische C2PA-Manifeste (z. B. via <code>c2pa-python</code> SDK) und digitale X.509-Signaturen umgesetzt, die unlöschbar in den Datei-Headern verankert werden. (Hinweis: Benötigt Python >= 3.10).</p>
 
-<h3>Wie spart man 75 % Kosten beim Google Gemini 3.7 Flash API-Aufruf?</h3>
+<h3>Wie spart man 75 % Kosten beim Google Gemini Flash API-Aufruf?</h3>
 <p>Durch die Nutzung von Explicit Context Caching bei Prompts über 32.768 Tokens. Dokumente und Medien werden einmalig über die Files API hochgeladen und gecached, wodurch nachfolgende Anfragen 75 % günstigere Input-Token-Kosten und deutlich schnellere Antworten erzielen.</p>
 
 <hr />
@@ -679,7 +679,7 @@ return [{ json: { retryCount: retryCount, totalDelaySeconds: totalDelay } }];</c
   {
     slug: 'ki-content-creation-workflows-2026',
     title: 'KI Content Creation 2026: Die multimodale n8n-Pipeline gegen "AI Slop" & SEO-Verlust',
-    excerpt: 'Klassisches SEO verliert an Boden, OpenAI stellt Sora ein und billiger KI-Müll wird abgestraft. So baust du 2026 eine multimodale Content-Engine mit echtem ROI und EU AI Act Compliance.',
+    excerpt: 'Klassisches SEO verliert an Boden, generischer KI-Müll wird abgestraft und Kunden suchen in Perplexity. So baust du 2026 eine multimodale Content-Engine mit echtem ROI und EU AI Act Compliance.',
     date: '2026-08-14',
     readTime: 8,
     category: 'Automatisierung',
@@ -687,9 +687,9 @@ return [{ json: { retryCount: retryCount, totalDelaySeconds: totalDelay } }];</c
     content: `
 <p class="blog-lead">Schluss mit den Märchen über die "vollautomatische KI-Content-Maschine", die per Klick 100 Blogbeiträge am Tag ausspuckt. Die Realität im August 2026 sieht anders aus: Google straft generischen KI-Müll ("AI Slop") gnadenlos ab, das Urheberrecht schützt rein KI-generierte Texte ohne menschliche Schöpfungshöhe mit null Prozent, und seit dem 2. August greift die strenge Kennzeichnungspflicht nach Artikel 50 des EU AI Acts.</p>
 
-<p>Wer heute noch glaubt, mit billigen Prompt-Genies auf LinkedIn Schritt halten zu können, verbrennt Marke und Sichtbarkeit. Sogar OpenAI hat die Reißleine gezogen und den Web-Dienst von Sora im April eingestellt – weil stumme, ungezielte KI-Videoschnipsel im Betrieb schlicht nutzlos waren.</p>
+<p>Wer heute noch glaubt, mit billigen Prompt-Genies auf LinkedIn Schritt halten zu können, verbrennt Marke und Sichtbarkeit. Stumme, ungelenke KI-Videoschnipsel ohne echtes Storytelling sind im harten Unternehmensalltag nutzlos und erzeugen null Kundenvertrauen.</p>
 
-<p>Als ich 2017 mit 25 Euro Gewerbeanmeldung und einem alten MacBook Air gestartet bin, gab es für schlechten Content genau eine Konsequenz: Du bist unsichtbar geblieben. 2026 gilt das mehr denn je.</p>
+<p>Als ich mit 25 Euro Gewerbeanmeldung und meinem alten MacBook Air gestartet bin, gab es für schlechten Content genau eine Konsequenz: Du bist unsichtbar geblieben. 2026 gilt das mehr denn je.</p>
 
 <p>Aber: Wer KI-Content nicht als Text-Spammer begreift, sondern als <strong>multimodale, datengetriebene Architektur</strong> aufbaut, fährt heute Ergebnisse ein, von denen klassische Marketing-Abteilungen nur träumen können.</p>
 
@@ -711,7 +711,7 @@ return [{ json: { retryCount: retryCount, totalDelaySeconds: totalDelay } }];</c
 <p>Der Wandel von der reinen Textgenerierung hin zu produktionsreifen Medien läuft auf drei Säulen:</p>
 
 <ol>
-  <li><strong>Audio-Synchrones Video (Google Veo 3.1 & Kling 3.0):</strong> Während stumme Clips Vergangenheit sind, generiert Veo 3.1 visuelle Outputs direkt mit passenden Soundeffekten, Umgebungsgeräuschen und synchroner Sprache in einem einzigen Renderpass. Kling 3.0 sichert dabei die physikalische Konsistenz über längere Szenen.</li>
+  <li><strong>Audio-Synchrones Video:</strong> Während stumme Clips Vergangenheit sind, ermöglichen moderne Video-Engines visuelle Outputs direkt mit passenden Soundeffekten, Umgebungsgeräuschen und lippensynchroner Sprache. Werkzeuge wie Runway Gen-3 und Kling sichern dabei die physikalische Konsistenz über längere Szenen.</li>
   <li><strong>ElevenLabs Dubbing v2 & Projekt-APIs:</strong> Statt für jede Sprache ein neues Tonstudio zu buchen, übersetzt Dubbing v2 Audio-Dateien via API in über 90 Sprachen – inklusive Emotion, Tonfall und Hintergrundakustik. Durch projektbasierte JSON-APIs lassen sich einzelne Sätze nachbearbeiten, ohne den gesamten Track neu zu rendern. Das spart 85 % der Lokalisierungskosten.</li>
   <li><strong>MCP-Kontext & Structured Outputs:</strong> Das Model Context Protocol (MCP) verbindet deine LLMs direkt mit internen Vektor-Datenbanken (z. B. Qdrant) und CI-Guidelines. Über erzwungene JSON-Schemas (Pydantic) spuckt das Modell exakt strukturierte Datenpakete aus, statt freidrehenden Freitext.</li>
 </ol>
@@ -739,30 +739,30 @@ return [{ json: { retryCount: retryCount, totalDelaySeconds: totalDelay } }];</c
          │
          ▼
 [Node 1: MCP Context Fetcher] 
-   └── Holt verifizierte Firmendaten & E-E-A-T-Fakten aus Qdrant Vektor-DB
+    └── Holt verifizierte Firmendaten & E-E-A-T-Fakten aus Qdrant Vektor-DB
          │
          ▼
-[Node 2: Multimodal Master Orchestrator (Claude 3.7 / GPT-4o)]
-   └── Spuckt per Pydantic JSON Schema 3 Artefakte aus:
-       ├── Text: GEO-optimierter Content & Schema.org JSON-LD
-       ├── Audio-Skript: SSML-annotiert für ElevenLabs
-       └── Video-Prompts: Kamera- & Bewegungs-Parameter für Veo 3.1
+[Node 2: Multimodal Master Orchestrator (Claude 3.5 Sonnet / GPT-4o)]
+    └── Spuckt per Pydantic JSON Schema 3 Artefakte aus:
+        ├── Text: GEO-optimierter Content & Schema.org JSON-LD
+        ├── Audio-Skript: SSML-annotiert für ElevenLabs
+        └── Video-Prompts: Kamera- & Bewegungs-Parameter für Video-Engines
          │
          ├───> [Node 3A: GEO Text Engine] (Rendert SSR-Markdown)
          ├───> [Node 3B: Audio Engine] (ElevenLabs Dubbing v2 API)
-         └───> [Node 3C: Video Engine] (Google Veo 3.1 Async API)
+         └───> [Node 3C: Video Engine] (Video Generation API)
          │
          ▼
 [Node 4: Assembly & EU AI Act Compliance]
-   └── Fügt Medien via FFmpeg zusammen & injiziert C2PA-Wasserzeichen (Art. 50)
+    └── Fügt Medien via FFmpeg zusammen & injiziert C2PA-Wasserzeichen (Art. 50)
          │
          ▼
 [Node 5: Human-in-the-Loop Freigabe (Slack Notification)]
-   └── Zeigt Vorschau-Card -> Button: "Freigeben" oder "Überarbeiten"
+    └── Zeigt Vorschau-Card -> Button: "Freigeben" oder "Überarbeiten"
          │
          ▼
 [Node 6: Syndication & GEO Push]
-   └── CMS-Upload & direkter Push an Google Indexing & Perplexity API</code></pre>
+    └── CMS-Upload & direkter Push an Google Indexing & Perplexity API</code></pre>
 
 <h3>Der messbare Impact:</h3>
 <ul>
@@ -783,8 +783,8 @@ return [{ json: { retryCount: retryCount, totalDelaySeconds: totalDelay } }];</c
 <h3>Welche Kennzeichnungspflichten verlangt der EU AI Act Art. 50 seit August 2026?</h3>
 <p>Artikel 50 des EU AI Acts verpflichtet Ersteller von synthetischen Medien (Audio, Video, Bild, Text), diese maschinenlesbar zu kennzeichnen. Dies erfolgt in der Praxis über C2PA-Metadaten und unsichtbare digitale Wasserzeichen, um Transparenz über KI-generierte Inhalte zu gewährleisten.</p>
 
-<h3>Warum hat OpenAI Sora im Jahr 2026 eingestellt?</h3>
-<p>OpenAI hat den Dienst von Sora im April 2026 eingestellt, weil stumme, isolierte Videoclips ohne synchrone Audio-Generierung und ohne präzise Kamera-Schnittstellen im professionellen Produktionsalltag von Unternehmen nicht wettbewerbsfähig waren.</p>
+<h3>Warum scheitern isolierte KI-Videoclips im B2B-Marketing?</h3>
+<p>Reine KI-Kurzclips ohne synchrone Audio-Spur, ohne präzise Kamera-Schnittstellen und ohne konsistente Corporate Identity erzeugen im professionellen B2B-Bereich keine Conversions. Erfolgreiche Kampagnen erfordern eine orchestrierte Pipeline aus Voiceover, Markendaten und strukturierter Distribution.</p>
 
 <h3>Wie spart ElevenLabs Dubbing v2 Lokalisierungskosten?</h3>
 <p>ElevenLabs Dubbing v2 übersetzt Audioinhalte via API in over 90 Sprachen unter Beibehaltung der Original-Stimme und Intonation. Über projektbasierte JSON-APIs können einzelne Sätze gezielt korrigiert werden, ohne den gesamten Audiotrack kostenintensiv neu zu rendern.</p>
@@ -813,7 +813,7 @@ return [{ json: { retryCount: retryCount, totalDelaySeconds: totalDelay } }];</c
 
 <p>Als ich damals mit einer 25-Euro-Gewerbeanmeldung und einem klapprigen MacBook Air angefangen habe, digitale Systeme und Workflows für Kunden zu bauen, galt eine Regel: Was im Betrieb nicht 100-prozentig verlässlich läuft, fliegt raus. Und genau an dieser Hürde sind KI-Agenten bisher gescheitert.</p>
 
-<p>Diese Woche hat sich das Blatt gewendet. Zwei Entwicklungen sind gleichzeitig zusammengekommen, die KI-Agenten vom Experimentierstatus direkt in die Serienreife katapultieren: Die native <strong>MCP-Client-Integration</strong> im <em>Tools Agent</em> Ökosystem von n8n und der dramatische Preisverfall bei extrem schnellen Modell-APIs wie <strong>Gemini 3.6 Flash</strong> und <strong>GPT-5.6 Terra</strong>.</p>
+<p>Diese Woche hat sich das Blatt gewendet. Zwei Entwicklungen sind gleichzeitig zusammengekommen, die KI-Agenten vom Experimentierstatus direkt in die Serienreife katapultieren: Die native <strong>MCP-Client-Integration</strong> im <em>Tools Agent</em> Ökosystem von n8n und der dramatische Preisverfall bei extrem schnellen Modell-APIs wie <strong>Gemini Flash</strong> und <strong>GPT-4o-mini</strong>.</p>
 
 <p>Wer jetzt noch manuelle Routineaufgaben abarbeitet, verbrennt vorsätzlich Zeit und Marge.</p>
 
@@ -834,7 +834,7 @@ return [{ json: { retryCount: retryCount, totalDelaySeconds: totalDelay } }];</c
 
 <p>Mehrstufige Agenten-Loops waren bisher ein teurer Spaß. Wenn ein Agent 5-mal nachdenken, 3-mal ein Tool aufrufen und am Ende eine Antwort formulieren musste, flossen schnell 50.000 Tokens durch die Leitung. Bei den Flaggschiff-Modellen der letzten Generation bedeutete das 0,30 € bis 0,50 € pro einzelnem Durchlauf. Bei 1.000 Kundenanfragen im Monat summierte sich das auf 350 bis 500 Euro – allein an API-Gebühren.</p>
 
-<p>Durch Modelle wie <strong>Gemini 3.6 Flash</strong> oder die schlanken <strong>GPT-5.6 Terra / Luna</strong> Varianten sind die API-Kosten um bis zu 80 % gesunken.</p>
+<p>Durch Modelle wie <strong>Gemini Flash</strong> oder die schlanken <strong>GPT-4o-mini</strong> und <strong>Claude 3.5 Haiku</strong> Varianten sind die API-Kosten um bis zu 80 % gesunken.</p>
 
 <p>Ein vollständiger, mehrstufiger Agenten-Prozess kostet dich heute <strong>unter 0,02 € pro Execution</strong>. Damit amortisiert sich die Automatisierung nicht erst nach einem Jahr, sondern ab Tag 1.</p>
 
@@ -842,8 +842,8 @@ return [{ json: { retryCount: retryCount, totalDelaySeconds: totalDelay } }];</c
 
 <p>Wer KI-Agenten in Produktion schickt, ohne die technischen Rahmenbedingungen im Griff zu haben, baut sich eine Zeitbombe ins Unternehmen. Bei Kimpress sehen wir in Audits immer wieder dieselben drei handwerklichen Fehler:</p>
 
-<h3>A. Der n8n v3.0 Breaking Change (Todesstoß für Hobby-Setups)</h3>
-<p>Falls deine Automatisierungen noch auf alten <code>npm</code>- oder <code>npx</code>-Instanzen auf einem billigen VPS laufen: Stell dich auf Probleme ein. n8n stellt Legacy-Deployments ab v3.0 ein. In Produktion gehören n8n-Instanzen zwingend in <strong>Docker-basierte Container-Deployments</strong> mit dedizierter Postgres-Datenbank und sauber konfigurierten Environment-Variablen.</p>
+<h3>A. Instabile Legacy-Deployments (Todesstoß für Hobby-Setups)</h3>
+<p>Falls deine Automatisierungen noch auf alten <code>npm</code>- oder <code>npx</code>-Instanzen auf einem billigen VPS laufen: Stell dich auf Probleme ein. Für den stabilen Produktivbetrieb gehören n8n-Instanzen zwingend in <strong>Docker-basierte Container-Deployments</strong> mit dedizierter Postgres-Datenbank und sauber konfigurierten Environment-Variablen.</p>
 
 <h3>B. DSGVO & PII-Masking (Pflicht für den DACH-Raum)</h3>
 <p>Du kannst nicht einfach ungesehen Kundennamen, Mailadressen oder Telefongedöns an US-APIs durchreichen. Vor jedem LLM-Call gehört ein dedizierter Sanitization-Node in die Pipeline, der personenbezogene Daten (PII) anonymisiert oder maskiert, bevor der Prompt das eigene System verlässt. Zudem sind EU-Endpunkte der API-Anbieter Pflicht.</p>
@@ -864,7 +864,7 @@ return [{ json: { retryCount: retryCount, totalDelaySeconds: totalDelay } }];</c
        │
        ▼
 [Node 2: n8n AI Agent Node (Tools Agent Modus)]
-   ├── Model: Gemini 3.6 Flash / Claude Sonnet 5
+   ├── Model: Gemini Flash / Claude 3.5 Sonnet
    ├── Tool A (MCP/API): HubSpot CRM Lookup (Prüft Bestandskunden-Status)
    ├── Tool B (MCP/API): B2B Firmendaten-Scraper (Recherchiert Unternehmensgröße & Branche)
    └── Tool C (Sub-Workflow): Stundensatz- & Aufwandsrechner (Berechnet Richtpreis basierend auf Anforderung)
@@ -898,8 +898,8 @@ return [{ json: { retryCount: retryCount, totalDelaySeconds: totalDelay } }];</c
 <h3>Was ist das Model Context Protocol (MCP) in n8n?</h3>
 <p>Das Model Context Protocol (MCP) ist ein offener Standard, der es KI-Agenten in n8n ermöglicht, auf externe Werkzeuge, Datenbanken und APIs zuzugreifen, ohne dass für jede Schnittstelle individueller Code geschrieben werden muss. Es trennt die Entscheidungslogik des LLM von der technischen Ausführung der Tools.</p>
 
-<h3>Warum sind n8n KI-Agenten seit 2026 serienreif für Unternehmen?</h3>
-<p>KI-Agenten sind serienreif, weil n8n native Retry-Logiken, visuelles Interleaved Reasoning und strikte Timeout-Logiken bietet. Gleichzeitig haben Hochleistungs-Modelle wie Gemini 3.6 Flash die API-Kosten pro Ausführung von über 0,30 € auf unter 0,02 € gesenkt, was den wirtschaftlichen Einsatz in KMUs rentabel macht.</p>
+<h3>Warum sind n8n KI-Agenten für Unternehmen serienreif?</h3>
+<p>KI-Agenten sind serienreif, weil n8n native Retry-Logiken, visuelles Interleaved Reasoning und strikte Timeout-Logiken bietet. Gleichzeitig haben schnelle Hochleistungs-Modelle wie Gemini Flash und GPT-4o-mini die API-Kosten pro Ausführung von über 0,30 € auf unter 0,02 € gesenkt, was den wirtschaftlichen Einsatz in KMUs rentabel macht.</p>
 
 <h3>Wie wird Datenschutz (DSGVO) bei n8n KI-Agenten sichergestellt?</h3>
 <p>Der Datenschutz wird durch vorgelagerte PII-Masking-Nodes (Personally Identifiable Information) gewährleistet, die sensible Kundendaten vor der Übergabe an das LLM anonymisieren. Zudem werden ausschließlich API-Endpunkte mit Garantie für europäische Serverstandorte und ohne Nutzung der Daten für Modell-Training verwendet.</p>
