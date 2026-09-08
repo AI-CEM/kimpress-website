@@ -3848,10 +3848,13 @@ button.btn {
 
 .post-content h3 {
   font-family: 'Inter', sans-serif;
-  font-size: 1.05rem;
+  font-size: 1.22rem;
   font-weight: 700;
-  color: rgba(255, 255, 255, 0.9);
-  margin: 2rem 0 0.75rem;
+  color: #FFFFFF;
+  margin: 2.5rem 0 1rem;
+  line-height: 1.35;
+  border-left: 3px solid #FF0000;
+  padding-left: 14px;
 }
 
 .post-content p {
@@ -3912,6 +3915,82 @@ button.btn {
   color: rgba(255, 255, 255, 0.7);
   font-size: 0.95rem;
   font-style: italic;
+}
+
+/* Blog Post Tables */
+.post-content table,
+.post-content .blog-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 2rem 0;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  font-size: 0.9rem;
+}
+
+.post-content table thead tr,
+.post-content .blog-table thead tr {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.post-content table th,
+.post-content .blog-table th {
+  padding: 16px 18px;
+  text-align: left;
+  font-weight: 700;
+  color: #FFFFFF;
+  font-size: 0.92rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  line-height: 1.4;
+  vertical-align: bottom;
+}
+
+.post-content table td,
+.post-content .blog-table td {
+  padding: 14px 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.82);
+  vertical-align: top;
+}
+
+.post-content table tr:last-child td,
+.post-content .blog-table tr:last-child td {
+  border-bottom: none;
+}
+
+.post-content table tbody tr:hover,
+.post-content .blog-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.post-content table td:first-child,
+.post-content .blog-table td:first-child {
+  font-weight: 600;
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.015);
+  white-space: nowrap;
+}
+
+/* Inline code in blog content */
+.post-content code {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  background: rgba(255, 255, 255, 0.07);
+  color: #FF6B6B;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.88em;
+}
+
+.post-content pre code {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+  border-radius: 0;
 }
 
 /* Author box */

@@ -65,31 +65,31 @@ export const BLOG_POSTS = [
 <table class="blog-table">
   <thead>
     <tr>
-      <th>Kategorie</th>
-      <th>Einstiegs-Stufe: Pure Lip-Sync (z. B. Creatify Aurora / D-ID)</th>
-      <th>High-End: Video-Diffusion & Avatar-Engines (z. B. Kling AI / HeyGen Avatar)</th>
+      <th>Kriterium</th>
+      <th>Avatar- & Lip-Sync-Tools (z. B. HeyGen / Creatify)</th>
+      <th>Generative Video-Diffusion (z. B. Kling AI / Runway)</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td><strong>Funktionsweise</strong></td>
-      <td>Animiert lediglich die Mundpartie und minimale Kopfneigungen auf dem statischen Porträt.</td>
-      <td>Generiert den gesamten Oberkörper, Mimikfalten, Augenblinzeln und Handgesten dynamisch passend zum Sprechrhythmus.</td>
+      <td>Animiert Mundpartie, Mimik und leichte Kopfbewegungen auf einem bestehenden Video oder Foto. Kleidung und Hintergrund bleiben starr.</td>
+      <td>Generiert den gesamten Körper, Mimikfalten, Augenblinzeln, Beleuchtungswechsel und Kamerabewegungen dynamisch per Text/Bild-Prompt.</td>
     </tr>
     <tr>
-      <td><strong>Rechenzeit & Kosten</strong></td>
-      <td>Sehr kostengünstig, Rendering dauert meist unter 60 Sekunden.</td>
-      <td>Höherer Rechenaufwand, 2–4 Minuten Rechenzeit pro 60-Sekunden-Take.</td>
+      <td><strong>Setup & Kosten</strong></td>
+      <td>Sehr schnelles 1-Klick-Setup (2 Min. Handyaufnahme). Abrechnung meist über starre Minuten-Credits (SaaS-Abo).</td>
+      <td>Erfordert Prompt-Regie. 2–4 Minuten Rechenzeit pro 60-Sekunden-Take. Abrechnung flexibel per GPU-Sekunde/API.</td>
     </tr>
     <tr>
-      <td><strong>Limitation</strong></td>
-      <td>Bei schnellen Konsonanten teils unscharfe Zahnkanten; Oberkörper bleibt eher starr.</td>
-      <td>Erfordert präzises Prompting der Szene (Regieanweisungen für Mimik und Gestik nötig).</td>
+      <td><strong>Limitationen</strong></td>
+      <td>Feste Kleidung und starrer Hintergrund („Polo-Shirt-Falle“). Keine Requisiten oder spontane Location-Wechsel ohne Neudreh.</td>
+      <td>Höhere Anforderungen an das Prompting (Regieanweisungen für Körperhaltung, Mimik und Gestik müssen exakt sitzen).</td>
     </tr>
     <tr>
-      <td><strong>Bester Einsatzzweck</strong></td>
-      <td>Interne Schulungen, schnelle Produkt-Erklärer, FAQ-Videos.</td>
-      <td>B2B-Marketing auf LinkedIn, Werbeanzeigen, TikTok & YouTube Shorts.</td>
+      <td><strong>Bester B2B-Einsatz</strong></td>
+      <td>Standard-Talking-Heads im Büro, interne Schulungen, FAQ-Videos und personalisierter Vertrieb via n8n.</td>
+      <td>High-CTR Social Media Ads (TikTok, Reels, LinkedIn), abwechslungsreiche Lifestyle-Szenen und skalierbares Brand-Building.</td>
     </tr>
   </tbody>
 </table>
