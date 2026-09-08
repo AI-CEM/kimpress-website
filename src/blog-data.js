@@ -66,8 +66,8 @@ export const BLOG_POSTS = [
   <thead>
     <tr>
       <th>Kategorie</th>
-      <th>Einstiegs-Stufe: Pure Lip-Sync (z. B. Creatify Aurora / Hedra)</th>
-      <th>High-End: Video-Diffusion (z. B. Kling AI / HeyGen Avatar)</th>
+      <th>Einstiegs-Stufe: Pure Lip-Sync (z. B. Creatify Aurora / D-ID)</th>
+      <th>High-End: Video-Diffusion & Avatar-Engines (z. B. Kling AI / HeyGen Avatar)</th>
     </tr>
   </thead>
   <tbody>
@@ -95,6 +95,17 @@ export const BLOG_POSTS = [
 </table>
 
 <p><strong>Praxis-Tipp für Video-Prompts:</strong> Wenn du mit Diffusions-Engines wie Kling AI arbeitest, übergib im Prompt nicht nur den Text, sondern Regieanweisungen für den Körper: <code>„Die Person spricht das Skript mit natürlicher Mimik, gestikuliert bei Sekunde 3 dezent mit der Hand und hält stabilen Blickkontakt zur Kamera.“</code></p>
+
+<h3>Die HeyGen-Frage: Wann HeyGen für UGC reicht – und wo die Grenzen liegen</h3>
+<p>Viele Creator und Marketing-Teams fragen uns: <em>„Warum sollte ich den modularen Workflow über OpenArt und Kling gehen, wenn HeyGen doch einen 1-Klick-Avatar anbietet?“</em></p>
+
+<p>Die Antwort hängt direkt von deinem Content-Format ab:</p>
+
+<ul>
+  <li><strong>HeyGen Instant Avatar (Ideal für Standard-UGC & Sales):</strong> Wenn du vor der Webcam im Büro sitzt und kurze Erklär-Videos, LinkedIn-Updates oder personalisierte Sales-Nachrichten via n8n automatisieren willst, ist HeyGen unschlagbar schnell. Du filmst dich einmal zwei Minuten mit dem Smartphone, lädst das Footage hoch und erhältst eine hervorragende deutsche Lippensynchronität.</li>
+  <li><strong>Die Grenze bei Werbeanzeigen & Brand-Building (Die „Polo-Shirt-Falle“):</strong> Ein HeyGen Instant-Avatar ist fest an das Trainings-Footage gekoppelt. Hast du dich im blauen Hemd vor deiner Bürowand gefilmt, trägt dein Klon in allen zukünftigen Videos exakt dieses Hemd vor dieser Wand. Nach wenigen Wochen durchschauen Nutzer auf TikTok und Instagram das starre Muster.</li>
+  <li><strong>Die Stärke des OpenArt/Kling-Workflows:</strong> Hier wechselst du Location (Auto, Konferenz, Café, Baustelle), Kameraperspektiven und Outfits rein per Text-Prompt und kannst sogar Produkte oder Requisiten in die Hand nehmen. Für abwechslungsreichen B2B-Content und High-CTR-Ads liefert dieser Workflow die Dynamik echter Drehtage.</li>
+</ul>
 
 <hr />
 
