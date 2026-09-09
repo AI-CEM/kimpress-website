@@ -115,7 +115,7 @@ export const BLOG_POSTS = [
 
 <ul>
   <li><strong>Klassischer Drehtag:</strong> Kamera-Operator, Tonmann, Studiomiete, Schnitt und Farbkorrektur. Kostenpunkt: Selten unter 2.500 € bis 4.000 € für 4–6 Videos. Lieferzeit: 2 bis 3 Wochen.</li>
-  <li><strong>Kimpress KI-Content Studio:</strong> Einmaliges Einmessen deines Avatars (30 Minuten Foto- & Audio-Setup). Anschließend generieren wir <strong>12 fertige 9:16-Videos pro Monat</strong> zum Festpreis von 1.950 € (rechnerisch nur 162,50 € pro Video) – schlüsselfertig mit Skript, Voiceover, Untertiteln und B-Roll geliefert innerhalb von 48 Stunden.</li>
+  <li><strong>Kimpress KI-Content Studio:</strong> Einmaliges Einmessen deines Avatars (30 Minuten Foto- & Audio-Setup). Anschließend generieren wir <strong>12 fertige 9:16-Videos pro Monat (je 20 bis 45 Sekunden Laufzeit</strong> – die ideale Retentions-Länge für maximale Durchschauquoten auf LinkedIn, TikTok und Instagram Reels) zum Festpreis von 1.950 € (rechnerisch nur 162,50 € pro Video) – schlüsselfertig mit Skript, Voiceover, Untertiteln und B-Roll geliefert innerhalb von 48 Stunden.</li>
 </ul>
 
 <hr />
@@ -123,6 +123,9 @@ export const BLOG_POSTS = [
 <h2>Häufig gestellte Fragen (FAQ) zum KI-Klon</h2>
 
 <div class="blog-faq">
+  <h3>Wie lang sind die produzierten KI-Videos?</h3>
+  <p>Die Videos haben eine optimierte Länge von <strong>20 bis 45 Sekunden (maximal bis zu 60 Sekunden für tiefere B2B-Themen)</strong>. Das ist kein Zufall, sondern reine Algorithmus-Mathematik: Auf TikTok, Instagram Reels, YouTube Shorts und LinkedIn entscheidet die <em>Completion Rate</em> (Durchschauquote) über die Reichweite. Ein extrem dicht geschnittenes 30-Sekunden-Video mit klarem Hook und hoher Schnittfrequenz (alle 2 Sekunden ein visueller Cut oder B-Roll) performt in puncto Kundenanfragen und Reichweite messbar besser als langatmige 3-Minuten-Vorträge.</p>
+
   <h3>Ist das Erstellen eines KI-Klons in Deutschland legal (DSGVO & § 22 KUG)?</h3>
   <p>Ja, solange du dein eigenes Bild und deine eigene Stimme nutzt. Nach § 22 KUG (Recht am eigenen Bild) liegt die Einwilligung bei dir selbst. Bei der Nutzung von Drittanbieter-APIs stellen wir bei Kimpress sicher, dass ausschließlich Anbieter mit DSGVO-konformer Datenverarbeitung und Server-Standorten gewählt werden, die Trainingsdaten nicht für eigene Modelle verwerten.</p>
 
@@ -133,14 +136,14 @@ export const BLOG_POSTS = [
   <p>Das hängt davon ab, ob du die Pipeline selbst baust oder schlüsselfertig produzieren lässt:</p>
   <ul>
     <li><strong>Im Selbstbau:</strong> Rund 50 bis 150 Euro monatlich für API-Credits und Software-Abonnements (OpenArt, ElevenLabs, Kling AI). Der größte Hebel ist hier deine eigene Arbeitszeit: Rechne mit mindestens 10 bis 15 Arbeitsstunden pro Monat für Prompt-Tuning, Schnitt und Fehlversuche.</li>
-    <li><strong>Einzelne Test-Videos:</strong> Für Unternehmen, die KI-Content unverbindlich testen wollen, starten wir mit Test-Paketen ab 350 € pro fertig produziertem Video (inklusive Skript, Klon-Animation, Sounddesign und Untertiteln).</li>
-    <li><strong>Die Kimpress Monats-Engine (1.950 € / Monat):</strong> Das ist kein Preis für ein einzelnes Video, sondern eine <strong>komplette Content-Produktion mit 12 fertigen 9:16-Videos pro Monat</strong> (monatlich kündbar). Das entspricht <strong>rechnerisch nur 162,50 € pro Video</strong> – inklusive Avatar-Kalibrierung, Stimm-Klon, Skripterstellung, Schnitt und B-Roll. Im Vergleich: Ein einziger klassischer Drehtag mit Kamerateam kostet in Deutschland selten unter 2.500 bis 4.000 Euro.</li>
+    <li><strong>Einzelne Test-Videos:</strong> Für Unternehmen, die KI-Content unverbindlich testen wollen, starten wir mit Test-Paketen ab 350 € pro fertig produziertem Video (20–45 Sekunden inkl. Skript, Klon-Animation, Sounddesign und Untertiteln).</li>
+    <li><strong>Die Kimpress Monats-Engine (1.950 € / Monat):</strong> Das ist kein Preis für ein einzelnes Video, sondern eine <strong>komplette Content-Maschine mit 12 fertigen 9:16-Videos pro Monat (je 20–45s)</strong> (monatlich kündbar). Das entspricht <strong>rechnerisch nur 162,50 € pro Video</strong> – inklusive Avatar-Kalibrierung, Stimm-Klon, Skripterstellung, Schnitt und B-Roll. Im Vergleich: Ein einziger klassischer Drehtag mit Kamerateam kostet in Deutschland selten unter 2.500 bis 4.000 Euro.</li>
   </ul>
 </div>
 
 <div class="cta-box">
   <h3>Deinen eigenen KI-Klon in 48 Stunden live schalten</h3>
-  <p>Wir kalibrieren deine visuelle Identität, trainieren deine deutsche KI-Stimme und liefern monatlich 12 schlüsselfertige B2B-Videos (rechnerisch nur 162,50 € pro Video) – oder starte mit einem unverbindlichen Test-Video.</p>
+  <p>Wir kalibrieren deine visuelle Identität, trainieren deine deutsche KI-Stimme und liefern monatlich 12 schlüsselfertige 9:16-Videos (20–45s, rechnerisch nur 162,50 € pro Video) – oder starte mit einem unverbindlichen Test-Video.</p>
   <a href="/#kontakt" class="btn btn--primary">15-Minuten Potenzial-Analyse buchen ➔</a>
 </div>
 `
