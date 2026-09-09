@@ -130,12 +130,17 @@ export const BLOG_POSTS = [
   <p>Für standardmäßige Lip-Sync- und Face-Swap-Verfahren genügen bereits 6 bis 10 hochauflösende Smartphone-Fotos aus verschiedenen Blickwinkeln (frontal, 3/4-Profil). Für ein individuelles LoRA-Feintraining in FLUX.1 empfehlen sich 15 bis 25 saubere Porträts mit unterschiedlichen Lichtstimmungen.</p>
 
   <h3>Was kostet die professionelle Erstellung eines B2B-Klons?</h3>
-  <p>Im Selbstbau fallen je nach Tool-Stack monatlich rund 50 bis 150 Euro für API-Credits und Tool-Abonnements (OpenArt, ElevenLabs, Runway/Kling) an. Bei Kimpress übernehmen wir die komplette technische Pipeline, das Sound-Mastering und die monatliche Videoproduktion schlüsselfertig im Paket ab 1.950 € / Monat.</p>
+  <p>Das hängt davon ab, ob du die Pipeline selbst baust oder schlüsselfertig produzieren lässt:</p>
+  <ul>
+    <li><strong>Im Selbstbau:</strong> Rund 50 bis 150 Euro monatlich für API-Credits und Software-Abonnements (OpenArt, ElevenLabs, Kling AI). Der größte Hebel ist hier deine eigene Arbeitszeit: Rechne mit mindestens 10 bis 15 Arbeitsstunden pro Monat für Prompt-Tuning, Schnitt und Fehlversuche.</li>
+    <li><strong>Einzelne Test-Videos:</strong> Für Unternehmen, die KI-Content unverbindlich testen wollen, starten wir mit Test-Paketen ab 350 € pro fertig produziertem Video (inklusive Skript, Klon-Animation, Sounddesign und Untertiteln).</li>
+    <li><strong>Die Kimpress Monats-Engine (1.950 € / Monat):</strong> Das ist kein Preis für ein einzelnes Video, sondern eine <strong>komplette Content-Produktion mit 12 fertigen 9:16-Videos pro Monat</strong> (monatlich kündbar). Das entspricht <strong>rechnerisch nur 162,50 € pro Video</strong> – inklusive Avatar-Kalibrierung, Stimm-Klon, Skripterstellung, Schnitt und B-Roll. Im Vergleich: Ein einziger klassischer Drehtag mit Kamerateam kostet in Deutschland selten unter 2.500 bis 4.000 Euro.</li>
+  </ul>
 </div>
 
 <div class="cta-box">
   <h3>Deinen eigenen KI-Klon in 48 Stunden live schalten</h3>
-  <p>Wir kalibrieren deine visuelle Identität, trainieren dein deutsches Stimm-Modell und bauen deine schlüsselfertige Video-Pipeline auf.</p>
+  <p>Wir kalibrieren deine visuelle Identität, trainieren deine deutsche KI-Stimme und liefern monatlich 12 schlüsselfertige B2B-Videos (rechnerisch nur 162,50 € pro Video) – oder starte mit einem unverbindlichen Test-Video.</p>
   <a href="/#kontakt" class="btn btn--primary">15-Minuten Potenzial-Analyse buchen ➔</a>
 </div>
 `
