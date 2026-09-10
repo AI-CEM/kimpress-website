@@ -115,7 +115,7 @@ export const BLOG_POSTS = [
 
 <ul>
   <li><strong>Klassischer Drehtag:</strong> Kamera-Operator, Tonmann, Studiomiete, Schnitt und Farbkorrektur. Kostenpunkt: Selten unter 2.500 € bis 4.000 € für 4–6 Videos. Lieferzeit: 2 bis 3 Wochen.</li>
-  <li><strong>Kimpress KI-Content Studio:</strong> Einmaliges Einmessen deines Avatars (30 Minuten Foto- & Audio-Setup). Anschließend generieren wir <strong>12 fertige 9:16-Videos pro Monat (je 20 bis 45 Sekunden Laufzeit</strong> – die ideale Retentions-Länge für maximale Durchschauquoten auf LinkedIn, TikTok und Instagram Reels) zum Festpreis von 1.950 € (rechnerisch nur 162,50 € pro Video) – schlüsselfertig mit Skript, Voiceover, Untertiteln und B-Roll geliefert innerhalb von 48 Stunden.</li>
+  <li><strong>Kimpress KI-Content Studio:</strong> Einmaliges Einmessen deines Avatars (30 Minuten Foto- & Audio-Setup). Anschließend erstellen wir dein <strong>12er-Video-Kontingent (je 20 bis 45 Sekunden Laufzeit</strong> – die ideale Retentions-Länge für maximale Durchschauquoten auf LinkedIn, TikTok und Instagram Reels) zum transparenten Festpreis von 1.950 € (rechnerisch nur 162,50 € pro Video – <strong>100 % ohne Abo-Vertrag oder automatische Verlängerung</strong>) – schlüsselfertig mit Skript, Voiceover, Untertiteln und B-Roll geliefert innerhalb von 48 Stunden.</li>
 </ul>
 
 <hr />
@@ -137,7 +137,7 @@ export const BLOG_POSTS = [
   <ul>
     <li><strong>Im Selbstbau:</strong> Rund 50 bis 150 Euro monatlich für API-Credits und Software-Abonnements (OpenArt, ElevenLabs, Kling AI). Der größte Hebel ist hier deine eigene Arbeitszeit: Rechne mit mindestens 10 bis 15 Arbeitsstunden pro Monat für Prompt-Tuning, Schnitt und Fehlversuche.</li>
     <li><strong>Einzelne Test-Videos:</strong> Für Unternehmen, die KI-Content unverbindlich testen wollen, starten wir mit Test-Paketen ab 350 € pro fertig produziertem Video (20–45 Sekunden inkl. Skript, Klon-Animation, Sounddesign und Untertiteln).</li>
-    <li><strong>Die Kimpress Monats-Engine (1.950 € / Monat):</strong> Das ist kein Preis für ein einzelnes Video, sondern eine <strong>komplette Content-Maschine mit 12 fertigen 9:16-Videos pro Monat (je 20–45s)</strong> (monatlich kündbar). Das entspricht <strong>rechnerisch nur 162,50 € pro Video</strong> – inklusive Avatar-Kalibrierung, Stimm-Klon, Skripterstellung, Schnitt und B-Roll. Im Vergleich: Ein einziger klassischer Drehtag mit Kamerateam kostet in Deutschland selten unter 2.500 bis 4.000 Euro.</li>
+    <li><strong>Das Kimpress 12er-Video-Paket (1.950 € Festpreis):</strong> Das ist kein Preis für ein einzelnes Video und <strong>kein Abo-Vertrag</strong>, sondern ein schlüsselfertiges Kontingent von <strong>12 fertigen 9:16-Videos (je 20–45s)</strong>, das du flexibel abrufst, wenn du Content brauchst. Das entspricht <strong>rechnerisch nur 162,50 € pro Video</strong> – 100 % ohne automatische Verlängerung, inklusive Avatar-Kalibrierung, Stimm-Klon, Skripterstellung, Schnitt und B-Roll. Im Vergleich: Ein einziger klassischer Drehtag mit Kamerateam kostet in Deutschland selten unter 2.500 bis 4.000 Euro.</li>
   </ul>
 </div>
 
