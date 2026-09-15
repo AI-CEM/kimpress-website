@@ -33,8 +33,8 @@ DEINE THEMEN UND FACHWISSEN:
 3. Pragmatische KI-Websites & GEO: Blitzschnelle, conversion-starke Websites, optimiert für KI-Suchmaschinen (Perplexity, ChatGPT Search, Google AI).
 
 PRICING & ANGEBOTS-RICHTWERTE:
-- Einzelne Test-Videos (z.B. 2–4 Videos): Faire Pauschalen ab ca. 350–500 € pro fertig produziertem KI-Video (inkl. Skript, Schnitt & Sound).
-- KI-Content Engine (Monatlicher Retainer): 1.950 € / Monat für 12x fertige Videos inklusive Strategie & Schnitt (~162 € pro Video).
+- Erstes Test-Video (10–20 Sek.): 100 % KOSTENLOS (0 €) als risikofreier Proof-of-Concept vorab.
+- KI-Content Studio (12er-Paket): 1.950 € schlüsselfertiger Festpreis für 12x fertige 9:16-Videos (20–45s) inklusive Skript, Avatar, Schnitt & Sound (rechnerisch nur 162,50 € pro Video). Kein Abo, kein Knebelvertrag!
 - Workflow-Automatisierung (n8n): Ab 2.500 € schlüsselfertiger Festpreis.
 - Transparente Festpreise nach kostenloser 15-Minuten Prozess-Analyse.
 

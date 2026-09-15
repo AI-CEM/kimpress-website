@@ -281,7 +281,7 @@ export function initChatbot() {
 
       if (q.includes('content') || q.includes('video') || q.includes('reels') || q.includes('tiktok') || q.includes('shorts') || q.includes('skript')) {
         service = 'KI Content Studio';
-        pricingText = `Wir arbeiten zu 100% mit transparenten Festpreisen & planbaren Monats-Engines:\n\n- **Einzelne Test-Videos (2–4 Videos):** Faire Pauschalen ab ca. 350–500 € pro fertig produziertem KI-Video (inkl. Skript, Schnitt & Sound).\n- **KI-Content Engine (Monats-Retainer):** 1.950 € / Monat für 12x fertige Videos inklusive Strategie & Auto-Posting (~162 € pro Video).\n- **Enterprise Studio:** Ab 3.500 € / Monat für 24x Videos.\n\nDu kannst dein Wunschpaket hier direkt anfragen:`;
+        pricingText = `Wir arbeiten zu 100% mit transparenten Festpreisen – ohne Abo-Zwang:\n\n- **Erstes Test-Video (10–20 Sek.):** 100 % KOSTENLOS als risikofreier Proof of Concept.\n- **12er-Video-Paket:** 1.950 € Festpreis für 12x fertige Videos inklusive Skript, Voice & Schnitt (~162 € pro Video, kein Abo).\n- **Enterprise:** Ab 3.500 € für 24x Videos.\n\nDu kannst dein kostenloses Test-Video hier direkt anfragen:`;
       } else if (q.includes('n8n') || q.includes('workflow') || q.includes('triage') || q.includes('mail') || q.includes('crm') || q.includes('automatisierung') || q.includes('backend')) {
         service = 'KI & Workflow Automatisierung';
         pricingText = `Wir entwickeln maßgeschneiderte Backend-Workflows zu verbindlichen Projekt-Festpreisen:\n\n- **Projekt-Sprints:** Schlüsselfertige n8n- & Make-Workflows ab 2.500 € Festpreis nach 15-Minuten Prozess-Mapping.\n- **0 € Nebenkosten:** Festpreis-Garantie inklusive 30 Tage Hypercare, Monitoring & SLA auf EU-Servern.\n- **Lieferzeit:** Fertigstellung meist in 3 bis 14 Tagen.\n\nSende uns hier direkt deine Prozess-Anforderung für eine verbindliche Kalkulation:`;
@@ -290,7 +290,7 @@ export function initChatbot() {
         pricingText = `Wir bringen deine Brand auf Platz 1 bei Google und in KI-Antworten (Perplexity, SearchGPT, Google AI Overviews):\n\n- **Projekt-Festpreis:** Individuell nach Website-Umfang und Vektorraum-Optimierung.\n- **Leistungen:** Generative Engine Optimization (GEO), Schema.org Entity Resolution & Sub-50ms High-Speed SEO.\n\nTrage hier deine Domain oder Anforderung für eine Potenzial-Analyse ein:`;
       } else {
         service = 'KI-Systeme & Automatisierung';
-        pricingText = `Wir arbeiten zu 100% mit transparenten Festpreisen – ohne Stundensatz-Mogelei, Retainer-Fallen oder versteckte Nebenkosten:\n\n- **01 // SEO & GEO Dominanz:** Projekt-Festpreis nach 15-Min. Potenzial-Analyse.\n- **02 // KI Content Studio:** Monats-Engine ab 1.950 € / Monat (12x Videos) oder Test-Videos ab 350 €.\n- **03 // KI & Workflow Automatisierung:** Verbindliche n8n-Sprints ab 2.500 € Festpreis.\n\nDu kannst dein Wunschsystem oder deine Anforderung hier direkt anfragen:`;
+        pricingText = `Wir arbeiten zu 100% mit transparenten Festpreisen – ohne Stundensatz-Mogelei, Retainer-Fallen oder versteckte Nebenkosten:\n\n- **01 // SEO & GEO Dominanz:** Projekt-Festpreis nach 15-Min. Potenzial-Analyse.\n- **02 // KI Content Studio:** Erstes Test-Video (10–20s) 100 % kostenlos, 12er-Paket für 1.950 € Festpreis.\n- **03 // KI & Workflow Automatisierung:** Verbindliche n8n-Sprints ab 2.500 € Festpreis.\n\nDu kannst dein Wunschsystem oder dein kostenloses Test-Video hier direkt anfragen:`;
       }
 
       return {
@@ -828,7 +828,7 @@ export function initChatbot() {
         (q.includes('preis') || q.includes('kosten') || q.includes('teuer') || q.includes('geld') || q.includes('budget') || q.includes('wie viel') || q.includes('was kostet') || /\d+\s*(videos?|reels?|shorts?|clips?)/i.test(q))) {
       return {
         type: 'text',
-        text: `Für individuelle Video-Projekte (z.B. 2–4 Test-Videos) kalkulieren wir faire Pauschalen ab ca. 350–500 € pro fertig produziertem KI-Video inklusive Skript, Hook-Testing, KI-Visuals & Sounddesign.\n\nFür regelmäßigen Content gibt es unsere **KI-Content Engine** mit 12x Videos/Monat ab 1.950 € / Monat (~162 € pro Video).\n\nMöchtest du ein konkretes Angebot für deine Videos anfragen?`
+        text: `Wir arbeiten ohne versteckte Nebenkosten oder Abo-Fallen:\n\n- **Erstes Test-Video (10–20 Sek.):** 100 % KOSTENLOS als risikofreier Proof of Value.\n- **12er-Video-Paket:** 1.950 € Festpreis für 12x schlüsselfertige 9:16 Videos (~162 € pro Video, kein Abo).\n- **Enterprise Studio:** Ab 3.500 € für 24x Videos.\n\nMöchtest du dein erstes kostenloses Test-Video anfragen?`
       };
     }
 
@@ -836,7 +836,7 @@ export function initChatbot() {
     if (q.includes('cut') || q.includes('min') || q.includes('sek') || q.includes('länge') || q.includes('dauer') || q.includes('was für') || q.includes('was ist drin') || q.includes('was ist enthalten') || q.includes('enthalten') || q.includes('spezifikation') || q.includes('wie lange') || q.includes('wie viele cuts') || q.includes('lieferumfang')) {
       return {
         type: 'text',
-        text: `Hier sind die exakten Spezifikationen für jedes KI-Video (z.B. im Test-Paket ab 350 € oder in der Content Engine):\n\n- **Format & Länge:** 9:16 Vertikal Full HD (1080x1920 MP4), 20 bis 45 Sekunden optimiert für maximale Retention (TikTok, Reels, Shorts, LinkedIn).\n- **Schnitt & Pacing:** Schneller, dynamischer Social-Media-Schnitt mit ca. 12–18 Schnitten pro Video (alle 1,5–3 Sek. visueller Cut, Zoom, Transition oder B-Roll).\n- **Visuals:** Wahlweise fotorealistischer Talking-Head KI-Avatar oder cinematische KI-B-Roll (Veo3 / Midjourney).\n- **Audio & Captions:** Deutsches Studio-Voiceover, dynamische animierte High-Contrast Untertitel (Hormozi-Style) & Sound-Effekte (SFX).\n- **Skript & Copy:** Verkaufspsychologisches AIDA-Skript inkl. 3 conversion-starker Hook-Variationen für die ersten 3 Sekunden.\n- **Rechte:** 100% uneingeschränkte kommerzielle Nutzungsrechte.\n\nMöchtest du ein konkretes Video-Paket für deine Marke anfragen?`
+        text: `Hier sind die exakten Spezifikationen für jedes KI-Video (sowohl im kostenlosen Test-Video als auch im 12er-Paket):\n\n- **Format & Länge:** 9:16 Vertikal Full HD (1080x1920 MP4), 20 bis 45 Sekunden (bzw. 10–20s für das kostenlose Test-Video), optimiert für maximale Retention (TikTok, Reels, Shorts, LinkedIn).\n- **Schnitt & Pacing:** Schneller, dynamischer Social-Media-Schnitt mit ca. 12–18 Schnitten pro Video (alle 1,5–3 Sek. visueller Cut, Zoom, Transition oder B-Roll).\n- **Visuals:** Wahlweise fotorealistischer Talking-Head KI-Avatar oder cinematische KI-B-Roll.\n- **Audio & Captions:** Deutsches Studio-Voiceover, dynamische animierte High-Contrast Untertitel (Hormozi-Style) & Sound-Effekte (SFX).\n- **Skript & Copy:** Verkaufspsychologisches AIDA-Skript inkl. conversion-starker Hook-Variationen für die ersten 3 Sekunden.\n- **Rechte:** 100% uneingeschränkte kommerzielle Nutzungsrechte.\n\nMöchtest du ein kostenloses Test-Video für deine Marke anfragen?`
       };
     }
 

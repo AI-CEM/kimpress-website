@@ -146,13 +146,13 @@ if __name__ == "__main__":
   <p>Aktuelle V2V-Engines verarbeiten Clips zwischen 4 und 30 Sekunden pro Generation. Das ist das perfekte Format für Social Media (TikTok, Instagram Reels, YouTube Shorts), wo die ersten 3 bis 15 Sekunden über die gesamte Conversion der Werbeanzeige entscheiden.</p>
 
   <h3>Was kostet die Produktion bei Kimpress?</h3>
-  <p>Wir arbeiten zu 100 % mit transparenten Festpreisen – ohne Abo-Fallen und ohne automatische Vertragsverlängerungen. Unser <strong>12er-Video-Paket liegt bei 1.950 € Festpreis (rechnerisch nur 162,50 € pro Video)</strong> für fertige 20–45s Videos inklusive Konzeption, KI-Visuals, deutschem Studio-Voiceover und Schnitt. Wer erst testen möchte, startet mit individuellen Test-Paketen ab 350 € pro Video.</p>
+  <p>Wir arbeiten zu 100 % mit transparenten Festpreisen – ohne Abo-Fallen und ohne automatische Vertragsverlängerungen. Unser <strong>12er-Video-Paket liegt bei 1.950 € Festpreis (rechnerisch nur 162,50 € pro Video)</strong> für fertige 20–45s Videos inklusive Konzeption, KI-Visuals, deutschem Studio-Voiceover und Schnitt. Wer die Qualität erst unverbindlich prüfen möchte, erhält sein <strong>erstes Test-Video (10–20 Sekunden) 100 % kostenlos</strong> als risikofreien Proof of Concept.</p>
 </div>
 
 <div class="cta-box">
   <h3>Deine eigene Video-Pipeline mit Google & KI-Motion starten</h3>
-  <p>Wir kombinieren Googles multimodale Gemini-Flash-Architektur mit modernstem Motion-Transfer für deinen schlüsselfertigen B2B-Content.</p>
-  <a href="/#kontakt" class="btn btn--primary">15-Minuten Potenzial-Analyse buchen ➔</a>
+  <p>Wir kombinieren Googles multimodale Gemini-Flash-Architektur mit modernstem Motion-Transfer für deinen schlüsselfertigen B2B-Content – oder sichere dir dein erstes kostenloses 10–20s Test-Video.</p>
+  <a href="/#kontakt" class="btn btn--primary">Kostenloses Test-Video anfragen ➔</a>
 </div>
 `
   },
@@ -287,15 +287,15 @@ if __name__ == "__main__":
   <p>Das hängt davon ab, ob du die Pipeline selbst baust oder schlüsselfertig produzieren lässt:</p>
   <ul>
     <li><strong>Im Selbstbau:</strong> Rund 50 bis 150 Euro monatlich für API-Credits und Software-Abonnements (OpenArt, ElevenLabs, Kling AI). Der größte Hebel ist hier deine eigene Arbeitszeit: Rechne mit mindestens 10 bis 15 Arbeitsstunden pro Monat für Prompt-Tuning, Schnitt und Fehlversuche.</li>
-    <li><strong>Einzelne Test-Videos:</strong> Für Unternehmen, die KI-Content unverbindlich testen wollen, starten wir mit Test-Paketen ab 350 € pro fertig produziertem Video (20–45 Sekunden inkl. Skript, Klon-Animation, Sounddesign und Untertiteln).</li>
+    <li><strong>Kostenloses Test-Video (0 €):</strong> Für Unternehmen, die KI-Content unverbindlich testen wollen, erstellen wir das <strong>erste Test-Video (10–20 Sekunden) 100 % kostenlos</strong> als risikofreien Proof of Value (inklusive Stimm- und Avatar-Probe).</li>
     <li><strong>Das Kimpress 12er-Video-Paket (1.950 € Festpreis):</strong> Das ist kein Preis für ein einzelnes Video und <strong>kein Abo-Vertrag</strong>, sondern ein schlüsselfertiges Kontingent von <strong>12 fertigen 9:16-Videos (je 20–45s)</strong>, das du flexibel abrufst, wenn du Content brauchst. Das entspricht <strong>rechnerisch nur 162,50 € pro Video</strong> – 100 % ohne automatische Verlängerung, inklusive Avatar-Kalibrierung, Stimm-Klon, Skripterstellung, Schnitt und B-Roll. Im Vergleich: Ein einziger klassischer Drehtag mit Kamerateam kostet in Deutschland selten unter 2.500 bis 4.000 Euro.</li>
   </ul>
 </div>
 
 <div class="cta-box">
   <h3>Deinen eigenen KI-Klon in 48 Stunden live schalten</h3>
-  <p>Wir kalibrieren deine visuelle Identität, trainieren deine deutsche KI-Stimme und liefern monatlich 12 schlüsselfertige 9:16-Videos (20–45s, rechnerisch nur 162,50 € pro Video) – oder starte mit einem unverbindlichen Test-Video.</p>
-  <a href="/#kontakt" class="btn btn--primary">15-Minuten Potenzial-Analyse buchen ➔</a>
+  <p>Wir kalibrieren deine visuelle Identität, trainieren deine deutsche KI-Stimme und liefern monatlich 12 schlüsselfertige 9:16-Videos (20–45s, rechnerisch nur 162,50 € pro Video) – oder starte mit einem kostenlosen 10–20s Test-Video.</p>
+  <a href="/#kontakt" class="btn btn--primary">Kostenloses Test-Video anfragen ➔</a>
 </div>
 `
   },
