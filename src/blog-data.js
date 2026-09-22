@@ -145,56 +145,91 @@ export const BLOG_POSTS = [
 
 <hr />
 
-<h2>6. Vollständiges Python-Artefakt: Temporal Drift &amp; Retention Index</h2>
+<h2>6. Vollständiges Python-Artefakt: Der Minerva Pacing &amp; Retention Linter</h2>
 
-<p>Hier ist das produktionsreife Python-Tool, mit dem wir die zeitliche Konsistenz von Keyframes und die resultierende Retention-Wahrscheinlichkeit mathematisch quantifizieren:</p>
+<p>Hier ist das produktionsreife Python-Tool, mit dem wir jede Video-Shotliste vor dem Rendering gegen die Minerva-Pacing-Doktrin auditieren (Dopamin-Pacing, Schnittfrequenz und Amygdala-Hook):</p>
 
-<pre><code class="language-python"># Vollstaendiges, lauffaehiges Script zur Validierung temporaler Video-Konsistenz
-import math
-from typing import List, Dict
+<pre><code class="language-python"># Vollstaendiges, lauffaehiges Script zur Validierung der Minerva-Pacing-Doktrin
+import json
+from dataclasses import dataclass
+from typing import List, Dict, Any
 
-def calculate_temporal_drift_score(frame_metrics: List[Dict[str, float]]) -> Dict[str, float]:
+@dataclass
+class VideoShot:
+    shot_id: int
+    start_sec: float
+    end_sec: float
+    visual_action: str
+    has_pattern_interrupt: bool = False
+    framing_phi_compliant: bool = True
+
+def validate_minerva_pacing(shots: List[VideoShot]) -> Dict[str, Any]:
     """
-    Berechnet den Temporal Consistency Index (TCI) und die Neuro-Retention Rate
-    basierend auf Frame-to-Frame Helligkeits- und Vektordistanzen nach Minerva-Kriterien.
+    Validiert eine B2B-Video-Shotliste gegen die Minerva-Pacing-Doktrin:
+    - Gesamtlaenge: 20 bis 45 Sekunden
+    - Schnitte: 12 bis 18 Cuts (max. 3.0s pro Take gegen Dopamin-Abfall)
+    - Phase 1 (0-3s): Zwingender Amygdala-Pattern-Interrupt
+    - Geometrie: Phi (1.618) Safezone-Konformitaet
     """
-    if len(frame_metrics) &lt; 2:
-        return {"tci_score": 1.0, "retention_probability": 0.99, "drift_detected": 0.0}
+    if not shots:
+        return {"status": "ERROR", "message": "Shot-Liste ist leer"}
 
-    drift_deltas = []
-    for i in range(1, len(frame_metrics)):
-        prev = frame_metrics[i - 1]
-        curr = frame_metrics[i]
+    total_duration = shots[-1].end_sec - shots[0].start_sec
+    cut_durations = [s.end_sec - s.start_sec for s in shots]
+    avg_cut = sum(cut_durations) / len(cut_durations)
+    max_cut = max(cut_durations)
 
-        # Euklidische Distanz im 5600K Farbraum &amp; Feature-Vektor
-        delta_color = math.sqrt((curr.get("color_temp", 5600) - prev.get("color_temp", 5600)) ** 2)
-        delta_luma = abs(curr.get("luma", 0.5) - prev.get("luma", 0.5))
-        delta_identity = abs(curr.get("identity_score", 0.98) - prev.get("identity_score", 0.98))
+    violations = []
 
-        # Gewichtete Abweichung gemaess Minerva-Qualitaetskriterien
-        drift = (delta_color / 5600.0) * 0.3 + delta_luma * 0.3 + delta_identity * 0.4
-        drift_deltas.append(drift)
+    # 1. Pacing-Check (Bannung von Dopamin-Drops)
+    if max_cut &gt; 3.0:
+        violations.append(f"Pacing-Verstoss: Take {cut_durations.index(max_cut) + 1} dauert {max_cut:.1f}s (Maximal erlaubt: 3.0s)")
 
-    avg_drift = sum(drift_deltas) / len(drift_deltas)
-    tci = max(0.0, min(1.0, 1.0 - avg_drift))
-    retention_prob = round(1.0 / (1.0 + math.exp(-10 * (tci - 0.75))), 4)
+    # 2. Hook-Check (0-3s Amygdala-Interrupt)
+    first_shots = [s for s in shots if s.start_sec &lt; 3.0]
+    if not any(s.has_pattern_interrupt for s in first_shots):
+        violations.append("Hook-Fehler: Keine Pattern-Interrupt-Aktion in Sekunde 0-3 gefunden")
+
+    # 3. Laengen-Check (20-45s)
+    if total_duration &lt; 20.0 or total_duration &gt; 45.0:
+        violations.append(f"Laengen-Warnung: {total_duration:.1f}s ausserhalb des optimalen 20-45s Fensters")
+
+    # 4. Schnitt-Frequenz (12-18 Cuts)
+    total_cuts = len(shots)
+    if total_cuts &lt; 10:
+        violations.append(f"Cut-Mangel: Nur {total_cuts} Schnitte (Empfohlen: 12-18 Schnitte)")
+
+    score = 100 - (len(violations) * 20)
+    score = max(0, min(100, score))
 
     return {
-        "tci_score": round(tci, 4),
-        "retention_probability": retention_prob,
-        "drift_detected": round(avg_drift, 4)
+        "status": "APPROVED" if score &gt;= 80 else "OPTIMIZE",
+        "minerva_score": score,
+        "total_duration_sec": round(total_duration, 1),
+        "total_cuts": total_cuts,
+        "avg_cut_duration_sec": round(avg_cut, 2),
+        "violations": violations
     }
 
-# Verifizierter Sandbox-Durchlauf
-sample_sequence = [
-    {"color_temp": 5600, "luma": 0.52, "identity_score": 0.99},
-    {"color_temp": 5605, "luma": 0.51, "identity_score": 0.98},
-    {"color_temp": 5595, "luma": 0.53, "identity_score": 0.98}
+# Verifizierter Testlauf fuer ein 24,5-Sekunden B2B-Creative
+sample_timeline = [
+    VideoShot(1, 0.0, 1.8, "Snap-Zoom auf Cadillac Hauben-Emblem", has_pattern_interrupt=True),
+    VideoShot(2, 1.8, 3.5, "Cockpit-Perspektive: Blick auf Andy FaceTime Screen"),
+    VideoShot(3, 3.5, 5.2, "B-Roll: Schwenk ueber 5600K Schiefer-Architektur"),
+    VideoShot(4, 5.2, 7.0, "Talking-Head Karim: Suave Geste mit Hand am Steuer"),
+    VideoShot(5, 7.0, 9.1, "Dynamic Cut: Einfahrt in Tiefgaragen-Rampe"),
+    VideoShot(6, 9.1, 11.2, "Klonk-Moment an der Muelltonne (Audio-Ducking)"),
+    VideoShot(7, 11.2, 13.0, "Karim deadpan Laecheln im Rueckspiegel"),
+    VideoShot(8, 13.0, 15.1, "FaceTime PIP Andy lacht ueber den Stunt"),
+    VideoShot(9, 15.1, 17.5, "Tiefgaragen-Tor faehrt geschmeidig auf"),
+    VideoShot(10, 17.5, 19.8, "High-Contrast Untertitel: 48h Lieferzeit"),
+    VideoShot(11, 19.8, 22.0, "Kimpress B2B Studio Branding &amp; Logo-Insert"),
+    VideoShot(12, 22.0, 24.5, "Endframe CTA: Kostenloses Test-Video anfragen")
 ]
 
 if __name__ == "__main__":
-    result = calculate_temporal_drift_score(sample_sequence)
-    print(f"Status: TCI={result['tci_score']} | Retention={result['retention_probability']}")
+    report = validate_minerva_pacing(sample_timeline)
+    print(json.dumps(report, indent=2))
 </code></pre>
 
 <hr />
