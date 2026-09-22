@@ -6,9 +6,9 @@
 
 export const BLOG_POSTS = [
   {
-    slug: 'deepmind-minerva-video-reasoning-neuro-retention-2026',
-    title: 'Die Weisheit der Minerva: Warum 90 % aller KI-Videos im Gehirn abprallen – und wie Video-Reasoning Kunden magnetisch anzieht',
-    excerpt: 'Das menschliche Gehirn filtert Videos in 1,8 Sekunden aus. Wie Google DeepMinds MINERVA-Forschung, foveale Neuro-Muster und die mathematische Zeit-Triade aus kalten KI-Prompts hochkonvertierende B2B-Verkaufsvideos formen.',
+    slug: 'minerva-methode-video-reasoning-neuro-retention-2026',
+    title: 'Die Minerva-Methode: Warum 90 % aller KI-Videos im Gehirn abprallen – und wie Neuro-Pacing & Google Veo Kunden magnetisch anziehen',
+    excerpt: 'Das menschliche Gehirn filtert Videos in 1,8 Sekunden aus. Wie die Kimpress Minerva-Doktrin, foveale Neuro-Trigger und Googles multimodale Video-Inferenz aus kalten Prompts hochkonvertierende B2B-Verkaufsvideos formen.',
     date: '2026-09-22',
     readTime: 11,
     category: 'CONTENT',
@@ -18,44 +18,42 @@ export const BLOG_POSTS = [
 
 <p>Unternehmen verbrennen monatlich fünfstellige Werbebudgets in der Annahme, dass hübsche KI-Bilder automatisch Kunden gewinnen. Doch das Gegenteil passiert: Mangelhafte KI-Videos zerstören die Glaubwürdigkeit einer Marke schneller als gar keine Präsenz.</p>
 
-<p>Um diese Barriere mathematisch und neurologisch zu durchbrechen, reicht oberflächliches Prompten nicht aus. Es braucht die <strong>Weisheit der Minerva</strong>: Die gezielte Synthese aus <strong>Google DeepMinds Video-Reasoning-Forschung (MINERVA)</strong>, neuro-biologischen Aufmerksamkeits-Triggern und den unverrückbaren numerologischen Gesetzen des Pacings. Hier ist die Dekonstruktion, wie wir bei Kimpress aus Rohdaten conversion-starke Video-Engines bauen.</p>
+<p>Um diese Barriere mathematisch und neurologisch zu durchbrechen, reicht oberflächliches Prompten nicht aus. Es braucht die <strong>Weisheit der Minerva</strong>: Die Kimpress-eigene Doktrin der reinen Geometrie und Strategie, vereint mit der multimodalen Video-Power unseres stärksten Technologiepartners <strong>Google</strong> (Google Veo und Gemini Flash). Hier ist die Dekonstruktion, wie wir bei Kimpress aus kalten Rohdaten conversion-starke Video-Engines bauen.</p>
 
 <hr />
 
-<h2>1. Technische Dekonstruktion: Das DeepMind MINERVA-Fundament</h2>
+<h2>1. Das unsichtbare Problem: Warum naive Text-to-Video Prompts scheitern</h2>
 
-<p>Warum scheitern klassische Text-to-Video-Pipelines im geschäftlichen Einsatz? Die Antwort liefert eine fundamentale Forschungsarbeit von <strong>Google DeepMind und der Columbia University</strong> (<em>MINERVA: Evaluating Complex Video Reasoning</em>, arXiv:2505.00681):</p>
-
-<p>Bisherige Video-Benchmarks prüften lediglich das Endergebnis („Outcome Supervision“), ignorierten jedoch den Denkpfad. MINERVA führt erstmals handgefertigte, mehrstufige <strong>Reasoning Traces</strong> über Video-Frames hinweg ein. Die forensische Fehler-Taxonomie des DeepMind-Teams deckt das eigentliche Problem moderner Multimodal-Modelle schonungslos auf:</p>
+<p>Warum scheitern klassische Text-to-Video-Pipelines im geschäftlichen Einsatz? Wenn Amateure Prompts in Standard-Generatoren eintippen, überlassen sie dem Zufall das Feld. Die Folge sind zwei fatale Fehlerklassen:</p>
 
 <table class="blog-table">
   <thead>
     <tr>
-      <th>Fehler-Kategorie laut DeepMind MINERVA</th>
-      <th>Fehler-Anteil im Modell</th>
+      <th>Fehler-Klasse naiver Video-KI</th>
+      <th>Ursache im Modell</th>
       <th>Praxis-Auswirkung im B2B-Video</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><strong>Temporal Localization Failure</strong></td>
-      <td><strong>&gt; 41 %</strong></td>
-      <td>Modell verliert den zeitlichen Ablauf: Kausalitäten vertauschen sich, Bewegungen wirken unnatürlich rückwärts oder abgehackt.</td>
+      <td><strong>Temporaler Kontinuitäts-Bruch</strong></td>
+      <td>Verlust der Zeitachse zwischen Frames</td>
+      <td>Kausalitäten vertauschen sich, Bewegungen wirken unnatürlich rückwärts, Schnitte reißen den Zuschauer aus der Szene.</td>
     </tr>
     <tr>
-      <td><strong>Visual Perception Drift</strong></td>
-      <td><strong>&gt; 37 %</strong></td>
-      <td>Gesichter verformen sich nach dem Schnitt, Kleidung wechselt Farbe und Textur, Hintergrund-Architektur morphing.</td>
+      <td><strong>Perzeptiver Identitäts-Drift</strong></td>
+      <td>Fehlende Vektor-Anker für Gesichter und Raum</td>
+      <td>Gesichter verformen sich nach dem Schnitt, Kleidung wechselt Textur und Farbe, Hintergrund-Architektur morpht unkontrolliert.</td>
     </tr>
     <tr>
-      <td><strong>Logical / Completion Error</strong></td>
-      <td>&lt; 22 %</td>
-      <td>Reine Textlogik und Skriptverständnis – dieser Teil funktioniert bereits zuverlässig.</td>
+      <td><strong>Monotone Reizarmut</strong></td>
+      <td>Statischer Talking-Head ohne Schnittfrequenz</td>
+      <td>Das Gehirn schaltet nach 1,8 Sekunden ab, weil kein neuer Informationswert transportiert wird.</td>
     </tr>
   </tbody>
 </table>
 
-<p><strong>Die fundamentale Erkenntnis:</strong> KI-Videomodelle scheitern nicht an der Text-Logik, sondern an der <em>zeitlichen Kontinuität</em> und der <em>visuellen Stabilität</em> über Schnittgrenzen hinweg. Wer einem Modell blind freie Hand lässt, erzeugt unweigerlich Perzeptionsdrift. Die Lösung liegt in deterministischer Steuerung durch feste Geometrie- und Frame-Anker.</p>
+<p><strong>Die Minerva-Erkenntnis:</strong> KI-Videomodelle brauchen strikte mathematische Führung. Wer einem System freie Hand lässt, erzeugt unweigerlich Perzeptionsdrift. Die Lösung liegt in deterministischer Steuerung durch unverrückbare Geometrie- und Frame-Anker.</p>
 
 <hr />
 
@@ -122,16 +120,16 @@ export const BLOG_POSTS = [
 
 <hr />
 
-<h2>4. Google als Partner der Wahrheit: Multimodale Inferenz &amp; GEO 2.0</h2>
+<h2>4. Google als Partner der Wahrheit: Google Veo, Gemini Flash &amp; GEO 2.0</h2>
 
-<p>Google ist im Bereich multimodaler Intelligenz und Suchmaschinen-Architektur der maßgebliche Standard. Unser gesamter Workflow baut auf zwei Kernsystemen auf:</p>
+<p>Google ist im Bereich multimodaler Intelligenz und Suchmaschinen-Architektur unser maßgeblicher Partner. Unser Workflow baut auf zwei Kernsystemen auf:</p>
 
 <ul>
-  <li><strong>Google Gemini Flash &amp; Google Veo:</strong> Durch natives Verständnis von Video-Tokens und extrem lange Kontextfenster (1M+ Tokens) kann Gemini ganze Videosequenzen Frame für Frame analysieren, semantische Brüche erkennen und Skripte exakt auf das Frame-Timing abstimmen.</li>
-  <li><strong>Generative Engine Optimization (GEO 2.0):</strong> Wenn Google AI Overviews, Gemini und Perplexity das Web nach Dienstleistern durchsuchen, werten sie strukturierte Daten, Autoren-Entitäten und sachliche Dichte aus. Videos mit klaren Schema.org VideoObject-Auszeichnungen und verifizierter Entity-Konsistenz erzielen nachweisbar höhere Sichtbarkeit.</li>
+  <li><strong>Google Veo &amp; Google Gemini Flash:</strong> Während Google Veo für physikalisch konsistente Video-Diffusion sorgt, analysiert Gemini Flash als multimodales Gehirn mit 1M+ Token Kontextfenster jede Sequenz Frame für Frame. So werden Schnitt-Timings, semantische Kohärenz und lippensynchrone Audio-Cues perfekt aufeinander abgestimmt.</li>
+  <li><strong>Generative Engine Optimization (GEO 2.0):</strong> Wenn Google AI Overviews und Gemini das Web nach Branchenexperten durchsuchen, priorisieren sie strukturierte Daten und sachliche Dichte. Videos mit sauberen Schema.org VideoObject-Auszeichnungen erzielen nachweisbar höhere Sichtbarkeit in KI-Antwortfeldern.</li>
 </ul>
 
-<p>Wir nutzen diesen Hebel, um Kundeninhalte nicht nur viral in Social Feeds zu platzieren, sondern dauerhaft als verlässliche Antwort in KI-Suchmaschinen zu verankern.</p>
+<p>Wir nutzen diesen Hebel, um Kundeninhalte nicht nur viral in Feeds zu platzieren, sondern dauerhaft als verlässliche Antwort in Google zu verankern.</p>
 
 <hr />
 
@@ -158,7 +156,7 @@ from typing import List, Dict
 def calculate_temporal_drift_score(frame_metrics: List[Dict[str, float]]) -> Dict[str, float]:
     """
     Berechnet den Temporal Consistency Index (TCI) und die Neuro-Retention Rate
-    basierend auf Frame-to-Frame Helligkeits- und Vektordistanzen nach MINERVA-Kriterien.
+    basierend auf Frame-to-Frame Helligkeits- und Vektordistanzen nach Minerva-Kriterien.
     """
     if len(frame_metrics) &lt; 2:
         return {"tci_score": 1.0, "retention_probability": 0.99, "drift_detected": 0.0}
@@ -173,7 +171,7 @@ def calculate_temporal_drift_score(frame_metrics: List[Dict[str, float]]) -> Dic
         delta_luma = abs(curr.get("luma", 0.5) - prev.get("luma", 0.5))
         delta_identity = abs(curr.get("identity_score", 0.98) - prev.get("identity_score", 0.98))
 
-        # Gewichtete Abweichung gemaess DeepMind MINERVA-Fehlerklassen
+        # Gewichtete Abweichung gemaess Minerva-Qualitaetskriterien
         drift = (delta_color / 5600.0) * 0.3 + delta_luma * 0.3 + delta_identity * 0.4
         drift_deltas.append(drift)
 
