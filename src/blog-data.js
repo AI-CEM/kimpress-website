@@ -211,20 +211,20 @@ def validate_minerva_pacing(shots: List[VideoShot]) -> Dict[str, Any]:
         "violations": violations
     }
 
-# Verifizierter Testlauf fuer ein 24,5-Sekunden B2B-Creative
+# Verifizierter Testlauf fuer ein 25,0-Sekunden B2B-Showcase
 sample_timeline = [
-    VideoShot(1, 0.0, 1.8, "Snap-Zoom auf Auto-Emblem", has_pattern_interrupt=True),
-    VideoShot(2, 1.8, 3.5, "Cockpit-Perspektive: Blick auf Smartphone-Screen"),
-    VideoShot(3, 3.5, 5.2, "B-Roll: Schwenk ueber 5600K Schiefer-Architektur"),
-    VideoShot(4, 5.2, 7.0, "Talking-Head CemGPT: Fokussierte Geste mit Hand am Steuer"),
-    VideoShot(5, 7.0, 9.1, "Dynamic Cut: Einfahrt in Tiefgaragen-Rampe"),
-    VideoShot(6, 9.1, 11.2, "Klonk-Moment an der Muelltonne (Audio-Ducking)"),
-    VideoShot(7, 11.2, 13.0, "CemGPT souveraenes Laecheln im Rueckspiegel"),
-    VideoShot(8, 13.0, 15.1, "FaceTime PIP Video-Call lacht ueber den Stunt"),
-    VideoShot(9, 15.1, 17.5, "Tiefgaragen-Tor faehrt geschmeidig auf"),
-    VideoShot(10, 17.5, 19.8, "High-Contrast Untertitel: 48h Lieferzeit"),
-    VideoShot(11, 19.8, 22.0, "Kimpress B2B Studio Branding &amp; Logo-Insert"),
-    VideoShot(12, 22.0, 24.5, "Endframe CTA: Kostenloses Test-Video anfragen")
+    VideoShot(1, 0.0, 1.8, "Macro-Zoom auf Dashboard-Metrik: 0 auf 100 Leads", has_pattern_interrupt=True),
+    VideoShot(2, 1.8, 3.5, "Talking-Head CemGPT: Praegnantes Problem-Statement"),
+    VideoShot(3, 3.5, 5.4, "B-Roll Cut: Dynamische Screencast-Sequenz mit Datenfluss"),
+    VideoShot(4, 5.4, 7.2, "Talking-Head: Erklaerung des Kernengpasses"),
+    VideoShot(5, 7.2, 9.3, "Grafik-Insert: Vorher-Nachher-Vergleich mit 70% Zeitgewinn"),
+    VideoShot(6, 9.3, 11.5, "Dynamic Cut: Live-Deployment einer automatisierten Pipeline"),
+    VideoShot(7, 11.5, 13.5, "Talking-Head CemGPT: Klare Loesung auf den Punkt"),
+    VideoShot(8, 13.5, 15.8, "Cinematic B-Roll: High-Tech Buero-Aesthetik im 5600K Licht"),
+    VideoShot(9, 15.8, 18.0, "High-Contrast animierte Untertitel: 48h Lieferzeit"),
+    VideoShot(10, 18.0, 20.2, "Proof-Metrik: Messbare Ergebnisse und ROI-Fakten"),
+    VideoShot(11, 20.2, 22.5, "Kimpress Studio Branding &amp; Audio-Drop"),
+    VideoShot(12, 22.5, 25.0, "Endframe CTA: Erstes 10-20s Test-Video 100% kostenlos anfragen")
 ]
 
 if __name__ == "__main__":
