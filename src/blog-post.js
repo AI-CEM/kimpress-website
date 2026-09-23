@@ -227,28 +227,93 @@ function renderPost(post) {
     </footer>
   `;
 
-  // Share buttons
-  const url   = encodeURIComponent(window.location.href);
-  const title = encodeURIComponent(post.title);
-  document.getElementById('share-li').href = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
-  document.getElementById('share-tw').href = `https://x.com/intent/tweet?text=${title}&url=${url}`;
-  document.getElementById('share-copy').addEventListener('click', () => {
-    navigator.clipboard.writeText(window.location.href).then(() => {
-      const btn = document.getElementById('share-copy');
-      btn.textContent = '✓ Kopiert!';
-      setTimeout(() => { btn.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg> Kopieren`; }, 2000);
-    });
-  });
-
-  // Scroll progress
-  const bar = document.getElementById('progress-bar');
-  window.addEventListener('scroll', () => {
-    if (bar) bar.style.width = (window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100) + '%';
-  }, { passive: true });
+  initPostInteractivity(post);
 
   // Hide loading
   const loading = document.getElementById('post-loading');
   if (loading) loading.remove();
+}
+
+export function initCodeCopyButtons() {
+  const preElements = document.querySelectorAll('.post-content pre');
+  preElements.forEach((pre) => {
+    if (pre.querySelector('.code-copy-btn')) return;
+
+    const btn = document.createElement('button');
+    btn.className = 'code-copy-btn';
+    btn.setAttribute('type', 'button');
+    btn.setAttribute('aria-label', 'Code kopieren');
+    btn.innerHTML = `
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+      </svg>
+      <span>Kopieren</span>
+    `;
+
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const codeElem = pre.querySelector('code');
+      const textToCopy = codeElem ? codeElem.innerText : pre.innerText;
+
+      navigator.clipboard.writeText(textToCopy).then(() => {
+        btn.classList.add('code-copy-btn--copied');
+        btn.innerHTML = `
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+          <span style="color:#22c55e">Kopiert!</span>
+        `;
+        setTimeout(() => {
+          btn.classList.remove('code-copy-btn--copied');
+          btn.innerHTML = `
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+            <span>Kopieren</span>
+          `;
+        }, 2000);
+      }).catch((err) => {
+        console.error('Clipboard copy error:', err);
+      });
+    });
+
+    pre.appendChild(btn);
+  });
+}
+
+function initPostInteractivity(post) {
+  // Share buttons
+  const url   = encodeURIComponent(window.location.href);
+  const title = encodeURIComponent(post ? post.title : document.title);
+  const shareLi = document.getElementById('share-li');
+  if (shareLi) shareLi.href = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
+  const shareTw = document.getElementById('share-tw');
+  if (shareTw) shareTw.href = `https://x.com/intent/tweet?text=${title}&url=${url}`;
+  
+  const shareCopy = document.getElementById('share-copy');
+  if (shareCopy) {
+    shareCopy.addEventListener('click', () => {
+      navigator.clipboard.writeText(window.location.href).then(() => {
+        shareCopy.textContent = '✓ Kopiert!';
+        setTimeout(() => { 
+          shareCopy.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg> Kopieren`; 
+        }, 2000);
+      });
+    });
+  }
+
+  // Scroll progress
+  const bar = document.getElementById('progress-bar');
+  if (bar) {
+    window.addEventListener('scroll', () => {
+      bar.style.width = (window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100) + '%';
+    }, { passive: true });
+  }
+
+  // Code Copy Buttons
+  initCodeCopyButtons();
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -257,12 +322,27 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileMenu();
 
   const params = new URLSearchParams(window.location.search);
-  const slug = params.get('slug') || params.get('post');
+  let slug = params.get('slug') || params.get('post');
+
+  if (!slug) {
+    const pathMatch = window.location.pathname.match(/\/blog\/([^\/\.]+)/);
+    if (pathMatch) slug = pathMatch[1];
+  }
+
+  // Check if content is already pre-rendered by SSG in DOM
+  if (document.querySelector('.post-content')) {
+    const post = slug ? getPostBySlug(slug) : null;
+    initPostInteractivity(post);
+    return;
+  }
+
   const post = slug ? getPostBySlug(slug) : null;
 
   if (!post) {
-    document.getElementById('post-loading').style.display = 'none';
-    document.getElementById('post-404').style.display = '';
+    const loader = document.getElementById('post-loading');
+    if (loader) loader.style.display = 'none';
+    const notFound = document.getElementById('post-404');
+    if (notFound) notFound.style.display = '';
     document.title = 'Nicht gefunden — Kimpress Blog';
     return;
   }
