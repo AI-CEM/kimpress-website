@@ -7,8 +7,8 @@
 export const BLOG_POSTS = [
   {
     slug: 'omni-flash-code-patterns-slash-at-prompt-engineering-2026',
-    title: 'Google Omni Flash & FlowLabs: Die geheimen / und @ Code-Patterns für deterministische KI-Videos',
-    excerpt: 'Schluss mit Prompt-Lotto und morphenden Gesichtern: Wie die 4-Schichten-Architektur aus Slash-Befehlen (/), Entity-Locks (@) und der 3-Stufen-Compiler-Pipeline in Google Omni Flash professionelle B2B-Videos deterministisch steuert.',
+    title: 'Kinoreife KI-Videos in Hollywood-Qualität: Die geheimen / und @ Code-Patterns für Google Omni Flash & FlowLabs',
+    excerpt: 'Schluss mit Prompt-Lotto und morphenden Gesichtern: Wie du mit Slash-Kamera-Befehlen (/), biometrischen Entity-Locks (@) und unveränderlicher @voice-Bindung kinoreife High-End-Videos in Google Omni Flash baust – perfekt abgestimmt für jedes Format.',
     date: '2026-09-24',
     readTime: 10,
     category: 'CONTENT',
@@ -22,7 +22,7 @@ export const BLOG_POSTS = [
 
 <hr />
 
-<h2>1. Das LEGO-Prinzip: Warum Prosa-Prompts im Video versagen</h2>
+<h2>1. Das LEGO-Prinzip: Warum endlose Fließtext-Prompts im Video versagen</h2>
 
 <p>Klassische Text-Prompts („Ein Mann im Anzug geht durch ein modernes Büro und spricht in die Kamera“) überlassen dem Modell hunderte Freiheitsgrade: Welcher Anzug? Welche Brennweite? Wie schnell geht er? Wann öffnet sich der Mund? Das Resultat ist bekannt: Halluzinierte Gliedmaßen und wechselnde Gesichter.</p>
 
@@ -39,6 +39,11 @@ export const BLOG_POSTS = [
       <td><strong>Charakter-Identität</strong></td>
       <td>Textbeschreibung („junger Gründer“) ➔ Morpht bei jedem Schnitt</td>
       <td><strong><code>@name</code> Entity-Lock</strong> ➔ Feste Bindung an biometrische 3D-Referenzdaten</td>
+    </tr>
+    <tr>
+      <td><strong>Stimm-Stabilität</strong></td>
+      <td>Zufälliger Tonfall ➔ Akzentsprünge und wechselnde Stimmfarben</td>
+      <td><strong><code>@voice</code> Vokal-Lock</strong> ➔ Unveränderliche Zuweisung des akustischen Profils</td>
     </tr>
     <tr>
       <td><strong>Kamera-Choreografie</strong></td>
@@ -66,7 +71,7 @@ export const BLOG_POSTS = [
 
 <ul>
   <li><strong><code>@name</code> (Der Identitäts-Anker):</strong> Friert die Gesichtsbiometrie, Knochenstruktur und unverwechselbaren Merkmale des Darstellers ein (z. B. <code>@CemGPT</code>). Das Modell darf die Gesichtsgeometrie über Schnittgrenzen hinweg nicht neu interpretieren.</li>
-  <li><strong><code>@voice</code> (Der Vokale Anker):</strong> Weist der Entität ein definiertes, akustisches Profil zu (z. B. sonorer deutscher Bariton mit klarer Hanseaten-Kadenz). Verhindert unnatürliche Tonhöhen-Sprünge oder Akzent-Verschiebungen.</li>
+  <li><strong><code>@voice</code> (Der Vokale Anker):</strong> Weist der sprechenden Person ein definiertes, akustisches Profil zu (z. B. <code>@cem_voice</code>: sonorer deutscher Bariton mit klarer Hanseaten-Kadenz). <strong>Sobald ein Charakter spricht, ist <code>@voice</code> zwingend erforderlich.</strong> Ohne diesen Anker halluzinieren Videomodelle willkürliche Akzente, Tonhöhen-Sprünge oder asynchrones Lippenflattern.</li>
   <li><strong><code>@object</code> (Der Materie-Anker):</strong> Sperrt physische Objekte, Hardwaresysteme, Bildschirme oder Fahrzeuge (z. B. <code>@device_display</code>, <code>@product_unit</code>), damit Logos, Tasten und Kanten exakt formstabil bleiben.</li>
 </ul>
 
@@ -74,7 +79,7 @@ export const BLOG_POSTS = [
 
 <h2>3. Die 4-Schichten-Architektur eines Produktions-Prompts</h2>
 
-<p>Jeder Befehl in unserer Pipeline wird strikt in vier hierarchischen Schichten zusammengesetzt:</p>
+<p>Jeder Befehl in unserer Pipeline wird strikt in vier hierarchischen Schichten zusammengesetzt – flexibel für Hochformat (9:16 Social) und Querformat (16:9 Web &amp; Cinema):</p>
 
 <pre><code class="language-text">[SCHICHT 1: KINETISCHE &amp; OPTISCHE DIREKTIVEN]
 /establishing /tracking /dollyin /goldenhour /volumetric
@@ -84,11 +89,11 @@ export const BLOG_POSTS = [
 
 [SCHICHT 3: SZENEN-CHRONOLOGIE &amp; AKTIONEN]
 00:00.0 - 00:02.5: @CemGPT betritt das lichtdurchflutete Buero, Blick fokussiert in die Kamera. Mund fest geschlossen.
-00:02.5 - 00:04.5: @CemGPT spricht lippensynchron im Praesenz-Ton: „Moin. Wer seine Prozesse automatisiert, gewinnt Zeit.“
+00:02.5 - 00:04.5: @CemGPT spricht lippensynchron im Praesenz-Ton @cem_voice: „Moin. Wer seine Prozesse automatisiert, gewinnt Zeit.“
 
 [SCHICHT 4: PARAMETER &amp; NEGATIV-LEITPLANKEN]
 No morphing, no limb distortion, consistent lighting.
-Format: 9:16 vertical native | Duration: 4.5s | FPS: 24
+Aspect Ratio: Adaptive (9:16 Social / 16:9 Cinema) | Duration: 4.5s | FPS: 24
 </code></pre>
 
 <h3>Die wichtigsten Slash-Befehle im Überblick:</h3>
@@ -107,7 +112,7 @@ Format: 9:16 vertical native | Duration: 4.5s | FPS: 24
 
 <ol>
   <li><strong>Token-Resolution:</strong> Der Compiler löst rohe Entwickler-Variablen (wie <code>@CemGPT</code>) in natürliche, hochauflösende Substantive auf, verknüpft sie jedoch im Hintergrund fest mit den Vektor-Referenz-Sheets der Inferenz-Session.</li>
-  <li><strong>Mund-Status-Isolierung:</strong> Das System deklariert für jeden Zeitabschnitt explizite Zustände: <code>mouth closed</code>, <code>moves in sync</code> oder <code>frozen closed</code>. Bei mehreren Sprechern erzwingt der Compiler <em>Strict Speaker Isolation</em> – gleichzeitiges Lippenbewegen ist technisch gesperrt.</li>
+  <li><strong>Mund-Status &amp; Stimm-Isolierung:</strong> Das System deklariert für jeden Zeitabschnitt explizite Zustände: <code>mouth closed</code>, <code>moves in sync</code> oder <code>frozen closed</code>. Bei Dialogen erzwingt der Compiler <em>Strict Speaker Isolation</em> – nur der aktive Sprecher mit zugewiesenem <code>@voice</code> darf die Lippen bewegen.</li>
   <li><strong>Der 200ms Anti-Bleed Stille-Puffer:</strong> Zwischen Dialogwechseln wird exakt ein Puffer von 0,2 Sekunden absoluter Stille erzwungen (z. B. Sekunde <code>00:04.8 bis 00:05.0</code>). Ohne diesen Puffer verschluckt die Audio-Engine Satzenden oder erzeugt unschönes Echo.</li>
 </ol>
 
@@ -123,12 +128,12 @@ Format: 9:16 vertical native | Duration: 4.5s | FPS: 24
   "technical_blueprint": {
     "camera": "ARRI Alexa Mini LF, 35mm anamorphic prime lens, 5600K overcast light",
     "fps": 24,
-    "format": "9:16 vertical native",
+    "format": "Adaptive (9:16 Social / 16:9 Cinema)",
     "duration_sec": 10.0
   },
   "entity_locks": {
-    "character_anchor": "CemGPT_3D_Master_Vektor_v2",
-    "voice_profile": "German_Studio_Baritone_Hanseatic"
+    "character_anchor": "@CemGPT_3D_Master_Vektor_v2",
+    "voice_anchor": "@cem_voice"
   },
   "sequence_structure": [
     {
@@ -137,6 +142,8 @@ Format: 9:16 vertical native | Duration: 4.5s | FPS: 24
       "camera": "/dollyin /tracking",
       "action": "Creator geht zielstrebig durch den Raum, Blickkontakt zur Linse. Mund geschlossen.",
       "audio": {
+        "speaker": "@CemGPT",
+        "voice": "@cem_voice",
         "voiceover": "Moin. Wer seine Prozesse automatisiert, gewinnt echte Freiheit.",
         "timing_constraint": "Voiceover finishes at 00:02.8. 0.2s silence gap."
       },
@@ -157,13 +164,25 @@ Format: 9:16 vertical native | Duration: 4.5s | FPS: 24
 
 <h2>6. Vollständiges Python-Artefakt: Der Omni Flash Prompt Compiler</h2>
 
-<p>Hier ist das lauffähige Python-Tool, mit dem wir Directorial-Prompts parsen, Slash-Befehle von Schilden trennen und bereinigte Payloads für die Google Omni Flash Inferenz generieren:</p>
+<p>Hier ist das lauffähige Python-Tool, mit dem wir Directorial-Prompts parsen, Slash-Befehle von Schilden trennen, die <code>@voice</code>-Bindung validieren und bereinigte Payloads für die Google Omni Flash Inferenz generieren:</p>
 
-<pre><code class="language-python"># Vollstaendiges, lauffaehiges Script zur Kompilierung von Omni Flash Directorial Prompts
+<pre><code class="language-python"># Vollstaendiges, verifiziertes Produktions-Script: Der Omni Flash Prompt Compiler
+# Zero External Dependencies (nutzt ausschließlich Python Standard Library)
 import re
 import json
 from dataclasses import dataclass, asdict
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Optional
+
+CAMERA_DIRECTIVES = {
+    "tracking", "dollyin", "orbit", "closeup", "macro", 
+    "whippan", "establishing", "volumetric", "goldenhour", 
+    "shallowdepth", "lowangle", "highangle", "pan"
+}
+
+LATENT_SHIELDS = {
+    "locksubject", "faceid", "seedlock", "smoothflow", 
+    "driftguard", "rigidhold", "anatomyanchor"
+}
 
 @dataclass
 class CompiledOmniFlashShot:
@@ -171,65 +190,100 @@ class CompiledOmniFlashShot:
     timecode: str
     camera_directives: List[str]
     latent_shields: List[str]
-    entity_anchors: List[str]
-    action_prompt: str
-    mouth_state: str = "closed"
+    visual_entities: List[str]
+    voice_anchor: Optional[str]
+    mouth_state: str
+    cleaned_visual_prompt: str
+    audio_dialogue: Optional[str] = None
+    anti_bleed_buffer_ms: int = 200
 
 def compile_omniflash_prompt(raw_text: str) -> Dict[str, Any]:
     """
     Kompiliert rohe Directorial Slash- und Entity-Befehle (/ und @)
     in einen deterministischen Google Omni Flash Agent Payload.
     """
-    slash_commands = re.findall(r"/([a-zA-Z0-9_]+)", raw_text)
-    entity_anchors = re.findall(r"@([a-zA-Z0-9_]+)", raw_text)
+    # 1. Direktiven und Schilde parsen
+    slash_tokens = re.findall(r"/([a-zA-Z0-9_]+)", raw_text)
+    camera_cmds = [t for t in slash_tokens if t in CAMERA_DIRECTIVES]
+    shield_cmds = [t for t in slash_tokens if t in LATENT_SHIELDS]
 
-    # 1. Trennung von Kamera-Befehlen und Latent Shields
-    camera_cmds = [
-        cmd for cmd in slash_commands
-        if cmd in ["tracking", "dollyin", "orbit", "closeup", "macro", "whippan", "establishing", "volumetric", "goldenhour"]
-    ]
-    shield_cmds = [
-        cmd for cmd in slash_commands
-        if cmd in ["locksubject", "faceid", "seedlock", "smoothflow", "driftguard", "rigidhold", "anatomyanchor"]
-    ]
+    # 2. Entity- & Voice-Anker isolieren
+    raw_entities = re.findall(r"@([a-zA-Z0-9_]+)", raw_text)
+    voice_candidates = [e for e in raw_entities if "voice" in e.lower()]
+    voice_anchor = f"@{voice_candidates[0]}" if voice_candidates else None
+    visual_entities = [f"@{e}" for e in sorted(set(raw_entities)) if "voice" not in e.lower()]
 
-    # 2. Token-Resolution: Bereinige rohe @-Zeichen fuer die Diffusion
-    cleaned_action = re.sub(r"@([a-zA-Z0-9_]+)", r"\\1", raw_text)
-    cleaned_action = re.sub(r"/[a-zA-Z0-9_]+", "", cleaned_action).strip()
+    # 3. Timecode ermitteln
+    tc_match = re.search(r"(\d{2}:\d{2}(?:\.\d+)?\s*-\s*\d{2}:\d{2}(?:\.\d+)?)", raw_text)
+    timecode = tc_match.group(1) if tc_match else "00:00.0 - 00:04.5"
 
-    # 3. Erkennung des temporalen Mund-Status
+    # 4. Dialog & Mund-Status analysieren (Minerva-Gate)
     mouth_state = "frozen_closed"
-    if "moves in sync" in raw_text.lower() or "spricht" in raw_text.lower():
+    dialogue_text = None
+    warnings = []
+
+    dialogue_match = re.search(r'[„"]([^„“”"]+)[“”"]', raw_text)
+    if dialogue_match:
+        dialogue_text = dialogue_match.group(1)
+
+    is_speaking = bool(
+        dialogue_text or 
+        "moves in sync" in raw_text.lower() or 
+        "spricht" in raw_text.lower() or 
+        "lippensynchron" in raw_text.lower()
+    )
+
+    if is_speaking:
         mouth_state = "active_lip_sync"
+        if not voice_anchor:
+            warnings.append(
+                "MINERVA-VALIDIERUNG: Sprech-Aktion ohne expliziten @voice-Anker! "
+                "Gefahr von Vokal-Drift und Sprachhalluzination."
+            )
     elif "listening" in raw_text.lower() or "zuhoeren" in raw_text.lower():
         mouth_state = "sealed_listening"
 
+    # 5. Token-Resolution: Bereinige Prompt fuer Diffusions-Inferenz
+    cleaned = re.sub(r"@[a-zA-Z0-9_]*voice[a-zA-Z0-9_]*\s*:?", ":", raw_text, flags=re.IGNORECASE)
+    cleaned = re.sub(r"/[a-zA-Z0-9_]+", "", cleaned)
+    cleaned = re.sub(r"@([a-zA-Z0-9_]+)", r"\\1", cleaned)
+    if tc_match:
+        cleaned = cleaned.replace(tc_match.group(0), "")
+    cleaned = re.sub(r"\s+:", ":", cleaned)
+    cleaned = re.sub(r":+", ":", cleaned)
+    cleaned = re.sub(r"\s+", " ", cleaned).strip().lstrip(":").strip()
+
     shot = CompiledOmniFlashShot(
         shot_id=1,
-        timecode="00:00.0 - 00:04.5",
+        timecode=timecode,
         camera_directives=camera_cmds,
         latent_shields=shield_cmds,
-        entity_anchors=list(set(entity_anchors)),
-        action_prompt=cleaned_action,
-        mouth_state=mouth_state
+        visual_entities=visual_entities,
+        voice_anchor=voice_anchor,
+        mouth_state=mouth_state,
+        cleaned_visual_prompt=cleaned,
+        audio_dialogue=dialogue_text,
+        anti_bleed_buffer_ms=200
     )
 
     return {
         "engine": "Google Omni Flash Agent Mode",
-        "resolution_status": "COMPILED",
-        "anti_bleed_buffer_ms": 200,
-        "shot_payload": asdict(shot)
+        "compiler_version": "2026.3-flowlabs",
+        "strict_speaker_isolation": True,
+        "validation_status": "PASS" if not warnings else "FLAGGED_FOR_REVIEW",
+        "validation_warnings": warnings,
+        "compiled_shot": asdict(shot)
     }
 
 # Verifizierter Sandbox-Durchlauf
 sample_directorial_input = (
-    "/establishing /tracking /goldenhour /locksubject /faceid /driftguard "
-    "@CemGPT betritt das Buero, mouth moves in sync erklaert B2B-Architektur."
+    "00:00.0 - 00:04.5: /establishing /tracking /goldenhour /locksubject /faceid /driftguard "
+    "@CemGPT betritt das Buero, mouth moves in sync @cem_voice: „Moin. Wer seine Prozesse automatisiert, gewinnt Zeit.“"
 )
 
 if __name__ == "__main__":
     compiled_result = compile_omniflash_prompt(sample_directorial_input)
-    print(json.dumps(compiled_result, indent=2))
+    print(json.dumps(compiled_result, indent=2, ensure_ascii=False))
 </code></pre>
 
 <hr />
@@ -240,12 +294,12 @@ if __name__ == "__main__":
 
 <ul>
   <li><strong>Erstes Test-Video (10–20 Sek.): 100 % KOSTENLOS (0 €)</strong> als verbindlicher Proof of Value vorab. Wir testen deine visuelle Identität und liefern dein erstes fertiges Creative in 48 Stunden.</li>
-  <li><strong>Schlüsselfertiges 12er-Video-Paket (1.950 € Festpreis):</strong> 12 fertige 9:16 Full-HD Videos (20–45s) inklusive AIDA-Skripting, Sprecher-Synthese, Schnitt, animierten Untertiteln und Google Omni Flash Choreografie. Rechnerisch nur 162,50 € pro Video. Kein Abo, kein Knebelvertrag, auf Abruf buchbar.</li>
+  <li><strong>Schlüsselfertiges 12er-Video-Paket (1.950 € Festpreis):</strong> 12 fertige Full-HD / 4K Videos (20–45s) – flexibel optimiert für jedes Format (9:16 Social &amp; 16:9 Web/Cinema) inklusive AIDA-Skripting, Sprecher-Synthese, Schnitt, animierten Untertiteln und Google Omni Flash Choreografie. Rechnerisch 162,50 € pro Video – transparenter Festpreis, flexibel auf Abruf.</li>
 </ul>
 
 <div class="cta-box">
   <h3>Dein kostenloses 10–20s Test-Video anfordern</h3>
-  <p>Erlebe den Unterschied zwischen wackeligen Hobby-Prompts und deterministischer Video-Architektur – 100 % kostenlos und ohne Risiko.</p>
+  <p>Erlebe den Unterschied zwischen wackeligen Hobby-Prompts und deterministischer Video-Architektur – 100 % kostenlos zum Kennenlernen.</p>
   <a href="/#kontakt" class="btn btn--primary">Kostenloses Test-Video anfragen ➔</a>
 </div>
 `

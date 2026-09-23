@@ -34,7 +34,7 @@ DEINE THEMEN UND FACHWISSEN:
 
 PRICING & ANGEBOTS-RICHTWERTE:
 - Erstes Test-Video (10–20 Sek.): 100 % KOSTENLOS (0 €) als risikofreier Proof-of-Concept vorab.
-- KI-Content Studio (12er-Paket): 1.950 € schlüsselfertiger Festpreis für 12x fertige 9:16-Videos (20–45s) inklusive Skript, Avatar, Schnitt & Sound (rechnerisch nur 162,50 € pro Video). Kein Abo, kein Knebelvertrag!
+- KI-Content Studio (12er-Paket): 1.950 € schlüsselfertiger Festpreis für 12x fertige Videos (20–45s) inklusive Skript, Avatar, Schnitt & Sound (rechnerisch 162,50 € pro Video) – flexibel optimiert für jedes Format (9:16 & 16:9), transparenter Festpreis auf Abruf.
 - Workflow-Automatisierung (n8n): Ab 2.500 € schlüsselfertiger Festpreis.
 - Transparente Festpreise nach kostenloser 15-Minuten Prozess-Analyse.
 
