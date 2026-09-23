@@ -213,14 +213,14 @@ def validate_minerva_pacing(shots: List[VideoShot]) -> Dict[str, Any]:
 
 # Verifizierter Testlauf fuer ein 24,5-Sekunden B2B-Creative
 sample_timeline = [
-    VideoShot(1, 0.0, 1.8, "Snap-Zoom auf Cadillac Hauben-Emblem", has_pattern_interrupt=True),
-    VideoShot(2, 1.8, 3.5, "Cockpit-Perspektive: Blick auf Andy FaceTime Screen"),
+    VideoShot(1, 0.0, 1.8, "Snap-Zoom auf Auto-Emblem", has_pattern_interrupt=True),
+    VideoShot(2, 1.8, 3.5, "Cockpit-Perspektive: Blick auf Smartphone-Screen"),
     VideoShot(3, 3.5, 5.2, "B-Roll: Schwenk ueber 5600K Schiefer-Architektur"),
-    VideoShot(4, 5.2, 7.0, "Talking-Head Karim: Suave Geste mit Hand am Steuer"),
+    VideoShot(4, 5.2, 7.0, "Talking-Head CemGPT: Fokussierte Geste mit Hand am Steuer"),
     VideoShot(5, 7.0, 9.1, "Dynamic Cut: Einfahrt in Tiefgaragen-Rampe"),
     VideoShot(6, 9.1, 11.2, "Klonk-Moment an der Muelltonne (Audio-Ducking)"),
-    VideoShot(7, 11.2, 13.0, "Karim deadpan Laecheln im Rueckspiegel"),
-    VideoShot(8, 13.0, 15.1, "FaceTime PIP Andy lacht ueber den Stunt"),
+    VideoShot(7, 11.2, 13.0, "CemGPT souveraenes Laecheln im Rueckspiegel"),
+    VideoShot(8, 13.0, 15.1, "FaceTime PIP Video-Call lacht ueber den Stunt"),
     VideoShot(9, 15.1, 17.5, "Tiefgaragen-Tor faehrt geschmeidig auf"),
     VideoShot(10, 17.5, 19.8, "High-Contrast Untertitel: 48h Lieferzeit"),
     VideoShot(11, 19.8, 22.0, "Kimpress B2B Studio Branding &amp; Logo-Insert"),
