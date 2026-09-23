@@ -539,12 +539,12 @@ if __name__ == "__main__":
 
 <ul>
   <li><strong>Erstes Test-Video (10–20 Sek.): 100 % KOSTENLOS (0 €)</strong> als verbindlicher Proof of Value vorab. Du lieferst uns ein Thema oder ein Sprachmemo – wir liefern dein fertiges Test-Creative in 48 Stunden.</li>
-  <li><strong>Schlüsselfertiges 12er-Video-Paket (1.950 € Festpreis):</strong> 12 fertige 9:16 Full-HD Videos (20–45s) inklusive AIDA-Skripting, lippensynchronem Studio-Sound, Schnitt und animierten Untertiteln. Rechnerisch nur 162,50 € pro Video. Kein Abo, kein Knebelvertrag, auf Abruf buchbar.</li>
+  <li><strong>Schlüsselfertiges 12er-Video-Paket (1.950 € Festpreis):</strong> 12 fertige 9:16 Full-HD Videos (20–45s) inklusive AIDA-Skripting, lippensynchronem Studio-Sound, Schnitt und animierten Untertiteln. Rechnerisch 162,50 € pro Video – transparenter Festpreis, flexibel auf Abruf.</li>
 </ul>
 
 <div class="cta-box">
   <h3>Dein kostenloses 10–20s Test-Video anfordern</h3>
-  <p>Überzeuge dich selbst von der visuellen Stabilität und der neuro-psychologischen Durchschlagskraft unserer Video-Engine – 100 % gratis und ohne Risiko.</p>
+  <p>Überzeuge dich selbst von der visuellen Stabilität und der neuro-psychologischen Durchschlagskraft unserer Video-Engine – 100 % gratis zum Kennenlernen.</p>
   <a href="/#kontakt" class="btn btn--primary">Kostenloses Test-Video anfragen ➔</a>
 </div>
 `
@@ -832,7 +832,7 @@ if __name__ == "__main__":
   <ul>
     <li><strong>Im Selbstbau:</strong> Rund 50 bis 150 Euro monatlich für API-Credits und Software-Abonnements (OpenArt, ElevenLabs, Kling AI). Der größte Hebel ist hier deine eigene Arbeitszeit: Rechne mit mindestens 10 bis 15 Arbeitsstunden pro Monat für Prompt-Tuning, Schnitt und Fehlversuche.</li>
     <li><strong>Kostenloses Test-Video (0 €):</strong> Für Unternehmen, die KI-Content unverbindlich testen wollen, erstellen wir das <strong>erste Test-Video (10–20 Sekunden) 100 % kostenlos</strong> als risikofreien Proof of Value (inklusive Stimm- und Avatar-Probe).</li>
-    <li><strong>Das Kimpress 12er-Video-Paket (1.950 € Festpreis):</strong> Das ist kein Preis für ein einzelnes Video und <strong>kein Abo-Vertrag</strong>, sondern ein schlüsselfertiges Kontingent von <strong>12 fertigen 9:16-Videos (je 20–45s)</strong>, das du flexibel abrufst, wenn du Content brauchst. Das entspricht <strong>rechnerisch nur 162,50 € pro Video</strong> – 100 % ohne automatische Verlängerung, inklusive Avatar-Kalibrierung, Stimm-Klon, Skripterstellung, Schnitt und B-Roll. Im Vergleich: Ein einziger klassischer Drehtag mit Kamerateam kostet in Deutschland selten unter 2.500 bis 4.000 Euro.</li>
+    <li><strong>Das Kimpress 12er-Video-Paket (1.950 € Festpreis):</strong> Ein schlüsselfertiges Kontingent von <strong>12 fertigen 9:16-Videos (je 20–45s)</strong>, das du flexibel abrufst, wenn du Content brauchst. Das entspricht <strong>rechnerisch 162,50 € pro Video</strong> – transparenter Festpreis auf Abruf, inklusive Avatar-Kalibrierung, Stimm-Klon, Skripterstellung, Schnitt und B-Roll. Im Vergleich: Ein einziger klassischer Drehtag mit Kamerateam kostet in Deutschland selten unter 2.500 bis 4.000 Euro.</li>
   </ul>
 </div>
 

@@ -281,7 +281,7 @@ export function initChatbot() {
 
       if (q.includes('content') || q.includes('video') || q.includes('reels') || q.includes('tiktok') || q.includes('shorts') || q.includes('skript')) {
         service = 'KI Content Studio';
-        pricingText = `Wir arbeiten zu 100% mit transparenten Festpreisen – ohne Abo-Zwang:\n\n- **Erstes Test-Video (10–20 Sek.):** 100 % KOSTENLOS als risikofreier Proof of Concept.\n- **12er-Video-Paket:** 1.950 € Festpreis für 12x fertige Videos inklusive Skript, Voice & Schnitt (~162 € pro Video, kein Abo).\n- **Enterprise:** Ab 3.500 € für 24x Videos.\n\nDu kannst dein kostenloses Test-Video hier direkt anfragen:`;
+        pricingText = `Wir arbeiten zu 100% mit transparenten Festpreisen – flexibel auf Abruf:\n\n- **Erstes Test-Video (10–20 Sek.):** 100 % KOSTENLOS als Proof of Concept.\n- **12er-Video-Paket:** 1.950 € Festpreis für 12x fertige Videos inklusive Skript, Voice & Schnitt (~162 € pro Video, flexibel auf Abruf).\n- **Enterprise:** Ab 3.500 € für 24x Videos.\n\nDu kannst dein kostenloses Test-Video hier direkt anfragen:`;
       } else if (q.includes('n8n') || q.includes('workflow') || q.includes('triage') || q.includes('mail') || q.includes('crm') || q.includes('automatisierung') || q.includes('backend')) {
         service = 'KI & Workflow Automatisierung';
         pricingText = `Wir entwickeln maßgeschneiderte Backend-Workflows zu verbindlichen Projekt-Festpreisen:\n\n- **Projekt-Sprints:** Schlüsselfertige n8n- & Make-Workflows ab 2.500 € Festpreis nach 15-Minuten Prozess-Mapping.\n- **0 € Nebenkosten:** Festpreis-Garantie inklusive 30 Tage Hypercare, Monitoring & SLA auf EU-Servern.\n- **Lieferzeit:** Fertigstellung meist in 3 bis 14 Tagen.\n\nSende uns hier direkt deine Prozess-Anforderung für eine verbindliche Kalkulation:`;
@@ -828,7 +828,7 @@ export function initChatbot() {
         (q.includes('preis') || q.includes('kosten') || q.includes('teuer') || q.includes('geld') || q.includes('budget') || q.includes('wie viel') || q.includes('was kostet') || /\d+\s*(videos?|reels?|shorts?|clips?)/i.test(q))) {
       return {
         type: 'text',
-        text: `Wir arbeiten ohne versteckte Nebenkosten oder Abo-Fallen:\n\n- **Erstes Test-Video (10–20 Sek.):** 100 % KOSTENLOS als risikofreier Proof of Value.\n- **12er-Video-Paket:** 1.950 € Festpreis für 12x schlüsselfertige 9:16 Videos (~162 € pro Video, kein Abo).\n- **Enterprise Studio:** Ab 3.500 € für 24x Videos.\n\nMöchtest du dein erstes kostenloses Test-Video anfragen?`
+        text: `Wir arbeiten zu 100% mit transparenten Festpreisen auf Abruf:\n\n- **Erstes Test-Video (10–20 Sek.):** 100 % KOSTENLOS als Proof of Value.\n- **12er-Video-Paket:** 1.950 € Festpreis für 12x schlüsselfertige Videos (~162 € pro Video, flexibel auf Abruf).\n- **Enterprise Studio:** Ab 3.500 € für 24x Videos.\n\nMöchtest du dein erstes kostenloses Test-Video anfragen?`
       };
     }
 
