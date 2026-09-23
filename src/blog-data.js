@@ -11,7 +11,7 @@ export const BLOG_POSTS = [
     excerpt: 'Schluss mit Prompt-Lotto und morphenden Gesichtern: Wie du mit Slash-Kamera-Befehlen (/), biometrischen Entity-Locks (@) und unveränderlicher @voice-Bindung kinoreife High-End-Videos in Google Omni Flash baust – perfekt abgestimmt für jedes Format.',
     date: '2026-09-24',
     readTime: 10,
-    category: 'CONTENT',
+    category: 'Content',
     featured: true,
     content: `
 <p class="blog-lead">Moin. Wer generative KI-Videomodelle mit gewöhnlichem Fließtext füttert, erlebt unweigerlich das pure Chaos: Gesichter verformen sich von Sekunde zu Sekunde, Kameraperspektiven springen unkontrolliert und Produkte morphen in bizarre Formen. Diffusionsmodelle sind gigantische Wahrscheinlichkeitsräume – und ohne deterministische mathematische Leitplanken raten sie blind ins Blaue.</p>
@@ -310,8 +310,7 @@ if __name__ == "__main__":
     excerpt: 'Das menschliche Gehirn filtert Videos in 1,8 Sekunden aus. Wie die Kimpress Minerva-Doktrin, foveale Neuro-Trigger und Googles multimodale Video-Inferenz aus kalten Prompts hochkonvertierende B2B-Verkaufsvideos formen.',
     date: '2026-09-22',
     readTime: 11,
-    category: 'CONTENT',
-    featured: true,
+    category: 'Content',
     content: `
 <p class="blog-lead">Moin. Wer heute durch Social-Media-Feeds scrollt, trifft auf ein Meer aus austauschbaren KI-Videos: Gesichter aus weichem Wachs, driftende Hände, zusammenhangslose Schnitte und monotone Stimmen. Das menschliche Gehirn erkennt diesen synthetischen Betrug in weniger als 250 Millisekunden – und die Amygdala signalisiert sofort: Weiterwischen.</p>
 
@@ -555,8 +554,7 @@ if __name__ == "__main__":
     excerpt: 'Mensch, Kleidung und Location in bestehenden Videos direkt austauschen: Wie Video-to-Video Motion Transfer mit Higgsfield Genjutsu und Googles multimodale Gemini-Flash-Inferenz das Drehtag-Problem im B2B-Marketing eliminieren.',
     date: '2026-09-15',
     readTime: 9,
-    category: 'CONTENT',
-    featured: true,
+    category: 'Content',
     content: `
 <p class="blog-lead">Moin. Klassische Text-to-Video-KI hat im professionellen Marketing bisher ein massives Kontrollproblem: Wer einen Prompt eintippt, erhält jedes Mal eine zufällige Kamerafahrt, unberechenbare Physik und driftende Gesichter. Und wer auf Standard-Avatare setzt, landet in der starren Talking-Head-Falle vor der Webcam.</p>
 
@@ -706,8 +704,7 @@ if __name__ == "__main__":
     excerpt: 'Schluss mit teuren Drehtagen: Wie du mit Smartphone-Fotos, Adobe Podcast und modernen Lip-Sync- bzw. Diffusions-Engines einen verblüffend echten B2B-Avatar baust.',
     date: '2026-09-08',
     readTime: 8,
-    category: 'CONTENT',
-    featured: true,
+    category: 'Content',
     content: `
 <p class="blog-lead">Moin. Wer heute für jedes 60-Sekunden-Video ein Stativ aufbauen, das Licht einpegeln, drei Stunden Drehmaterial sichten und Versprecher herausschneiden muss, verbrennt als Geschäftsführer oder Creator bares Geld.</p>
 
@@ -849,8 +846,7 @@ if __name__ == "__main__":
     excerpt: 'Google hat Gemini 3.5 Transcribe und Transcribe Live offiziell in die General Availability entlassen. Wie das neue Custom Vocabulary Biasing Fachbegriffe rettet und Audio-Pipelines in n8n beschleunigt.',
     date: '2026-08-28',
     readTime: 9,
-    category: 'AUTOMATION',
-    featured: true,
+    category: 'Automatisierung',
     content: `
 <p class="blog-lead">Moin. Wer im deutschen Mittelstand versucht, Kundentelefonate, Baustellenberichte oder Kanzlei-Diktate mit Standard-STT-Modellen wie Whisper zu transkribieren, kennt das Elend: Aus „DIN EN ISO 9001“ wird „die ISO Nummer“, aus medizinischen oder juristischen Fachbegriffen wird phonetischer Kauderwelsch.</p>
 
@@ -1061,7 +1057,6 @@ if __name__ == "__main__":
     date: '2026-08-28',
     readTime: 12,
     category: 'SEO',
-    featured: true,
     content: `
 <p class="blog-lead">Vergiss die oberflächlichen Marketing-Tipps über "Answer Blocks" oder "Füge ein paar Schema.org Tags ein". Wenn du 2026 wissen willst, warum ChatGPT, Perplexity, Gemini oder Google AI Overviews deine Konkurrenz empfehlen und dein Unternehmen ignorieren, musst du das Backend der RAG-Architekturen (Retrieval-Augmented Generation) verstehen. Hier ist das mathematische Reverse-Engineering der 5 Algorithmen-Pipelines, die über deinen Share of Model (SoM) entscheiden.</p>
 
@@ -1139,7 +1134,6 @@ if __name__ == "__main__":
     date: '2026-08-21',
     readTime: 12,
     category: 'Automatisierung',
-    featured: true,
     content: `
 <p class="blog-lead">99 % aller KI-Tutorials im Netz haben dasselbe Problem: Sie stammen von Prompt-Postern auf LinkedIn, die noch nie eine Zeile Produktions-Code geschrieben haben. Du kopierst den Beispiel-Code, wirfst ihn in deine Konsole und landest sofort in einem Haufen von <code>SyntaxError</code>, veralteten SDK-Aufrufen oder fehlenden Dependency-Importen.</p>
 
@@ -1521,7 +1515,6 @@ return [{ json: { retryCount: retryCount, totalDelaySeconds: totalDelay } }];</c
     date: '2026-08-14',
     readTime: 8,
     category: 'Automatisierung',
-    featured: true,
     content: `
 <p class="blog-lead">Schluss mit den Märchen über die "vollautomatische KI-Content-Maschine", die per Klick 100 Blogbeiträge am Tag ausspuckt. Die Realität im August 2026 sieht anders aus: Google straft generischen KI-Müll ("AI Slop") gnadenlos ab, das Urheberrecht schützt rein KI-generierte Texte ohne menschliche Schöpfungshöhe mit null Prozent, und seit dem 2. August greift die strenge Kennzeichnungspflicht nach Artikel 50 des EU AI Acts.</p>
 
@@ -1645,7 +1638,6 @@ return [{ json: { retryCount: retryCount, totalDelaySeconds: totalDelay } }];</c
     date: '2026-08-04',
     readTime: 7,
     category: 'Automatisierung',
-    featured: true,
     content: `
 <p class="blog-lead">Sehen wir den Tatsachen ins Auge: 95 % aller KI-Agenten-Demos, die in den letzten zwei Jahren über LinkedIn und Twitter getrieben wurden, waren instabile Basteleien. Hübsch anzusehen in einem 30-Sekunden-Screenrecording, aber im echten Betriebsalltag ein Albtraum aus abgebrochenen API-Calls, wirren Halluzinationen und dreistelligen Monatsrechnungen für Token.</p>
 
@@ -1763,7 +1755,6 @@ return [{ json: { retryCount: retryCount, totalDelaySeconds: totalDelay } }];</c
     date: '2026-07-16',
     readTime: 6,
     category: 'KI-Tools',
-    featured: true,
     content: `
 <p class="blog-lead">ChatGPT Plus für 20 Euro. Claude Pro für 20 Euro. Gemini Advanced für 20 Euro. Und nach 40 Nachrichten in 3 Stunden sagt dir ChatGPT trotzdem: "Bitte warte bis 14 Uhr". Das ist die Realität für viele, die KI heute intensiv nutzen. Das ist nicht das offene, freie KI-Zeitalter, das uns versprochen wurde.</p>
 
@@ -1809,7 +1800,6 @@ return [{ json: { retryCount: retryCount, totalDelaySeconds: totalDelay } }];</c
     date: '2026-07-16',
     readTime: 6,
     category: 'Automatisierung',
-    featured: true,
     content: `
 <p class="blog-lead">Alle reden über KI-Automatisierung. Die Realität sieht oft so aus: Du kaufst einen Kurs, startest motiviert und nach 10 Minuten scheiterst du an der Kommandozeile. Wir haben heute den "Postfach-Triage-Bot" für Kimpress lokal aufgebaut. Und ich zeige dir jetzt den echten, ungeschönten Prozess.</p>
 
@@ -1846,8 +1836,7 @@ return [{ json: { retryCount: retryCount, totalDelaySeconds: totalDelay } }];</c
     excerpt: 'Ich sag es dir direkt: Die meisten KI-Musikvideos da draußen sehen aus wie billige Plastikpuppen mit Sprachfehler. Wenn du ein Video willst, das mit echten Millionen-Budgets mithalten kann, musst du tiefer ins Backend gehen.',
     date: '2026-07-16',
     readTime: 6,
-    category: 'KI-Tools',
-    featured: true,
+    category: 'Content',
     content: `
 <p class="blog-lead">Ich sag es dir direkt: Die meisten KI-Musikvideos da draußen sehen aus wie billige Plastikpuppen mit Sprachfehler. Du kennst diese weichgespülten Tutorials. Da klatscht jemand ein Audiofile auf ein starres Midjourney-Bild, nennt das stolz "KI Content Erstellung" und feiert sich dafür auf LinkedIn. Bullshit. Wenn du ein Musikvideo erstellen willst, das mit echten Millionen-Budgets mithalten kann, musst du tiefer ins Backend gehen.</p>
 
@@ -1904,8 +1893,7 @@ return [{ json: { retryCount: retryCount, totalDelaySeconds: totalDelay } }];</c
     excerpt: 'Ich hab Kimpress in Hamburg gegründet — mit 25 Euro Gewerbeanmeldung und einem Laptop. Hier erzähle ich dir ehrlich, was eine KI-Agentur kostet, was sie kann und wann sie sich für dich lohnt.',
     date: '2026-07-16',
     readTime: 8,
-    category: 'KI Marketing',
-    featured: true,
+    category: 'Content',
     content: `
 <p class="blog-lead">Ich sitze gerade in meinem Büro in Billstedt — Hamburg, 22115, für die die das nicht kennen: östliches Hamburg, weit weg von der Alster, nah an der Realität. Hier habe ich Kimpress gegründet. Mit einer 25-Euro-Gewerbeanmeldung, einem Laptop und der Überzeugung, dass KI-Marketing nicht nur für Konzerne mit sechsstelligem Budget sein muss.</p>
 
@@ -2314,7 +2302,7 @@ return [{ json: { retryCount: retryCount, totalDelaySeconds: totalDelay } }];</c
   },
 ];
 
-export const CATEGORIES = ['Alle', 'KI Marketing', 'Automatisierung', 'KI-Tools', 'Social Media', 'SEO'];
+export const CATEGORIES = ['Alle', 'Content', 'Automatisierung', 'KI-Tools', 'Social Media', 'SEO'];
 
 export function getPostBySlug(slug) {
   return BLOG_POSTS.find(p => p.slug === slug) || null;

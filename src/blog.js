@@ -8,19 +8,24 @@ function formatDate(iso) {
 
 function categoryColor(cat) {
   const map = {
+    'Content':         '#FF0088',
+    'CONTENT':         '#FF0088',
     'Automatisierung': '#FF0000',
+    'AUTOMATION':      '#FF0000',
     'KI-Tools':        '#FF6B35',
-    'Social Media':    '#FF0088',
+    'Social Media':    '#9D4EDD',
     'SEO':             '#00BB88',
+    'KI Marketing':    '#FF6B35',
   };
   return map[cat] || '#FF0000';
 }
 
 function postCard(post) {
   const color = categoryColor(post.category);
+  const postUrl = `/blog/${post.slug}`;
   return `
-    <article class="bcard" onclick="window.location='/blog-post.html?slug=${post.slug}'" role="button" tabindex="0"
-             onkeydown="if(event.key==='Enter')window.location='/blog-post.html?slug=${post.slug}'"
+    <article class="bcard" onclick="window.location='${postUrl}'" role="button" tabindex="0"
+             onkeydown="if(event.key==='Enter')window.location='${postUrl}'"
              aria-label="${post.title}">
       <div class="bcard__cat" style="--cat-color:${color}">${post.category}</div>
       <h3 class="bcard__title">${post.title}</h3>
@@ -36,8 +41,9 @@ function postCard(post) {
 
 function featuredCard(post) {
   const color = categoryColor(post.category);
+  const postUrl = `/blog/${post.slug}`;
   return `
-    <a class="bfeatured" href="/blog-post.html?slug=${post.slug}" aria-label="${post.title}">
+    <a class="bfeatured" href="${postUrl}" aria-label="${post.title}">
       <div class="bfeatured__badge" style="--cat-color:${color}">
         <span class="bfeatured__badge-label">Featured</span>
         <span class="bfeatured__badge-cat">${post.category}</span>
@@ -59,7 +65,12 @@ let searchQuery    = '';
 
 function getFilteredPosts() {
   return BLOG_POSTS.filter(p => {
-    const catOk  = activeCategory === 'Alle' || p.category === activeCategory;
+    const postCatNorm = (p.category || '').toLowerCase();
+    const activeCatNorm = activeCategory.toLowerCase();
+    const catOk  = activeCategory === 'Alle' ||
+      postCatNorm === activeCatNorm ||
+      (activeCatNorm === 'automatisierung' && postCatNorm === 'automation') ||
+      (activeCatNorm === 'content' && postCatNorm === 'content');
     const query  = searchQuery.toLowerCase();
     const textOk = !query ||
       p.title.toLowerCase().includes(query) ||
@@ -101,9 +112,9 @@ function renderGrid() {
       showFeatured && featuredPost ? featuredCard(featuredPost) : '';
   }
 
-  // Regular grid — exclude featured when shown
+  // Regular grid — exclude ONLY the single active featured post so all other articles appear!
   const gridPosts = showFeatured && featuredPost
-    ? filtered.filter(p => !p.featured)
+    ? filtered.filter(p => p.slug !== featuredPost.slug)
     : filtered;
 
   if (gridPosts.length === 0) {
