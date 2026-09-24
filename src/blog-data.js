@@ -77,36 +77,301 @@ export const BLOG_POSTS = [
 
 <hr />
 
-<h2>3. Die 4-Schichten-Architektur eines Produktions-Prompts</h2>
+<h2>3. Lighting als Konsistenz-Anker: Warum Licht das Gesicht rettet</h2>
 
-<p>Jeder Befehl in unserer Pipeline wird strikt in vier hierarchischen Schichten zusammengesetzt – flexibel für Hochformat (9:16 Social) und Querformat (16:9 Web &amp; Cinema):</p>
+<p>Hier liegt das größte Geheimnis professioneller KI-Videoproduktion, das 99 % der Creator übersehen: <strong>Diffusionsmodelle haben kein räumliches 3D-Gedächtnis aus Polygonen.</strong> Sie berechnen Gesichtsmerkmale, Knochenbau und Kleidungsfalten primär aus den <em>Schattenverläufen und Highlight-Reflexionen</em>.</p>
 
-<pre><code class="language-text">[SCHICHT 1: KINETISCHE &amp; OPTISCHE DIREKTIVEN]
-/establishing /tracking /dollyin /goldenhour /volumetric
+<p>Wenn ein Prompt das Licht nicht mathematisch fixiert, „erfindet“ das Modell bei jedem Kameraschnitt einen neuen Lichtvektor: Im ersten Shot kommt die Sonne von links (weiche Wangenschatten), im zweiten Shot steht ein Deckenstrahler darüber (harte Augenringe). Für das menschliche Gehirn sieht der Darsteller augenblicklich wie ein völlig anderer Mensch aus – der gefürchtete <em>Facial Drift</em>.</p>
 
-[SCHICHT 2: LATENTE SCHILDE &amp; PHYSIK-SCHUTZ]
-/locksubject /faceid /seedlock /smoothflow /driftguard /rigidhold /anatomyanchor
-
-[SCHICHT 3: SZENEN-CHRONOLOGIE &amp; AKTIONEN]
-00:00.0 - 00:02.5: @CemGPT betritt das lichtdurchflutete Buero, Blick fokussiert in die Kamera. Mund fest geschlossen.
-00:02.5 - 00:04.5: @CemGPT spricht lippensynchron im Praesenz-Ton @cem_voice: „Moin. Wer seine Prozesse automatisiert, gewinnt Zeit.“
-
-[SCHICHT 4: PARAMETER &amp; NEGATIV-LEITPLANKEN]
-No morphing, no limb distortion, consistent lighting.
-Aspect Ratio: Adaptive (9:16 Social / 16:9 Cinema) | Duration: 4.5s | FPS: 24
-</code></pre>
-
-<h3>Die wichtigsten Slash-Befehle im Überblick:</h3>
-
-<ul>
-  <li><strong>Kamera-Rigging:</strong> <code>/tracking</code> (parallele Mitfahrt), <code>/dollyin</code> (sanftes Heranziehen), <code>/orbit</code> (kreisförmige Umrundung), <code>/whippan</code> (schneller Peitschenschwenk für Match-Cuts).</li>
-  <li><strong>Optik &amp; Framing:</strong> <code>/establishing</code> (Übersichtstotale), <code>/closeup</code> (Nahaufnahme), <code>/shallowdepth</code> (präzise Tiefenunschärfe mit Bokeh), <code>/lowangle</code> (Autoritäts-Untersicht).</li>
-  <li><strong>Latente Schilde:</strong> <code>/faceid</code> (biometrische Gesichtssperre), <code>/rigidhold</code> (feste Materialsteifigkeit gegen Verbiegen), <code>/driftguard</code> (Begrenzung zeitlicher Farbverschiebungen).</li>
-</ul>
+<div class="blog-callout">
+  <h4>💡 Die 4 Säulen des deterministischen Lighting-Lockings:</h4>
+  <ul>
+    <li><strong>Kelvin-Farbtemperatur verankern:</strong> Ob <code>5600K overcast</code> (neutrales nordisches Tageslicht), <code>3200K tungsten</code> (warme Innenraum-Beleuchtung) oder <code>2800K golden hour</code> – die Kelvin-Zahl muss clipübergreifend unverrückbar bleiben.</li>
+    <li><strong>Kanten-Separation mit <code>/rimlight</code>:</strong> Ein hochintensives Gegen-/Streiflicht trennt die Silhouette (Haare, Schultern) haarscharf vom Hintergrund. Es verhindert, dass Konturen im Hintergrundrauschen verschwimmen.</li>
+    <li><strong>Kontrast-Verhältnis (Key-to-Fill):</strong> Befehle wie <code>/chiaroscuro</code> oder <code>/rembrandt</code> definieren das exakte Helligkeitsverhältnis zwischen beleuchteter und abgewandter Gesichtshälfte.</li>
+    <li><strong>Atmosphärische Kohärenz (<code>/volumetric</code>):</strong> Sichtbare Lichtkegel und Schwebepartikel (Crepuscular Beams) betten Darsteller und Architektur in denselben physikalischen Raum ein.</li>
+  </ul>
+</div>
 
 <hr />
 
-<h2>4. Die 3-Stufen-Compiler-Pipeline („Was das System verbirgt“)</h2>
+<h2>4. Der vollständige /SLASH-Codex: 40+ Direktiven für Regie, Optik, Licht &amp; Physik</h2>
+
+<p>Anstatt vage Beschreibungen zu tippen, steuern wir die Inferenz mit dem internen Kimpress / FlowLabs Regie-Codex. Diese Tokens wirken wie Assembler-Befehle direkt auf die Cross-Attention-Schichten des Modells:</p>
+
+<h3>Kamera-Rigging &amp; Bewegung</h3>
+<table class="blog-table">
+  <thead>
+    <tr>
+      <th>Slash-Befehl</th>
+      <th>Kinetische Aktion &amp; Verhalten</th>
+      <th>Einsatzbereich (Director Intent)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong><code>/tracking</code></strong></td>
+      <td>Parallele Kamera-Mitfahrt auf Augenhöhe mit fixer Distanz</td>
+      <td>Dynamische Geh-Szenen, Begleitung durch Räume</td>
+    </tr>
+    <tr>
+      <td><strong><code>/dollyin</code> / <code>/dollyout</code></strong></td>
+      <td>Physische Vorwärts- oder Rückwärtsfahrt des Rigs im 3D-Raum</td>
+      <td>Spannungsaufbau, Fokusverstärkung oder Szenen-Exit</td>
+    </tr>
+    <tr>
+      <td><strong><code>/pushin</code> / <code>/pullout</code></strong></td>
+      <td>Subtiler, langsamer Kriechmodus auf Details zu / weg</td>
+      <td>Micro-Reaktionen, emotionale Offenbarung</td>
+    </tr>
+    <tr>
+      <td><strong><code>/orbit</code></strong></td>
+      <td>360-Grad-Radialrotation um den fixierten Subjekt-Anker</td>
+      <td>Heldenhafter Reveal, Raum-Präsentation</td>
+    </tr>
+    <tr>
+      <td><strong><code>/truckleft</code> / <code>/truckright</code></strong></td>
+      <td>Strikte Seitwärtsfahrt parallel zur Szene</td>
+      <td>Architektur-Fassaden, Vorbeifahrt an Arbeitsplätzen</td>
+    </tr>
+    <tr>
+      <td><strong><code>/craneup</code> / <code>/cranedown</code></strong></td>
+      <td>Vertikaler Jib-Arm Bogen von oben herab / aufsteigend</td>
+      <td>Eröffnungs-Shots, epische Szenerie-Abschlüsse</td>
+    </tr>
+    <tr>
+      <td><strong><code>/droneview</code></strong></td>
+      <td>Höhenflug mit fließender Gimbal-Ausrichtung</td>
+      <td>Landschaften, Firmengebäude, Fahrzeug-Verfolgung</td>
+    </tr>
+    <tr>
+      <td><strong><code>/whippan</code></strong></td>
+      <td>Extrem schneller Peitschenschwenk mit Bewegungsunschärfe</td>
+      <td>Nahtlose Match-Cuts zwischen zwei Locations</td>
+    </tr>
+    <tr>
+      <td><strong><code>/static</code></strong></td>
+      <td>Absolutes Fixieren der Kameraplattform; nur Darsteller bewegen sich</td>
+      <td>Trockene B2B-Kameraansprache, Cockpit-Framing</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Framing, Linsen &amp; Optik</h3>
+<table class="blog-table">
+  <thead>
+    <tr>
+      <th>Slash-Befehl</th>
+      <th>Optische Charakteristik</th>
+      <th>Einsatzbereich</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong><code>/establishing</code></strong></td>
+      <td>Weitwinkel-Totale (16mm–24mm) zur Verortung der Szene</td>
+      <td>Szenenauftakt, Architektur, Wetterlage</td>
+    </tr>
+    <tr>
+      <td><strong><code>/closeup</code></strong></td>
+      <td>Fokussierte Nahaufnahme auf Gesicht, Mimik oder Hände</td>
+      <td>Intensive Sprechmomente, emotionale Bindung</td>
+    </tr>
+    <tr>
+      <td><strong><code>/macro</code></strong></td>
+      <td>Extremer Makrofokus auf Texturen und Oberflächen</td>
+      <td>Uhrendetails, Materialprüfung, Displays</td>
+    </tr>
+    <tr>
+      <td><strong><code>/shallowdepth</code> / <code>/bokeh</code></strong></td>
+      <td>Messerscharfe Trennung mit butterweicher Hintergrundunschärfe</td>
+      <td>Isolierung des Speakers von unruhigem Hintergrund</td>
+    </tr>
+    <tr>
+      <td><strong><code>/lowangle</code></strong></td>
+      <td>Untersicht von unten nach oben</td>
+      <td>Autorität, Souveränität, imponierende Haltung</td>
+    </tr>
+    <tr>
+      <td><strong><code>/overhead</code></strong></td>
+      <td>Senkrechte 90-Grad-Vogelperspektive (Top-Down)</td>
+      <td>Table-Top-Setups, UI-Boards, Lagepläne</td>
+    </tr>
+    <tr>
+      <td><strong><code>/rackfocus</code></strong></td>
+      <td>Verlagerung der Schärfeebene von Vorder- auf Hintergrund</td>
+      <td>Lenkung des Zuschauerblicks auf ein Produkt/Detail</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Lighting, Photonen-Ratio &amp; Atmosphäre</h3>
+<table class="blog-table">
+  <thead>
+    <tr>
+      <th>Slash-Befehl</th>
+      <th>Photonen-Geometrie &amp; Spektrum</th>
+      <th>Atmosphärischer Nutzen &amp; Konsistenz</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong><code>/rimlight</code></strong></td>
+      <td>Hartes Gegenlicht für präzise Kanten-Separation</td>
+      <td><strong>Goldstandard für Gesichtskonsistenz:</strong> trennt Silhouette vom Rauschen</td>
+    </tr>
+    <tr>
+      <td><strong><code>/volumetric</code></strong></td>
+      <td>Sichtbare Lichtkegel durch atmosphärische Partikel (God Rays)</td>
+      <td>Echtes Raumgefühl, filmische Tiefenstaffelung</td>
+    </tr>
+    <tr>
+      <td><strong><code>/overcast</code></strong></td>
+      <td>Diffuses 5600K Himmelslicht mit weichen, neutralen Schatten</td>
+      <td>Ehrliche nordische Sachlichkeit, reflexionsfrei für Produkte</td>
+    </tr>
+    <tr>
+      <td><strong><code>/goldenhour</code></strong></td>
+      <td>Tiefstehende Sonne (2800K–3200K) mit langen, warmen Schatten</td>
+      <td>Emotionale Wärme, Aufbruchsstimmung, Testimonials</td>
+    </tr>
+    <tr>
+      <td><strong><code>/bluehour</code></strong></td>
+      <td>Dämmerungslicht (7500K–9000K) mit tiefem Cyan- und Indigoton</td>
+      <td>Eleganz, Tech-Atmosphäre, hochwertige Nachtszenen</td>
+    </tr>
+    <tr>
+      <td><strong><code>/chiaroscuro</code></strong></td>
+      <td>Harte Hell-Dunkel-Kontraste nach Renaissance-Vorbild</td>
+      <td>Dramatische Introspektion, tiefgründige B2B-Storys</td>
+    </tr>
+    <tr>
+      <td><strong><code>/rembrandt</code></strong></td>
+      <td>Klassisches 45-Grad-Dreieck auf der Schattenwange</td>
+      <td>Natürliche Gesichtsautorität im B2B-Interview</td>
+    </tr>
+    <tr>
+      <td><strong><code>/tungsten</code></strong></td>
+      <td>Warmer 3200K Kunstlicht-Glow</td>
+      <td>Gemütliche Büroatmosphäre, Kaminfeuer, Hotel-Lounge</td>
+    </tr>
+    <tr>
+      <td><strong><code>/caustics</code></strong></td>
+      <td>Fließende Lichtreflexionen von Wasseroberflächen</td>
+      <td>Luxus-Bäder, Spa-Bereiche, futuristisches Glasdesign</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Kinetik &amp; Zeit-Dynamik</h3>
+<table class="blog-table">
+  <thead>
+    <tr>
+      <th>Slash-Befehl</th>
+      <th>Temporale Propagation</th>
+      <th>Wirkung &amp; Einsatz</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong><code>/slowmo</code></strong></td>
+      <td>High-Frame-Rate Rendering (60–120fps)</td>
+      <td>Betonung von Gewicht, Sportler-Fokus, fließenden Stoffen</td>
+    </tr>
+    <tr>
+      <td><strong><code>/speedramp</code></strong></td>
+      <td>Fließender Wechsel zwischen Echtzeit und Zeitlupe</td>
+      <td>Kinoreife Action-Hooks, Aufprallmomente</td>
+    </tr>
+    <tr>
+      <td><strong><code>/timelapse</code> / <code>/hyperlapse</code></strong></td>
+      <td>Temporale Zeitraffung mit oder ohne Kamerafahrt</td>
+      <td>Wetterwechsel, Baufortschritte, dynamische Stadtrundgänge</td>
+    </tr>
+    <tr>
+      <td><strong><code>/dollyzoom</code></strong></td>
+      <td>Vertigo-Effekt (Fahrt vorwärts bei gleichzeitigem Zoom zurück)</td>
+      <td>Schock, plötzliche Erkenntnis, psychologische Tiefe</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Latente Guardrails &amp; Anti-Drift-Schilde</h3>
+<table class="blog-table">
+  <thead>
+    <tr>
+      <th>Slash-Befehl</th>
+      <th>Mathematische Schutzschranke</th>
+      <th>Verhindertes Problem</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong><code>/locksubject</code></strong></td>
+      <td>Friert die anatomische Gesamterscheinung im Vektor-Raum ein</td>
+      <td>Körpergrößen-Drift und Haltungsbrüche</td>
+    </tr>
+    <tr>
+      <td><strong><code>/faceid</code></strong></td>
+      <td>Bindet Gesichtsmerkmale fest an die 3D-Referenzdaten</td>
+      <td>Gesichtsverformungen bei wechselnden Winkeln</td>
+    </tr>
+    <tr>
+      <td><strong><code>/wardrobelock</code></strong></td>
+      <td>Sperrt Textur, Schnitt und Farbe der Kleidung</td>
+      <td>Morphende Anzugkragen oder wechselnde Farbnuancen</td>
+    </tr>
+    <tr>
+      <td><strong><code>/rigidhold</code></strong></td>
+      <td>Nicht-deformierbare Netzbeschränkung auf Hartteile</td>
+      <td>Verbiegen von Autos, Glasfronten, Laptops und Produkten</td>
+    </tr>
+    <tr>
+      <td><strong><code>/driftguard</code></strong></td>
+      <td>Verankert Hintergrund-Geometrie und globale Fixpunkte</td>
+      <td>Verschwimmende oder schmelzende Wände und Gebäude</td>
+    </tr>
+    <tr>
+      <td><strong><code>/smoothflow</code></strong></td>
+      <td>Temporaler Glättungsfilter über die gesamte Bewegungstrajektorie</td>
+      <td>Ruckeln, stotternde Phasen und Artefakt-Sprünge</td>
+    </tr>
+    <tr>
+      <td><strong><code>/antiflicker</code></strong></td>
+      <td>Luminanz-Normalisierung zwischen aufeinanderfolgenden Frames</td>
+      <td>Helligkeits-Flickern auf Gesichtern und Glasflächen</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2>5. Die 5-Schichten-Architektur eines Produktions-Prompts</h2>
+
+<p>Jeder Befehl in unserer Pipeline wird strikt in fünf hierarchischen Schichten aufgebaut – flexibel für Hochformat (9:16 Social) und Querformat (16:9 Web &amp; Cinema):</p>
+
+<pre><code class="language-text">[SCHICHT 1: KINETISCHE &amp; OPTISCHE DIREKTIVEN]
+/establishing /tracking /dollyin /shallowdepth
+
+[SCHICHT 2: LIGHTING KEY &amp; PHOTONEN-GEOMETRIE]
+/overcast /rimlight /volumetric
+Beleuchtungs-Vektor: 5600K neutrales Nordlicht, 3:1 Key-to-Fill Ratio, scharfes Rimlight für Kanten-Separation, diffuse Kontaktschatten.
+
+[SCHICHT 3: LATENTE SCHILDE &amp; PHYSIK-SCHUTZ]
+/locksubject /faceid /wardrobelock /seedlock /smoothflow /driftguard /rigidhold /antiflicker
+
+[SCHICHT 4: SZENEN-CHRONOLOGIE &amp; AKTIONEN]
+00:00.0 - 00:02.5: @CemGPT betritt das moderne Buero, Blick fokussiert in die Kamera. Mund fest geschlossen.
+00:02.5 - 00:04.5: @CemGPT spricht lippensynchron im Praesenz-Ton @cem_voice: „Moin. Wer seine Prozesse automatisiert, gewinnt Zeit.“
+
+[SCHICHT 5: PARAMETER &amp; NEGATIV-LEITPLANKEN]
+No morphing, no limb distortion, consistent lighting vector, no text on clothing.
+Aspect Ratio: Adaptive (9:16 Social / 16:9 Cinema) | Duration: 4.5s | FPS: 24
+</code></pre>
+
+<hr />
+
+<h2>6. Die 3-Stufen-Compiler-Pipeline („Was das System verbirgt“)</h2>
 
 <p>Wer rohe Befehle unreflektiert in ein Diffusionsmodell wirft, scheitert oft an einem kuriosen Nebeneffekt: Das Modell versucht manchmal, das wörtliche Textzeichen <code>@</code> auf Hemden oder Displays zu malen. Unser interner Compiler führt daher vor der Inferenz drei Schritte aus:</p>
 
@@ -118,18 +383,25 @@ Aspect Ratio: Adaptive (9:16 Social / 16:9 Cinema) | Duration: 4.5s | FPS: 24
 
 <hr />
 
-<h2>5. Master JSON-Spezifikation für Google Omni Flash Agent Mode</h2>
+<h2>7. Master JSON-Spezifikation für Google Omni Flash Agent Mode</h2>
 
-<p>Für automatisierte Workflows (z. B. via n8n oder Cloud-Inferenz) wird der Prompt als deterministisches JSON-Objekt an die Inferenz-Schnittstelle übergeben:</p>
+<p>Für automatisierte Workflows (z. B. via n8n oder Cloud-Inferenz) wird der Prompt als deterministisches JSON-Objekt an die Inferenz-Schnittstelle übergeben – mit eigenem Lighting- und Photonen-Block:</p>
 
 <pre><code class="language-json">{
   "project": "Kimpress B2B Studio Showcase",
   "generation_mode": "Google Omni Flash Agent Mode",
   "technical_blueprint": {
-    "camera": "ARRI Alexa Mini LF, 35mm anamorphic prime lens, 5600K overcast light",
+    "camera": "ARRI Alexa Mini LF, 35mm anamorphic prime lens",
     "fps": 24,
     "format": "Adaptive (9:16 Social / 16:9 Cinema)",
     "duration_sec": 10.0
+  },
+  "lighting_blueprint": {
+    "color_temperature": "5600K overcast neutral daylight",
+    "key_fill_ratio": "3:1 directional key",
+    "directives": ["/rimlight", "/volumetric", "/overcast"],
+    "rim_separation": "crisp hair and shoulder silhouette lock",
+    "ambient_shadows": "soft diffuse contact shadows without luminance strobing"
   },
   "entity_locks": {
     "character_anchor": "@CemGPT_3D_Master_Vektor_v2",
@@ -139,7 +411,8 @@ Aspect Ratio: Adaptive (9:16 Social / 16:9 Cinema) | Duration: 4.5s | FPS: 24
     {
       "clip_id": "shot_01_hook",
       "timecode": "00:00.0 - 00:03.0",
-      "camera": "/dollyin /tracking",
+      "camera": "/dollyin /tracking /shallowdepth",
+      "lighting": "/rimlight /volumetric /overcast",
       "action": "Creator geht zielstrebig durch den Raum, Blickkontakt zur Linse. Mund geschlossen.",
       "audio": {
         "speaker": "@CemGPT",
@@ -147,13 +420,15 @@ Aspect Ratio: Adaptive (9:16 Social / 16:9 Cinema) | Duration: 4.5s | FPS: 24
         "voiceover": "Moin. Wer seine Prozesse automatisiert, gewinnt echte Freiheit.",
         "timing_constraint": "Voiceover finishes at 00:02.8. 0.2s silence gap."
       },
-      "shields": ["/faceid", "/rigidhold", "/driftguard"]
+      "shields": ["/faceid", "/rigidhold", "/driftguard", "/wardrobelock", "/antiflicker"]
     }
   ],
   "negative_prompts": [
     "morphing faces",
     "jittering hands",
     "unnatural lip sync",
+    "changing light angle",
+    "luminance strobing",
     "cartoon look",
     "overlapping voices"
   ]
@@ -162,26 +437,32 @@ Aspect Ratio: Adaptive (9:16 Social / 16:9 Cinema) | Duration: 4.5s | FPS: 24
 
 <hr />
 
-<h2>6. Vollständiges Python-Artefakt: Der Omni Flash Prompt Compiler</h2>
+<h2>8. Vollständiges Python-Artefakt: Der Omni Flash Prompt Compiler</h2>
 
-<p>Hier ist das lauffähige Python-Tool, mit dem wir Directorial-Prompts parsen, Slash-Befehle von Schilden trennen, die <code>@voice</code>-Bindung validieren und bereinigte Payloads für die Google Omni Flash Inferenz generieren:</p>
+<p>Hier ist das lauffähige Python-Tool, mit dem wir Directorial-Prompts parsen, Slash-Befehle (Kamera, Lighting, Schilde) trennen, die <code>@voice</code>-Bindung validieren und verifizierte Payloads für Google Omni Flash kompilieren:</p>
 
 <pre><code class="language-python"># Vollstaendiges, verifiziertes Produktions-Script: Der Omni Flash Prompt Compiler
-# Zero External Dependencies (nutzt ausschließlich Python Standard Library)
+# Zero External Dependencies (nutzt ausschliesslich Python Standard Library)
 import re
 import json
 from dataclasses import dataclass, asdict
 from typing import List, Dict, Any, Optional
 
 CAMERA_DIRECTIVES = {
-    "tracking", "dollyin", "orbit", "closeup", "macro", 
-    "whippan", "establishing", "volumetric", "goldenhour", 
-    "shallowdepth", "lowangle", "highangle", "pan"
+    "tracking", "dollyin", "dollyout", "orbit", "closeup", "macro", 
+    "whippan", "establishing", "shallowdepth", "lowangle", "highangle", 
+    "overhead", "craneup", "cranedown", "truckleft", "truckright", "pov"
+}
+
+LIGHTING_DIRECTIVES = {
+    "rimlight", "chiaroscuro", "rembrandt", "butterfly", "toplight", 
+    "volumetric", "goldenhour", "bluehour", "overcast", "tungsten", 
+    "hazylight", "lowfog", "caustics", "lensflare"
 }
 
 LATENT_SHIELDS = {
     "locksubject", "faceid", "seedlock", "smoothflow", 
-    "driftguard", "rigidhold", "anatomyanchor"
+    "driftguard", "rigidhold", "anatomyanchor", "wardrobelock", "antiflicker"
 }
 
 @dataclass
@@ -189,6 +470,7 @@ class CompiledOmniFlashShot:
     shot_id: int
     timecode: str
     camera_directives: List[str]
+    lighting_directives: List[str]
     latent_shields: List[str]
     visual_entities: List[str]
     voice_anchor: Optional[str]
@@ -200,11 +482,12 @@ class CompiledOmniFlashShot:
 def compile_omniflash_prompt(raw_text: str) -> Dict[str, Any]:
     """
     Kompiliert rohe Directorial Slash- und Entity-Befehle (/ und @)
-    in einen deterministischen Google Omni Flash Agent Payload.
+    in einen deterministischen Google Omni Flash Agent Payload mit Lighting-Lock.
     """
-    # 1. Direktiven und Schilde parsen
+    # 1. Direktiven nach Funktionsbereichen parsen
     slash_tokens = re.findall(r"/([a-zA-Z0-9_]+)", raw_text)
     camera_cmds = [t for t in slash_tokens if t in CAMERA_DIRECTIVES]
+    lighting_cmds = [t for t in slash_tokens if t in LIGHTING_DIRECTIVES]
     shield_cmds = [t for t in slash_tokens if t in LATENT_SHIELDS]
 
     # 2. Entity- & Voice-Anker isolieren
@@ -257,6 +540,7 @@ def compile_omniflash_prompt(raw_text: str) -> Dict[str, Any]:
         shot_id=1,
         timecode=timecode,
         camera_directives=camera_cmds,
+        lighting_directives=lighting_cmds,
         latent_shields=shield_cmds,
         visual_entities=visual_entities,
         voice_anchor=voice_anchor,
@@ -270,14 +554,15 @@ def compile_omniflash_prompt(raw_text: str) -> Dict[str, Any]:
         "engine": "Google Omni Flash Agent Mode",
         "compiler_version": "2026.3-flowlabs",
         "strict_speaker_isolation": True,
+        "lighting_validation": "LOCKED" if lighting_cmds else "UNLOCKED_WARNING",
         "validation_status": "PASS" if not warnings else "FLAGGED_FOR_REVIEW",
         "validation_warnings": warnings,
         "compiled_shot": asdict(shot)
     }
 
-# Verifizierter Sandbox-Durchlauf
+# Verifizierter Sandbox-Durchlauf mit Lighting-Pass
 sample_directorial_input = (
-    "00:00.0 - 00:04.5: /establishing /tracking /goldenhour /locksubject /faceid /driftguard "
+    "00:00.0 - 00:04.5: /establishing /tracking /dollyin /overcast /rimlight /volumetric /locksubject /faceid /driftguard "
     "@CemGPT betritt das Buero, mouth moves in sync @cem_voice: „Moin. Wer seine Prozesse automatisiert, gewinnt Zeit.“"
 )
 
@@ -288,7 +573,7 @@ if __name__ == "__main__":
 
 <hr />
 
-<h2>7. B2B-Umsatzhebel &amp; Dein Einstieg bei Kimpress</h2>
+<h2>9. B2B-Umsatzhebel &amp; Dein Einstieg bei Kimpress</h2>
 
 <p>Statt Wochen mit Prompt-Engineering und Fehlversuchen zu verschwenden, erhalten Unternehmen bei Kimpress schlüsselfertige Ergebnisse:</p>
 
