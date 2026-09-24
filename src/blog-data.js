@@ -7,7 +7,7 @@
 export const BLOG_POSTS = [
   {
     slug: 'omni-flash-code-patterns-slash-at-prompt-engineering-2026',
-    title: 'Kinoreife KI-Videos in Hollywood-Qualität: Die geheimen / und @ Code-Patterns für Google Omni Flash & FlowLabs',
+    title: 'Kinoreife KI-Videos in Hollywood-Qualität: Die geheimen /SLASH und @ Code-Patterns für Google Omni Flash & FlowLabs',
     excerpt: 'Schluss mit Prompt-Lotto und morphenden Gesichtern: Wie du mit Slash-Kamera-Befehlen (/), biometrischen Entity-Locks (@) und unveränderlicher @voice-Bindung kinoreife High-End-Videos in Google Omni Flash baust – perfekt abgestimmt für jedes Format.',
     date: '2026-09-24',
     readTime: 10,
