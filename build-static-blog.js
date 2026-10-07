@@ -253,6 +253,12 @@ function buildStaticBlogPages() {
       `<link rel="canonical" id="canonical-tag" href="${postUrl}" />`
     );
 
+    // 3. CRITICAL: Remove noindex from static pages — only blog-post.html shell stays noindex
+    renderedHtml = renderedHtml.replace(
+      /<meta\s+name="robots"\s+content="noindex,\s*nofollow"\s*\/>/i,
+      `<meta name="robots" content="index, follow" />`
+    );
+
     // 3. Replace OpenGraph & Twitter Tags
     renderedHtml = renderedHtml.replace(
       /<meta\s+property="og:title"[^>]*>/i,
