@@ -41,7 +41,7 @@ function categoryColor(cat) {
 function renderRelatedCard(post) {
   const color = categoryColor(post.category);
   return `
-    <a class="related-card" href="/blog-post.html?slug=${post.slug}">
+    <a class="related-card" href="/blog/${post.slug}">
       <span class="related-card__cat" style="color:${color}">${escapeHtml(post.category)}</span>
       <h4 class="related-card__title">${escapeHtml(post.title)}</h4>
       <span class="related-card__read">${post.readTime} Min →</span>
@@ -58,7 +58,7 @@ function renderFullPostMain(post) {
     <!-- POST HEADER -->
     <header class="post-header">
       <div class="container">
-        <a href="/blog.html" class="post-back">← Zurück zum Blog</a>
+        <a href="/blog" class="post-back">← Zurück zum Blog</a>
         <div class="post-header__cat" style="--cat-color:${color}">${escapeHtml(post.category)}</div>
         <h1 class="post-header__title">${escapeHtml(post.title)}</h1>
         <div class="post-header__meta">
@@ -189,7 +189,7 @@ function buildStaticBlogPages() {
   let count = 0;
 
   for (const post of BLOG_POSTS) {
-    const postUrl = `${DOMAIN}/blog-post.html?slug=${post.slug}`;
+    const postUrl = `${DOMAIN}/blog/${post.slug}`;
     const pageTitle = `${post.title} — Kimpress KI Blog`;
     const metaDesc = post.excerpt;
 
@@ -206,18 +206,18 @@ function buildStaticBlogPages() {
           "dateModified": post.date,
           "author": {
             "@type": "Person",
-            "@id": "https://kimpress.de/#founder",
+            "@id": "https://www.kimpress.de/#founder",
             "name": "Cem Görül",
-            "url": "https://kimpress.de"
+            "url": "https://www.kimpress.de"
           },
           "publisher": {
             "@type": "Organization",
-            "@id": "https://kimpress.de/#organization",
+            "@id": "https://www.kimpress.de/#organization",
             "name": "Kimpress",
-            "url": "https://kimpress.de",
+            "url": "https://www.kimpress.de",
             "logo": {
               "@type": "ImageObject",
-              "url": "https://kimpress.de/kimpress-logo.png"
+              "url": "https://www.kimpress.de/kimpress-logo.png"
             }
           },
           "articleSection": post.category,
@@ -227,8 +227,8 @@ function buildStaticBlogPages() {
           "@type": "BreadcrumbList",
           "@id": `${postUrl}#breadcrumb`,
           "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://kimpress.de" },
-            { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://kimpress.de/blog.html" },
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kimpress.de" },
+            { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.kimpress.de/blog" },
             { "@type": "ListItem", "position": 3, "name": post.title, "item": postUrl }
           ]
         }
@@ -247,7 +247,7 @@ function buildStaticBlogPages() {
       `<meta name="description" id="post-meta-desc" content="${escapeHtml(metaDesc)}" />`
     );
 
-    // 2. Replace Canonical Tag
+    // 2. Canonical — always /blog/slug
     renderedHtml = renderedHtml.replace(
       /<link\s+rel="canonical"[^>]*>/i,
       `<link rel="canonical" id="canonical-tag" href="${postUrl}" />`
