@@ -13,12 +13,12 @@ const generateSitemap = () => {
   let xml = `<?xml version="1.0" encoding="UTF-8"?>\n`;
   xml += `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n`;
 
-  // Static pages
+  // Static pages — URLs without .html to match Vercel's clean URL serving
   const staticPages = [
     { url: '/', priority: '1.0' },
-    { url: '/n8n-ki-agentur-deutschland.html', priority: '0.9' },
-    { url: '/ki-content-agentur-deutschland.html', priority: '0.9' },
-    { url: '/blog.html', priority: '0.8' }
+    { url: '/n8n-ki-agentur-deutschland', priority: '0.9' },
+    { url: '/ki-content-agentur-deutschland', priority: '0.9' },
+    { url: '/blog', priority: '0.8' }
   ];
 
   for (const page of staticPages) {
@@ -30,15 +30,9 @@ const generateSitemap = () => {
     xml += `  </url>\n`;
   }
 
-  // Blog posts
+  // Blog posts — ONLY canonical /blog/slug URLs (no blog-post.html?slug= duplicates)
   for (const post of BLOG_POSTS) {
     const postDate = post.date || TODAY;
-    xml += `  <url>\n`;
-    xml += `    <loc>${DOMAIN}/blog-post.html?slug=${post.slug}</loc>\n`;
-    xml += `    <lastmod>${postDate}</lastmod>\n`;
-    xml += `    <changefreq>weekly</changefreq>\n`;
-    xml += `    <priority>0.85</priority>\n`;
-    xml += `  </url>\n`;
     xml += `  <url>\n`;
     xml += `    <loc>${DOMAIN}/blog/${post.slug}</loc>\n`;
     xml += `    <lastmod>${postDate}</lastmod>\n`;
@@ -64,10 +58,11 @@ const generateSitemap = () => {
   rss += `  <atom:link href="${DOMAIN}/rss.xml" rel="self" type="application/rss+xml" />\n`;
 
   for (const post of BLOG_POSTS) {
+    const canonicalUrl = `${DOMAIN}/blog/${post.slug}`;
     rss += `  <item>\n`;
     rss += `    <title>${post.title.replace(/&/g, '&amp;')}</title>\n`;
-    rss += `    <link>${DOMAIN}/blog-post.html?slug=${post.slug}</link>\n`;
-    rss += `    <guid>${DOMAIN}/blog-post.html?slug=${post.slug}</guid>\n`;
+    rss += `    <link>${canonicalUrl}</link>\n`;
+    rss += `    <guid isPermaLink="true">${canonicalUrl}</guid>\n`;
     rss += `    <description>${post.excerpt.replace(/&/g, '&amp;')}</description>\n`;
     rss += `    <pubDate>${new Date(post.date).toUTCString()}</pubDate>\n`;
     rss += `  </item>\n`;
