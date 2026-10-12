@@ -2617,8 +2617,8 @@ return [{ json: { retryCount: retryCount, totalDelaySeconds: totalDelay } }];</c
 <p>Was wir tun: Wir nehmen dein Business, schauen wo KI dir sofort etwas abnehmen kann — und bauen das. Fertig. Die vier Bereiche in denen das bei unseren Kunden am meisten bringt:</p>
 
 <ul>
-  <li><strong>Videos und Bilder für Social Media &amp; Ads:</strong> KI-generierte Kurzvideos (10 Sekunden, deutsches Voiceover, dein Logo) und Ad-Bilder für Meta, LinkedIn oder Google. Was früher eine Videoproduktion für 1.500 € war, kostet heute einen Bruchteil davon — wenn man weiß wie.</li>
-  <li><strong>Prozesse die sich selbst erledigen:</strong> Dein Postfach sortiert sich allein. Leads werden automatisch qualifiziert. Termine bestätigen sich ohne dein Zutun. Das klingt nach Science-Fiction — ist es aber nicht, wenn man n8n richtig einrichtet.</li>
+  <li><strong>Videos und Bilder für Social Media &amp; Ads:</strong> KI-generierte Kurzvideos (15 bis 30 Sekunden im vertikalen 9:16-Format, deutsches Voiceover, Sounddesign und dein Logo) und Ad-Bilder für Meta, LinkedIn oder Google. Was früher eine Videoproduktion für 1.500 € war, kostet heute einen Bruchteil davon — wenn man weiß wie.</li>
+  <li><strong>Prozesse die sich selbst erledigen:</strong> Dein Postfach sortiert sich allein. Leads werden automatisch qualifiziert. Termine bestätigen sich ohne dein Zutun. Das klingt nach Science-Fiction — ist es aber nicht, wenn man automatisierte Workflows richtig einrichtet.</li>
   <li><strong>KI-Chatbots die wirklich helfen:</strong> Nicht die nervigen Pop-ups die nach 3 Sekunden aufploppen. Sondern Assistenten die Kundenfragen beantworten können, Termine vorqualifizieren und Kontaktdaten sauber ins System eintragen.</li>
   <li><strong>Gefunden werden — auch von KI-Suchmaschinen:</strong> Das ist mein persönliches Steckenpferd. GEO nennt sich das — Generative Engine Optimization. Dafür sorgen, dass ChatGPT, Gemini oder Perplexity dich empfehlen wenn jemand "KI-Agentur Hamburg" eintippt.</li>
 </ul>
@@ -2632,7 +2632,7 @@ return [{ json: { retryCount: retryCount, totalDelaySeconds: totalDelay } }];</c
 <p>Unser Modell ist ein anderes. Bei Kimpress verkaufen wir keine vagen Stunden oder PowerPoint-Folien, sondern schlüsselfertige Systeme zum Festpreis:</p>
 
 <ul>
-  <li><strong>KI-Content Engine (1.950 € Festpreis):</strong> Die komplette monatliche Video-Maschine. 12 fertige Premium-Videos (TikTok, Reels, LinkedIn), optimierte Skripte, Hooks und Captions — schlüsselfertig produziert ohne Kamera-Aufwand oder Filmteam.</li>
+  <li><strong>KI-Content Engine (1.950 € Festpreis):</strong> Die komplette monatliche Video-Maschine. 12 fertige Premium-Videos (je 15 bis 30 Sekunden, retentionsoptimiertes 9:16-Format für TikTok, Instagram Reels und LinkedIn Shorts), inklusive Hooks, Skripte, Sprecher-Audio und Schnitt — schlüsselfertig produziert ohne Kamera-Aufwand oder Filmteam.</li>
   <li><strong>Automatisierte Workflows (ab 2.500 € einmalig):</strong> Maßgeschneiderte Prozess-Automatisierung für Postfach, Lead-Qualifizierung oder CRM-Sync, damit Routine-Aufgaben ohne dein Zutun laufen.</li>
   <li><strong>KI-Assistenten &amp; Chatbots (ab 3.500 € einmalig):</strong> DSGVO-konforme Assistenten für Kundenfragen und automatische Vorqualifizierung von Anfragen.</li>
 </ul>
