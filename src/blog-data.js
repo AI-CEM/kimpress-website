@@ -2625,18 +2625,19 @@ return [{ json: { retryCount: retryCount, totalDelaySeconds: totalDelay } }];</c
 
 <h2>Was kostet das — und warum liegen die Preise so weit auseinander?</h2>
 
-<p>Ich hab mich damals umgeschaut, bevor ich selbst gegründet hab. Was ich gesehen habe: Preise zwischen 119 € und 25.000 € für "KI-Beratung". Beides ist real. Beides hat seine Berechtigung. Die Frage ist nur: Was brauchst du?</p>
+<p>Ich hab mich damals umgeschaut, bevor ich selbst gegründet hab. Was ich gesehen habe: Preise zwischen 2.000 € und 25.000 € für "KI-Beratung". Beides ist real. Beides hat seine Berechtigung. Die Frage ist nur: Was brauchst du?</p>
 
-<p>Große Unternehmensberatungen nehmen 10.000 bis 20.000 € — und dann bekommst du in der Regel einen dicken Bericht darüber was du theoretisch mit KI machen könntest. Das ist manchmal sinnvoll. Für einen Hamburger Handwerksbetrieb, eine Coaching-Praxis oder einen Selbstständigen ist es das meistens nicht.</p>
+<p>Große Unternehmensberatungen nehmen 10.000 bis 20.000 € — und dann bekommst du in der Regel einen dicken Bericht darüber was du theoretisch mit KI machen könntest. Das ist manchmal sinnvoll. Für einen Hamburger Handwerksbetrieb, eine Coaching-Praxis oder ein mittelständisches Unternehmen ist es das meistens nicht.</p>
 
-<p>Unser Modell ist ein anderes. Bei Kimpress gibt es zwei Einstiegspunkte:</p>
+<p>Unser Modell ist ein anderes. Bei Kimpress verkaufen wir keine vagen Stunden oder PowerPoint-Folien, sondern schlüsselfertige Systeme zum Festpreis:</p>
 
 <ul>
-  <li><strong>119 € einmalig:</strong> Das AI Performance Starter-Kit. Drei KI-Videos, fünf Ad-Bilder, Bio-Optimierung für Instagram, TikTok und LinkedIn plus die fertigen Skripte dazu. Für Leute die erstmal testen wollen ob KI-Content zu ihrem Business passt — bevor sie größere Budgets einsetzen.</li>
-  <li><strong>Ab 499 € im Monat:</strong> Für die die eine echte Zusammenarbeit wollen. Laufender Content, Automatisierungen, GEO-Aufbau. Wir sind dann so etwas wie dein ausgelagertes KI-Team.</li>
+  <li><strong>KI-Content Engine (1.950 € Festpreis):</strong> Die komplette monatliche Video-Maschine. 12 fertige Premium-Videos (TikTok, Reels, LinkedIn), optimierte Skripte, Hooks und Captions — schlüsselfertig produziert ohne Kamera-Aufwand oder Filmteam.</li>
+  <li><strong>Automatisierte Workflows (ab 2.500 € einmalig):</strong> Maßgeschneiderte Prozess-Automatisierung für Postfach, Lead-Qualifizierung oder CRM-Sync, damit Routine-Aufgaben ohne dein Zutun laufen.</li>
+  <li><strong>KI-Assistenten &amp; Chatbots (ab 3.500 € einmalig):</strong> DSGVO-konforme Assistenten für Kundenfragen und automatische Vorqualifizierung von Anfragen.</li>
 </ul>
 
-<p>Zur Einordnung: Eine klassische Marketingagentur in Hamburg nimmt für Social-Media-Management schnell 1.500 bis 3.000 € im Monat. Dafür bekommst du dann oft 8 bis 12 Posts die sich alle gleich anfühlen. Ich sage nicht dass das schlecht ist — aber der Vergleich zeigt wo KI gerade steht.</p>
+<p>Zur Einordnung: Eine klassische Marketingagentur in Hamburg nimmt für Social-Media-Management schnell 2.500 bis 4.000 € im Monat — oft für langsame Abstimmungsschleifen und generische Posts. Unser Festpreis-Ansatz spart dir wöchentlich 10 bis 20 Stunden Arbeitszeit bei voller Kostenkontrolle.</p>
 
 <h2>Für wen lohnt es sich — und für wen nicht</h2>
 
@@ -2659,7 +2660,7 @@ return [{ json: { retryCount: retryCount, totalDelaySeconds: totalDelay } }];</c
 <h2>Die Fragen die ich am häufigsten bekomme</h2>
 
 <h3>Gibt es KI-Agenturen in Hamburg die auch für kleine Unternehmen bezahlbar sind?</h3>
-<p>Ja — das wäre dann wir. Einstieg ab 119 €, monatliche Zusammenarbeit ab 499 €. Keine Mindestvertragslaufzeit, kein verstecktes Kleingedrucktes.</p>
+<p>Ja — das sind wir. Bei uns gibt es transparente Festpreise statt unberechenbarer Retainer: Unsere KI-Content Engine liegt bei 1.950 € für 12 fertige Videos pro Monat, Workflow-Automatisierungen starten ab 2.500 € einmalig. Kein Kleingedrucktes, keine versteckten Kosten.</p>
 
 <h3>Wie lange bis man erste Ergebnisse sieht?</h3>
 <p>KI-Videos und Bilder: sofort, oft innerhalb von 24 Stunden. SEO und GEO: realistisch 4 bis 12 Wochen. Automatisierungen: ab dem ersten Tag spürbar.</p>
