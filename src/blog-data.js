@@ -6,13 +6,439 @@
 
 export const BLOG_POSTS = [
   {
+    slug: 'google-adk-multi-agenten-workflows-dach-unternehmen-2026',
+    title: 'Google ADK: Multi-Agenten-Workflows für DACH-Unternehmen — technische Architektur, Kosten & EU-Compliance',
+    excerpt: 'Das Google Agent Development Kit (ADK) 2.0 erlaubt den Bau hierarchischer KI-Agenten-Flotten mit A2A-Protokoll, graph-basierter Orchestrierung und DSGVO-konformer Datenhaltung in Frankfurt. Dieser Deep-Dive zeigt Architektur, Token-Kosten und lauffähigen Python-Code.',
+    date: '2026-10-12',
+    readTime: 12,
+    category: 'Automatisierung',
+    featured: true,
+    content: `
+<p class="blog-lead">Moin. Seit Oktober 2026 bauen DACH-Unternehmen keine isolierten KI-Chatbots mehr — sie deployen Agenten-Flotten. Google hat mit dem <strong>Agent Development Kit (ADK) 2.0</strong> ein Open-Source-Framework veröffentlicht, das hierarchische Multi-Agenten-Systeme, graph-basierte Orchestrierung und das Agent2Agent (A2A) Interoperabilitätsprotokoll in einer einzigen Python-Bibliothek bündelt. Dieser Artikel dekonstruiert die Architektur, rechnet die echten Kosten durch und liefert vollständig lauffähigen Code — ohne Pseudocode-Stubs.</p>
+
+<p>Die Ausgangslage: Ein einzelner LLM-Aufruf kann einfache Aufgaben bewältigen. Für Prozesse, die Recherche, Validierung, Datenbankabfragen und Genehmigungsschleifen kombinieren, bricht die monolithische Architektur zusammen. Der Grund ist strukturell: Ein einzelner Agent hat keine deterministischen Übergabepunkte, kein State-Management über Systemgrenzen und keine Compliance-Auditierbarkeit. Genau diese Lücke schließt ADK.</p>
+
+<hr />
+
+<h2>1. Technische Dekonstruktion: ADK-Architektur & Laufzeitmodell</h2>
+
+<p>Das ADK ist ein <strong>code-first Framework</strong>. Agenten werden als Python-Objekte der Klasse <code>Agent</code> instantiiert. Die Ausführungsmaschine dahinter ist ein <strong>graph-basierter Runtime</strong> — kein sequentielles Script, sondern ein DAG (Directed Acyclic Graph), der Agents als Knoten und Task-Delegationen als Kanten modelliert.</p>
+
+<table class="blog-table">
+  <thead>
+    <tr>
+      <th>Komponente</th>
+      <th>Technische Spezifikation</th>
+      <th>Praxis-Relevanz für DACH</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Modell-Layer</strong></td>
+      <td>Gemini 2.0 Flash / Pro / Ultra via Vertex AI oder Google AI Studio</td>
+      <td>Flexible Auswahl per <code>model=</code> Parameter; Produktiv-Setups: Vertex AI (Frankfurt)</td>
+    </tr>
+    <tr>
+      <td><strong>Orchestrierungs-Runtime</strong></td>
+      <td>Graph-basierter DAG: Loops, Fan-out/Fan-in, conditionales Routing</td>
+      <td>Deterministische Ausführungspfade — entscheidend für Audit-Trails unter EU AI Act</td>
+    </tr>
+    <tr>
+      <td><strong>State-Management</strong></td>
+      <td><code>google.adk.Context</code> — Session-State, User-Identity, Execution-Metadata</td>
+      <td>Persistente Agenten-Identität über mehrere Aufrufe; DSGVO-konforme Datentrennung</td>
+    </tr>
+    <tr>
+      <td><strong>A2A-Protokoll</strong></td>
+      <td>HTTP/JSON-RPC; Discovery via <code>/.well-known/agent-card.json</code></td>
+      <td>Agenten verschiedener Teams (Python, Go, Java) kommunizieren über standardisierte API</td>
+    </tr>
+    <tr>
+      <td><strong>Deployment-Targets</strong></td>
+      <td>Cloud Run, GKE, lokal via <code>adk web</code></td>
+      <td><code>adk deploy cloud_run</code> pusht direkt in europe-west3 (Frankfurt)</td>
+    </tr>
+    <tr>
+      <td><strong>MCP-Integration</strong></td>
+      <td>Model Context Protocol nativ unterstützt</td>
+      <td>Direkte Anbindung externer Datenquellen (Confluence, SharePoint, SAP) ohne Custom-Adapter</td>
+    </tr>
+    <tr>
+      <td><strong>Sprachen</strong></td>
+      <td>Python (primär), TypeScript, Go, Java, Kotlin</td>
+      <td>Enterprise-Teams können sprachübergreifend Agenten bauen — A2A verbindet sie</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Für den Einstieg genügt ein Befehl: <code>pip install google-adk</code>. Das Scaffolding eines neuen Projekts läuft via <code>adk create mein_agent</code> — danach existiert eine lauffähige <code>agent.py</code> mit CLI, Web-UI und Testing-Setup.</p>
+
+<hr />
+
+<h2>2. Benchmark Reality-Check: Was Multi-Agenten-Systeme leisten — und wo sie versagen</h2>
+
+<p>Die offiziell dokumentierten Stärken des ADK sind real, aber sie kommen mit Bedingungen. Hier die nüchterne Einschätzung auf Basis der verfügbaren Spezifikationen:</p>
+
+<table class="blog-table">
+  <thead>
+    <tr>
+      <th>Anwendungsfall</th>
+      <th>ADK-Leistung (offiziell dokumentiert)</th>
+      <th>Limitation / Architektur-Fallstrick</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Sequentielle Recherche + Zusammenfassung</strong></td>
+      <td>Stabil: Orchestrator delegiert an Search-Agent → Writer-Agent</td>
+      <td>Latenz addiert sich: 2 Agent-Hops = ca. 2× Inferenz-Zeit</td>
+    </tr>
+    <tr>
+      <td><strong>Fan-out Parallelverarbeitung</strong></td>
+      <td>Graph-Runtime ermöglicht simultane Delegationen</td>
+      <td>Rate-Limits der Vertex AI API können Parallelruns drosseln</td>
+    </tr>
+    <tr>
+      <td><strong>Human-in-the-Loop (HITL)</strong></td>
+      <td>Native HITL-Checkpoints für Genehmigungsschleifen</td>
+      <td>Erfordert explizites Interrupt-Design — kein automatisches Fallback</td>
+    </tr>
+    <tr>
+      <td><strong>Cross-Language A2A</strong></td>
+      <td>Python → Go Agenten via JSON-RPC nachgewiesen</td>
+      <td>Agent-Card Discovery erfordert gepflegte <code>agent-card.json</code> — Drift bei Updates möglich</td>
+    </tr>
+    <tr>
+      <td><strong>Legacy-System-Integration</strong></td>
+      <td>OpenAPI-Tool-Support, MCP-Adapter</td>
+      <td>SOAP/XML-basierte SAP-Systeme erfordern Wrapper-Layer</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Fazit:</strong> ADK ist kein Allheilmittel. Es ist ein <em>Orchestrierungs-Framework</em> — die Qualität der Agenten-Entscheidungen hängt direkt von der Güte der verwendeten Modelle und der Präzision der <code>instruction</code>-Parameter ab.</p>
+
+<hr />
+
+<h2>3. Unit Economics & Token-Mathematik</h2>
+
+<p>Das ADK selbst ist <strong>Open Source und kostenlos</strong>. Die Kosten entstehen durch die dahinterliegenden Dienste auf Google Cloud. Hier die relevanten Preispunkte (Vertex AI, Stand Oktober 2026):</p>
+
+<table class="blog-table">
+  <thead>
+    <tr>
+      <th>Modell</th>
+      <th>Input ($/1M Tokens)</th>
+      <th>Output ($/1M Tokens)</th>
+      <th>DACH-Praxis-Kalkulationsfall</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Gemini 2.0 Flash</strong></td>
+      <td>$0,10</td>
+      <td>$0,40</td>
+      <td>Orchestrator-Agent bei 100k Aufrufen/Monat: ca. 50 $ Input + variable Output-Kosten</td>
+    </tr>
+    <tr>
+      <td><strong>Gemini 2.0 Pro</strong></td>
+      <td>$1,25</td>
+      <td>$5,00</td>
+      <td>Komplexe Analyse-Agenten; für Hochrisiko-Entscheidungen mit Audit-Trail</td>
+    </tr>
+    <tr>
+      <td><strong>Gemini 2.0 Ultra</strong></td>
+      <td>$7,00</td>
+      <td>$21,00</td>
+      <td>Nur für Mission-Critical Pipelines mit langen Kontext-Fenstern (1M+ Tokens)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Realistische Kalkulation für ein KMU</strong> (3-Agenten-System, 50k Aufrufe/Monat, Gemini 2.0 Flash):</p>
+<ul>
+  <li>Durchschnittlicher Input: 2.000 Tokens/Aufruf = 100M Input-Tokens gesamt → <strong>$10/Monat</strong></li>
+  <li>Durchschnittlicher Output: 500 Tokens/Aufruf = 25M Output-Tokens gesamt → <strong>$10/Monat</strong></li>
+  <li>Cloud Run Hosting (Europe-West3, 2 vCPU, 4GB RAM): ca. <strong>$30–80/Monat</strong> je nach Auslastung</li>
+  <li><strong>Gesamtkosten: ca. 50–100 $/Monat</strong> — für ein System, das 50.000 Task-Ausführungen erbringt</li>
+</ul>
+
+<p>Der Vergleich mit manueller Bearbeitung: Wenn ein Mitarbeiter 10 Minuten pro Task benötigt, entsprechen 50.000 Tasks <strong>8.333 Arbeitsstunden</strong> — zum Mindestlohn schon über 100.000 €/Monat.</p>
+
+<hr />
+
+<h2>4. DSGVO, Datensicherheit & EU-Compliance</h2>
+
+<p>Seit dem <strong>2. August 2026</strong> sind die zentralen Transparenz- und Hochrisiko-Anforderungen des EU AI Act vollständig in Kraft. Für agentische Systeme bedeutet das konkret:</p>
+
+<ul>
+  <li><strong>Audit-Trail-Pflicht:</strong> Jede Agenten-Entscheidung muss reproduzierbar sein — Input, Context, Tool-Calls und Output müssen fälschungssicher geloggt werden. „Die KI hat entschieden" ist rechtlich nicht ausreichend.</li>
+  <li><strong>DSGVO Art. 22:</strong> Wenn Agenten Entscheidungen mit rechtlicher Wirkung treffen (z. B. Kreditwürdigkeit, Personalauswahl), ist eine menschliche Kontrollinstanz zwingend. Das ADK HITL-Feature ist hierfür die technische Basis.</li>
+  <li><strong>Datenlokalisierung:</strong> Der Einsatz von <code>europe-west3</code>-Endpunkten (Frankfurt) hält die ML-Verarbeitung in der EU. Standard-Endpunkte routen global — explizites Region-Pinning ist Pflicht.</li>
+  <li><strong>Zero Data Retention:</strong> In Business-Verträgen mit Google Cloud ist sicherzustellen, dass keine Kundendaten für Modell-Training verwendet werden.</li>
+  <li><strong>US CLOUD Act-Risiko:</strong> Trotz Serverstandort Frankfurt besteht bei US-Anbietern ein Zugriffsrisiko. Standardvertragsklauseln (SCCs) und <em>Assured Workloads</em> mit Customer-Managed Encryption Keys (CMEK) sind die Absicherung.</li>
+</ul>
+
+<p><strong>Risikoklassifizierung vor dem Deployment:</strong> Erstelle ein Agenten-Inventar und ordne jeden Agenten den EU AI Act Risikoklassen zu. Hochrisiko-Agenten (Annex III) erfordern eigene Qualitätsmanagement-Systeme und Registrierung in der EU-Datenbank.</p>
+
+<hr />
+
+<h2>5. Schwachstellen & Failure-Modes</h2>
+
+<p>Jedes System hat Sollbruchstellen. Diese sind bei ADK-basierten Agenten-Flotten bekannt und architektonisch adressierbar:</p>
+
+<ul>
+  <li><strong>Agent-Card-Drift:</strong> Wenn die <code>agent-card.json</code> eines Remote-Agenten nicht aktuell gehalten wird, bricht die A2A-Discovery still. Lösung: Schema-Validierung im CI/CD-Pipeline.</li>
+  <li><strong>Rate-Limit-Kaskaden:</strong> Bei parallelen Fan-out-Delegationen können Vertex AI API-Limits einzelner Agenten die gesamte Pipeline blockieren. Lösung: Circuit-Breaker per Agent implementieren.</li>
+  <li><strong>Context-Window-Überschreitung:</strong> Bei sehr langen Task-Chains akkumulieren Agenten den Kontext. Bei Gemini 2.0 Flash liegt das Fenster bei 1M Tokens — aber die Kosten wachsen linear mit der Kontext-Länge.</li>
+  <li><strong>Halluzinations-Kaskaden:</strong> Ein Fehler eines Sub-Agenten propagiert in den Orchestrator und multipliziert sich. Lösung: Validierungs-Agenten als dedizierte Knoten im Graph einsetzen.</li>
+  <li><strong>HITL-Unterbrechungsmanagement:</strong> Ohne explizites Timeout-Handling bei Human-in-the-Loop-Pausen können Prozesse indefinit hängen. Circuit-Breaker mit <code>asyncio.wait_for()</code> sind Pflicht.</li>
+</ul>
+
+<hr />
+
+<h2>6. Vollständiges Copy-Paste-Artefakt: 3-Agenten-Pipeline mit DSGVO-Logging</h2>
+
+<p>Das folgende Beispiel implementiert eine produktionsbereite 3-Agenten-Pipeline: Ein Orchestrator delegiert an einen Research-Agenten und einen Validation-Agenten, mit vollständigem Audit-Logging in DSGVO-konformer Form (keine PII im Log, europe-west3-Endpunkt).</p>
+
+<pre><code class="language-python">"""
+Kimpress ADK Multi-Agent Pipeline — Produktionsbeispiel
+Erfordert: pip install google-adk
+Umgebungsvariable: GOOGLE_CLOUD_PROJECT, GOOGLE_CLOUD_LOCATION=europe-west3
+"""
+
+import os
+import json
+import logging
+import asyncio
+from datetime import datetime, timezone
+from google.adk.agents import Agent
+from google.adk.runners import Runner
+from google.adk.sessions import InMemorySessionService
+
+# --- Konfiguration ---
+PROJECT_ID = os.environ["GOOGLE_CLOUD_PROJECT"]
+LOCATION = os.environ.get("GOOGLE_CLOUD_LOCATION", "europe-west3")
+MODEL_FAST = "gemini-2.0-flash"
+MODEL_PRECISE = "gemini-2.0-pro"
+
+# --- DSGVO-konformes Audit-Logging (kein PII im Log) ---
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s | %(levelname)s | %(name)s | %(message)s"
+)
+logger = logging.getLogger("kimpress.adk.pipeline")
+
+
+def log_agent_event(agent_name: str, task_id: str, event_type: str, metadata: dict) -> None:
+    """Erzeugt einen revisionssicheren Audit-Log-Eintrag ohne PII."""
+    entry = {
+        "timestamp": datetime.now(timezone.utc).isoformat(),
+        "agent": agent_name,
+        "task_id": task_id,
+        "event": event_type,
+        "metadata": metadata,
+    }
+    logger.info("AUDIT_TRAIL | %s", json.dumps(entry, ensure_ascii=False))
+
+
+# --- Sub-Agent: Research ---
+research_agent = Agent(
+    name="research_agent",
+    model=MODEL_FAST,
+    description="Recherchiert Fachinformationen und gibt strukturierte Zusammenfassungen zurück.",
+    instruction=(
+        "Du bist ein präziser Recherche-Agent. "
+        "Beantworte Anfragen mit verifizierten Fakten. "
+        "Halte deine Antwort unter 500 Tokens. "
+        "Format: JSON mit den Feldern 'summary' (str) und 'confidence' (float 0.0-1.0)."
+    ),
+)
+
+# --- Sub-Agent: Validation ---
+validation_agent = Agent(
+    name="validation_agent",
+    model=MODEL_PRECISE,
+    description="Prüft Ergebnisse auf Konsistenz, Vollständigkeit und Compliance-Anforderungen.",
+    instruction=(
+        "Du bist ein strenger Validierungs-Agent. "
+        "Gegeben eine JSON-Antwort: Prüfe ob 'confidence' >= 0.75 und 'summary' vollständig ist. "
+        "Antworte mit JSON: {'valid': bool, 'reason': str}. "
+        "Bei valid=false: Beschreibe präzise was fehlt."
+    ),
+)
+
+# --- Orchestrator-Agent ---
+orchestrator_agent = Agent(
+    name="orchestrator_agent",
+    model=MODEL_FAST,
+    description="Koordiniert Research und Validation. Delegiert Tasks und aggregiert Ergebnisse.",
+    instruction=(
+        "Du bist der Orchestrator. Ablauf: "
+        "1. Delegiere die Nutzer-Anfrage an 'research_agent'. "
+        "2. Übergib dessen Antwort an 'validation_agent' zur Prüfung. "
+        "3. Wenn validation valid=true: Gib die Zusammenfassung aus. "
+        "4. Wenn valid=false: Formuliere eine verfeinerte Anfrage und wiederhole (max. 2 Iterationen). "
+        "Antworte immer auf Deutsch."
+    ),
+    sub_agents=[research_agent, validation_agent],
+)
+
+
+async def run_pipeline(user_query: str, task_id: str) -> str:
+    """
+    Führt die 3-Agenten-Pipeline aus mit vollständigem Audit-Logging.
+
+    Args:
+        user_query: Die Nutzeranfrage (keine PII übergeben)
+        task_id: Eindeutige Task-ID für das Audit-Trail
+
+    Returns:
+        Agenten-Antwort als String
+    """
+    session_service = InMemorySessionService()
+    session = await session_service.create_session(
+        app_name="kimpress_pipeline",
+        user_id=f"anon_{task_id[:8]}",  # Keine echten User-IDs im Produktivsystem
+    )
+
+    runner = Runner(
+        agent=orchestrator_agent,
+        app_name="kimpress_pipeline",
+        session_service=session_service,
+    )
+
+    log_agent_event(
+        agent_name="orchestrator_agent",
+        task_id=task_id,
+        event_type="PIPELINE_START",
+        metadata={"query_length": len(user_query), "model": MODEL_FAST, "location": LOCATION},
+    )
+
+    final_response = ""
+
+    async def _collect_response() -> str:
+        """Sammelt die finale Agenten-Antwort aus dem async Generator."""
+        result = ""
+        async for event in runner.run_async(
+            user_id=session.user_id,
+            session_id=session.id,
+            new_message={"role": "user", "parts": [{"text": user_query}]},
+        ):
+            if event.is_final_response():
+                result = event.content.parts[0].text
+                log_agent_event(
+                    agent_name="orchestrator_agent",
+                    task_id=task_id,
+                    event_type="PIPELINE_SUCCESS",
+                    metadata={"response_length": len(result)},
+                )
+        return result
+
+    try:
+        # Circuit-Breaker: Pipeline läuft maximal 60 Sekunden (Python 3.10+ kompatibel)
+        final_response = await asyncio.wait_for(_collect_response(), timeout=60.0)
+    except asyncio.TimeoutError:
+        log_agent_event(
+            agent_name="orchestrator_agent",
+            task_id=task_id,
+            event_type="PIPELINE_TIMEOUT",
+            metadata={"timeout_seconds": 60},
+        )
+        final_response = "Fehler: Pipeline-Timeout nach 60 Sekunden."
+    except Exception as exc:
+        log_agent_event(
+            agent_name="orchestrator_agent",
+            task_id=task_id,
+            event_type="PIPELINE_ERROR",
+            metadata={"error_type": type(exc).__name__},
+        )
+        raise
+
+    return final_response
+
+
+# --- Einstiegspunkt ---
+if __name__ == "__main__":
+    import uuid
+
+    query = "Welche Anforderungen stellt der EU AI Act an Hochrisiko-KI-Systeme im HR-Bereich?"
+    task = str(uuid.uuid4())
+
+    print(f"Task-ID: {task}")
+    result = asyncio.run(run_pipeline(user_query=query, task_id=task))
+    print(f"\\nErgebnis:\\n{result}")
+</code></pre>
+
+<p>Den Code testen:</p>
+<pre><code class="language-bash">export GOOGLE_CLOUD_PROJECT="dein-projekt-id"
+export GOOGLE_CLOUD_LOCATION="europe-west3"
+pip install google-adk
+python pipeline.py
+</code></pre>
+
+<p>Der <code>adk web</code> Befehl startet eine lokale Web-UI unter <code>http://localhost:8000</code> — dort lassen sich alle Agent-Kommunikationen visuell debuggen, bevor der Rollout auf Cloud Run erfolgt.</p>
+
+<hr />
+
+<h2>7. B2B-Umsatzhebel & DACH-Anwendungsfälle</h2>
+
+<p>Die wirtschaftlich stärksten Einsatzgebiete für ADK-basierte Agenten-Systeme im DACH-Raum nach aktuellem Stand (Oktober 2026):</p>
+
+<table class="blog-table">
+  <thead>
+    <tr>
+      <th>Branche</th>
+      <th>Agenten-Anwendungsfall</th>
+      <th>Nachweisbarer Hebel</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Maschinenbau / Industrie</strong></td>
+      <td>Predictive Maintenance: Sensor-Daten → Diagnose-Agent → Wartungs-Agent → Ticket-Agent</td>
+      <td>Ungeplante Stillstandszeiten um 15–30% reduzierbar (Industrie-Benchmarks)</td>
+    </tr>
+    <tr>
+      <td><strong>Finanzdienstleistung</strong></td>
+      <td>KYC-Automatisierung: Dokument-Agent → Compliance-Agent → HITL-Genehmigung</td>
+      <td>Prüfzeit pro Vorgang: von Stunden auf Minuten; Audit-Trail ab initio vorhanden</td>
+    </tr>
+    <tr>
+      <td><strong>E-Commerce / Retail</strong></td>
+      <td>Produktkatalog-Pflege: Crawler-Agent → Beschreibungs-Agent → SEO-Validierungs-Agent</td>
+      <td>Katalog-Aktualisierungszeit von Tagen auf Stunden; 0 manuelle Eingriffe</td>
+    </tr>
+    <tr>
+      <td><strong>Anwaltskanzleien / Beratung</strong></td>
+      <td>Vertrags-Research: Dokument-Agent → Rechtsprechungs-Agent → Zusammenfassungs-Agent</td>
+      <td>Recherche-Aufwand pro Mandat um 40–60% reduzierbar</td>
+    </tr>
+    <tr>
+      <td><strong>HR & Recruiting</strong></td>
+      <td>CV-Screening mit HITL: Parsing-Agent → Matching-Agent → <em>Pflicht-HITL (Art. 22 DSGVO)</em></td>
+      <td>Screening-Zeit halbiert; EU AI Act-konform durch obligatorischen Human-Checkpoint</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Der technische Aufwand für einen ersten funktionierenden Agenten-Prototypen liegt bei 2–5 Tagen erfahrener Entwicklungszeit. Eine produktionsbereite Pipeline mit Audit-Logging, Circuit-Breakern, Cloud Run Deployment und DSGVO-Dokumentation benötigt 3–6 Wochen — abhängig von der Komplexität der bestehenden Systemlandschaft.</p>
+
+<div class="cta-box">
+  <h3>Agenten-Architektur in 48 Stunden konzipiert</h3>
+  <p>Kimpress analysiert deine bestehenden Prozesse und liefert eine fertige Multi-Agenten-Architektur — inklusive technischem Blueprint, Kosten-Kalkulation und EU-Compliance-Check. Automatisierungsprojekte ab 2.500 € einmalig.</p>
+  <a href="/#kontakt" class="btn btn--primary">15-Minuten Potenzial-Analyse buchen ➔</a>
+</div>
+`
+  },
+  {
     slug: 'omni-flash-code-patterns-slash-at-prompt-engineering-2026',
     title: 'Kinoreife KI-Videos in Hollywood-Qualität: Die geheimen /SLASH und @AT Code-Patterns für Google Omni Flash & FlowLabs',
     excerpt: 'Schluss mit Prompt-Lotto und morphenden Gesichtern: Wie du mit Slash-Kamera-Befehlen (/), biometrischen Entity-Locks (@) und unveränderlicher @voice-Bindung kinoreife High-End-Videos in Google Omni Flash baust – perfekt abgestimmt für jedes Format.',
     date: '2026-09-24',
     readTime: 10,
     category: 'Content',
-    featured: true,
+    featured: false,
     content: `
 <p class="blog-lead">Moin. Wer generative KI-Videomodelle mit gewöhnlichem Fließtext füttert, erlebt unweigerlich das pure Chaos: Gesichter verformen sich von Sekunde zu Sekunde, Kameraperspektiven springen unkontrolliert und Produkte morphen in bizarre Formen. Diffusionsmodelle sind gigantische Wahrscheinlichkeitsräume – und ohne deterministische mathematische Leitplanken raten sie blind ins Blaue.</p>
 

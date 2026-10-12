@@ -7,6 +7,13 @@
   <language>de-de</language>
   <atom:link href="https://www.kimpress.de/rss.xml" rel="self" type="application/rss+xml" />
   <item>
+    <title>Google ADK: Multi-Agenten-Workflows für DACH-Unternehmen — technische Architektur, Kosten &amp; EU-Compliance</title>
+    <link>https://www.kimpress.de/blog/google-adk-multi-agenten-workflows-dach-unternehmen-2026</link>
+    <guid isPermaLink="true">https://www.kimpress.de/blog/google-adk-multi-agenten-workflows-dach-unternehmen-2026</guid>
+    <description>Das Google Agent Development Kit (ADK) 2.0 erlaubt den Bau hierarchischer KI-Agenten-Flotten mit A2A-Protokoll, graph-basierter Orchestrierung und DSGVO-konformer Datenhaltung in Frankfurt. Dieser Deep-Dive zeigt Architektur, Token-Kosten und lauffähigen Python-Code.</description>
+    <pubDate>Mon, 12 Oct 2026 00:00:00 GMT</pubDate>
+  </item>
+  <item>
     <title>Kinoreife KI-Videos in Hollywood-Qualität: Die geheimen /SLASH und @AT Code-Patterns für Google Omni Flash &amp; FlowLabs</title>
     <link>https://www.kimpress.de/blog/omni-flash-code-patterns-slash-at-prompt-engineering-2026</link>
     <guid isPermaLink="true">https://www.kimpress.de/blog/omni-flash-code-patterns-slash-at-prompt-engineering-2026</guid>
