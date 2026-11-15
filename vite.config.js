@@ -14,6 +14,7 @@ export default defineConfig({
         n8nKi: resolve(__dirname, 'n8n-ki-agentur-deutschland.html'),
         immobilienVideosHamburg: resolve(__dirname, 'immobilien-videos-hamburg.html'),
         kiChatbotKanzlei: resolve(__dirname, 'ki-chatbot-kanzlei.html'),
+        vergleichWerbeagentur: resolve(__dirname, 'ki-agentur-vs-klassische-werbeagentur.html'),
       },
     },
   },
