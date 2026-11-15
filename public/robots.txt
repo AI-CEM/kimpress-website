@@ -22,5 +22,11 @@ Allow: /
 User-agent: Amazonbot
 Allow: /
 
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
 Sitemap: https://www.kimpress.de/sitemap.xml
 

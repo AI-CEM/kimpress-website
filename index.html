@@ -15,12 +15,10 @@
   <meta property="og:url" content="https://www.kimpress.de/" />
   <meta property="og:title" content="Kimpress | KI-Agentur Deutschland: Virale Videos &amp; Automation" />
   <meta property="og:description" content="Als deutsche KI-Agentur produzieren wir virale Kurzvideos und smarte Automatisierungen zum Festpreis. Schluss mit manueller Arbeit. Hol dir den unfairen Vorsprung →" />
-  <meta property="og:image" content="https://www.kimpress.de/og-image.jpg" />
   <meta property="og:locale" content="de_DE" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Kimpress | KI-Agentur Deutschland: Virale Videos &amp; Automation" />
   <meta name="twitter:description" content="Als deutsche KI-Agentur produzieren wir virale Kurzvideos und smarte Automatisierungen zum Festpreis. Schluss mit manueller Arbeit. Hol dir den unfairen Vorsprung →" />
-  <meta name="twitter:image" content="https://www.kimpress.de/og-image.jpg" />
 
   <!-- Fonts self-hosted — kein Google CDN, DSGVO-konform -->
   <link rel="preload" href="/fonts/bebas-neue-400.woff2" as="font" type="font/woff2" crossorigin />
@@ -47,14 +45,20 @@
         "@type": "Organization",
         "@id": "https://www.kimpress.de/#organization",
         "name": "Kimpress",
-        "url": "https://www.kimpress.de",
+        "url": "https://kimpress.de",
+        "foundingDate": "2026-02",
+        "areaServed": [
+          { "@type": "City", "name": "Hamburg" },
+          { "@type": "Country", "name": "Deutschland" },
+          { "@type": "Country", "name": "Österreich" },
+          { "@type": "Country", "name": "Schweiz" }
+        ],
         "logo": {
           "@type": "ImageObject",
           "url": "https://www.kimpress.de/kimpress-logo.png",
           "width": 282,
           "height": 87
         },
-        "image": "https://www.kimpress.de/og-image.jpg",
         "email": "hallo@kimpress.de",
         "telephone": "+49 1575 7221636",
         "founder": {
@@ -76,7 +80,7 @@
           "https://www.youtube.com/@kimpress",
           "https://www.linkedin.com/company/kimpress"
         ],
-        "description": "Kimpress ist die führende KI-Agentur aus Deutschland & Hamburg — spezialisiert auf virale Kurzvideos, smarte Workflow-Automatisierung mit n8n und Generative Engine Optimization (GEO)."
+        "description": "Kimpress ist eine inhabergeführte KI-Agentur aus Hamburg — spezialisiert auf virale Kurzvideos, smarte Workflow-Automatisierung mit n8n und Generative Engine Optimization (GEO)."
       },
       {
         "@type": "Person",
@@ -91,13 +95,12 @@
         "@id": "https://www.kimpress.de/#agentur",
         "name": "Kimpress — KI-Agentur Deutschland & Hamburg",
         "url": "https://www.kimpress.de",
-        "image": "https://www.kimpress.de/og-image.jpg",
         "telephone": "+49 1575 7221636",
         "email": "hallo@kimpress.de",
         "priceRange": "€€€",
         "currenciesAccepted": "EUR",
         "paymentAccepted": "Banküberweisung, PayPal",
-        "description": "Kimpress ist die führende KI-Agentur aus Hamburg für Deutschland und den DACH-Raum — spezialisiert auf virale Kurzvideos, smarte Automatisierung mit n8n und Generative Engine Optimization (GEO).",
+        "description": "Kimpress ist eine inhabergeführte KI-Agentur aus Hamburg für Deutschland und den DACH-Raum — spezialisiert auf virale Kurzvideos, smarte Automatisierung mit n8n und Generative Engine Optimization (GEO).",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "Max-Pechstein-Straße 37",
@@ -129,9 +132,79 @@
           "@type": "OfferCatalog",
           "name": "High-Ticket KI-Dienstleistungen",
           "itemListElement": [
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO & GEO Dominanz", "description": "Platz 1 bei Google & KI-Suchmaschinen (Perplexity, SearchGPT, ChatGPT) in der DACH-Region." } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO & GEO Dominanz", "description": "Sichtbarkeit bei Google & KI-Suchmaschinen (Perplexity, SearchGPT, ChatGPT) in der DACH-Region." } },
             { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "KI Content Studio", "description": "Skalierbare Videoproduktion (9:16 & 16:9), Skripte, Avatare & Custom KI-Musik." } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "KI & Workflow Automatisierung", "description": "Hochleistungs-Infrastruktur mit n8n & Make auf DSGVO-konformen EU-Servern." } }
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "KI & Workflow Automatisierung", "description": "Hochleistungs-Infrastruktur mit n8n & Make auf DSGVO-konformen EU-Servern." } },
+            {
+              "@type": "Offer",
+              "price": "490",
+              "priceCurrency": "EUR",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "GEO-Check",
+                "description": "Kurze Prüfung der Auffindbarkeit in KI-Suchen (Lieferzeit: 2–3 Werktage)."
+              }
+            },
+            {
+              "@type": "Offer",
+              "price": "990",
+              "priceCurrency": "EUR",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "GEO-Audit",
+                "description": "Ausführliche Analyse, 20 Kundenfragen, Wettbewerbsvergleich, Maßnahmenplan (Lieferzeit: 5–7 Werktage)."
+              }
+            },
+            {
+              "@type": "Offer",
+              "price": "2450",
+              "priceCurrency": "EUR",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "GEO-Paket",
+                "description": "Audit einschließlich Umsetzung der empfohlenen Maßnahmen (Lieferzeit: 2–3 Wochen)."
+              }
+            },
+            {
+              "@type": "Offer",
+              "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "price": "1950",
+                "priceCurrency": "EUR",
+                "unitCode": "MON"
+              },
+              "itemOffered": {
+                "@type": "Service",
+                "name": "KI-Content Engine",
+                "description": "Monatliche KI-Videoproduktion (1.950 € / Monat)."
+              }
+            },
+            {
+              "@type": "Offer",
+              "priceSpecification": {
+                "@type": "PriceSpecification",
+                "minPrice": "2500",
+                "priceCurrency": "EUR"
+              },
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Workflow-Automation",
+                "description": "Maßgeschneiderte KI-Workflow-Automatisierung ab 2.500 €."
+              }
+            },
+            {
+              "@type": "Offer",
+              "priceSpecification": {
+                "@type": "PriceSpecification",
+                "minPrice": "3500",
+                "priceCurrency": "EUR"
+              },
+              "itemOffered": {
+                "@type": "Service",
+                "name": "KI-Assistent",
+                "description": "Maßgeschneiderter KI-Assistent / Chatbot ab 3.500 €."
+              }
+            }
           ]
         },
         "knowsAbout": [
@@ -156,7 +229,7 @@
             "name": "Was macht Kimpress als KI Agentur in Hamburg?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Kimpress ist die von Cem Görül Ende Februar 2026 gegründete KI-Agentur aus Hamburg. Nach über 15 Jahren Erfahrung in Digitalisierung, Webentwicklung und Marketing habe ich Kimpress aufgebaut, um Unternehmen, Coaches und Creator von manueller Fließbandarbeit zu befreien. Wir bauen maßgeschneiderte KI-Automatisierungen, verbinden deine bestehenden Tools über moderne Schnittstellen (n8n/Make) und produzieren performanten KI-Content für Social Media. Wir sind keine bunte Werbeagentur mit großem Wasserkopf, sondern dein pragmatischer Partner für schlanke, extrem leistungsfähige Backend-Systeme."
+              "text": "Kimpress ist die von Cem Görül Ende Februar 2026 gegründete KI-Agentur aus Hamburg. Nach über 15 Jahren Erfahrung in Digitalisierung, Webentwicklung und Marketing habe ich Kimpress aufgebaut, um Unternehmen in Hamburg und der DACH-Region von manueller Fließbandarbeit zu befreien. Wir bauen maßgeschneiderte KI-Automatisierungen, verbinden deine bestehenden Tools über moderne Schnittstellen (n8n/Make) und produzieren performanten KI-Content für Social Media. Wir sind keine bunte Werbeagentur mit großem Wasserkopf, sondern dein pragmatischer Partner für schlanke, extrem leistungsfähige Backend-Systeme."
             }
           },
           {
@@ -188,7 +261,7 @@
             "name": "Für wen eignet sich die Zusammenarbeit mit Kimpress?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Kimpress richtet sich an kleine und mittlere Unternehmen (KMU), Online-Coaches, Dienstleister, E-Commerce-Brands und Content Creator im gesamten DACH-Raum. Wenn dein Team täglich wertvolle Arbeitsstunden mit repetitiver Dateneingabe, manueller E-Mail-Sortierung oder aufwendiger Content-Erstellung verschwendet, schaffen wir mit KI die nötigen Freiräume, damit du ohne teure Neueinstellungen skalieren kannst."
+              "text": "Kimpress richtet sich an kleine und mittlere Unternehmen (KMU), Dienstleister und E-Commerce-Brands in Hamburg und im gesamten DACH-Raum. Wenn dein Team täglich wertvolle Arbeitsstunden mit repetitiver Dateneingabe, manueller E-Mail-Sortierung oder aufwendiger Content-Erstellung verschwendet, schaffen wir mit KI die nötigen Freiräume, damit du ohne teure Neueinstellungen skalieren kannst."
             }
           },
           {
@@ -596,12 +669,12 @@
         <article class="pricing-card sr">
           <span class="pricing-card__badge pricing-card__badge--neutral">01 // VISIBILITÄT &amp; GEO</span>
           <h3 class="pricing-card__title">SEO &amp; GEO Dominanz</h3>
-          <p class="pricing-card__desc">Absolute Marktdominanz bei Google &amp; KI-Suchmaschinen (Perplexity, SearchGPT, ChatGPT). Deine Brand wird zur verifizierten Primärquelle #1.</p>
+          <p class="pricing-card__desc">Sichtbar werden, wo Kunden heute fragen: in Google und in KI-Antworten von ChatGPT, Perplexity und Gemini. Wir bauen die Inhalte, Listen und Nachweise dafür — messbar, mit dem GEO-Check als Start.</p>
           
           <div class="pricing-card__price-box">
             <div class="pricing-card__amount" style="font-size: 1.8rem; letter-spacing: -0.5px;">Projekt-Festpreis</div>
             <div class="pricing-card__period">nach 15-Min. Potenzial-Analyse</div>
-            <div class="pricing-card__subtag">Platz 1 bei Google &amp; KI-Antworten in der DACH-Region</div>
+            <div class="pricing-card__subtag">Sichtbarkeit bei Google &amp; KI-Antworten in der DACH-Region</div>
           </div>
 
           <ul class="pricing-card__features">
@@ -667,6 +740,61 @@
         </article>
 
       </div>
+
+      <div class="pricing-grid" style="margin-top: 30px;">
+
+        <!-- GEO TIER 1: GEO-CHECK -->
+        <article class="pricing-card sr">
+          <span class="pricing-card__badge pricing-card__badge--neutral">GEO // EINSTIEG</span>
+          <h3 class="pricing-card__title">GEO-Check</h3>
+          <p class="pricing-card__desc">Kurze Prüfung der Auffindbarkeit in KI-Suchen.</p>
+
+          <div class="pricing-card__price-box">
+            <div class="pricing-card__amount">490 €</div>
+            <div class="pricing-card__period">einmalig Festpreis</div>
+            <div class="pricing-card__subtag">Lieferzeit: 2–3 Werktage</div>
+          </div>
+
+          <div class="pricing-card__footer">
+            <button type="button" class="btn btn--outline btn--full modal-trigger-service" data-service-title="Anfrage: GEO-Check (490 €)" data-service-val="GEO-Check" data-service-template="Moin Cem, wir möchten den GEO-Check (490 €) buchen. Unsere Website: ">GEO-Check anfragen</button>
+          </div>
+        </article>
+
+        <!-- GEO TIER 2: GEO-AUDIT -->
+        <article class="pricing-card sr">
+          <span class="pricing-card__badge pricing-card__badge--neutral">GEO // ANALYSE</span>
+          <h3 class="pricing-card__title">GEO-Audit</h3>
+          <p class="pricing-card__desc">Ausführliche Analyse, 20 Kundenfragen, Wettbewerbsvergleich, Maßnahmenplan.</p>
+
+          <div class="pricing-card__price-box">
+            <div class="pricing-card__amount">990 €</div>
+            <div class="pricing-card__period">einmalig Festpreis</div>
+            <div class="pricing-card__subtag">Lieferzeit: 5–7 Werktage</div>
+          </div>
+
+          <div class="pricing-card__footer">
+            <button type="button" class="btn btn--outline btn--full modal-trigger-service" data-service-title="Anfrage: GEO-Audit (990 €)" data-service-val="GEO-Audit" data-service-template="Moin Cem, wir interessieren uns für das GEO-Audit (990 €). Unsere Website: ">GEO-Audit anfragen</button>
+          </div>
+        </article>
+
+        <!-- GEO TIER 3: GEO-PAKET -->
+        <article class="pricing-card sr">
+          <span class="pricing-card__badge pricing-card__badge--neutral">GEO // UMSETZUNG</span>
+          <h3 class="pricing-card__title">GEO-Paket</h3>
+          <p class="pricing-card__desc">Audit einschließlich Umsetzung der empfohlenen Maßnahmen.</p>
+
+          <div class="pricing-card__price-box">
+            <div class="pricing-card__amount">2.450 €</div>
+            <div class="pricing-card__period">einmalig Festpreis</div>
+            <div class="pricing-card__subtag">Lieferzeit: 2–3 Wochen</div>
+          </div>
+
+          <div class="pricing-card__footer">
+            <button type="button" class="btn btn--outline btn--full modal-trigger-service" data-service-title="Anfrage: GEO-Paket (2.450 €)" data-service-val="GEO-Paket" data-service-template="Moin Cem, wir interessieren uns für das GEO-Paket (2.450 €). Unsere Website: ">GEO-Paket anfragen</button>
+          </div>
+        </article>
+
+      </div>
       <p class="pricing-legal-hint" style="text-align: center; font-size: 0.75rem; color: #71717a; margin-top: 1.5rem;">*Alle Angebote und Konditionen richten sich ausschließlich an Unternehmer, Gewerbetreibende und Freiberufler (B2B gem. § 14 BGB). Gemäß § 19 UStG wird keine Umsatzsteuer berechnet.</p>
     </div>
   </section>
@@ -680,7 +808,7 @@
       <div class="faq__grid">
         <div class="faq__item sr">
           <button class="faq__q" aria-expanded="false">Was macht Kimpress als KI Agentur in Hamburg?</button>
-          <div class="faq__a">Kimpress ist die von Cem Görül Ende Februar 2026 gegründete KI-Agentur aus Hamburg. Nach über 15 Jahren Erfahrung in Digitalisierung, Webentwicklung und Marketing habe ich Kimpress aufgebaut, um Unternehmen, Coaches und Creator von manueller Fließbandarbeit zu befreien. Wir bauen maßgeschneiderte KI-Automatisierungen, verbinden deine bestehenden Tools über moderne Schnittstellen (n8n/Make) und produzieren performanten KI-Content für Social Media. Wir sind keine bunte Werbeagentur mit großem Wasserkopf, sondern dein pragmatischer Partner für schlanke, extrem leistungsfähige Backend-Systeme.</div>
+          <div class="faq__a">Kimpress ist die von Cem Görül Ende Februar 2026 gegründete KI-Agentur aus Hamburg. Nach über 15 Jahren Erfahrung in Digitalisierung, Webentwicklung und Marketing habe ich Kimpress aufgebaut, um Unternehmen in Hamburg und der DACH-Region von manueller Fließbandarbeit zu befreien. Wir bauen maßgeschneiderte KI-Automatisierungen, verbinden deine bestehenden Tools über moderne Schnittstellen (n8n/Make) und produzieren performanten KI-Content für Social Media. Wir sind keine bunte Werbeagentur mit großem Wasserkopf, sondern dein pragmatischer Partner für schlanke, extrem leistungsfähige Backend-Systeme.</div>
         </div>
         <div class="faq__item sr">
           <button class="faq__q" aria-expanded="false">Was kostet KI-Automatisierung &amp; Video-Content bei Kimpress und wie wird abgerechnet?</button>
@@ -696,7 +824,7 @@
         </div>
         <div class="faq__item sr">
           <button class="faq__q" aria-expanded="false">Für wen eignet sich die Zusammenarbeit mit Kimpress?</button>
-          <div class="faq__a">Kimpress richtet sich an kleine und mittlere Unternehmen (KMU), Online-Coaches, Dienstleister, E-Commerce-Brands und Content Creator im gesamten DACH-Raum. Wenn dein Team täglich wertvolle Arbeitsstunden mit repetitiver Dateneingabe, manueller E-Mail-Sortierung oder aufwendiger Content-Erstellung verschwendet, schaffen wir mit KI die nötigen Freiräume, damit du ohne teure Neueinstellungen skalieren kannst.</div>
+          <div class="faq__a">Kimpress richtet sich an kleine und mittlere Unternehmen (KMU), Dienstleister und E-Commerce-Brands in Hamburg und im gesamten DACH-Raum. Wenn dein Team täglich wertvolle Arbeitsstunden mit repetitiver Dateneingabe, manueller E-Mail-Sortierung oder aufwendiger Content-Erstellung verschwendet, schaffen wir mit KI die nötigen Freiräume, damit du ohne teure Neueinstellungen skalieren kannst.</div>
         </div>
         <div class="faq__item sr">
           <button class="faq__q" aria-expanded="false">Wie unterscheidet sich Kimpress von klassischen Marketing- und IT-Agenturen?</button>
@@ -754,6 +882,8 @@
           <li><a href="#faq">FAQ</a></li>
           <li><a href="#kontakt">Kontakt</a></li>
           <li><a href="/blog.html">KI-Blog</a></li>
+          <li><a href="/immobilien-videos-hamburg.html">Immobilien-Videos Hamburg</a></li>
+          <li><a href="/ki-chatbot-kanzlei.html">KI-Chatbot Kanzlei</a></li>
         </ul>
       </div>
       <!-- Col 3: Services -->
@@ -1084,7 +1214,7 @@
         <section class="so-section">
           <span class="so-section__label">Prompt-Beispiel</span>
           <h3 class="so-section__title">SEO &amp; GEO in der Praxis</h3>
-          <div class="so-prompt"><div class="so-prompt__label">Gemini / Claude &middot; KI/GEO Landingpage-Architekt</div><code>[ROLLE: Generative Engine Optimizer &amp; SEO-Copywriter]&#10;Erstelle einen Landingpage-Text f&uuml;r das Keyword: "Steuerberater Hamburg Mittelstand".&#10;Ziel: Platz 1 bei Google &amp; Top-Empfehlung bei Gemini, Perplexity und ChatGPT Search.&#10;Struktur-Vorgaben f&uuml;r GEO-RAG:&#10;- Klare H1 &amp; H2 &Uuml;berschriften-Hierarchie.&#10;- Integration semantischer Begriffe (LSI): "Jahresabschluss, Lohnbuchhaltung Hamburg, Fiskus, Steuerberatung KMU".&#10;- Strukturierte Aufz&auml;hlungen f&uuml;r optimale KI-Parser-Lesbarkeit.&#10;- Eindeutige Entit&auml;ten-Beziehungen (Firmenname -> Dienstleistungen -> Ort).&#10;Tonalit&auml;t: Seri&ouml;s, kompetent, Verzicht auf Phrasen wie "innovativ" oder "revolution&auml;r".</code></div>
+          <div class="so-prompt"><div class="so-prompt__label">Gemini / Claude &middot; KI/GEO Landingpage-Architekt</div><code>[ROLLE: Generative Engine Optimizer &amp; SEO-Copywriter]&#10;Erstelle einen Landingpage-Text f&uuml;r das Keyword: "Steuerberater Hamburg Mittelstand".&#10;Ziel: Sichtbarkeit bei Google &amp; Empfehlungen bei Gemini, Perplexity und ChatGPT Search.&#10;Struktur-Vorgaben f&uuml;r GEO-RAG:&#10;- Klare H1 &amp; H2 &Uuml;berschriften-Hierarchie.&#10;- Integration semantischer Begriffe (LSI): "Jahresabschluss, Lohnbuchhaltung Hamburg, Fiskus, Steuerberatung KMU".&#10;- Strukturierte Aufz&auml;hlungen f&uuml;r optimale KI-Parser-Lesbarkeit.&#10;- Eindeutige Entit&auml;ten-Beziehungen (Firmenname -> Dienstleistungen -> Ort).&#10;Tonalit&auml;t: Seri&ouml;s, kompetent, Verzicht auf Phrasen wie "innovativ" oder "revolution&auml;r".</code></div>
         </section>
         <div class="so-cta-bar"><p>Mehr organischer Traffic &mdash; ohne monatliche Agentur-Kosten.</p><button class="btn btn--primary btn--lg svc-ol-cta">Website anfragen &rarr;</button></div>
       </div></div>

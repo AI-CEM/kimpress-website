@@ -12,6 +12,8 @@ export default defineConfig({
         blogPost: resolve(__dirname, 'blog-post.html'),
         kiContent: resolve(__dirname, 'ki-content-agentur-deutschland.html'),
         n8nKi: resolve(__dirname, 'n8n-ki-agentur-deutschland.html'),
+        immobilienVideosHamburg: resolve(__dirname, 'immobilien-videos-hamburg.html'),
+        kiChatbotKanzlei: resolve(__dirname, 'ki-chatbot-kanzlei.html'),
       },
     },
   },

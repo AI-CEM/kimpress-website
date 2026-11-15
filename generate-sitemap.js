@@ -18,6 +18,8 @@ const generateSitemap = () => {
     { url: '/', priority: '1.0' },
     { url: '/n8n-ki-agentur-deutschland', priority: '0.9' },
     { url: '/ki-content-agentur-deutschland', priority: '0.9' },
+    { url: '/immobilien-videos-hamburg', priority: '0.9' },
+    { url: '/ki-chatbot-kanzlei', priority: '0.9' },
     { url: '/blog', priority: '0.8' }
   ];
 

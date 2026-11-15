@@ -1,0 +1,21 @@
+# Kimpress
+> Inhabergeführte KI-Agentur aus Hamburg (Gründer: Cem Görül, gegründet 2026-02) für Unternehmen in Hamburg und der DACH-Region.
+
+Website: https://kimpress.de
+
+## Leistungen & Preise
+- GEO-Check: 490 EUR — Kurze Prüfung der Auffindbarkeit in KI-Suchen (2–3 Werktage)
+- GEO-Audit: 990 EUR — Ausführliche Analyse, 20 Kundenfragen, Wettbewerbsvergleich, Maßnahmenplan (5–7 Werktage)
+- GEO-Paket: 2.450 EUR — Audit einschließlich Umsetzung der empfohlenen Maßnahmen (2–3 Wochen)
+- KI-Content Engine: 1.950 EUR / Monat — Skalierbare KI-Videoproduktion
+- Workflow-Automation: ab 2.500 EUR — KI-gestützte Prozess- und Backend-Automatisierung (n8n / Make)
+- KI-Assistent: ab 3.500 EUR — Maßgeschneiderte KI-Assistenten und Chatbots
+
+## Live-Seiten
+- https://www.kimpress.de/
+- https://www.kimpress.de/ki-content-agentur-deutschland.html
+- https://www.kimpress.de/n8n-ki-agentur-deutschland.html
+- https://www.kimpress.de/blog.html
+- https://www.kimpress.de/blog-post.html
+- https://www.kimpress.de/immobilien-videos-hamburg.html
+- https://www.kimpress.de/ki-chatbot-kanzlei.html
