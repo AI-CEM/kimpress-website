@@ -93,3 +93,11 @@ Letzte Prüfung: `2026-11-16`
 - Example block audit (`ki-agentur-vs-inhouse.html`): „no verified example yet“ | operator to supply | 2026-11-16
 - Example block audit (`n8n-ki-agentur-deutschland.html`): „no verified example yet“ (`hero-matrix-showcase.jpg`, `demo-avatar-expert.jpg`, `demo-motion-visual.jpg` already showcased without generating image prompts in repo) | operator to supply | 2026-11-16
 - Example block audit (`ki-content-agentur-deutschland.html`): „no verified example yet“ (`hero-matrix-showcase.jpg`, `demo-avatar-expert.jpg`, `demo-motion-visual.jpg` already showcased without generating image prompts in repo) | operator to supply | 2026-11-16
+
+---
+
+## Deploy 10 — ki-content "AI Operator" Cleanup & Homepage GEO Explainer (`#geo-ablauf`)
+
+- ki-content "AI Operator Cem Görül" → "Cem Görül" at 3 spots (JSON-LD description + 2 visible texts) | person title removed, product name untouched | kimpress.de (this site), verified 2026-11-17
+- GEO explainer section added to homepage (#geo-ablauf, after pricing, before reviews) | honest sentence verbatim, no ranking promise | kimpress.de (this site), verified 2026-11-17
+- GEO scope (Audit / Umsetzung / Messung; Schema, llms.txt, Einträge, Messung) | service description, no promised outcome | kimpress.de (this site) / Geoagenturen hub step 1, verified 2026-11-17
