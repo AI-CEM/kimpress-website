@@ -15,6 +15,7 @@ export default defineConfig({
         immobilienVideosHamburg: resolve(__dirname, 'immobilien-videos-hamburg.html'),
         kiChatbotKanzlei: resolve(__dirname, 'ki-chatbot-kanzlei.html'),
         vergleichWerbeagentur: resolve(__dirname, 'ki-agentur-vs-klassische-werbeagentur.html'),
+        vergleichBaukasten: resolve(__dirname, 'massgeschneiderte-ki-systeme-vs-baukasten-tools.html'),
       },
     },
   },
