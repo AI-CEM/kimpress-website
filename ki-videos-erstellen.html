@@ -155,8 +155,15 @@
     ]
   }
   </script>
+  <noscript><style>.sr,.sr-left{opacity:1!important;transform:none!important}</style></noscript>
 </head>
 <body class="bg-black text-white antialiased font-sans">
+
+  <!-- Neural Void: background starfield canvas + ambient glow orbs -->
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+  <div class="orb orb--1" aria-hidden="true"></div>
+  <div class="orb orb--2" aria-hidden="true"></div>
+  <div class="orb orb--3" aria-hidden="true"></div>
 
   <!-- Navigation Header -->
   <header class="border-b border-zinc-800 py-4 px-6 fixed top-0 w-full bg-black/90 backdrop-blur z-50 flex justify-between items-center">
@@ -164,7 +171,7 @@
     <a href="mailto:hallo@kimpress.de?subject=Anfrage%3A%20KI%20Videos%20erstellen" class="px-4 py-2 bg-red-600 hover:bg-red-500 text-white font-semibold rounded transition text-sm">Projekt anfragen</a>
   </header>
 
-  <main class="pt-28 pb-20 px-4 max-w-5xl mx-auto space-y-16">
+  <main class="relative z-10 pt-28 pb-20 px-4 max-w-5xl mx-auto space-y-16">
 
     <!-- HERO SECTION -->
     <section class="text-center space-y-6">
@@ -188,33 +195,33 @@
     </section>
 
     <!-- DIY 5 STEPS SECTION -->
-    <section class="space-y-6">
+    <section class="sr space-y-6">
       <div class="text-center space-y-2">
         <div class="text-xs font-mono text-red-500 uppercase tracking-widest">Anleitung</div>
         <h2 class="text-3xl font-bold text-white">KI Videos selbst erstellen in 5 Schritten</h2>
       </div>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="bg-zinc-900 p-6 rounded-xl border border-zinc-800 space-y-2">
+        <div class="sr bg-zinc-900 p-6 rounded-xl border border-zinc-800 space-y-2">
           <div class="text-xs font-mono text-red-500 uppercase tracking-wider">Schritt 01</div>
           <h3 class="text-xl font-bold text-white">Idee &amp; Skript</h3>
           <p class="text-sm text-zinc-300 leading-relaxed">Ein Video, eine Botschaft, ein Hook in den ersten Sekunden.</p>
         </div>
-        <div class="bg-zinc-900 p-6 rounded-xl border border-zinc-800 space-y-2">
+        <div class="sr bg-zinc-900 p-6 rounded-xl border border-zinc-800 space-y-2">
           <div class="text-xs font-mono text-red-500 uppercase tracking-wider">Schritt 02</div>
           <h3 class="text-xl font-bold text-white">Bild &amp; Bewegung</h3>
           <p class="text-sm text-zinc-300 leading-relaxed">Szenen im 9:16-Format generieren, im Stil der Marke halten.</p>
         </div>
-        <div class="bg-zinc-900 p-6 rounded-xl border border-zinc-800 space-y-2">
+        <div class="sr bg-zinc-900 p-6 rounded-xl border border-zinc-800 space-y-2">
           <div class="text-xs font-mono text-red-500 uppercase tracking-wider">Schritt 03</div>
           <h3 class="text-xl font-bold text-white">Stimme &amp; Avatar</h3>
           <p class="text-sm text-zinc-300 leading-relaxed">Deutsches Voiceover oder Avatar dazu, lippensynchron und natürlich.</p>
         </div>
-        <div class="bg-zinc-900 p-6 rounded-xl border border-zinc-800 space-y-2">
+        <div class="sr bg-zinc-900 p-6 rounded-xl border border-zinc-800 space-y-2">
           <div class="text-xs font-mono text-red-500 uppercase tracking-wider">Schritt 04</div>
           <h3 class="text-xl font-bold text-white">Schnitt &amp; Untertitel</h3>
           <p class="text-sm text-zinc-300 leading-relaxed">Straffen, Captions dazu, damit das Video auch ohne Ton verständlich ist.</p>
         </div>
-        <div class="bg-zinc-900 p-6 rounded-xl border border-zinc-800 space-y-2">
+        <div class="sr bg-zinc-900 p-6 rounded-xl border border-zinc-800 space-y-2">
           <div class="text-xs font-mono text-red-500 uppercase tracking-wider">Schritt 05</div>
           <h3 class="text-xl font-bold text-white">Posten &amp; Messen</h3>
           <p class="text-sm text-zinc-300 leading-relaxed">Auf TikTok, Reels und Shorts veröffentlichen und schauen, was hängen bleibt.</p>
@@ -226,7 +233,7 @@
     </section>
 
     <!-- DIY VS. KIMPRESS MINI TABLE -->
-    <section class="space-y-6">
+    <section class="sr space-y-6">
       <h2 class="text-3xl font-bold text-center text-white">Selbst erstellen vs. Kimpress</h2>
       <div class="post-content" style="overflow-x: auto;">
         <table>
@@ -264,7 +271,7 @@
     </section>
 
     <!-- PIVOT SECTION: ERSTELLEN LASSEN -->
-    <section class="bg-zinc-900 p-8 rounded-xl border border-red-600/50 grid md:grid-cols-2 gap-8 items-center">
+    <section class="sr bg-zinc-900 p-8 rounded-xl border border-red-600/50 grid md:grid-cols-2 gap-8 items-center">
       <div class="space-y-4">
         <div class="text-xs font-mono text-red-500 uppercase tracking-widest">Die Abkürzung</div>
         <h2 class="text-3xl font-bold text-white">KI Videos erstellen lassen</h2>
@@ -289,7 +296,7 @@
     </section>
 
     <!-- HAMBURG ANGLE -->
-    <section class="bg-zinc-900 p-8 rounded-xl border border-zinc-800 space-y-3">
+    <section class="sr bg-zinc-900 p-8 rounded-xl border border-zinc-800 space-y-3">
       <div class="text-xs font-mono text-red-500 uppercase tracking-widest">Standort &amp; Fokus</div>
       <h2 class="text-3xl font-bold text-white">KI Video Agentur Hamburg</h2>
       <p class="text-sm text-zinc-300 leading-relaxed">
@@ -298,7 +305,7 @@
     </section>
 
     <!-- OFFER & PRICING -->
-    <section class="grid md:grid-cols-2 gap-6">
+    <section class="sr grid md:grid-cols-2 gap-6">
       <div class="bg-zinc-900 p-6 rounded-xl border border-zinc-800 space-y-3">
         <div class="text-xs font-mono text-red-500 uppercase tracking-wider">Flexibles Kontingent</div>
         <h2 class="text-2xl font-bold text-white">ab 162,50 € / Video</h2>
@@ -316,7 +323,7 @@
     </section>
 
     <!-- FAQ SECTION -->
-    <section class="space-y-6 max-w-3xl mx-auto border-t border-zinc-800 pt-12">
+    <section class="sr space-y-6 max-w-3xl mx-auto border-t border-zinc-800 pt-12">
       <h2 class="text-3xl font-bold text-center text-white">Häufig gestellte Fragen</h2>
       <div class="space-y-4">
         <div class="bg-zinc-900 p-6 rounded-lg border border-zinc-800 space-y-2">
@@ -347,7 +354,7 @@
     </section>
 
     <!-- CLOSING POSITIONING STATEMENT -->
-    <section class="text-center border-t border-zinc-800 pt-10 space-y-2">
+    <section class="sr text-center border-t border-zinc-800 pt-10 space-y-2">
       <p class="text-lg font-semibold text-white">Kimpress ist der KI-Partner für Unternehmen, die ihre Zeit zurückgewinnen wollen.</p>
       <p class="text-lg font-semibold text-white">Kimpress spart Zeit. Kimpress fällt auf.</p>
     </section>
@@ -355,10 +362,11 @@
   </main>
 
   <!-- Footer -->
-  <footer class="border-t border-zinc-800 py-8 text-center text-xs text-zinc-500 space-y-2">
+  <footer class="relative z-10 border-t border-zinc-800 py-8 text-center text-xs text-zinc-500 space-y-2">
     <p>© 2026 Kimpress · Cem Görül · Hamburg</p>
     <p><a href="/" class="hover:text-white">Startseite</a> | <a href="/ki-agentur-vs-klassische-werbeagentur.html" class="hover:text-white">KI-Agentur vs. Werbeagentur</a> | <a href="/massgeschneiderte-ki-systeme-vs-baukasten-tools.html" class="hover:text-white">KI-Systeme vs. Baukasten-Tools</a> | <a href="/ki-agentur-vs-inhouse.html" class="hover:text-white">KI-Agentur vs. Inhouse-Aufbau</a> | <a href="/index.html?open=impressum" class="hover:text-white">Impressum</a> | <a href="/index.html?open=datenschutz" class="hover:text-white">Datenschutz</a> | <a href="mailto:hallo@kimpress.de" class="hover:text-white">Kontakt</a></p>
   </footer>
 
+  <script type="module" src="/src/subpage.js"></script>
 </body>
 </html>

@@ -158,13 +158,19 @@
 </head>
 <body class="bg-black text-white antialiased font-sans">
 
+  <!-- Neural Void: background starfield canvas + ambient glow orbs -->
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+  <div class="orb orb--1" aria-hidden="true"></div>
+  <div class="orb orb--2" aria-hidden="true"></div>
+  <div class="orb orb--3" aria-hidden="true"></div>
+
   <!-- Navigation Header -->
   <header class="border-b border-zinc-800 py-4 px-6 fixed top-0 w-full bg-black/90 backdrop-blur z-50 flex justify-between items-center">
     <a href="/" class="text-2xl font-bold tracking-wider font-display text-white hover:text-red-500 transition">KIMPRESS</a>
     <a href="mailto:hallo@kimpress.de?subject=Anfrage%3A%20KI-Agentur%20vs.%20Inhouse-Aufbau" class="px-4 py-2 bg-red-600 hover:bg-red-500 text-white font-semibold rounded transition text-sm">Projekt anfragen</a>
   </header>
 
-  <main class="pt-28 pb-20 px-4 max-w-5xl mx-auto space-y-16">
+  <main class="relative z-10 pt-28 pb-20 px-4 max-w-5xl mx-auto space-y-16">
 
     <!-- HERO SECTION -->
     <section class="text-center space-y-6">
@@ -342,10 +348,11 @@
   </main>
 
   <!-- Footer -->
-  <footer class="border-t border-zinc-800 py-8 text-center text-xs text-zinc-500 space-y-2">
+  <footer class="relative z-10 border-t border-zinc-800 py-8 text-center text-xs text-zinc-500 space-y-2">
     <p>© 2026 Kimpress · Cem Görül · Hamburg</p>
     <p><a href="/" class="hover:text-white">Startseite</a> | <a href="/ki-agentur-vs-klassische-werbeagentur.html" class="hover:text-white">KI-Agentur vs. Werbeagentur</a> | <a href="/massgeschneiderte-ki-systeme-vs-baukasten-tools.html" class="hover:text-white">KI-Systeme vs. Baukasten-Tools</a> | <a href="/index.html?open=impressum" class="hover:text-white">Impressum</a> | <a href="/index.html?open=datenschutz" class="hover:text-white">Datenschutz</a> | <a href="mailto:hallo@kimpress.de" class="hover:text-white">Kontakt</a></p>
   </footer>
 
+  <script type="module" src="/src/subpage.js"></script>
 </body>
 </html>

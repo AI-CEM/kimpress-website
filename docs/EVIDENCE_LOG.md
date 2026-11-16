@@ -78,3 +78,18 @@ Letzte Prüfung: `2026-11-16`
 - Zeitaufwand (Selbst vs. Kimpress): eigene Arbeitszeit vs. erste KI-Videos in wenigen Werktagen | In der Regel | "In der Regel"; category statement / kimpress.de (this site), verified 2026-11-16
 - Qualität & Konsistenz (Selbst vs. Kimpress): schwankt je nach Zeit und Übung vs. 12 Videos pro Monat in der Content Engine | category statement | kimpress.de (this site), verified 2026-11-16
 - Skalierung (Selbst vs. Kimpress): mehr eigene Stunden vs. flexibles Kontingent ab 162,50 €/Video | In der Regel | "in der Regel"; category statement / kimpress.de (this site), verified 2026-11-16
+
+---
+
+## Deploy 9 — Subpage Design System, Scroll Reveal, Kanzlei Cleanup & Example Audit
+
+- Design source: Neural Void starfield + orbs from homepage (`index.html` L292-296, `src/main.js` L1-89, `src/style.css` L80-170) | existing site system, reused via `src/subpage.js` | kimpress.de (this site), verified 2026-11-16
+- Scroll animation source: lightweight scroll reveal from homepage (`src/main.js` L543-562, `src/style.css` L2253-2275, `.sr` 700ms fade/slide + `<noscript>` fallback) | existing site system, reused on `ki-videos-erstellen` + `ki-chatbot-kanzlei` only | kimpress.de (this site), verified 2026-11-16
+- Kanzlei Projektstatus deletion: „Erstes Kanzlei-Projekt in Vorbereitung — Ausproduktion nach Hardware-Beschaffung.“ removed with no replacement | removed wrong hardware-copy | verified 2026-11-16
+- Example block audit (`ki-chatbot-kanzlei.html`): „no verified example yet“ (no prompt-to-image pair proven in repo) | operator to supply | 2026-11-16
+- Example block audit (`ki-videos-erstellen.html`): „no verified example yet“ (`hero-matrix-showcase.jpg` & `demo-motion-visual.jpg` exist in `public/images/showcase/`, no verified generating prompt in repo) | operator to supply | 2026-11-16
+- Example block audit (`ki-agentur-vs-klassische-werbeagentur.html`): „no verified example yet“ | operator to supply | 2026-11-16
+- Example block audit (`massgeschneiderte-ki-systeme-vs-baukasten-tools.html`): „no verified example yet“ | operator to supply | 2026-11-16
+- Example block audit (`ki-agentur-vs-inhouse.html`): „no verified example yet“ | operator to supply | 2026-11-16
+- Example block audit (`n8n-ki-agentur-deutschland.html`): „no verified example yet“ (`hero-matrix-showcase.jpg`, `demo-avatar-expert.jpg`, `demo-motion-visual.jpg` already showcased without generating image prompts in repo) | operator to supply | 2026-11-16
+- Example block audit (`ki-content-agentur-deutschland.html`): „no verified example yet“ (`hero-matrix-showcase.jpg`, `demo-avatar-expert.jpg`, `demo-motion-visual.jpg` already showcased without generating image prompts in repo) | operator to supply | 2026-11-16

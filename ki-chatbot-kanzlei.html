@@ -95,8 +95,15 @@
     ]
   }
   </script>
+  <noscript><style>.sr,.sr-left{opacity:1!important;transform:none!important}</style></noscript>
 </head>
 <body class="bg-black text-white antialiased font-sans">
+
+  <!-- Neural Void: background starfield canvas + ambient glow orbs -->
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+  <div class="orb orb--1" aria-hidden="true"></div>
+  <div class="orb orb--2" aria-hidden="true"></div>
+  <div class="orb orb--3" aria-hidden="true"></div>
 
   <!-- Navigation Header -->
   <header class="border-b border-zinc-800 py-4 px-6 fixed top-0 w-full bg-black/90 backdrop-blur z-50 flex justify-between items-center">
@@ -104,7 +111,7 @@
     <a href="mailto:hallo@kimpress.de?subject=Anfrage%3A%20KI-Chatbot%20f%C3%BCr%20Steuerberater%20%26%20Kanzleien" class="px-4 py-2 bg-red-600 hover:bg-red-500 text-white font-semibold rounded transition text-sm">Projekt anfragen</a>
   </header>
 
-  <main class="pt-28 pb-20 px-4 max-w-5xl mx-auto space-y-16">
+  <main class="relative z-10 pt-28 pb-20 px-4 max-w-5xl mx-auto space-y-16">
 
     <!-- HERO SECTION -->
     <section class="text-center space-y-6">
@@ -125,7 +132,7 @@
     </section>
 
     <!-- OFFER & PRICING -->
-    <section class="grid md:grid-cols-2 gap-6">
+    <section class="sr grid md:grid-cols-2 gap-6">
       <div class="bg-zinc-900 p-6 rounded-xl border border-red-600/50 space-y-3">
         <div class="text-xs font-mono text-red-500 uppercase tracking-wider">KI-Assistent</div>
         <h2 class="text-2xl font-bold text-white">ab 3.500 € (Festpreis)</h2>
@@ -142,14 +149,8 @@
       </div>
     </section>
 
-    <!-- HONEST PROOF STATUS -->
-    <section class="bg-zinc-900 p-6 rounded-xl border border-zinc-800 space-y-2 text-center">
-      <div class="text-xs font-mono text-zinc-400 uppercase tracking-wider">Projektstatus</div>
-      <p class="text-base text-white font-semibold">Erstes Kanzlei-Projekt in Vorbereitung — Ausproduktion nach Hardware-Beschaffung.</p>
-    </section>
-
     <!-- FAQ SECTION -->
-    <section class="space-y-6 max-w-3xl mx-auto border-t border-zinc-800 pt-12">
+    <section class="sr space-y-6 max-w-3xl mx-auto border-t border-zinc-800 pt-12">
       <h2 class="text-3xl font-bold text-center text-white">Häufig gestellte Fragen</h2>
       <div class="space-y-4">
         <div class="bg-zinc-900 p-6 rounded-lg border border-zinc-800 space-y-2">
@@ -170,10 +171,11 @@
   </main>
 
   <!-- Footer -->
-  <footer class="border-t border-zinc-800 py-8 text-center text-xs text-zinc-500 space-y-2">
+  <footer class="relative z-10 border-t border-zinc-800 py-8 text-center text-xs text-zinc-500 space-y-2">
     <p>© 2026 Kimpress · Cem Görül · Hamburg</p>
     <p><a href="/" class="hover:text-white">Startseite</a> | <a href="/index.html?open=impressum" class="hover:text-white">Impressum</a> | <a href="/index.html?open=datenschutz" class="hover:text-white">Datenschutz</a> | <a href="mailto:hallo@kimpress.de" class="hover:text-white">Kontakt</a></p>
   </footer>
 
+  <script type="module" src="/src/subpage.js"></script>
 </body>
 </html>

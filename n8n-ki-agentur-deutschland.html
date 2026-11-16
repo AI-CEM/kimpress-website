@@ -90,13 +90,19 @@
 </head>
 <body class="bg-black text-white antialiased font-sans">
   
+  <!-- Neural Void: background starfield canvas + ambient glow orbs -->
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+  <div class="orb orb--1" aria-hidden="true"></div>
+  <div class="orb orb--2" aria-hidden="true"></div>
+  <div class="orb orb--3" aria-hidden="true"></div>
+
   <!-- Navigation Header -->
   <header class="border-b border-zinc-800 py-4 px-6 fixed top-0 w-full bg-black/90 backdrop-blur z-50 flex justify-between items-center">
     <a href="/" class="text-2xl font-bold tracking-wider font-display text-white hover:text-emerald-400 transition">KIMPRESS</a>
     <a href="mailto:hallo@kimpress.de?subject=15-Minuten%20Prozess-Analyse" class="px-4 py-2 bg-emerald-500 hover:bg-emerald-400 text-black font-semibold rounded transition text-sm">15-Min-Analyse (0 €)</a>
   </header>
 
-  <main class="pt-28 pb-20 px-4 max-w-5xl mx-auto space-y-20">
+  <main class="relative z-10 pt-28 pb-20 px-4 max-w-5xl mx-auto space-y-20">
 
     <!-- HERO SECTION -->
     <section class="text-center space-y-6">
@@ -364,7 +370,7 @@
   </main>
 
   <!-- Footer -->
-  <footer class="border-t border-zinc-800 py-8 text-center text-xs text-zinc-500 space-y-2">
+  <footer class="relative z-10 border-t border-zinc-800 py-8 text-center text-xs text-zinc-500 space-y-2">
     <p>© 2026 Kimpress KI Agentur. Alle Rechte vorbehalten.</p>
     <p><a href="/" class="hover:text-emerald-400">Startseite</a> | <a href="/ki-content-agentur-deutschland.html" class="hover:text-purple-400">KI Content Agentur</a> | <a href="/index.html?open=impressum" class="hover:text-emerald-400">Impressum</a> | <a href="/index.html?open=datenschutz" class="hover:text-emerald-400">Datenschutz</a> | <a href="mailto:hallo@kimpress.de" class="hover:text-emerald-400">Kontakt</a></p>
   </footer>
@@ -416,5 +422,6 @@
     }
   </script>
 
+  <script type="module" src="/src/subpage.js"></script>
 </body>
 </html>
