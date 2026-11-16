@@ -16,6 +16,7 @@ export default defineConfig({
         kiChatbotKanzlei: resolve(__dirname, 'ki-chatbot-kanzlei.html'),
         vergleichWerbeagentur: resolve(__dirname, 'ki-agentur-vs-klassische-werbeagentur.html'),
         vergleichBaukasten: resolve(__dirname, 'massgeschneiderte-ki-systeme-vs-baukasten-tools.html'),
+        vergleichInhouse: resolve(__dirname, 'ki-agentur-vs-inhouse.html'),
       },
     },
   },

@@ -1,23 +1,27 @@
 # Kimpress
-> Inhabergeführte KI-Agentur aus Hamburg (Gründer: Cem Görül, gegründet 2026-02) für Unternehmen in Hamburg und der DACH-Region.
 
-Website: https://kimpress.de
+> Inhabergeführte KI-Agentur aus Hamburg (Gründer: Cem Görül, gegründet 2026-02) für KMU, Dienstleister und E-Commerce-Brands im DACH-Raum: Workflow-Automatisierung, KI-Assistenten & Chatbots, KI-Videoproduktion sowie Generative Engine Optimization (GEO) zum transparenten B2B-Festpreis.
 
-## Leistungen & Preise
-- GEO-Check: Preis auf Anfrage — Kurze Prüfung der Auffindbarkeit in KI-Suchen (2–3 Werktage)
-- GEO-Audit: Preis auf Anfrage — Ausführliche Analyse, 20 Kundenfragen, Wettbewerbsvergleich, Maßnahmenplan (5–7 Werktage)
-- GEO-Paket: Preis auf Anfrage — Audit einschließlich Umsetzung der empfohlenen Maßnahmen (2–3 Wochen)
-- KI-Content Engine: 1.950 EUR / Monat — Skalierbare KI-Videoproduktion
-- Workflow-Automation: ab 2.500 EUR — KI-gestützte Prozess- und Backend-Automatisierung (n8n / Make)
-- KI-Assistent: ab 3.500 EUR — Maßgeschneiderte KI-Assistenten und Chatbots
+## Hauptseiten
+- [Startseite](https://www.kimpress.de/): Leistungsübersicht, Festpreismodelle, Google-Bewertungen und FAQ
+- [Workflow-Automatisierung](https://www.kimpress.de/n8n-ki-agentur-deutschland): Schlüsselfertige Workflows und autonome Agenten ab 2.500 € Festpreis
+- [KI Content Studio](https://www.kimpress.de/ki-content-agentur-deutschland): 9:16 KI-Videos für KMU, Dienstleister & B2B-Marken (1.950 €/Monat bzw. ab 162,50 €/Video)
+- [KI-Chatbot Kanzlei](https://www.kimpress.de/ki-chatbot-kanzlei): Maßgeschneiderte KI-Assistenten und Chatbots für Kanzleien ab 3.500 € Festpreis
+- [Immobilien-Videos Hamburg](https://www.kimpress.de/immobilien-videos-hamburg): Formatbeschreibung für Immobilien-Videorundgänge in Hamburg
+- [KI-Agentur vs. klassische Werbeagentur](https://www.kimpress.de/ki-agentur-vs-klassische-werbeagentur): Sachlicher Modellvergleich für B2B-Unternehmen
+- [Maßgeschneiderte KI-Systeme vs. Baukasten-Tools](https://www.kimpress.de/massgeschneiderte-ki-systeme-vs-baukasten-tools): Vergleich zwischen Systemen nach Maß und No-Code-Baukästen
+- [KI-Agentur vs. Inhouse-Aufbau](https://www.kimpress.de/ki-agentur-vs-inhouse): Kosten, Startzeit, Wartung und Rechenbeispiel vs. eigene Fachkraft
+- [KI-Blog](https://www.kimpress.de/blog): Fachartikel zu Prozessautomatisierung, KI-Video und GEO
 
-## Live-Seiten
-- https://www.kimpress.de/
-- https://www.kimpress.de/ki-content-agentur-deutschland.html
-- https://www.kimpress.de/n8n-ki-agentur-deutschland.html
-- https://www.kimpress.de/blog.html
-- https://www.kimpress.de/blog-post.html
-- https://www.kimpress.de/immobilien-videos-hamburg.html
-- https://www.kimpress.de/ki-chatbot-kanzlei.html
-- https://www.kimpress.de/ki-agentur-vs-klassische-werbeagentur.html
-- https://www.kimpress.de/massgeschneiderte-ki-systeme-vs-baukasten-tools.html
+## Preise (B2B gem. § 14 BGB, gem. § 19 UStG ohne USt.)
+- Workflow-Automatisierung: ab 2.500 € (Festpreis)
+- KI-Assistent: ab 3.500 € (Festpreis)
+- Content Engine: 1.950 €/Monat für 12 Videos
+- Einzelvideo (flexibles Kontingent): ab 162,50 €
+- GEO (Check / Audit / Paket): Preis auf Anfrage, je nach Projekt
+
+## Kontakt & Verifizierte Profile
+- Kontakt: Cem Görül · Max-Pechstein-Straße 37, 22115 Hamburg · hallo@kimpress.de · +49 1575 7221636
+- [Instagram (@kimpress.de)](https://www.instagram.com/kimpress.de): Offizielles Kimpress-Profil (HTTP 200)
+- [TikTok (@kimpress.de)](https://www.tiktok.com/@kimpress.de): Offizielles Kimpress-Profil (HTTP 200)
+- [TikTok (@kimpressed)](https://www.tiktok.com/@kimpressed): Bestätigter Kimpress-Kanal (HTTP 200)

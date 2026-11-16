@@ -22,6 +22,7 @@ const generateSitemap = () => {
     { url: '/ki-chatbot-kanzlei', priority: '0.9' },
     { url: '/ki-agentur-vs-klassische-werbeagentur', priority: '0.9' },
     { url: '/massgeschneiderte-ki-systeme-vs-baukasten-tools', priority: '0.9' },
+    { url: '/ki-agentur-vs-inhouse', priority: '0.9' },
     { url: '/blog', priority: '0.8' }
   ];
 

@@ -42,11 +42,14 @@
         "publisher": { "@id": "https://www.kimpress.de/#organization" }
       },
       {
-        "@type": "Organization",
+        "@type": ["Organization", "LocalBusiness"],
         "@id": "https://www.kimpress.de/#organization",
         "name": "Kimpress",
-        "url": "https://kimpress.de",
+        "url": "https://www.kimpress.de",
         "foundingDate": "2026-02",
+        "priceRange": "€€€",
+        "currenciesAccepted": "EUR",
+        "paymentAccepted": "Banküberweisung, PayPal",
         "areaServed": [
           { "@type": "City", "name": "Hamburg" },
           { "@type": "Country", "name": "Deutschland" },
@@ -61,46 +64,7 @@
         },
         "email": "hallo@kimpress.de",
         "telephone": "+49 1575 7221636",
-        "founder": {
-          "@type": "Person",
-          "@id": "https://www.kimpress.de/#founder",
-          "name": "Cem Görül",
-          "jobTitle": "Founder & AI Operator"
-        },
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Max-Pechstein-Straße 37",
-          "addressLocality": "Hamburg",
-          "postalCode": "22115",
-          "addressCountry": "DE"
-        },
-        "sameAs": [
-          "https://www.instagram.com/kimpress.de",
-          "https://www.tiktok.com/@kimpress.de",
-          "https://www.youtube.com/@kimpress",
-          "https://www.linkedin.com/company/kimpress"
-        ],
-        "description": "Kimpress ist eine inhabergeführte KI-Agentur aus Hamburg — spezialisiert auf virale Kurzvideos, smarte Workflow-Automatisierung mit n8n und Generative Engine Optimization (GEO)."
-      },
-      {
-        "@type": "Person",
-        "@id": "https://www.kimpress.de/#founder",
-        "name": "Cem Görül",
-        "jobTitle": "Founder & AI Operator",
-        "worksFor": { "@id": "https://www.kimpress.de/#organization" },
-        "knowsAbout": ["KI-Agentur Deutschland", "Virale Kurzvideos", "KI Automatisierung", "n8n Workflows", "GEO Optimization", "KI Content Production"]
-      },
-      {
-        "@type": ["ProfessionalService", "LocalBusiness"],
-        "@id": "https://www.kimpress.de/#agentur",
-        "name": "Kimpress — KI-Agentur Deutschland & Hamburg",
-        "url": "https://www.kimpress.de",
-        "telephone": "+49 1575 7221636",
-        "email": "hallo@kimpress.de",
-        "priceRange": "€€€",
-        "currenciesAccepted": "EUR",
-        "paymentAccepted": "Banküberweisung, PayPal",
-        "description": "Kimpress ist eine inhabergeführte KI-Agentur aus Hamburg für Deutschland und den DACH-Raum — spezialisiert auf virale Kurzvideos, smarte Automatisierung mit n8n und Generative Engine Optimization (GEO).",
+        "founder": { "@id": "https://www.kimpress.de/#person-cem-goeruel" },
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "Max-Pechstein-Straße 37",
@@ -117,101 +81,152 @@
         "openingHoursSpecification": [
           {
             "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
             "opens": "09:00",
             "closes": "18:00"
           }
         ],
-        "areaServed": [
-          { "@type": "Country", "name": "Deutschland" },
-          { "@type": "Country", "name": "Österreich" },
-          { "@type": "Country", "name": "Schweiz" },
-          { "@type": "City", "name": "Hamburg" }
-        ],
-        "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "name": "High-Ticket KI-Dienstleistungen",
-          "itemListElement": [
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO & GEO Dominanz", "description": "Sichtbarkeit bei Google & KI-Suchmaschinen (Perplexity, SearchGPT, ChatGPT) in der DACH-Region." } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "KI Content Studio", "description": "Skalierbare Videoproduktion (9:16 & 16:9), Skripte, Avatare & Custom KI-Musik." } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "KI & Workflow Automatisierung", "description": "Hochleistungs-Infrastruktur mit n8n & Make auf DSGVO-konformen EU-Servern." } },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "GEO-Check",
-                "description": "Kurze Prüfung der Auffindbarkeit in KI-Suchen (Lieferzeit: 2–3 Werktage)."
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "GEO-Audit",
-                "description": "Ausführliche Analyse, 20 Kundenfragen, Wettbewerbsvergleich, Maßnahmenplan (Lieferzeit: 5–7 Werktage)."
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "GEO-Paket",
-                "description": "Audit einschließlich Umsetzung der empfohlenen Maßnahmen (Lieferzeit: 2–3 Wochen)."
-              }
-            },
-            {
-              "@type": "Offer",
-              "priceSpecification": {
-                "@type": "UnitPriceSpecification",
-                "price": "1950",
-                "priceCurrency": "EUR",
-                "unitCode": "MON"
-              },
-              "itemOffered": {
-                "@type": "Service",
-                "name": "KI-Content Engine",
-                "description": "Monatliche KI-Videoproduktion (1.950 € / Monat)."
-              }
-            },
-            {
-              "@type": "Offer",
-              "priceSpecification": {
-                "@type": "PriceSpecification",
-                "minPrice": "2500",
-                "priceCurrency": "EUR"
-              },
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Workflow-Automation",
-                "description": "Maßgeschneiderte KI-Workflow-Automatisierung ab 2.500 €."
-              }
-            },
-            {
-              "@type": "Offer",
-              "priceSpecification": {
-                "@type": "PriceSpecification",
-                "minPrice": "3500",
-                "priceCurrency": "EUR"
-              },
-              "itemOffered": {
-                "@type": "Service",
-                "name": "KI-Assistent",
-                "description": "Maßgeschneiderter KI-Assistent / Chatbot ab 3.500 €."
-              }
-            }
-          ]
-        },
         "knowsAbout": [
-          "KI Agentur Deutschland", "KI Content Agentur", "KI Agentur Hamburg",
-          "Künstliche Intelligenz Marketing", "KI-Workflow-Automatisierung",
-          "Generative Engine Optimization", "n8n Make Automatisierung",
-          "KI-Videos TikTok Reels YouTube", "Custom AI Agenten RAG"
+          "KI-Automatisierung",
+          "KI-Chatbots",
+          "KI-Videos",
+          "Generative Engine Optimization",
+          "Local SEO",
+          "Workflow-Automatisierung",
+          "Prozessautomatisierung",
+          "KI-Content"
         ],
         "sameAs": [
           "https://www.instagram.com/kimpress.de",
           "https://www.tiktok.com/@kimpress.de",
-          "https://www.youtube.com/@kimpress",
-          "https://www.linkedin.com/company/kimpress"
+          "https://www.tiktok.com/@kimpressed"
+        ],
+        "description": "Kimpress ist eine inhabergeführte KI-Agentur aus Hamburg — spezialisiert auf Prozessautomatisierung, maßgeschneiderte KI-Chatbots, KI-Videos und Generative Engine Optimization (GEO)."
+      },
+      {
+        "@type": "Person",
+        "@id": "https://www.kimpress.de/#person-cem-goeruel",
+        "name": "Cem Görül",
+        "jobTitle": "Inhaber & KI-Operator",
+        "worksFor": { "@id": "https://www.kimpress.de/#organization" },
+        "knowsAbout": [
+          "KI-Automatisierung",
+          "KI-Chatbots",
+          "KI-Videos",
+          "Generative Engine Optimization",
+          "Local SEO",
+          "Workflow-Automatisierung",
+          "Prozessautomatisierung",
+          "KI-Content"
+        ]
+      },
+      {
+        "@type": "Service",
+        "@id": "https://www.kimpress.de/#service-automation",
+        "name": "Workflow-Automatisierung",
+        "serviceType": "KI-Workflow-Automatisierung & Integrationen",
+        "provider": { "@id": "https://www.kimpress.de/#organization" },
+        "areaServed": [
+          { "@type": "City", "name": "Hamburg" },
+          { "@type": "Country", "name": "Deutschland" },
+          { "@type": "Country", "name": "Österreich" },
+          { "@type": "Country", "name": "Schweiz" }
+        ],
+        "description": "Maßgeschneiderte Workflow-Automatisierung mit n8n & Make auf DSGVO-konformen EU-Servern ab 2.500 € Festpreis.",
+        "offers": {
+          "@type": "Offer",
+          "name": "Workflow-Automatisierung (ab 2.500 € Festpreis)",
+          "price": "2500",
+          "priceCurrency": "EUR",
+          "description": "Maßgeschneiderte KI-Workflow-Automatisierung ab 2.500 € Festpreis."
+        }
+      },
+      {
+        "@type": "Service",
+        "@id": "https://www.kimpress.de/#service-chatbot",
+        "name": "KI-Assistent & Chatbots",
+        "serviceType": "KI-Chatbots & KI-Assistenten",
+        "provider": { "@id": "https://www.kimpress.de/#organization" },
+        "areaServed": [
+          { "@type": "City", "name": "Hamburg" },
+          { "@type": "Country", "name": "Deutschland" },
+          { "@type": "Country", "name": "Österreich" },
+          { "@type": "Country", "name": "Schweiz" }
+        ],
+        "description": "Maßgeschneiderte KI-Assistenten und Chatbots für Kundenservice, Terminbuchung und Lead-Qualifizierung ab 3.500 € Festpreis.",
+        "offers": {
+          "@type": "Offer",
+          "name": "KI-Assistent (ab 3.500 € Festpreis)",
+          "price": "3500",
+          "priceCurrency": "EUR",
+          "description": "Maßgeschneiderter KI-Assistent / Chatbot ab 3.500 € Festpreis."
+        }
+      },
+      {
+        "@type": "Service",
+        "@id": "https://www.kimpress.de/#service-content",
+        "name": "KI Content Studio",
+        "serviceType": "KI-Videoproduktion & Content Engine",
+        "provider": { "@id": "https://www.kimpress.de/#organization" },
+        "areaServed": [
+          { "@type": "City", "name": "Hamburg" },
+          { "@type": "Country", "name": "Deutschland" },
+          { "@type": "Country", "name": "Österreich" },
+          { "@type": "Country", "name": "Schweiz" }
+        ],
+        "description": "Skalierbare KI-Videoproduktion (9:16 & 16:9), Skripte, Avatare & Custom KI-Musik.",
+        "offers": [
+          {
+            "@type": "Offer",
+            "name": "KI-Content Engine (12 Videos / Monat)",
+            "price": "1950",
+            "priceCurrency": "EUR",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "1950",
+              "priceCurrency": "EUR",
+              "unitCode": "MON"
+            },
+            "description": "Monatliche KI-Videoproduktion (1.950 € / Monat für 12 Videos)."
+          },
+          {
+            "@type": "Offer",
+            "name": "Einzelvideo (flexibles Kontingent)",
+            "price": "162.50",
+            "priceCurrency": "EUR",
+            "description": "Ab 162,50 € pro fertigem Video im flexiblen Kontingent."
+          }
+        ]
+      },
+      {
+        "@type": "Service",
+        "@id": "https://www.kimpress.de/#service-geo",
+        "name": "SEO & GEO Dominanz",
+        "serviceType": "Generative Engine Optimization & Local SEO",
+        "provider": { "@id": "https://www.kimpress.de/#organization" },
+        "areaServed": [
+          { "@type": "City", "name": "Hamburg" },
+          { "@type": "Country", "name": "Deutschland" },
+          { "@type": "Country", "name": "Österreich" },
+          { "@type": "Country", "name": "Schweiz" }
+        ],
+        "description": "Sichtbarkeit bei Google & KI-Antworten in der DACH-Region (Preis auf Anfrage, je nach Projekt).",
+        "offers": [
+          {
+            "@type": "Offer",
+            "name": "GEO-Check (Preis auf Anfrage)",
+            "description": "Kurze Prüfung der Auffindbarkeit in KI-Suchen (Lieferzeit: 2–3 Werktage). Preis auf Anfrage."
+          },
+          {
+            "@type": "Offer",
+            "name": "GEO-Audit (Preis auf Anfrage)",
+            "description": "Ausführliche Analyse, 20 Kundenfragen, Wettbewerbsvergleich, Maßnahmenplan (Lieferzeit: 5–7 Werktage). Preis auf Anfrage."
+          },
+          {
+            "@type": "Offer",
+            "name": "GEO-Paket (Preis auf Anfrage)",
+            "description": "Audit einschließlich Umsetzung der empfohlenen Maßnahmen (Lieferzeit: 2–3 Wochen). Preis auf Anfrage."
+          }
         ]
       },
       {
@@ -223,7 +238,7 @@
             "name": "Was macht Kimpress als KI Agentur in Hamburg?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Kimpress ist die von Cem Görül Ende Februar 2026 gegründete KI-Agentur aus Hamburg. Nach über 15 Jahren Erfahrung in Digitalisierung, Webentwicklung und Marketing habe ich Kimpress aufgebaut, um Unternehmen in Hamburg und der DACH-Region von manueller Fließbandarbeit zu befreien. Wir bauen maßgeschneiderte KI-Automatisierungen, verbinden deine bestehenden Tools über moderne Schnittstellen (n8n/Make) und produzieren performanten KI-Content für Social Media. Wir sind keine bunte Werbeagentur mit großem Wasserkopf, sondern dein pragmatischer Partner für schlanke, extrem leistungsfähige Backend-Systeme."
+              "text": "Kimpress ist eine inhabergeführte KI-Agentur aus Hamburg. Wir bauen maßgeschneiderte KI-Automatisierungen, verbinden deine bestehenden Tools über moderne Schnittstellen und produzieren performanten KI-Content für Social Media. Wir sind keine bunte Werbeagentur mit großem Wasserkopf, sondern dein pragmatischer Partner für schlanke, extrem leistungsfähige Backend-Systeme."
             }
           },
           {
@@ -231,7 +246,7 @@
             "name": "Was kostet KI-Automatisierung & Video-Content bei Kimpress und wie wird abgerechnet?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Wir arbeiten zu 100% mit transparenten Festpreisen – ohne versteckte Nebenkosten, Stundensatz-Mogeleien oder starre Knebelverträge. Die Produktion schlüsselfertiger 9:16 Video-Ads im Content Studio startet rechnerisch bereits ab 162,50 € pro fertiges Video im flexiblen Kontingent (inkl. Skripten, Voiceover & Feinschnitt). Maßgeschneiderte KI-Workflow-Architekturen und Automatisierungen kalkulieren wir nach einer Prozessanalyse als verbindliches Pauschalangebot ab 2.500 € Festpreis. Alle Angebote richten sich an B2B-Kunden gem. § 14 BGB (gem. § 19 UStG wird keine USt. berechnet)."
+              "text": "Wir arbeiten zu 100% mit transparenten Festpreisen – ohne versteckte Nebenkosten, Stundensatz-Mogeleien oder starre Knebelverträge. Die Produktion schlüsselfertiger 9:16 Video-Ads im Content Studio startet rechnerisch bereits ab 162,50 € pro fertiges Video im flexiblen Kontingent (inkl. Skripten, Voiceover & Feinschnitt). Maßgeschneiderte KI-Workflow-Architekturen und Automatisierungen kalkulieren wir nach einer Prozessanalyse als verbindliches Pauschalangebot ab 2.500 € Festpreis. Alle Angebote richten sich an B2B-Kunden gem. § 14 BGB (gem. § 19 UStG wird keine USt. berechnet). GEO-Leistungen (Check, Audit und Paket) bietet Kimpress auf Anfrage je nach Projekt an."
             }
           },
           {
@@ -239,7 +254,7 @@
             "name": "Welche konkreten Services und KI-Systeme entwickelt Kimpress?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Unser Schwerpunkt liegt auf drei Kernbereichen: 1. Prozess-Automatisierung (Lead-Triage, CRM-Sync, Rechnungsverarbeitung via n8n & Make). 2. KI-Content & Studio (Production von KI-Videos, Ad-Visuals und automatisierter Content-Distribution). 3. KI-Assistenten & GEO-Websites (Intelligente Chatbots für WhatsApp/Web sowie maßgeschneiderte Websites, die gezielt für KI-Suchmaschinen wie Perplexity, ChatGPT und Google AI optimiert sind)."
+              "text": "Unser Schwerpunkt liegt auf drei Kernbereichen: 1. Prozess-Automatisierung: Automatisierte Lead-Triage, CRM-Synchronisation, Rechnungsverarbeitung und Kundenservice-Workflows. 2. KI-Content & Studio: Produktion von viralen KI-Videos, Skripten, Ad-Visuals und automatisierter Content-Distributions-Software. 3. KI-Assistenten & GEO-Websites: Intelligente Chatbots für WhatsApp & Web sowie maßgeschneiderte KI-Websites, die gezielt für Suchmaschinen und KI-Systeme (Perplexity, ChatGPT, Google AI) optimiert sind."
             }
           },
           {
@@ -322,7 +337,7 @@
   <section class="hero" id="hero">
     <div class="hero__left">
       <span class="hero__eyebrow">KI-Agentur Deutschland · Hamburg · DACH</span>
-      <h1 class="hero__headline">Deutschlands pragmatischste KI-Agentur <span>für virale Videos &amp; smarte Automation.</span></h1>
+      <h1 class="hero__headline">KI-Agentur in Hamburg <span>für KI-Videos &amp; smarte Automation.</span></h1>
       <p class="hero__subline">Als inhabergeführte KI-Agentur aus Hamburg produzieren wir virale Kurzvideos für Social Media und bauen hochgradig effiziente Backends. Wir automatisieren deine Workflows zum Festpreis, damit du hunderte Stunden manuelle Arbeit sparst und dein Business ohne teure Neueinstellungen skalierst.</p>
       <div class="hero__actions">
         <a href="#kontakt" class="btn btn--primary btn--lg hero__cta" id="hero-cta">
@@ -331,7 +346,7 @@
         </a>
         <a href="#services" class="btn btn--outline btn--lg">Services ansehen</a>
       </div>
-      <p class="hero__badge">Antwort innerhalb 24h garantiert</p>
+      <p class="hero__badge">Antwort in der Regel innerhalb von 24 Stunden</p>
       <div class="hero__pills" aria-label="Unsere Stärken auf einen Blick">
         <span class="hero__pill">
           <svg width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 4" stroke="#FF0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -356,42 +371,6 @@
     </div>
   </section>
 
-
-  <!-- TOOL TRUST MARQUEE -->
-  <div class="tool-marquee" aria-hidden="true">
-    <div class="tool-marquee__track">
-      <span class="tool-marquee__item">Make</span>
-      <span class="tool-marquee__item">n8n</span>
-      <span class="tool-marquee__item">Zapier</span>
-      <span class="tool-marquee__item">Gemini</span>
-      <span class="tool-marquee__item">Claude</span>
-      <span class="tool-marquee__item">ChatGPT</span>
-      <span class="tool-marquee__item">Veo AI</span>
-      <span class="tool-marquee__item">NanoBanana</span>
-      <span class="tool-marquee__item">Midjourney</span>
-      <span class="tool-marquee__item">ElevenLabs</span>
-      <span class="tool-marquee__item">HeyGen</span>
-      <span class="tool-marquee__item">Airtable</span>
-      <span class="tool-marquee__item">Notion</span>
-      <span class="tool-marquee__item">Perplexity</span>
-      <!-- duplicate for seamless loop -->
-      <span class="tool-marquee__item">Make</span>
-      <span class="tool-marquee__item">n8n</span>
-      <span class="tool-marquee__item">Zapier</span>
-      <span class="tool-marquee__item">Gemini</span>
-      <span class="tool-marquee__item">Claude</span>
-      <span class="tool-marquee__item">ChatGPT</span>
-      <span class="tool-marquee__item">Veo AI</span>
-      <span class="tool-marquee__item">NanoBanana</span>
-      <span class="tool-marquee__item">Midjourney</span>
-      <span class="tool-marquee__item">ElevenLabs</span>
-      <span class="tool-marquee__item">HeyGen</span>
-      <span class="tool-marquee__item">Airtable</span>
-      <span class="tool-marquee__item">Notion</span>
-      <span class="tool-marquee__item">Perplexity</span>
-    </div>
-  </div>
-
   <!-- STATS BAR -->
   <div class="stats">
     <div class="container">
@@ -401,16 +380,12 @@
           <div class="stat__label">Durchschnittliche Lieferzeit</div>
         </div>
         <div class="stat">
-          <div class="stat__number">10×</div>
-          <div class="stat__label">Schneller als klassische Agenturen</div>
-        </div>
-        <div class="stat">
           <div class="stat__number">100%</div>
           <div class="stat__label">KI-gestützte Prozesse</div>
         </div>
         <div class="stat">
           <div class="stat__number">24h</div>
-          <div class="stat__label">Reaktionszeit garantiert</div>
+          <div class="stat__label">Reaktionszeit</div>
         </div>
       </div>
     </div>
@@ -421,7 +396,7 @@
     <div class="container">
       <span class="section__label" style="text-align:center;display:block">Services</span>
       <h2 class="section__title">Was wir liefern</h2>
-      <p class="section__subtitle">Als f&uuml;hrender KI-Dienstleister bieten wir dir sechs Kernleistungen. 100% KI-gest&uuml;tzt, voll automatisiert und perfekt auf dein Business zugeschnitten.</p>
+      <p class="section__subtitle">Als inhabergef&uuml;hrter KI-Dienstleister bieten wir dir sechs Kernleistungen. 100% KI-gest&uuml;tzt, voll automatisiert und perfekt auf dein Business zugeschnitten.</p>
 
       <div class="svc-grid">
 
@@ -435,7 +410,7 @@
             </div>
             <div class="svc-card__body">
               <h3 class="svc-card__title">KI-Content Erstellung</h3>
-              <p class="svc-card__text">Als deutsche KI-Agentur produzieren wir virale Kurzvideos und smarte Automatisierungen zum Festpreis &mdash; schnell, skalierbar und messbar.</p>
+              <p class="svc-card__text">Als deutsche KI-Agentur produzieren wir virale Kurzvideos und smarte Automatisierungen zum Festpreis &mdash; schnell und skalierbar.</p>
             </div>
             <div class="svc-card__footer">Details ansehen <span aria-hidden="true">→</span></div>
           </div>
@@ -479,7 +454,7 @@
           <div class="svc-card__content">
             <div class="svc-card__top">
               <span class="svc-card__num" aria-hidden="true">04</span>
-              <div class="svc-card__tags"><span>n8n Chatbots</span><span>WhatsApp API</span><span>KI-Assistenten</span></div>
+              <div class="svc-card__tags"><span>Chatbots</span><span>WhatsApp API</span><span>KI-Assistenten</span></div>
             </div>
             <div class="svc-card__body">
               <h3 class="svc-card__title">Chatbots &amp; KI-Assistenten</h3>
@@ -495,11 +470,11 @@
           <div class="svc-card__content">
             <div class="svc-card__top">
               <span class="svc-card__num" aria-hidden="true">05</span>
-              <div class="svc-card__tags"><span>n8n &amp; Make</span><span>Automatisierung</span><span>Prozesse</span></div>
+              <div class="svc-card__tags"><span>Automatisierung</span><span>Prozesse</span></div>
             </div>
             <div class="svc-card__body">
               <h3 class="svc-card__title">KI-Workflow Automatisierung</h3>
-              <p class="svc-card__text">Dein Business auf Autopilot. Wir integrieren Make &amp; n8n, um manuelle Routineaufgaben durch künstliche Intelligenz zu eliminieren.</p>
+              <p class="svc-card__text">Dein Business auf Autopilot. Wir integrieren deine Tools, um manuelle Routineaufgaben durch künstliche Intelligenz zu eliminieren.</p>
             </div>
             <div class="svc-card__footer">Details ansehen <span aria-hidden="true">→</span></div>
           </div>
@@ -547,7 +522,7 @@
           <span class="process__bg-num" aria-hidden="true">02</span>
           <div class="process__content">
             <h3 class="process__title">Architektur</h3>
-            <p class="process__text">Ich entwerfe eine schlanke, ma&szlig;geschneiderte Workflow-Architektur. Wir planen die Anbindung deiner bestehenden Software an Tools wie n8n oder Make &mdash; ohne unn&ouml;tigen Software-Ballast oder teure Lizenzen.</p>
+            <p class="process__text">Ich entwerfe eine schlanke, ma&szlig;geschneiderte Workflow-Architektur. Wir planen die Anbindung an deine bestehende Software &mdash; ohne unn&ouml;tigen Software-Ballast oder teure Lizenzen.</p>
           </div>
         </div>
         <div class="process__step sr">
@@ -587,23 +562,15 @@
           </div>
           <div class="about__stats-row">
             <div class="about__stat">
-              <span class="about__stat-num">15+</span>
-              <span class="about__stat-lbl">Jahre Erfahrung</span>
-            </div>
-            <div class="about__stat">
               <span class="about__stat-num">6</span>
               <span class="about__stat-lbl">Services</span>
-            </div>
-            <div class="about__stat about__stat--accent">
-              <span class="about__stat-num" style="font-size: 1.6rem;">Feb 2026</span>
-              <span class="about__stat-lbl">Gegründet in Hamburg</span>
             </div>
           </div>
         </div>
         <div class="about__content">
           <span class="section__label">Über Kimpress</span>
           <h2 class="about__headline">100% Senior-Level.<br><span>Direkt mit dem Experten.</span></h2>
-          <p class="about__text">Kimpress ist die inhabergeführte KI-Agentur von Cem Görül, Ende Februar 2026 in Hamburg gegründet. Nach über 15 Jahren Erfahrung in den Bereichen Social Media, Marketing und Webentwicklung habe ich Kimpress als moderne KI-Firma aufgebaut. Als Solo Operator &ndash; unterstützt durch modernste künstliche Intelligenz &ndash; biete ich dir die Geschwindigkeit und Kapazität einer klassischen Agentur zum Bruchteil der Kosten. Jedes System wird persönlich von mir konzipiert und implementiert: Kein künstlicher Overhead, 100% Founder-Fokus.</p>
+          <p class="about__text">Kimpress ist eine inhabergeführte KI-Agentur aus Hamburg. Als Solo Operator &ndash; unterstützt durch modernste künstliche Intelligenz &ndash; biete ich dir die Geschwindigkeit und Kapazität einer klassischen Agentur zum Bruchteil der Kosten. Jedes System wird persönlich von mir konzipiert und implementiert: Kein künstlicher Overhead, 100% Founder-Fokus.</p>
 
           <!-- Mobile-only portrait — floats right alongside list items -->
           <div class="about__portrait-mobile" aria-hidden="true">
@@ -611,9 +578,8 @@
           </div>
 
           <ul class="about__list">
-            <li>15+ Jahre Social Media, Webdesign &amp; SEO-Erfahrung</li>
             <li>Experte f&uuml;r KI-Prompt-Engineering &amp; GEO-Optimierung</li>
-            <li>Workflow-Automatisierung via n8n &amp; Make-Integrationen</li>
+            <li>Workflow-Automatisierung &amp; Integrationen</li>
             <li>Markenkonforme KI-Videos f&uuml;r TikTok, Instagram &amp; LinkedIn</li>
             <li>Transparente Festpreise ohne versteckte Retainer-Kosten</li>
           </ul>
@@ -631,16 +597,8 @@
           <!-- Mobile-only stats chips (desktop shows stats inside portrait) -->
           <div class="about__stats-mobile">
             <div class="about__stat-chip">
-              <span class="about__stat-chip-num">15+</span>
-              <span class="about__stat-chip-lbl">Jahre Erfahrung</span>
-            </div>
-            <div class="about__stat-chip">
               <span class="about__stat-chip-num">6</span>
               <span class="about__stat-chip-lbl">Services</span>
-            </div>
-            <div class="about__stat-chip about__stat-chip--accent">
-              <span class="about__stat-chip-num">2026</span>
-              <span class="about__stat-chip-lbl">Hamburg</span>
             </div>
           </div>
         </div>
@@ -663,7 +621,7 @@
         <article class="pricing-card sr">
           <span class="pricing-card__badge pricing-card__badge--neutral">01 // VISIBILITÄT &amp; GEO</span>
           <h3 class="pricing-card__title">SEO &amp; GEO Dominanz</h3>
-          <p class="pricing-card__desc">Sichtbar werden, wo Kunden heute fragen: in Google und in KI-Antworten von ChatGPT, Perplexity und Gemini. Wir bauen die Inhalte, Listen und Nachweise dafür — messbar, mit dem GEO-Check als Start.</p>
+          <p class="pricing-card__desc">Sichtbar werden, wo Kunden heute fragen: in Google und in KI-Antworten von ChatGPT, Perplexity und Gemini. Wir bauen die Inhalte, Listen und Nachweise dafür &mdash; mit dem GEO-Check als Start.</p>
           
           <div class="pricing-card__price-box">
             <div class="pricing-card__amount" style="font-size: 1.8rem; letter-spacing: -0.5px;">Preis auf Anfrage</div>
@@ -738,6 +696,28 @@
     </div>
   </section>
 
+  <!-- BEWERTUNGEN -->
+  <section class="pricing-section" id="bewertungen">
+    <div class="container">
+      <div class="pricing-header">
+        <span class="section__label" style="text-align:center;display:block">Google-Profil</span>
+        <h2 class="section__title">Bewertungen auf Google</h2>
+        <p class="section__subtitle">5,0 von 5 Sternen &middot; 2 Bewertungen auf Google</p>
+      </div>
+      <div class="pricing-grid" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); max-width: 720px; margin: 0 auto;">
+        <article class="pricing-card sr">
+          <span class="pricing-card__badge pricing-card__badge--neutral">&#9733;&#9733;&#9733;&#9733;&#9733; &middot; 5 Sterne</span>
+          <h3 class="pricing-card__title">Der KI-Peter</h3>
+        </article>
+        <article class="pricing-card sr">
+          <span class="pricing-card__badge pricing-card__badge--neutral">&#9733;&#9733;&#9733;&#9733;&#9733; &middot; 5 Sterne</span>
+          <h3 class="pricing-card__title">yunus</h3>
+        </article>
+      </div>
+      <p class="pricing-legal-hint" style="text-align: center; font-size: 0.75rem; color: #71717a; margin-top: 1.5rem; max-width: 720px; margin-left: auto; margin-right: auto;">Diese Bewertungen stammen aus unserem Google-Unternehmensprofil (Stand: November 2026). Google prüft die Echtheit über die Google-Konten der Verfasser. Wir veröffentlichen sie unverändert und ohne Auswahl.</p>
+    </div>
+  </section>
+
   <!-- FAQ -->
   <section class="faq" id="faq">
     <div class="container">
@@ -747,15 +727,15 @@
       <div class="faq__grid">
         <div class="faq__item sr">
           <button class="faq__q" aria-expanded="false">Was macht Kimpress als KI Agentur in Hamburg?</button>
-          <div class="faq__a">Kimpress ist die von Cem Görül Ende Februar 2026 gegründete KI-Agentur aus Hamburg. Nach über 15 Jahren Erfahrung in Digitalisierung, Webentwicklung und Marketing habe ich Kimpress aufgebaut, um Unternehmen in Hamburg und der DACH-Region von manueller Fließbandarbeit zu befreien. Wir bauen maßgeschneiderte KI-Automatisierungen, verbinden deine bestehenden Tools über moderne Schnittstellen (n8n/Make) und produzieren performanten KI-Content für Social Media. Wir sind keine bunte Werbeagentur mit großem Wasserkopf, sondern dein pragmatischer Partner für schlanke, extrem leistungsfähige Backend-Systeme.</div>
+          <div class="faq__a">Kimpress ist eine inhabergeführte KI-Agentur aus Hamburg. Wir bauen maßgeschneiderte KI-Automatisierungen, verbinden deine bestehenden Tools über moderne Schnittstellen und produzieren performanten KI-Content für Social Media. Wir sind keine bunte Werbeagentur mit großem Wasserkopf, sondern dein pragmatischer Partner für schlanke, extrem leistungsfähige Backend-Systeme.</div>
         </div>
         <div class="faq__item sr">
           <button class="faq__q" aria-expanded="false">Was kostet KI-Automatisierung &amp; Video-Content bei Kimpress und wie wird abgerechnet?</button>
-          <div class="faq__a">Wir arbeiten zu 100% mit transparenten Festpreisen &mdash; ohne versteckte Nebenkosten, Stundensatz-Mogeleien oder starre Knebelverträge. Die Produktion schlüsselfertiger 9:16 Video-Ads im Content Studio startet rechnerisch bereits ab 162,50 € pro fertiges Video im flexiblen Kontingent (inkl. Skripten, Voiceover &amp; Feinschnitt). Maßgeschneiderte KI-Workflow-Architekturen und Automatisierungen kalkulieren wir nach einer Prozessanalyse als verbindliches Pauschalangebot ab 2.500 € Festpreis. Alle Angebote richten sich an B2B-Kunden gem. § 14 BGB (gem. § 19 UStG wird keine USt. berechnet).</div>
+          <div class="faq__a">Wir arbeiten zu 100% mit transparenten Festpreisen &mdash; ohne versteckte Nebenkosten, Stundensatz-Mogeleien oder starre Knebelverträge. Die Produktion schlüsselfertiger 9:16 Video-Ads im Content Studio startet rechnerisch bereits ab 162,50 € pro fertiges Video im flexiblen Kontingent (inkl. Skripten, Voiceover &amp; Feinschnitt). Maßgeschneiderte KI-Workflow-Architekturen und Automatisierungen kalkulieren wir nach einer Prozessanalyse als verbindliches Pauschalangebot ab 2.500 € Festpreis. Alle Angebote richten sich an B2B-Kunden gem. § 14 BGB (gem. § 19 UStG wird keine USt. berechnet). GEO-Leistungen (Check, Audit und Paket) bietet Kimpress auf Anfrage je nach Projekt an.</div>
         </div>
         <div class="faq__item sr">
           <button class="faq__q" aria-expanded="false">Welche konkreten Services und KI-Systeme entwickelt Kimpress?</button>
-          <div class="faq__a">Unser Schwerpunkt liegt auf drei Kernbereichen: 1. <strong>Prozess-Automatisierung:</strong> Automatisierte Lead-Triage, CRM-Synchronisation, Rechnungsverarbeitung und Kundenservice-Workflows via n8n &amp; Make. 2. <strong>KI-Content &amp; Studio:</strong> Produktion von viralen KI-Videos, Skripten, Ad-Visuals und automatisierter Content-Distributions-Software. 3. <strong>KI-Assistenten &amp; GEO-Websites:</strong> Intelligente Chatbots für WhatsApp &amp; Web sowie maßgeschneiderte KI-Websites, die gezielt für Suchmaschinen und KI-Systeme (Perplexity, ChatGPT, Google AI) optimiert sind.</div>
+          <div class="faq__a">Unser Schwerpunkt liegt auf drei Kernbereichen: 1. <strong>Prozess-Automatisierung:</strong> Automatisierte Lead-Triage, CRM-Synchronisation, Rechnungsverarbeitung und Kundenservice-Workflows. 2. <strong>KI-Content &amp; Studio:</strong> Produktion von viralen KI-Videos, Skripten, Ad-Visuals und automatisierter Content-Distributions-Software. 3. <strong>KI-Assistenten &amp; GEO-Websites:</strong> Intelligente Chatbots für WhatsApp &amp; Web sowie maßgeschneiderte KI-Websites, die gezielt für Suchmaschinen und KI-Systeme (Perplexity, ChatGPT, Google AI) optimiert sind.</div>
         </div>
         <div class="faq__item sr">
           <button class="faq__q" aria-expanded="false">Wie läuft ein Projekt ab und wie schnell gehen die Systeme live?</button>
@@ -805,10 +785,6 @@
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
             <span>Instagram</span>
           </a>
-          <a href="https://www.youtube.com/@kimpress" target="_blank" rel="noopener noreferrer" class="footer__social-link" id="footer-youtube" aria-label="YouTube">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
-            <span>YouTube</span>
-          </a>
         </div>
       </div>
       <!-- Col 2: Navigation -->
@@ -825,6 +801,7 @@
           <li><a href="/ki-chatbot-kanzlei.html">KI-Chatbot Kanzlei</a></li>
           <li><a href="/ki-agentur-vs-klassische-werbeagentur.html">KI-Agentur vs. Werbeagentur</a></li>
           <li><a href="/massgeschneiderte-ki-systeme-vs-baukasten-tools.html">KI-Systeme vs. Baukasten-Tools</a></li>
+          <li><a href="/ki-agentur-vs-inhouse.html">KI-Agentur vs. Inhouse-Aufbau</a></li>
         </ul>
       </div>
       <!-- Col 3: Services -->
@@ -918,10 +895,8 @@
       <h4 class="modal-section-title">Verantwortlich f&uuml;r den Inhalt nach &sect; 18 Abs. 2 MStV</h4>
       <p class="modal-text">Cem Görül, Anschrift wie oben</p>
 
-      <h4 class="modal-section-title">EU-Streitschlichtung</h4>
+      <h4 class="modal-section-title">Verbraucherstreitbeilegung</h4>
       <p class="modal-text">
-        Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:<br>
-        <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer" style="color:#FF0000;">https://ec.europa.eu/consumers/odr/</a><br>
         Wir sind nicht verpflichtet und nicht bereit, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
       </p>
 
@@ -1014,7 +989,7 @@
       <div class="svc-overlay__body"><div class="container so-content">
         <section class="so-section">
           <span class="so-section__label">Was ist das?</span>
-          <h3 class="so-section__title">KI-Content Erstellung f&uuml;r Coaches, Creator &amp; KMU im DACH-Raum</h3>
+          <h3 class="so-section__title">KI-Content Erstellung f&uuml;r KMU &amp; E-Commerce im DACH-Raum</h3>
           <p class="so-section__text">Mit modernsten <strong>KI-Modellen wie Gemini, Claude und GPT</strong>, kombiniert mit <strong>Video- und Bildgeneratoren wie Veo AI, NanoBanana und Midjourney</strong> sowie CapCut AI, produzieren wir hochwertigen <strong>KI-Content (Videos, Bilder, Texte)</strong> &mdash; in einem Bruchteil der Zeit herkömmlicher Agenturen. Jedes Asset ist markenkonform, plattformoptimiert und sofort einsetzbar. Ob <strong>TikTok Reels, YouTube Shorts, LinkedIn-Beiträge oder SEO-Blogartikel</strong> &mdash; wir liefern Content, der konvertiert.</p>
         </section>
         <section class="so-section">
@@ -1037,7 +1012,7 @@
           <section class="so-section">
             <span class="so-section__label">Zielgruppe</span>
             <h3 class="so-section__title">F&uuml;r wen geeignet?</h3>
-            <div class="so-audience"><span>&#127919; Life &amp; Business Coaches</span><span>&#127918; Creator &amp; Influencer</span><span>&#128722; E-Commerce Shops</span><span>&#127970; KMU &amp; Lokalunternehmen</span></div>
+            <div class="so-audience"><span>&#127919; Dienstleister</span><span>&#127918; Online-Shops</span><span>&#127970; KMU &amp; Lokalunternehmen</span></div>
           </section>
         </div>
         <section class="so-section">
@@ -1088,12 +1063,12 @@
           <section class="so-section">
             <span class="so-section__label">Tools</span>
             <h3 class="so-section__title">Die Pipeline</h3>
-            <div class="so-tools"><span>Make</span><span>n8n</span><span>Gemini</span><span>Claude</span><span>ChatGPT</span><span>Midjourney</span><span>Buffer</span><span>Airtable</span></div>
+            <div class="so-tools"><span>Gemini</span><span>Claude</span><span>ChatGPT</span><span>Midjourney</span><span>Buffer</span><span>Airtable</span></div>
           </section>
           <section class="so-section">
             <span class="so-section__label">Zielgruppe</span>
             <h3 class="so-section__title">Ideal f&uuml;r</h3>
-            <div class="so-audience"><span>&#127908; Coaches &amp; Speaker</span><span>&#127902; Creator &amp; YouTuber</span><span>&#127968; Lokale Unternehmen</span><span>&#128722; E-Commerce Brands</span></div>
+            <div class="so-audience"><span>&#127908; Dienstleister</span><span>&#127902; E-Commerce Brands</span><span>&#127968; Lokale Unternehmen</span></div>
           </section>
         </div>
         <section class="so-section">
@@ -1113,7 +1088,7 @@
       <div class="svc-overlay__hero hero--web">
         <div class="container">
           <span class="svc-overlay__label">Service 03 &mdash; Webseiten, SEO &amp; GEO</span>
-          <h2 class="svc-overlay__title">Websites die ranken,<br>blitzschnell laden<br><span>und von KI empfohlen werden.</span></h2>
+          <h2 class="svc-overlay__title">Websites die ranken<br>und blitzschnell laden.</h2>
           <p class="svc-overlay__tagline">KI-optimierter SEO/GEO-Content &amp; blitzschnelle Websites &mdash; bereit f&uuml;r Google, ChatGPT &amp; Perplexity.</p>
         </div>
       </div>
@@ -1183,7 +1158,7 @@
         <section class="so-section">
           <span class="so-section__label">Was ist das?</span>
           <h3 class="so-section__title">KI-Chatbots &amp; Voicebots die rund um die Uhr f&uuml;r dein Business arbeiten</h3>
-          <p class="so-section__text">Von <strong>WhatsApp-Chatbots</strong> über Web-Assistenten bis zu intelligenten Telefon-Voicebots &mdash; wir entwickeln maßgeschneiderte <strong>KI-Assistenten</strong>, die Kundenanfragen beantworten, Leads qualifizieren und Termine buchen. Auf Basis modernster LLMs wie <strong>Gemini, Claude und GPT</strong> sind unsere Bots dank <strong>n8n/Make Integrationen</strong> nahtlos in dein CRM eingebunden, klingen natürlich und überzeugen deine Kunden rund um die Uhr.</p>
+          <p class="so-section__text">Von <strong>WhatsApp-Chatbots</strong> über Web-Assistenten bis zu intelligenten Telefon-Voicebots &mdash; wir entwickeln maßgeschneiderte <strong>KI-Assistenten</strong>, die Kundenanfragen beantworten, Leads qualifizieren und Termine buchen. Auf Basis modernster LLMs wie <strong>Gemini, Claude und GPT</strong> sind unsere Bots dank nahtloser Integrationen in dein CRM eingebunden, klingen natürlich und überzeugen deine Kunden rund um die Uhr.</p>
         </section>
         <section class="so-section">
           <span class="so-section__label">Unser Prozess</span>
@@ -1200,12 +1175,12 @@
           <section class="so-section">
             <span class="so-section__label">Tools</span>
             <h3 class="so-section__title">Tech-Stack</h3>
-            <div class="so-tools"><span>n8n</span><span>Gemini</span><span>Claude</span><span>ChatGPT</span><span>Voiceflow</span><span>WhatsApp API</span><span>Vapi.ai</span><span>Twilio</span></div>
+            <div class="so-tools"><span>Gemini</span><span>Claude</span><span>ChatGPT</span><span>Voiceflow</span><span>WhatsApp API</span><span>Vapi.ai</span><span>Twilio</span></div>
           </section>
           <section class="so-section">
             <span class="so-section__label">Zielgruppe</span>
             <h3 class="so-section__title">Ideal f&uuml;r</h3>
-            <div class="so-audience"><span>&#127959; Handwerksbetriebe</span><span>&#127968; Gastro &amp; Hotels</span><span>&#127979; Coaches &amp; Berater</span><span>&#128188; Agenturen &amp; KMU</span></div>
+            <div class="so-audience"><span>&#127959; Handwerksbetriebe</span><span>&#127968; Gastro &amp; Hotels</span><span>&#127979; Berater &amp; Dienstleister</span><span>&#128188; Agenturen &amp; KMU</span></div>
           </section>
         </div>
         <section class="so-section">
@@ -1226,28 +1201,27 @@
         <div class="container">
           <span class="svc-overlay__label">Service 05 &mdash; KI-Workflow Automatisierung</span>
           <h2 class="svc-overlay__title">Manuelle Arbeit<br>auf null<br><span>reduzieren.</span></h2>
-          <p class="svc-overlay__tagline">Make, n8n &amp; KI eliminieren wiederkehrende Prozesse &mdash; dauerhaft.</p>
+          <p class="svc-overlay__tagline">KI eliminiert wiederkehrende Prozesse &mdash; dauerhaft.</p>
         </div>
       </div>
       <div class="svc-overlay__stats-bar"><div class="container"><div class="so-stats">
         <div class="so-stat"><span class="so-stat__num">&minus;80%</span><span class="so-stat__lbl">Manuelle Arbeit</span></div>
-        <div class="so-stat"><span class="so-stat__num">30 T</span><span class="so-stat__lbl">ROI garantiert</span></div>
         <div class="so-stat"><span class="so-stat__num">100%</span><span class="so-stat__lbl">DSGVO-konform</span></div>
         <div class="so-stat"><span class="so-stat__num">24/7</span><span class="so-stat__lbl">L&auml;uft automatisch</span></div>
       </div></div></div>
       <div class="svc-overlay__body"><div class="container so-content">
         <section class="so-section">
           <span class="so-section__label">Was ist das?</span>
-          <h3 class="so-section__title">Gesch&auml;ftsprozesse automatisieren mit Make, n8n &amp; KI</h3>
-          <p class="so-section__text">Wir analysieren deine manuellen Geschäftsprozesse und automatisieren sie vollständig durch <strong>Workflow-Automatisierung mit n8n, Make und Zapier</strong>. Von der automatisierten <strong>Rechnungsverarbeitung</strong> über <strong>Lead-Nurturing</strong> bis zum Daten-Sync &mdash; wir eliminieren wiederkehrende Routineaufgaben durch <strong>Künstliche Intelligenz</strong>. Das Ergebnis: Dein Team spart wöchentlich Arbeitszeit und fokussiert sich auf wertschöpfende Aufgaben.</p>
+          <h3 class="so-section__title">Gesch&auml;ftsprozesse automatisieren mit KI</h3>
+          <p class="so-section__text">Wir analysieren deine manuellen Geschäftsprozesse und automatisieren sie vollständig durch <strong>Workflow-Automatisierung</strong>. Von der automatisierten <strong>Rechnungsverarbeitung</strong> über <strong>Lead-Nurturing</strong> bis zum Daten-Sync &mdash; wir eliminieren wiederkehrende Routineaufgaben durch <strong>Künstliche Intelligenz</strong>. Das Ergebnis: Dein Team spart wöchentlich Arbeitszeit und fokussiert sich auf wertschöpfende Aufgaben.</p>
         </section>
         <section class="so-section">
           <span class="so-section__label">Unser Prozess</span>
           <h3 class="so-section__title">Von der Idee zum laufenden Workflow</h3>
           <div class="so-workflow">
-            <div class="so-step"><span class="so-step__num">01</span><strong>Prozess-Audit</strong><p>Wir mapppen alle manuellen Routineaufgaben und berechnen den Automatisierungs-ROI.</p></div>
+            <div class="so-step"><span class="so-step__num">01</span><strong>Prozess-Audit</strong><p>Wir mappen alle manuellen Routineaufgaben und berechnen den Automatisierungs-ROI.</p></div>
             <div class="so-step"><span class="so-step__num">02</span><strong>Automatisierungsplan</strong><p>Priorisierung: Welche Prozesse haben den gr&ouml;&szlig;ten Hebel? Welche zuerst?</p></div>
-            <div class="so-step"><span class="so-step__num">03</span><strong>Build &amp; Test</strong><p>Make oder n8n Workflows werden entwickelt, getestet und abgesichert.</p></div>
+            <div class="so-step"><span class="so-step__num">03</span><strong>Build &amp; Test</strong><p>Workflows werden entwickelt, getestet und abgesichert.</p></div>
             <div class="so-step"><span class="so-step__num">04</span><strong>KI-Integration</strong><p>Smarte KI (Gemini / GPT / Claude) wird eingebunden f&uuml;r smarte Entscheidungen innerhalb der Workflows.</p></div>
             <div class="so-step"><span class="so-step__num">05</span><strong>&Uuml;bergabe</strong><p>Vollst&auml;ndige Dokumentation. Optional: Schulung deines Teams.</p></div>
           </div>
@@ -1256,7 +1230,7 @@
           <section class="so-section">
             <span class="so-section__label">Tools</span>
             <h3 class="so-section__title">Eingesetzte Plattformen</h3>
-            <div class="so-tools"><span>Make</span><span>n8n</span><span>Zapier</span><span>Gemini</span><span>Claude</span><span>ChatGPT</span><span>Airtable</span><span>HubSpot</span></div>
+            <div class="so-tools"><span>Gemini</span><span>Claude</span><span>ChatGPT</span><span>Airtable</span><span>HubSpot</span></div>
           </section>
           <section class="so-section">
             <span class="so-section__label">Zielgruppe</span>
@@ -1267,7 +1241,7 @@
         <section class="so-section">
           <span class="so-section__label">Praxis-Beispiel</span>
           <h3 class="so-section__title">Automatisierung in Aktion</h3>
-          <div class="so-prompt"><div class="so-prompt__label">n8n / Make &middot; Automatisierter Multi-Channel Lead-Router</div><code>[WORKFLOW-BLUEPRINT: Multi-Channel Lead-Erfassung]&#10;{&#10;  "trigger": "Webhook -> Kontaktformular ausgef&uuml;llt",&#10;  "logic_gate_1": "Gemini API -> Analyse der Anfrage-Intention &amp; Budget-Klasse",&#10;  "routing": {&#10;    "premium_lead": "HubSpot CRM anlegen + Slack-Alert an Gr&uuml;nder + Vapi Telefon-Anruf starten",&#10;    "standard_lead": "Airtable eintragen -> Personalisierte E-Mail via Claude API generieren -> Senden via Postmark"&#10;  },&#10;  "database_sync": "n8n f&uuml;hrt w&ouml;chentlichen Abgleich des Lead-Status zum CRM-Dashboard aus"&#10;}</code></div>
+          <div class="so-prompt"><div class="so-prompt__label">Automatisierter Multi-Channel Lead-Router</div><code>[WORKFLOW-BLUEPRINT: Multi-Channel Lead-Erfassung]&#10;{&#10;  "trigger": "Webhook -> Kontaktformular ausgef&uuml;llt",&#10;  "logic_gate_1": "Gemini API -> Analyse der Anfrage-Intention &amp; Budget-Klasse",&#10;  "routing": {&#10;    "premium_lead": "HubSpot CRM anlegen + Slack-Alert an Gr&uuml;nder + Vapi Telefon-Anruf starten",&#10;    "standard_lead": "Airtable eintragen -> Personalisierte E-Mail via Claude API generieren -> Senden via Postmark"&#10;  },&#10;  "database_sync": "Das System f&uuml;hrt w&ouml;chentlichen Abgleich des Lead-Status zum CRM-Dashboard aus"&#10;}</code></div>
         </section>
         <div class="so-cta-bar"><p>Was k&ouml;nnte dein Team tun, wenn Routinearbeit wegf&auml;llt?</p><button class="btn btn--primary btn--lg svc-ol-cta">Automation anfragen &rarr;</button></div>
       </div></div>
@@ -1312,12 +1286,12 @@
           <section class="so-section">
             <span class="so-section__label">Tools</span>
             <h3 class="so-section__title">Plattformen</h3>
-            <div class="so-tools"><span>Gemini API</span><span>Claude API</span><span>OpenAI API</span><span>Custom GPT Builder</span><span>Perplexity</span><span>Notion AI</span><span>n8n / Make</span></div>
+            <div class="so-tools"><span>Gemini API</span><span>Claude API</span><span>OpenAI API</span><span>Custom GPT Builder</span><span>Perplexity</span><span>Notion AI</span></div>
           </section>
           <section class="so-section">
             <span class="so-section__label">Zielgruppe</span>
             <h3 class="so-section__title">Ideal f&uuml;r</h3>
-            <div class="so-audience"><span>&#127979; Freelancer &amp; Berater</span><span>&#127908; Coaches &amp; Trainer</span><span>&#127970; KMU Gesch&auml;ftsf&uuml;hrer</span><span>&#128188; Agenturen &amp; Teams</span></div>
+            <div class="so-audience"><span>&#127979; Freelancer &amp; Berater</span><span>&#127908; Dienstleister</span><span>&#127970; KMU Gesch&auml;ftsf&uuml;hrer</span><span>&#128188; Agenturen &amp; Teams</span></div>
           </section>
         </div>
         <section class="so-section">
