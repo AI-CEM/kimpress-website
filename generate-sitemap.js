@@ -18,7 +18,7 @@ const generateSitemap = () => {
     { url: '/', priority: '1.0' },
     { url: '/n8n-ki-agentur-deutschland', priority: '0.9' },
     { url: '/ki-content-agentur-deutschland', priority: '0.9' },
-    { url: '/immobilien-videos-hamburg', priority: '0.9' },
+    { url: '/ki-videos-erstellen', priority: '0.9' },
     { url: '/ki-chatbot-kanzlei', priority: '0.9' },
     { url: '/ki-agentur-vs-klassische-werbeagentur', priority: '0.9' },
     { url: '/massgeschneiderte-ki-systeme-vs-baukasten-tools', priority: '0.9' },

@@ -12,7 +12,7 @@ export default defineConfig({
         blogPost: resolve(__dirname, 'blog-post.html'),
         kiContent: resolve(__dirname, 'ki-content-agentur-deutschland.html'),
         n8nKi: resolve(__dirname, 'n8n-ki-agentur-deutschland.html'),
-        immobilienVideosHamburg: resolve(__dirname, 'immobilien-videos-hamburg.html'),
+        kiVideosErstellen: resolve(__dirname, 'ki-videos-erstellen.html'),
         kiChatbotKanzlei: resolve(__dirname, 'ki-chatbot-kanzlei.html'),
         vergleichWerbeagentur: resolve(__dirname, 'ki-agentur-vs-klassische-werbeagentur.html'),
         vergleichBaukasten: resolve(__dirname, 'massgeschneiderte-ki-systeme-vs-baukasten-tools.html'),

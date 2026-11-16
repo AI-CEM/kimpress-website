@@ -66,3 +66,15 @@ Letzte Prüfung: `2026-11-16`
 - Wartung & Weiterentwicklung (Kimpress / Inhouse): Auf Anfrage ohne Retainer-Zwang vs. laufend durch eigene Kraft (bei Ausfall ohne Vertretung) | category statement | kimpress.de (this site) / category statement, no external benchmark claimed
 - Kontrolle & Wissen im Haus (Kimpress / Inhouse): Dokumentation & Übergabe auf Kunden-Accounts vs. vollständig im Haus | category statement | kimpress.de (this site) / category statement, no external benchmark claimed
 - Skalierung (Kimpress / Inhouse): Anpassbares Volumen vs. in der Regel weitere Stelle | In der Regel | kimpress.de (this site) / "in der Regel"; category statement, no external benchmark claimed
+
+---
+
+## Funnel-Seite: `/ki-videos-erstellen`
+
+- Keyword "KI Videos erstellen" | lead term, steady demand | Google Trends review 2026-11-16
+- "Social Media Videos" fading / "TikTok Videos" wrong intent | category & search-intent note | Google Trends review 2026-11-16
+- Keine veröffentlichten Monats-Volumina — genaue Zahlen prüft der Operator im Google Keyword Planner.
+- Kimpress prices (2.500 / 3.500 / 1.950 / 162,50 / GEO auf Anfrage) | Festpreise lt. Website | kimpress.de (this site) — verified 2026-11-16
+- Zeitaufwand (Selbst vs. Kimpress): eigene Arbeitszeit vs. erste KI-Videos in wenigen Werktagen | In der Regel | "In der Regel"; category statement / kimpress.de (this site), verified 2026-11-16
+- Qualität & Konsistenz (Selbst vs. Kimpress): schwankt je nach Zeit und Übung vs. 12 Videos pro Monat in der Content Engine | category statement | kimpress.de (this site), verified 2026-11-16
+- Skalierung (Selbst vs. Kimpress): mehr eigene Stunden vs. flexibles Kontingent ab 162,50 €/Video | In der Regel | "in der Regel"; category statement / kimpress.de (this site), verified 2026-11-16
