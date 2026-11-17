@@ -101,3 +101,11 @@ Letzte Prüfung: `2026-11-16`
 - ki-content "AI Operator Cem Görül" → "Cem Görül" at 3 spots (JSON-LD description + 2 visible texts) | person title removed, product name untouched | kimpress.de (this site), verified 2026-11-17
 - GEO explainer section added to homepage (#geo-ablauf, after pricing, before reviews) | honest sentence verbatim, no ranking promise | kimpress.de (this site), verified 2026-11-17
 - GEO scope (Audit / Umsetzung / Messung; Schema, llms.txt, Einträge, Messung) | service description, no promised outcome | kimpress.de (this site) / Geoagenturen hub step 1, verified 2026-11-17
+
+---
+
+## Deploy 11 — Price Rewrite (Engine 1.500 €) + Marquee Restore + Stats Grid Fix
+
+- Price ladder rewrite (`index.html`, `ki-content-agentur-deutschland.html`, `ki-videos-erstellen.html`, `public/llms.txt`): Content Engine 1.500 € Festpreis / 12 Videos (125 € pro Video, 23 % günstiger vs. 162,50 € Einzelpreis), Einzelvideo LVL 1 (15–30 Sek.) ab 162,50 €, Kurzvideo LVL 2 (30–60 Sek.) ab 299 €, Seamless One-Take (30 Sek.) 249 €; unsourced „90% günstiger“ and „gegenüber 1.500 €+“ claims and „Content-Pipelines“ removed | B2B Festpreise per 2026-11-17 operator decision, visible = JSON-LD | kimpress.de (this site), verified 2026-11-17
+- Tool marquee restored on homepage (`index.html` after hero, before `#stats`): 12 tools (`n8n, Gemini, Claude, ChatGPT, OmniFlash, Seedance, Muse Video, Grok Imagine, NanoBanana, ElevenLabs, HeyGen, Perplexity`) duplicated once (24 items) | decorative `aria-hidden="true"` marquee | kimpress.de (this site), verified 2026-11-17
+- Stats grid column fix (`src/style.css` `@media (min-width: 641px)` `.stats__grid`): changed `repeat(4, 1fr)` → `repeat(3, 1fr)` matching the 3 stat cards | layout fix, base/mobile grids unchanged | kimpress.de (this site), verified 2026-11-17

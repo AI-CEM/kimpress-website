@@ -1330,7 +1330,7 @@ button.btn {
 /* Landscape phone / small tablet */
 @media (min-width: 641px) {
   .stats__grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 12px;
   }
 

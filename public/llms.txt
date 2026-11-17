@@ -5,7 +5,7 @@
 ## Hauptseiten
 - [Startseite](https://www.kimpress.de/): Leistungsübersicht, Festpreismodelle, Google-Bewertungen und FAQ
 - [Workflow-Automatisierung](https://www.kimpress.de/n8n-ki-agentur-deutschland): Schlüsselfertige Workflows und autonome Agenten ab 2.500 € Festpreis
-- [KI Content Studio](https://www.kimpress.de/ki-content-agentur-deutschland): 9:16 KI-Videos für KMU, Dienstleister & B2B-Marken (1.950 €/Monat bzw. ab 162,50 €/Video)
+- [KI Content Studio](https://www.kimpress.de/ki-content-agentur-deutschland): 9:16 KI-Videos für KMU, Dienstleister & B2B-Marken (1.500 €/Monat bzw. ab 162,50 €/Video, 15–30 Sek.)
 - [KI-Chatbot Kanzlei](https://www.kimpress.de/ki-chatbot-kanzlei): Maßgeschneiderte KI-Assistenten und Chatbots für Kanzleien ab 3.500 € Festpreis
 - [KI Videos erstellen](https://www.kimpress.de/ki-videos-erstellen): Anleitung in 5 Schritten und erstellen lassen zum Festpreis
 - [KI-Agentur vs. klassische Werbeagentur](https://www.kimpress.de/ki-agentur-vs-klassische-werbeagentur): Sachlicher Modellvergleich für B2B-Unternehmen
@@ -16,8 +16,10 @@
 ## Preise (B2B gem. § 14 BGB, gem. § 19 UStG ohne USt.)
 - Workflow-Automatisierung: ab 2.500 € (Festpreis)
 - KI-Assistent: ab 3.500 € (Festpreis)
-- Content Engine: 1.950 €/Monat für 12 Videos
-- Einzelvideo (flexibles Kontingent): ab 162,50 €
+- Content Engine: 1.500 €/Monat für 12 Videos (125 € pro Video)
+- Einzelvideo (flexibles Kontingent, 15–30 Sek.): ab 162,50 €
+- Kurzvideo LVL 2 (30–60 Sek.): ab 299 €
+- Seamless One-Take (30 Sek., ein Take ohne Cut): 249 €
 - GEO (Check / Audit / Paket): Preis auf Anfrage, je nach Projekt
 
 ## Kontakt & Verifizierte Profile
