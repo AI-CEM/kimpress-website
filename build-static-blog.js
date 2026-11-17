@@ -91,7 +91,7 @@ function renderFullPostMain(post) {
           <img class="post-author__avatar post-author__avatar--lg" src="/images/characters/portrait-01.png" alt="Cem Görül" style="object-fit: cover;" loading="lazy" />
           <div class="post-authorbox__text">
             <div class="post-authorbox__name">Cem Görül</div>
-            <div class="post-authorbox__bio">KI-Agentur Kimpress · Hamburg. Über 15 Jahre Erfahrung in Webentwicklung, Marketing &amp; KI-Automatisierung für KMU im DACH-Raum.</div>
+            <div class="post-authorbox__bio">Cem Görül · Gründer &amp; KI-Architekt bei Kimpress · Hamburg. Spezialisiert auf KI-Prozessautomatisierung, maßgeschneiderte KI-Assistenten, kinoreife KI-Videos und GEO für den DACH-Raum.</div>
             <a href="/#kontakt" class="btn btn--primary" style="margin-top:1rem">Direktkontakt →</a>
           </div>
         </div>
@@ -99,11 +99,11 @@ function renderFullPostMain(post) {
         <!-- Share -->
         <div class="post-share">
           <span class="post-share__label">Teilen</span>
-          <a class="post-share__btn" id="share-li" href="https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`${DOMAIN}/blog-post.html?slug=${post.slug}`)}" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <a class="post-share__btn" id="share-li" href="https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`${DOMAIN}/blog/${post.slug}`)}" target="_blank" rel="noopener" aria-label="LinkedIn">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
             LinkedIn
           </a>
-          <a class="post-share__btn" id="share-tw" href="https://x.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(`${DOMAIN}/blog-post.html?slug=${post.slug}`)}" target="_blank" rel="noopener" aria-label="X / Twitter">
+          <a class="post-share__btn" id="share-tw" href="https://x.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(`${DOMAIN}/blog/${post.slug}`)}" target="_blank" rel="noopener" aria-label="X / Twitter">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
             X
           </a>

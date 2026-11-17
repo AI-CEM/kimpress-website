@@ -1771,8 +1771,6 @@ if __name__ == "__main__":
     content: `
 <p class="blog-lead">Vergiss die oberflächlichen Marketing-Tipps über "Answer Blocks" oder "Füge ein paar Schema.org Tags ein". Wenn du 2026 wissen willst, warum ChatGPT, Perplexity, Gemini oder Google AI Overviews deine Konkurrenz empfehlen und dein Unternehmen ignorieren, musst du das Backend der RAG-Architekturen (Retrieval-Augmented Generation) verstehen. Hier ist das mathematische Reverse-Engineering der 5 Algorithmen-Pipelines, die über deinen Share of Model (SoM) entscheiden.</p>
 
-<p>Als ich mit 25 Euro Gewerbeanmeldung im östlichen Hamburg und meinem alten MacBook Air gestartet bin, lief SEO noch nach ganz einfachen Regeln ab: Keywords in die H1, ein paar Backlinks kaufen und abwarten. 2026 existiert diese Welt nicht mehr. 57 % aller B2B-Suchanfragen sind Zero-Click-Suchen. Entscheidungsträger fragen LLMs direkt. Wer nicht in den synthetischen Antworten landet, existiert nicht.</p>
-
 <p>Die Frage ist nicht mehr: "Wie ranke ich auf Google?", sondern: <strong>"Wie manipuliere ich die mathematische Vektor-Kosinus-Ähnlichkeit und Cross-Encoder Re-Ranker zu meinen Gunsten?"</strong> Let's dive deep.</p>
 
 <h2>1. Vektor-Dichte & Latent Space Alignment (Dense Retrieval)</h2>
@@ -1847,8 +1845,6 @@ if __name__ == "__main__":
     category: 'Automatisierung',
     content: `
 <p class="blog-lead">99 % aller KI-Tutorials im Netz haben dasselbe Problem: Sie stammen von Prompt-Postern auf LinkedIn, die noch nie eine Zeile Produktions-Code geschrieben haben. Du kopierst den Beispiel-Code, wirfst ihn in deine Konsole und landest sofort in einem Haufen von <code>SyntaxError</code>, veralteten SDK-Aufrufen oder fehlenden Dependency-Importen.</p>
-
-<p>Als ich Ende Februar 2026 Kimpress in Hamburg gegründet habe – gestartet mit 15+ Jahren Erfahrung, 25 Euro Gewerbeanmeldung und meinem alten 2017er MacBook Air – gab es eine eiserne Regel: Was im Terminal nicht auf Anhieb funktioniert, bringt dir keinen einzigen Euro Gewinn im Tagesgeschäft.</p>
 
 <p>In diesem Master-Tutorial räumen wir auf. Du bekommst <strong>6 lauffähige, im Terminal getestete Code-Snippets und Ultimate-Level System-Prompts</strong> für die wichtigsten Modelle und Plattformen – und zu jedem Snippet erklären wir exakt das **Problem**, die **Lösung**, was der Code **Zeile für Zeile bewirkt** und welchen **Business-Nutzen** du damit erzielst.</p>
 
@@ -2231,8 +2227,6 @@ return [{ json: { retryCount: retryCount, totalDelaySeconds: totalDelay } }];</c
 
 <p>Wer heute noch glaubt, mit billigen Prompt-Genies auf LinkedIn Schritt halten zu können, verbrennt Marke und Sichtbarkeit. Stumme, ungelenke KI-Videoschnipsel ohne echtes Storytelling sind im harten Unternehmensalltag nutzlos und erzeugen null Kundenvertrauen.</p>
 
-<p>Als ich mit 25 Euro Gewerbeanmeldung und meinem alten MacBook Air gestartet bin, gab es für schlechten Content genau eine Konsequenz: Du bist unsichtbar geblieben. 2026 gilt das mehr denn je.</p>
-
 <p>Aber: Wer KI-Content nicht als Text-Spammer begreift, sondern als <strong>multimodale, datengetriebene Architektur</strong> aufbaut, fährt heute Ergebnisse ein, von denen klassische Marketing-Abteilungen nur träumen können.</p>
 
 <h2>1. GEO statt SEO: Warum "Share of Model" die 10 Blue Links ablöst</h2>
@@ -2351,8 +2345,6 @@ return [{ json: { retryCount: retryCount, totalDelaySeconds: totalDelay } }];</c
     category: 'Automatisierung',
     content: `
 <p class="blog-lead">Sehen wir den Tatsachen ins Auge: 95 % aller KI-Agenten-Demos, die in den letzten zwei Jahren über LinkedIn und Twitter getrieben wurden, waren instabile Basteleien. Hübsch anzusehen in einem 30-Sekunden-Screenrecording, aber im echten Betriebsalltag ein Albtraum aus abgebrochenen API-Calls, wirren Halluzinationen und dreistelligen Monatsrechnungen für Token.</p>
-
-<p>Als ich damals mit einer 25-Euro-Gewerbeanmeldung und einem klapprigen MacBook Air angefangen habe, digitale Systeme und Workflows für Kunden zu bauen, galt eine Regel: Was im Betrieb nicht 100-prozentig verlässlich läuft, fliegt raus. Und genau an dieser Hürde sind KI-Agenten bisher gescheitert.</p>
 
 <p>Diese Woche hat sich das Blatt gewendet. Zwei Entwicklungen sind gleichzeitig zusammengekommen, die KI-Agenten vom Experimentierstatus direkt in die Serienreife katapultieren: Die native <strong>MCP-Client-Integration</strong> im <em>Tools Agent</em> Ökosystem von n8n und der dramatische Preisverfall bei extrem schnellen Modell-APIs wie <strong>Gemini Flash</strong> und <strong>GPT-4o-mini</strong>.</p>
 
@@ -2473,7 +2465,7 @@ return [{ json: { retryCount: retryCount, totalDelaySeconds: totalDelay } }];</c
 
 <h2>Das Problem der Einzel-Abos</h2>
 
-<p>Wenn du KI wirklich in deinen Arbeitsalltag integrierst – für Code, Texte, Analysen und Automatisierungen – merkst du schnell: Kein Modell ist perfekt für alles. Wie ich in einem <a href="/blog-post.html?slug=chatgpt-vs-claude-welches-modell">anderen Artikel schon geschrieben habe</a>, ist Claude Sonnet unschlagbar für Texte und Code, während ChatGPT bei Bildern und Datenanalyse glänzt.</p>
+<p>Wenn du KI wirklich in deinen Arbeitsalltag integrierst – für Code, Texte, Analysen und Automatisierungen – merkst du schnell: Kein Modell ist perfekt für alles. Wie ich in einem <a href="/blog/chatgpt-vs-claude-welches-modell">anderen Artikel schon geschrieben habe</a>, ist Claude Sonnet unschlagbar für Texte und Code, während ChatGPT bei Bildern und Datenanalyse glänzt.</p>
 
 <p>Das zwingt dich aktuell in den sogenannten "Vendor Lock-in". Du nutzt das Modell, für das du gerade bezahlst, auch für Aufgaben, bei denen es eigentlich schwächer ist. Und wenn du an die harten Message-Limits stößt, bist du komplett blockiert.</p>
 
@@ -2601,14 +2593,14 @@ return [{ json: { retryCount: retryCount, totalDelaySeconds: totalDelay } }];</c
   {
     slug: 'ki-agentur-hamburg',
     title: 'KI-Agentur Hamburg: Was kostet KI-Marketing wirklich? (2026)',
-    excerpt: 'Ich hab Kimpress in Hamburg gegründet — mit 25 Euro Gewerbeanmeldung und einem Laptop. Hier erzähle ich dir ehrlich, was eine KI-Agentur kostet, was sie kann und wann sie sich für dich lohnt.',
+    excerpt: 'KI-Agentur Hamburg: Was KI-Marketing 2026 für KMU und Mittelstand kostet — Festpreise statt Stundensatz, KI-Videos, Chatbots und Automatisierung von Kimpress.',
     date: '2026-07-16',
     readTime: 8,
     category: 'Content',
     content: `
-<p class="blog-lead">Ich sitze gerade in meinem Büro in Billstedt — Hamburg, 22115, für die die das nicht kennen: östliches Hamburg, weit weg von der Alster, nah an der Realität. Hier habe ich Kimpress gegründet. Mit einer 25-Euro-Gewerbeanmeldung, einem Laptop und der Überzeugung, dass KI-Marketing nicht nur für Konzerne mit sechsstelligem Budget sein muss.</p>
+<p class="blog-lead">Hamburg, 2026: Wer eine KI-Agentur sucht, googelt nicht mehr nur — Entscheidungsträger fragen ChatGPT, Perplexity und Google AI Overviews direkt. Wer dort nicht als Antwort auftaucht, existiert für potenzielle Kunden nicht. Dieser Guide zeigt, was eine KI-Agentur in Hamburg für KMU und Mittelstand leisten muss, was das kostet und woran du eine seriöse Agentur erkennst — mit den Festpreisen von Kimpress: Content Engine 1.500 € im Monat, Workflow-Automatisierung ab 2.500 €, KI-Assistent ab 3.500 €.</p>
 
-<p>Seitdem werde ich fast täglich gefragt: Was macht ihr eigentlich? Was kostet das? Und ist das was für mich? Ich beantworte das jetzt einmal — so ehrlich wie möglich.</p>
+<p>Mich erreichen fast täglich dieselben Fragen: Was macht ihr eigentlich? Was kostet das? Und ist das was für mich? Ich beantworte das jetzt einmal — so ehrlich wie möglich.</p>
 
 <h2>Was eine KI-Agentur in Hamburg wirklich macht</h2>
 
@@ -2627,7 +2619,7 @@ return [{ json: { retryCount: retryCount, totalDelaySeconds: totalDelay } }];</c
 
 <p>Ich hab mich damals umgeschaut, bevor ich selbst gegründet hab. Was ich gesehen habe: Preise zwischen 2.000 € und 25.000 € für "KI-Beratung". Beides ist real. Beides hat seine Berechtigung. Die Frage ist nur: Was brauchst du?</p>
 
-<p>Große Unternehmensberatungen nehmen 10.000 bis 20.000 € — und dann bekommst du in der Regel einen dicken Bericht darüber was du theoretisch mit KI machen könntest. Das ist manchmal sinnvoll. Für einen Hamburger Handwerksbetrieb, eine Coaching-Praxis oder ein mittelständisches Unternehmen ist es das meistens nicht.</p>
+<p>Große Unternehmensberatungen nehmen 10.000 bis 20.000 € — und dann bekommst du in der Regel einen dicken Bericht darüber was du theoretisch mit KI machen könntest. Das ist manchmal sinnvoll. Für einen Hamburger Handwerksbetrieb, einen Dienstleister oder ein mittelständisches Unternehmen ist es das meistens nicht.</p>
 
 <p>Unser Modell ist ein anderes. Bei Kimpress verkaufen wir keine vagen Stunden oder PowerPoint-Folien, sondern schlüsselfertige Systeme zum Festpreis:</p>
 
@@ -2730,7 +2722,7 @@ return [{ json: { retryCount: retryCount, totalDelaySeconds: totalDelay } }];</c
 
 <h2>Was wenn ich keine Ahnung von Technik habe?</h2>
 
-<p>Dann bist du in guter Gesellschaft. Die meisten meiner Kunden sind keine Entwickler. Handwerker, Coaches, Berater, kleine Agenturen. Kein einziger hat mir je einen Workflow in Code geschrieben.</p>
+<p>Dann bist du in guter Gesellschaft. Die meisten meiner Kunden sind keine Entwickler. Handwerker, Dienstleister, Berater, kleine Agenturen. Kein einziger hat mir je einen Workflow in Code geschrieben.</p>
 
 <p>Das ist auch nicht nötig. Die Tools heute sind visuell, zieh-und-ablege, und wer einen Laptop bedienen kann kommt damit klar. Und für alles andere gibt es uns.</p>
 
@@ -2847,7 +2839,7 @@ return [{ json: { retryCount: retryCount, totalDelaySeconds: totalDelay } }];</c
 
 <h2>Meine ehrliche Empfehlung</h2>
 
-<p>Für die meisten Selbstständigen, Coaches und kleinen Unternehmen mit denen ich arbeite: Claude Sonnet als Einstieg. Stärkere Texte, sehr gutes Coding, natürlichere Konversation.</p>
+<p>Für die meisten Selbstständigen, Dienstleister und kleinen Unternehmen mit denen ich arbeite: Claude Sonnet als Einstieg. Stärkere Texte, sehr gutes Coding, natürlichere Konversation.</p>
 
 <p>Wenn du regelmäßig mit Daten arbeitest oder KI-Bilder direkt aus dem Chat brauchst: ChatGPT Plus dazu. 40 € im Monat für beide. Für mich die Investition mit dem besten ROI die ich kenne — mit großem Abstand.</p>
     `,
