@@ -140,3 +140,9 @@ Letzte Prüfung: `2026-11-16`
 ## Deploy 11e — 4th Stats Panel Restored
 
 - 4th stat card added (`12` / `Videos pro Monat`, verified Content Engine monthly output, no `"Abo"` wording — cancellation terms undecided) after `24h` inside `.stats__grid`; `@media (min-width: 641px)` `.stats__grid` restored `repeat(3, 1fr)` → `repeat(4, 1fr)` with mobile 2-column grids unchanged | 4-panel grid symmetry on mobile and desktop | kimpress.de (this site), verified 2026-11-17
+
+---
+
+## Deploy 11f — 4th Stats Panel Back to `10×`
+
+- 4th stat card restored to the original `10×` / `Schneller als klassische Agenturen` (13 Nov rescue wording, byte-identical) per 2026-11-17 operator decision (claim based on the operator's own daily AI work); `12` / `Videos pro Monat` removed from the stats grid only (fact remains in FAQ + JSON-LD); desktop `.stats__grid` unchanged at 4 columns (`repeat(4, 1fr)` from Deploy 11e) | operator-stated claim on own daily workflow | kimpress.de (this site), verified 2026-11-17
