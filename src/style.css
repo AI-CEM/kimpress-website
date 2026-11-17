@@ -2807,7 +2807,7 @@ button.btn {
 
 @media (min-width: 1024px) {
   .footer__top {
-    grid-template-columns: 2fr 1fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
     padding: 64px 60px 48px;
     gap: 0;
     /* Vertikaler Separator nach Brand-Spalte via border */

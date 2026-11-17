@@ -115,3 +115,15 @@ Letzte Prüfung: `2026-11-16`
 ## Deploy 11b — GEO Cards Removed from `#geo-ablauf`
 
 - 3 GEO cards (`01 // AUDIT`, `02 // UMSETZUNG`, `03 // MESSUNG`) removed from `#geo-ablauf` on homepage per operator decision; section text (label, H2, subtitle, honest sentence, CTA) kept card-free; 3 pricing TIER cards untouched | operator UX decision, no extra cards | kimpress.de (this site), verified 2026-11-17
+
+---
+
+## Deploy 11c — Footer Navigation Split
+
+- Homepage footer Navigation column split (11 → 5 links: `#services`, `#process`, `#about`, `#faq`, `#kontakt`), new `Wissen & Vergleiche` column added between `Services` and `Rechtliches` (6 links: `/blog.html`, `/ki-videos-erstellen.html`, `/ki-chatbot-kanzlei.html`, `/ki-agentur-vs-klassische-werbeagentur.html`, `/massgeschneiderte-ki-systeme-vs-baukasten-tools.html`, `/ki-agentur-vs-inhouse.html`), desktop grid `.footer__top` at `min-width: 1024px` updated `2fr 1fr 1fr 1fr` → `2fr 1fr 1fr 1fr 1fr`; zero links deleted, all hrefs unchanged | UX / scannability, 5–6 links per nav column | kimpress.de (this site), verified 2026-11-17
+
+---
+
+## Deploy 11d — `#geo-ablauf` Section Removed
+
+- Entire `#geo-ablauf` section removed from the homepage per operator decision (cards already removed in Deploy 11b; remaining text duplicated the TIER 1 card and left an empty gap); 3 pricing TIER cards untouched; GEO facts remain in JSON-LD and `llms.txt` | operator UX decision, no duplicate section | kimpress.de (this site), verified 2026-11-17
