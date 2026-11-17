@@ -98,7 +98,14 @@
 
   <!-- Navigation Header -->
   <header class="border-b border-zinc-800 py-4 px-6 fixed top-0 w-full bg-black/90 backdrop-blur z-50 flex justify-between items-center">
-    <a href="/" class="text-2xl font-bold tracking-wider font-display text-white hover:text-emerald-400 transition">KIMPRESS</a>
+    <a href="/" aria-label="Kimpress — zur Startseite"><img src="/kimpress-logo.svg" alt="Kimpress - KI Agentur Hamburg für KI Automatisierung" height="28" class="footer__logo" style="margin-bottom:0" /></a>
+    <nav class="hidden md:flex items-center gap-6 text-sm font-semibold text-zinc-300" aria-label="Hauptnavigation">
+      <a href="/#services" class="hover:text-white transition">Services</a>
+      <a href="/#process" class="hover:text-white transition">Prozess</a>
+      <a href="/#about" class="hover:text-white transition">Über Kimpress</a>
+      <a href="/#faq" class="hover:text-white transition">FAQ</a>
+      <a href="/blog.html" class="hover:text-white transition">KI-Blog</a>
+    </nav>
     <a href="mailto:hallo@kimpress.de?subject=15-Minuten%20Prozess-Analyse" class="px-4 py-2 bg-emerald-500 hover:bg-emerald-400 text-black font-semibold rounded transition text-sm">15-Min-Analyse (0 €)</a>
   </header>
 
@@ -109,7 +116,7 @@
       <div class="inline-block px-3 py-1 bg-emerald-950 border border-emerald-500/30 text-emerald-400 text-xs font-mono uppercase tracking-widest rounded-full">
         ⚡ SPEZIALISIERTE N8N KI AGENTUR DEUTSCHLAND
       </div>
-      <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white leading-tight">
+      <h1 class="sub-h1">
         Geschäftsprozesse automatisieren mit <span class="text-emerald-400">n8n & KI</span> — deterministische Systeme, die manuelle Arbeit übernehmen.
       </h1>
       <p class="text-xl text-zinc-400 max-w-3xl mx-auto">
@@ -178,7 +185,7 @@
         <div class="inline-block px-3 py-1 bg-emerald-950/80 border border-emerald-500/30 text-emerald-400 text-xs font-mono uppercase tracking-widest rounded-full">
           ⚡ VISUELLE AUTOMATION DEMOS & SYSTEM REELS
         </div>
-        <h2 class="text-3xl md:text-4xl font-extrabold text-white">Automatisierung in der Praxis</h2>
+        <h2 class="sub-h2">Automatisierung in der Praxis</h2>
         <p class="text-zinc-400 text-sm md:text-base max-w-2xl mx-auto">
           Sieh dir an, wie n8n KI-Agenten Lead-Triage, Content-Generierung und Daten-Extraktion in Sekunden ausführen.
         </p>
@@ -206,7 +213,7 @@
 
             <div class="absolute bottom-4 left-4 right-4 text-left space-y-1">
               <div class="text-xs font-mono text-emerald-400 uppercase">System 01</div>
-              <h3 class="text-lg font-bold text-white">Inbound Lead Triage Bot</h3>
+              <h3 class="sub-h3">Inbound Lead Triage Bot</h3>
               <p class="text-xs text-zinc-300 line-clamp-2">Qualifiziert Anfragen in &lt;60 Sek, reichert CRM-Daten an & bucht Termine.</p>
               <div class="pt-2 flex flex-wrap gap-1 text-[10px] font-mono text-zinc-400">
                 <span class="px-1.5 py-0.5 bg-zinc-800 rounded">#n8nWorkflow</span>
@@ -237,7 +244,7 @@
 
             <div class="absolute bottom-4 left-4 right-4 text-left space-y-1">
               <div class="text-xs font-mono text-emerald-400 uppercase">System 02</div>
-              <h3 class="text-lg font-bold text-white">Auto Content Factory</h3>
+              <h3 class="sub-h3">Auto Content Factory</h3>
               <p class="text-xs text-zinc-300 line-clamp-2">Verwandelt Blogartikel & Voice-Memos automatisch in fertige 9:16 Video-Reels.</p>
               <div class="pt-2 flex flex-wrap gap-1 text-[10px] font-mono text-zinc-400">
                 <span class="px-1.5 py-0.5 bg-zinc-800 rounded">#Automation</span>
@@ -268,7 +275,7 @@
 
             <div class="absolute bottom-4 left-4 right-4 text-left space-y-1">
               <div class="text-xs font-mono text-emerald-400 uppercase">System 03</div>
-              <h3 class="text-lg font-bold text-white">Smart Document Parser</h3>
+              <h3 class="sub-h3">Smart Document Parser</h3>
               <p class="text-xs text-zinc-300 line-clamp-2">Liest PDFs, Verträge & Angebote aus und spielt strukturierte Daten ins ERP ein.</p>
               <div class="pt-2 flex flex-wrap gap-1 text-[10px] font-mono text-zinc-400">
                 <span class="px-1.5 py-0.5 bg-zinc-800 rounded">#PDFParser</span>
@@ -282,21 +289,21 @@
 
     <!-- VALUE PROPOSITION GRID -->
     <section class="space-y-8">
-      <h2 class="text-3xl font-bold text-center text-white">Vollautomatische Systeme für deinen Unternehmens-Erfolg</h2>
+      <h2 class="sub-h2 text-center">Vollautomatische Systeme für deinen Unternehmens-Erfolg</h2>
       <div class="grid md:grid-cols-3 gap-6">
         <div class="bg-zinc-900 border border-zinc-800 p-6 rounded-xl space-y-3">
           <div class="text-emerald-400 font-mono text-sm">01 / Automatisierter Datenfluss</div>
-          <h3 class="text-xl font-bold text-white">Nahtlose System-Kopplung</h3>
+          <h3 class="sub-h3">Nahtlose System-Kopplung</h3>
           <p class="text-sm text-zinc-400">Verbinde E-Mail, CRM und Datenbanken. n8n Workflows übertragen und verarbeiten Unternehmensdaten automatisch per API.</p>
         </div>
         <div class="bg-zinc-900 border border-zinc-800 p-6 rounded-xl space-y-3">
           <div class="text-emerald-400 font-mono text-sm">02 / Höchste Reaktions-Speed</div>
-          <h3 class="text-xl font-bold text-white">Inbound Lead Triage</h3>
+          <h3 class="sub-h3">Inbound Lead Triage</h3>
           <p class="text-sm text-zinc-400">KI-Agenten qualifizieren eingehende B2B-Anfragen in unter 60 Sekunden, reichern Firmendaten an und vergeben Termine.</p>
         </div>
         <div class="bg-zinc-900 border border-zinc-800 p-6 rounded-xl space-y-3">
           <div class="text-emerald-400 font-mono text-sm">03 / KI-Parser für Dokumente</div>
-          <h3 class="text-xl font-bold text-white">Strukturierte Extraktion</h3>
+          <h3 class="sub-h3">Strukturierte Extraktion</h3>
           <p class="text-sm text-zinc-400">Unstrukturierte PDFs, Verträge und Rechnungen werden automatisiert ausgelesen und direkt in dein ERP eingespielt.</p>
         </div>
       </div>
@@ -304,13 +311,13 @@
 
     <!-- PRICING TIERS -->
     <section class="space-y-8">
-      <h2 class="text-3xl font-bold text-center text-white">Transparente n8n KI-Automatisierungs-Preise</h2>
+      <h2 class="sub-h2 text-center">Transparente n8n KI-Automatisierungs-Preise</h2>
       <div class="grid md:grid-cols-3 gap-6">
         <!-- Free Hook -->
         <div class="bg-zinc-900 border border-zinc-800 p-6 rounded-xl flex flex-col justify-between space-y-6">
           <div class="space-y-4">
             <div class="text-xs font-mono text-emerald-400 uppercase">Schritt 1 (Kostenlos)</div>
-            <h3 class="text-2xl font-bold text-white">Prozess-Analyse</h3>
+            <h3 class="sub-h3">Prozess-Analyse</h3>
             <div class="text-3xl font-black text-emerald-400">0 € <span class="text-xs text-zinc-500 font-normal">Zoom Call</span></div>
             <p class="text-sm text-zinc-400">15-Minuten Zoom-Call. Wir analysieren deine Zeitfresser und zeigen dir am Bildschirm den n8n-Blueprint.</p>
           </div>
@@ -321,7 +328,7 @@
           <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-emerald-500 text-black text-xs font-bold uppercase px-3 py-1 rounded-full">Haupt-Angebot</div>
           <div class="space-y-4 pt-2">
             <div class="text-xs font-mono text-emerald-400 uppercase">System Implementation</div>
-            <h3 class="text-2xl font-bold text-white">AI Automation Sprint</h3>
+            <h3 class="sub-h3">AI Automation Sprint</h3>
             <div class="text-3xl font-black text-white">ab 2.500 € <span class="text-xs text-zinc-500 font-normal">Festpreis</span></div>
             <p class="text-sm text-zinc-400">1 schlüsselfertiges n8n-System (z. B. Inbound Lead Bot, PDF-Parser oder Kundenservice Bot) fertig gebaut in 14 Tagen.</p>
           </div>
@@ -331,7 +338,7 @@
         <div class="bg-zinc-900 border border-zinc-800 p-6 rounded-xl flex flex-col justify-between space-y-6">
           <div class="space-y-4">
             <div class="text-xs font-mono text-zinc-500 uppercase">Laufender Ausbau</div>
-            <h3 class="text-2xl font-bold text-white">AI Operations Partner</h3>
+            <h3 class="sub-h3">AI Operations Partner</h3>
             <div class="text-3xl font-black text-emerald-400">ab 1.950 € <span class="text-xs text-zinc-500 font-normal">/ Monat</span></div>
             <p class="text-sm text-zinc-400">Deine externe KI-Abteilung. Wartung, API-Monitoring, Prompt-Tuning & monatlich 1x neuer Workflow.</p>
           </div>
@@ -342,26 +349,26 @@
 
     <!-- DETAILED SEO / GEO FAQ SECTION -->
     <section class="space-y-6 max-w-3xl mx-auto border-t border-zinc-800 pt-12">
-      <h2 class="text-3xl font-bold text-center text-white">Häufig gestellte Fragen zu n8n & KI-Automatisierung</h2>
+      <h2 class="sub-h2 text-center">Häufig gestellte Fragen zu n8n & KI-Automatisierung</h2>
       <div class="space-y-4">
         <div class="bg-zinc-900 p-6 rounded-lg border border-zinc-800 space-y-2">
-          <h3 class="font-bold text-lg text-emerald-400">Was unterscheidet Kimpress als n8n KI Agentur in Deutschland?</h3>
+          <h3 class="sub-h3">Was unterscheidet Kimpress als n8n KI Agentur in Deutschland?</h3>
           <p class="text-sm text-zinc-300 leading-relaxed">Kimpress ist eine inhabergeführte n8n KI Agentur unter der Leitung von Cem Görül. Wir verkaufen keine theoretischen KI-Konzepte oder stundenlange Beratungen, sondern schlüsselfertig gebaute n8n KI-Systeme zum transparenten Festpreis für Unternehmen im DACH-Raum.</p>
         </div>
         <div class="bg-zinc-900 p-6 rounded-lg border border-zinc-800 space-y-2">
-          <h3 class="font-bold text-lg text-emerald-400">Warum setzen Unternehmen n8n für KI-Automatisierung ein?</h3>
+          <h3 class="sub-h3">Warum setzen Unternehmen n8n für KI-Automatisierung ein?</h3>
           <p class="text-sm text-zinc-300 leading-relaxed">n8n ist eine hochflexible Workflow-Automations-Plattform, die On-Premise oder auf eigenen Servern in der EU betrieben werden kann. Dies ermöglicht DSGVO-konformen Betrieb, hohe Datensicherheit und volle Kontrolle über sensible Unternehmensdaten im Vergleich zu geschlossenen US-Cloud-Plattformen.</p>
         </div>
         <div class="bg-zinc-900 p-6 rounded-lg border border-zinc-800 space-y-2">
-          <h3 class="font-bold text-lg text-emerald-400">Wie schnell amortisiert sich eine n8n KI-Automatisierung für ein Unternehmen?</h3>
+          <h3 class="sub-h3">Wie schnell amortisiert sich eine n8n KI-Automatisierung für ein Unternehmen?</h3>
           <p class="text-sm text-zinc-300 leading-relaxed">Ein n8n AI Automation Sprint (ab 2.500 € Festpreis) spart durchschnittlich 10 bis 20 Stunden manuelle Handarbeit pro Woche ein. Bei typischen Stundensätzen amortisiert sich die Investition für das Unternehmen bereits nach 30 bis 60 Tagen.</p>
         </div>
         <div class="bg-zinc-900 p-6 rounded-lg border border-zinc-800 space-y-2">
-          <h3 class="font-bold text-lg text-emerald-400">Was passiert in der kostenlosen 15-Minuten Prozess-Analyse?</h3>
+          <h3 class="sub-h3">Was passiert in der kostenlosen 15-Minuten Prozess-Analyse?</h3>
           <p class="text-sm text-zinc-300 leading-relaxed">Im kostenlosen 15-Minuten Zoom-Call analysieren wir deine 1–2 größten manuellen Zeitfresser im Unternehmen. Wir zeigen dir direkt am Bildschirm eine klare n8n-Architektur und einen unverbindlichen Festpreis-Blueprint.</p>
         </div>
         <div class="bg-zinc-900 p-6 rounded-lg border border-zinc-800 space-y-2">
-          <h3 class="font-bold text-lg text-emerald-400">Wie funktioniert die Anbindung an bestehende CRM- und ERP-Systeme?</h3>
+          <h3 class="sub-h3">Wie funktioniert die Anbindung an bestehende CRM- und ERP-Systeme?</h3>
           <p class="text-sm text-zinc-300 leading-relaxed">n8n verbindet bestehende Software-Systeme (wie HubSpot, Pipedrive, Gmail, Outlook, Lexoffice, SevDesk oder Custom Datenbanken) direkt über sichere API-Schnittstellen und Webhooks — ohne dass deine bestehende IT-Landschaft umgebaut werden muss.</p>
         </div>
       </div>

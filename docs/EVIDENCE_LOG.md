@@ -127,3 +127,16 @@ Letzte Prüfung: `2026-11-16`
 ## Deploy 11d — `#geo-ablauf` Section Removed
 
 - Entire `#geo-ablauf` section removed from the homepage per operator decision (cards already removed in Deploy 11b; remaining text duplicated the TIER 1 card and left an empty gap); 3 pricing TIER cards untouched; GEO facts remain in JSON-LD and `llms.txt` | operator UX decision, no duplicate section | kimpress.de (this site), verified 2026-11-17
+
+---
+
+## Deploy 12 — Subpage Design Unification
+
+- Subpage H1/H2/H3 typography unified to Bebas Neue display type via shared `.sub-h1`, `.sub-h2`, `.sub-h3` classes in `src/style.css` across all 7 subpages; modal H3s outside `<main>` (`ki-content-agentur-deutschland.html`, `n8n-ki-agentur-deutschland.html`) left untouched | visual consistency with homepage, no text/color changes | kimpress.de (this site), verified 2026-11-17
+- Subpage headers unified with homepage navigation (`public/kimpress-logo.svg` + 5 links `/#services`, `/#process`, `/#about`, `/#faq`, `/blog.html` + existing page-specific mailto CTA button) across all 7 subpages | navigation consistency, absolute `/#` anchors | kimpress.de (this site), verified 2026-11-17
+
+---
+
+## Deploy 11e — 4th Stats Panel Restored
+
+- 4th stat card added (`12` / `Videos pro Monat`, verified Content Engine monthly output, no `"Abo"` wording — cancellation terms undecided) after `24h` inside `.stats__grid`; `@media (min-width: 641px)` `.stats__grid` restored `repeat(3, 1fr)` → `repeat(4, 1fr)` with mobile 2-column grids unchanged | 4-panel grid symmetry on mobile and desktop | kimpress.de (this site), verified 2026-11-17
