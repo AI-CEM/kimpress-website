@@ -109,3 +109,9 @@ Letzte Prüfung: `2026-11-16`
 - Price ladder rewrite (`index.html`, `ki-content-agentur-deutschland.html`, `ki-videos-erstellen.html`, `public/llms.txt`): Content Engine 1.500 € Festpreis / 12 Videos (125 € pro Video, 23 % günstiger vs. 162,50 € Einzelpreis), Einzelvideo LVL 1 (15–30 Sek.) ab 162,50 €, Kurzvideo LVL 2 (30–60 Sek.) ab 299 €, Seamless One-Take (30 Sek.) 249 €; unsourced „90% günstiger“ and „gegenüber 1.500 €+“ claims and „Content-Pipelines“ removed | B2B Festpreise per 2026-11-17 operator decision, visible = JSON-LD | kimpress.de (this site), verified 2026-11-17
 - Tool marquee restored on homepage (`index.html` after hero, before `#stats`): 12 tools (`n8n, Gemini, Claude, ChatGPT, OmniFlash, Seedance, Muse Video, Grok Imagine, NanoBanana, ElevenLabs, HeyGen, Perplexity`) duplicated once (24 items) | decorative `aria-hidden="true"` marquee | kimpress.de (this site), verified 2026-11-17
 - Stats grid column fix (`src/style.css` `@media (min-width: 641px)` `.stats__grid`): changed `repeat(4, 1fr)` → `repeat(3, 1fr)` matching the 3 stat cards | layout fix, base/mobile grids unchanged | kimpress.de (this site), verified 2026-11-17
+
+---
+
+## Deploy 11b — GEO Cards Removed from `#geo-ablauf`
+
+- 3 GEO cards (`01 // AUDIT`, `02 // UMSETZUNG`, `03 // MESSUNG`) removed from `#geo-ablauf` on homepage per operator decision; section text (label, H2, subtitle, honest sentence, CTA) kept card-free; 3 pricing TIER cards untouched | operator UX decision, no extra cards | kimpress.de (this site), verified 2026-11-17
