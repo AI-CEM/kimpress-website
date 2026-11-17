@@ -146,3 +146,13 @@ Letzte Prüfung: `2026-11-16`
 ## Deploy 11f — 4th Stats Panel Back to `10×`
 
 - 4th stat card restored to the original `10×` / `Schneller als klassische Agenturen` (13 Nov rescue wording, byte-identical) per 2026-11-17 operator decision (claim based on the operator's own daily AI work); `12` / `Videos pro Monat` removed from the stats grid only (fact remains in FAQ + JSON-LD); desktop `.stats__grid` unchanged at 4 columns (`repeat(4, 1fr)` from Deploy 11e) | operator-stated claim on own daily workflow | kimpress.de (this site), verified 2026-11-17
+
+---
+
+## Deploy 13 — Old Price 1.950 € Cleanup
+
+- P1 (`ki-agentur-vs-klassische-werbeagentur.html`, 6× + JSON-LD `"price": "1500"`) and P3 (`ki-agentur-vs-inhouse.html`, 7× + JSON-LD prices + TCO recompute: `23.400` → `18.000`, diff `25.605` → `31.005`, `49.005`/Stepstone/disclaimer unchanged) updated to `1.500 €`; `162,50 €` Einzelvideo LVL 1 unchanged | consistent Engine 1.500 € pricing & TCO arithmetic | kimpress.de (this site), verified 2026-11-17
+- n8n page (`n8n-ki-agentur-deutschland.html`): `AI Operations Partner` deleted entirely per 2026-11-17 operator decision (L178 mention + L337–346 pricing card removed, pricing grid `md:grid-cols-3` → `md:grid-cols-2`; `Autonomous Operations` eyebrow kept) | offer removed | kimpress.de (this site), verified 2026-11-17
+- Blog & Chatbot/API: `src/blog-data.js` (8× `1.950` → `1.500` + per-video math `162,50` → `125 €`) regenerating `dist/blog/*.html` + `dist/assets/blog-shared-*.js`, `api/chat.js` (L37 → `1.500 €` / `125 €`), and `src/chatbot.js` (L284 + L831 → `1.500 €` / `125 €`; L293 blocked by user write permission denial — flagged) | unified AI/blog copy | kimpress.de (this site), verified 2026-11-17
+- Listing drafts & homepage footer comment: `docs/geo-listings/google-business-profile.md` synced to the verified 691-char live GBP description (stale 658-char draft incl. hardware sentence + GEO prices removed); `geoagenturen.md`, `feedbax.md`, `sortlist.md` (L16 + L28 `1.950` → `1.500`, counts unchanged); `index.html:860` comment `Col 4: Legal` → `Col 5: Legal` | listing/markup alignment | kimpress.de (this site), verified 2026-11-17
+- Deploy 13b: src/chatbot.js L293 (12er-Paket 1.950 → 1.500 €) fixed after permission denial in Deploy 13; dist main.js now 1.950 = 0 | kimpress.de (this site), verified 2026-11-17

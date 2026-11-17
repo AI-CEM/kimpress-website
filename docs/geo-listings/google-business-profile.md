@@ -11,15 +11,11 @@
   - E-Mail: `hallo@kimpress.de`
 
 ## Kurzbeschreibung (max. 750 Zeichen)
-- **Exakte Zeichenanzahl:** `658` Zeichen
+- **Exakte Zeichenanzahl:** `691` Zeichen
 
 ```text
-Kimpress ist eine inhabergeführte KI-Agentur aus Hamburg (Gründer: Cem Görül, gegründet 2026-02). Wir unterstützen Unternehmen mit Workflow-Automatisierung ab 2.500 € (Festpreis), KI-Assistenten ab 3.500 € (Festpreis) sowie KI-Videos in der Content Engine für 1.950 €/Monat (12 Videos) und 60-Sekunden-POV-Walkthroughs ab 162,50 € pro fertigem Video. Für Sichtbarkeit in Google und KI-Antworten bieten wir GEO-Check (490 €), GEO-Audit (990 €) und GEO-Paket (2.450 €). Erstes Projekt in Vorbereitung — Ausproduktion nach Hardware-Beschaffung. Standort: Max-Pechstein-Straße 37, 22115 Hamburg. Kontakt: hallo@kimpress.de, +49 1575 7221636, https://kimpress.de.
+Kimpress ist eine KI-Agentur in Hamburg für KMU und Mittelstand, Dienstleister und Online-Shops im gesamten DACH-Raum. Wir automatisieren wiederkehrende Geschäftsprozesse, entwickeln maßgeschneiderte KI-Chatbots für den Kundenservice und produzieren kinoreifen KI-Content: von scrollstoppenden Kurzvideos bis zu starken Werbe- und Erklärvideos für nachhaltige Reichweite auf allen sozialen Kanälen — damit du weniger manuelle Arbeit hast. Mit GEO (Generative Engine Optimization) und Local SEO stärken wir zudem die Sichtbarkeit von Unternehmen bei Google sowie in KI-Suchmaschinen wie ChatGPT und Perplexity. Kimpress ist der KI-Partner für Unternehmen, die ihre Zeit zurückgewinnen wollen.
 ```
 
 ## Operator to do
-1. Google Business Profile Konto mit Google-Account anlegen bzw. öffnen.
-2. Unternehmensname, Adresse (`Max-Pechstein-Straße 37, 22115 Hamburg`), Telefonnummer (`+49 1575 7221636`), Website (`https://kimpress.de`) und Öffnungszeiten eintragen.
-3. Kurzbeschreibung (658 Zeichen) in das Beschreibungsfeld kopieren (falls Google URLs/Telefonnummern/Preise im Beschreibungsfeld ablehnt, diese dort entfernen und nur über die Profilfelder pflegen).
-4. Kimpress-Logo und ggf. eigene Standort-/Teamfotos hochladen.
-5. Google-Verifizierung (Video-/Postkarten-/Telefon-Verifizierung) durchführen und Profil veröffentlichen.
+Erledigt — Profil ist live seit 15 Nov 2026 (verifiziert). Diese Datei hält nur den Live-Text fest; keine Neueintragung nötig.

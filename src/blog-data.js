@@ -1005,7 +1005,7 @@ if __name__ == "__main__":
 
 <ul>
   <li><strong>Erstes Test-Video (10–20 Sek.): 100 % KOSTENLOS (0 €)</strong> als verbindlicher Proof of Value vorab. Wir testen deine visuelle Identität und liefern dein erstes fertiges Creative in 48 Stunden.</li>
-  <li><strong>Schlüsselfertiges 12er-Video-Paket (1.950 € Festpreis):</strong> 12 fertige Full-HD / 4K Videos (20–45s) – flexibel optimiert für jedes Format (9:16 Social &amp; 16:9 Web/Cinema) inklusive AIDA-Skripting, Sprecher-Synthese, Schnitt, animierten Untertiteln und Google Omni Flash Choreografie. Rechnerisch 162,50 € pro Video – transparenter Festpreis, flexibel auf Abruf.</li>
+  <li><strong>Schlüsselfertiges 12er-Video-Paket (1.500 € Festpreis):</strong> 12 fertige Full-HD / 4K Videos (20–45s) – flexibel optimiert für jedes Format (9:16 Social &amp; 16:9 Web/Cinema) inklusive AIDA-Skripting, Sprecher-Synthese, Schnitt, animierten Untertiteln und Google Omni Flash Choreografie. Rechnerisch 125 € pro Video – transparenter Festpreis, flexibel auf Abruf.</li>
 </ul>
 
 <div class="cta-box">
@@ -1249,7 +1249,7 @@ if __name__ == "__main__":
 
 <ul>
   <li><strong>Erstes Test-Video (10–20 Sek.): 100 % KOSTENLOS (0 €)</strong> als verbindlicher Proof of Value vorab. Du lieferst uns ein Thema oder ein Sprachmemo – wir liefern dein fertiges Test-Creative in 48 Stunden.</li>
-  <li><strong>Schlüsselfertiges 12er-Video-Paket (1.950 € Festpreis):</strong> 12 fertige 9:16 Full-HD Videos (20–45s) inklusive AIDA-Skripting, lippensynchronem Studio-Sound, Schnitt und animierten Untertiteln. Rechnerisch 162,50 € pro Video – transparenter Festpreis, flexibel auf Abruf.</li>
+  <li><strong>Schlüsselfertiges 12er-Video-Paket (1.500 € Festpreis):</strong> 12 fertige 9:16 Full-HD Videos (20–45s) inklusive AIDA-Skripting, lippensynchronem Studio-Sound, Schnitt und animierten Untertiteln. Rechnerisch 125 € pro Video – transparenter Festpreis, flexibel auf Abruf.</li>
 </ul>
 
 <div class="cta-box">
@@ -1399,7 +1399,7 @@ if __name__ == "__main__":
   <p>Aktuelle V2V-Engines verarbeiten Clips zwischen 4 und 30 Sekunden pro Generation. Das ist das perfekte Format für Social Media (TikTok, Instagram Reels, YouTube Shorts), wo die ersten 3 bis 15 Sekunden über die gesamte Conversion der Werbeanzeige entscheiden.</p>
 
   <h3>Was kostet die Produktion bei Kimpress?</h3>
-  <p>Wir arbeiten zu 100 % mit transparenten Festpreisen – ohne Abo-Fallen und ohne automatische Vertragsverlängerungen. Unser <strong>12er-Video-Paket liegt bei 1.950 € Festpreis (rechnerisch nur 162,50 € pro Video)</strong> für fertige 20–45s Videos inklusive Konzeption, KI-Visuals, deutschem Studio-Voiceover und Schnitt. Wer die Qualität erst unverbindlich prüfen möchte, erhält sein <strong>erstes Test-Video (10–20 Sekunden) 100 % kostenlos</strong> als risikofreien Proof of Concept.</p>
+  <p>Wir arbeiten zu 100 % mit transparenten Festpreisen – ohne Abo-Fallen und ohne automatische Vertragsverlängerungen. Unser <strong>12er-Video-Paket liegt bei 1.500 € Festpreis (rechnerisch nur 125 € pro Video)</strong> für fertige 20–45s Videos inklusive Konzeption, KI-Visuals, deutschem Studio-Voiceover und Schnitt. Wer die Qualität erst unverbindlich prüfen möchte, erhält sein <strong>erstes Test-Video (10–20 Sekunden) 100 % kostenlos</strong> als risikofreien Proof of Concept.</p>
 </div>
 
 <div class="cta-box">
@@ -1518,7 +1518,7 @@ if __name__ == "__main__":
 
 <ul>
   <li><strong>Klassischer Drehtag:</strong> Kamera-Operator, Tonmann, Studiomiete, Schnitt und Farbkorrektur. Kostenpunkt: Selten unter 2.500 € bis 4.000 € für 4–6 Videos. Lieferzeit: 2 bis 3 Wochen.</li>
-  <li><strong>Kimpress KI-Content Studio:</strong> Einmaliges Einmessen deines Avatars (30 Minuten Foto- & Audio-Setup). Anschließend erstellen wir dein <strong>12er-Video-Kontingent (je 20 bis 45 Sekunden Laufzeit</strong> – die ideale Retentions-Länge für maximale Durchschauquoten auf LinkedIn, TikTok und Instagram Reels) zum transparenten Festpreis von 1.950 € (rechnerisch nur 162,50 € pro Video – <strong>100 % ohne Abo-Vertrag oder automatische Verlängerung</strong>) – schlüsselfertig mit Skript, Voiceover, Untertiteln und B-Roll geliefert innerhalb von 48 Stunden.</li>
+  <li><strong>Kimpress KI-Content Studio:</strong> Einmaliges Einmessen deines Avatars (30 Minuten Foto- & Audio-Setup). Anschließend erstellen wir dein <strong>12er-Video-Kontingent (je 20 bis 45 Sekunden Laufzeit</strong> – die ideale Retentions-Länge für maximale Durchschauquoten auf LinkedIn, TikTok und Instagram Reels) zum transparenten Festpreis von 1.500 € (rechnerisch nur 125 € pro Video – <strong>100 % ohne Abo-Vertrag oder automatische Verlängerung</strong>) – schlüsselfertig mit Skript, Voiceover, Untertiteln und B-Roll geliefert innerhalb von 48 Stunden.</li>
 </ul>
 
 <hr />
@@ -1540,13 +1540,13 @@ if __name__ == "__main__":
   <ul>
     <li><strong>Im Selbstbau:</strong> Rund 50 bis 150 Euro monatlich für API-Credits und Software-Abonnements (OpenArt, ElevenLabs, Kling AI). Der größte Hebel ist hier deine eigene Arbeitszeit: Rechne mit mindestens 10 bis 15 Arbeitsstunden pro Monat für Prompt-Tuning, Schnitt und Fehlversuche.</li>
     <li><strong>Kostenloses Test-Video (0 €):</strong> Für Unternehmen, die KI-Content unverbindlich testen wollen, erstellen wir das <strong>erste Test-Video (10–20 Sekunden) 100 % kostenlos</strong> als risikofreien Proof of Value (inklusive Stimm- und Avatar-Probe).</li>
-    <li><strong>Das Kimpress 12er-Video-Paket (1.950 € Festpreis):</strong> Ein schlüsselfertiges Kontingent von <strong>12 fertigen 9:16-Videos (je 20–45s)</strong>, das du flexibel abrufst, wenn du Content brauchst. Das entspricht <strong>rechnerisch 162,50 € pro Video</strong> – transparenter Festpreis auf Abruf, inklusive Avatar-Kalibrierung, Stimm-Klon, Skripterstellung, Schnitt und B-Roll. Im Vergleich: Ein einziger klassischer Drehtag mit Kamerateam kostet in Deutschland selten unter 2.500 bis 4.000 Euro.</li>
+    <li><strong>Das Kimpress 12er-Video-Paket (1.500 € Festpreis):</strong> Ein schlüsselfertiges Kontingent von <strong>12 fertigen 9:16-Videos (je 20–45s)</strong>, das du flexibel abrufst, wenn du Content brauchst. Das entspricht <strong>rechnerisch 125 € pro Video</strong> – transparenter Festpreis auf Abruf, inklusive Avatar-Kalibrierung, Stimm-Klon, Skripterstellung, Schnitt und B-Roll. Im Vergleich: Ein einziger klassischer Drehtag mit Kamerateam kostet in Deutschland selten unter 2.500 bis 4.000 Euro.</li>
   </ul>
 </div>
 
 <div class="cta-box">
   <h3>Deinen eigenen KI-Klon in 48 Stunden live schalten</h3>
-  <p>Wir kalibrieren deine visuelle Identität, trainieren deine deutsche KI-Stimme und liefern monatlich 12 schlüsselfertige 9:16-Videos (20–45s, rechnerisch nur 162,50 € pro Video) – oder starte mit einem kostenlosen 10–20s Test-Video.</p>
+  <p>Wir kalibrieren deine visuelle Identität, trainieren deine deutsche KI-Stimme und liefern monatlich 12 schlüsselfertige 9:16-Videos (20–45s, rechnerisch nur 125 € pro Video) – oder starte mit einem kostenlosen 10–20s Test-Video.</p>
   <a href="/#kontakt" class="btn btn--primary">Kostenloses Test-Video anfragen ➔</a>
 </div>
 `
@@ -2632,7 +2632,7 @@ return [{ json: { retryCount: retryCount, totalDelaySeconds: totalDelay } }];</c
 <p>Unser Modell ist ein anderes. Bei Kimpress verkaufen wir keine vagen Stunden oder PowerPoint-Folien, sondern schlüsselfertige Systeme zum Festpreis:</p>
 
 <ul>
-  <li><strong>KI-Content Engine (1.950 € Festpreis):</strong> Die komplette monatliche Video-Maschine. 12 fertige Premium-Videos (je 15 bis 30 Sekunden, retentionsoptimiertes 9:16-Format für TikTok, Instagram Reels und LinkedIn Shorts), inklusive Hooks, Skripte, Sprecher-Audio und Schnitt — schlüsselfertig produziert ohne Kamera-Aufwand oder Filmteam.</li>
+  <li><strong>KI-Content Engine (1.500 € Festpreis):</strong> Die komplette monatliche Video-Maschine. 12 fertige Premium-Videos (je 15 bis 30 Sekunden, retentionsoptimiertes 9:16-Format für TikTok, Instagram Reels und LinkedIn Shorts), inklusive Hooks, Skripte, Sprecher-Audio und Schnitt — schlüsselfertig produziert ohne Kamera-Aufwand oder Filmteam.</li>
   <li><strong>Automatisierte Workflows (ab 2.500 € einmalig):</strong> Maßgeschneiderte Prozess-Automatisierung für Postfach, Lead-Qualifizierung oder CRM-Sync, damit Routine-Aufgaben ohne dein Zutun laufen.</li>
   <li><strong>KI-Assistenten &amp; Chatbots (ab 3.500 € einmalig):</strong> DSGVO-konforme Assistenten für Kundenfragen und automatische Vorqualifizierung von Anfragen.</li>
 </ul>
@@ -2660,7 +2660,7 @@ return [{ json: { retryCount: retryCount, totalDelaySeconds: totalDelay } }];</c
 <h2>Die Fragen die ich am häufigsten bekomme</h2>
 
 <h3>Gibt es KI-Agenturen in Hamburg die auch für kleine Unternehmen bezahlbar sind?</h3>
-<p>Ja — das sind wir. Bei uns gibt es transparente Festpreise statt unberechenbarer Retainer: Unsere KI-Content Engine liegt bei 1.950 € für 12 fertige Videos pro Monat, Workflow-Automatisierungen starten ab 2.500 € einmalig. Kein Kleingedrucktes, keine versteckten Kosten.</p>
+<p>Ja — das sind wir. Bei uns gibt es transparente Festpreise statt unberechenbarer Retainer: Unsere KI-Content Engine liegt bei 1.500 € für 12 fertige Videos pro Monat, Workflow-Automatisierungen starten ab 2.500 € einmalig. Kein Kleingedrucktes, keine versteckten Kosten.</p>
 
 <h3>Wie lange bis man erste Ergebnisse sieht?</h3>
 <p>KI-Videos und Bilder: sofort, oft innerhalb von 24 Stunden. SEO und GEO: realistisch 4 bis 12 Wochen. Automatisierungen: ab dem ersten Tag spürbar.</p>

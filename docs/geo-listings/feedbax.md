@@ -13,7 +13,7 @@
 - **Exakte Zeichenanzahl:** `464` Zeichen
 
 ```text
-Kimpress ist eine inhabergeführte KI-Agentur aus Hamburg. Wir bieten Workflow-Automatisierung ab 2.500 € (Festpreis), KI-Assistenten ab 3.500 € (Festpreis), KI-Videos / Content Engine für 1.950 €/Monat (12 Videos). Im Bereich GEO (Generative Engine Optimization) bieten wir GEO-Check, GEO-Audit und GEO-Paket an — jeweils Preis auf Anfrage, je nach Projekt. Kontakt: Max-Pechstein-Straße 37, 22115 Hamburg, hallo@kimpress.de, +49 1575 7221636, https://kimpress.de.
+Kimpress ist eine inhabergeführte KI-Agentur aus Hamburg. Wir bieten Workflow-Automatisierung ab 2.500 € (Festpreis), KI-Assistenten ab 3.500 € (Festpreis), KI-Videos / Content Engine für 1.500 €/Monat (12 Videos). Im Bereich GEO (Generative Engine Optimization) bieten wir GEO-Check, GEO-Audit und GEO-Paket an — jeweils Preis auf Anfrage, je nach Projekt. Kontakt: Max-Pechstein-Straße 37, 22115 Hamburg, hallo@kimpress.de, +49 1575 7221636, https://kimpress.de.
 ```
 
 ## Langbeschreibung (max. 1.500 Zeichen)
@@ -25,7 +25,7 @@ Kimpress ist eine inhabergeführte KI-Agentur aus Hamburg. Unser Standort befind
 Leistungen und Preise von Kimpress:
 - Workflow-Automatisierung: ab 2.500 € (Festpreis)
 - KI-Assistent: ab 3.500 € (Festpreis)
-- KI-Videos / Content Engine: 1.950 €/Monat für 12 Videos
+- KI-Videos / Content Engine: 1.500 €/Monat für 12 Videos
 - GEO-Check: Preis auf Anfrage
 - GEO-Audit: Preis auf Anfrage
 - GEO-Paket: Preis auf Anfrage
