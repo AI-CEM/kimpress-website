@@ -151,7 +151,7 @@ function renderFullPostMain(post) {
             <li><a href="/#services">Services</a></li>
             <li><a href="/#about">Über uns</a></li>
             <li><a href="/#faq">FAQ</a></li>
-            <li><a href="/blog.html">Blog</a></li>
+            <li><a href="/blog">Blog</a></li>
           </ul>
         </div>
         <div class="footer__col">
@@ -165,8 +165,8 @@ function renderFullPostMain(post) {
       <div class="footer__bottom">
         <p>
           &copy; 2026 Kimpress &middot; Cem Görül &middot; Hamburg &middot; 
-          <a href="/index.html?open=impressum" style="color: inherit; text-decoration: underline;">Impressum</a> &middot; 
-          <a href="/index.html?open=datenschutz" style="color: inherit; text-decoration: underline;">Datenschutz</a>
+          <a href="/?open=impressum" style="color: inherit; text-decoration: underline;">Impressum</a> &middot; 
+          <a href="/?open=datenschutz" style="color: inherit; text-decoration: underline;">Datenschutz</a>
         </p>
       </div>
     </footer>
