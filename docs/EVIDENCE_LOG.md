@@ -186,3 +186,10 @@ Letzte Prüfung: `2026-11-16`
 ## Deploy 16 — Homepage Title + Meta Rewrite
 
 - Homepage SERP metadata (`index.html`, 7 spots): old `<title>` (65 chars: `Kimpress | KI-Agentur Deutschland: Virale Videos & Automation`) + old meta description (164 chars) → approved `<title>` (54 chars: `Kimpress – KI Content Agentur & smarte Automatisierung`) + approved meta description (115 chars: `Kimpress: KI-Videos, Chatbots & smarte Automatisierung für KMU. Festpreise statt Stundensatz. In 7 Tagen startklar.`); `og:title`, `og:description`, `twitter:title`, `twitter:description`, and `WebSite` JSON-LD `description` synced; Google had rewritten both title and snippet for `"ki agentur hamburg"` per 18 Nov 2026 SERP screenshot; H1, `Organization` JSON-LD description, `WebSite.name`, and `10×` card untouched; no Hamburg in title/meta per operator decision | SERP snippet fit | kimpress.de (this site) + Google SERP screenshot 2026-11-18
+
+---
+
+## Deploy 16b — Leftover String Sync
+
+- `WebSite.name` (`index.html` L39): old title string → `"name": "Kimpress"` + `"alternateName": "Kimpress – KI Content Agentur & smarte Automatisierung"` (Google Site Name spec prefers concise brand name in `WebSite.name`; raw `&` in JSON string); old title string = 0 across repo source (`index.html`, `.js`, `.html`) | Site Name alignment | kimpress.de (this site), verified 2026-11-18
+- Runtime blog fallback (`src/blog-post.js`, 6 spots): related cards (L20), `postUrl` feeding JS canonical + `og:url` (L30), `BreadcrumbList` item (L103), back link (L116), footer nav (L209), and legal links (L223–224) cleaned from `.html` / `blog-post.html?slug=` to clean `/blog/:slug`, `/blog`, and `/?open=*`; `blog-post.html` shell stays `noindex, nofollow` | runtime clean-URL parity | kimpress.de (this site), verified 2026-11-18

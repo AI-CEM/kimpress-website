@@ -17,7 +17,7 @@ function categoryColor(cat) {
 
 function relatedCard(post) {
   return `
-    <a class="related-card" href="/blog-post.html?slug=${post.slug}">
+    <a class="related-card" href="/blog/${post.slug}">
       <span class="related-card__cat" style="color:${categoryColor(post.category)}">${post.category}</span>
       <h4 class="related-card__title">${post.title}</h4>
       <span class="related-card__read">${post.readTime} Min →</span>
@@ -27,7 +27,7 @@ function relatedCard(post) {
 function renderPost(post) {
   const color = categoryColor(post.category);
   const related = getRelatedPosts(post.slug, 3);
-  const postUrl = `https://www.kimpress.de/blog-post.html?slug=${post.slug}`;
+  const postUrl = `https://www.kimpress.de/blog/${post.slug}`;
 
   document.title = `${post.title} — Kimpress Blog`;
   const metaTitle = document.getElementById('post-meta-title');
@@ -100,7 +100,7 @@ function renderPost(post) {
         "@id": `${postUrl}#breadcrumb`,
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kimpress.de" },
-          { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.kimpress.de/blog.html" },
+          { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.kimpress.de/blog" },
           { "@type": "ListItem", "position": 3, "name": post.title, "item": postUrl }
         ]
       }
@@ -113,7 +113,7 @@ function renderPost(post) {
     <!-- POST HEADER -->
     <header class="post-header">
       <div class="container">
-        <a href="/blog.html" class="post-back">← Zurück zum Blog</a>
+        <a href="/blog" class="post-back">← Zurück zum Blog</a>
         <div class="post-header__cat" style="--cat-color:${color}">${post.category}</div>
         <h1 class="post-header__title">${post.title}</h1>
         <div class="post-header__meta">
@@ -206,7 +206,7 @@ function renderPost(post) {
             <li><a href="/#services">Services</a></li>
             <li><a href="/#about">Über uns</a></li>
             <li><a href="/#faq">FAQ</a></li>
-            <li><a href="/blog.html">Blog</a></li>
+            <li><a href="/blog">Blog</a></li>
           </ul>
         </div>
         <div class="footer__col">
@@ -220,8 +220,8 @@ function renderPost(post) {
       <div class="footer__bottom">
         <p>
           &copy; 2026 Kimpress &middot; Cem Görül &middot; Hamburg &middot; 
-          <a href="/index.html?open=impressum" style="color: inherit; text-decoration: underline;">Impressum</a> &middot; 
-          <a href="/index.html?open=datenschutz" style="color: inherit; text-decoration: underline;">Datenschutz</a>
+          <a href="/?open=impressum" style="color: inherit; text-decoration: underline;">Impressum</a> &middot; 
+          <a href="/?open=datenschutz" style="color: inherit; text-decoration: underline;">Datenschutz</a>
         </p>
       </div>
     </footer>
