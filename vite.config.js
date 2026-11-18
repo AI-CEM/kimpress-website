@@ -17,6 +17,7 @@ export default defineConfig({
         vergleichWerbeagentur: resolve(__dirname, 'ki-agentur-vs-klassische-werbeagentur.html'),
         vergleichBaukasten: resolve(__dirname, 'massgeschneiderte-ki-systeme-vs-baukasten-tools.html'),
         vergleichInhouse: resolve(__dirname, 'ki-agentur-vs-inhouse.html'),
+        geoAgenturHamburg: resolve(__dirname, 'geo-agentur-hamburg.html'),
       },
     },
   },

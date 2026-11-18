@@ -3,7 +3,7 @@
   "trailingSlash": false,
   "redirects": [
     {
-      "source": "/blog-post.html",
+      "source": "/blog-post",
       "has": [
         {
           "type": "query",
