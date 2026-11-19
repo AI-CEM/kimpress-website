@@ -207,3 +207,9 @@ Letzte Prüfung: `2026-11-16`
 ## Track 2.1 — Bing verification file
 
 - `public/BingSiteAuth.xml` created for Bing Webmaster Tools XML-file verification (code `1F503A14BF90622A1E22FF9696E09350`); served at `https://www.kimpress.de/BingSiteAuth.xml` after deploy; verification artifact only, no code changed | Bing Webmaster Tools verification | kimpress.de (this site), verified 2026-11-19
+
+---
+
+## Track 2.1 — IndexNow key file (19 Nov 2026)
+
+- `public/e571e96033184fa19c1d5cb5376e7b08.txt` created for Bing Webmaster Tools IndexNow ownership verification (32 bytes, no trailing newline, served at `https://www.kimpress.de/e571e96033184fa19c1d5cb5376e7b08.txt` after deploy; `npm run build` exit code 0, `cmp` identical / exit 0 vs. `dist/e571e96033184fa19c1d5cb5376e7b08.txt`; verification artifact only, no code changed) | IndexNow ownership verification | kimpress.de (this site), verified 2026-11-19
