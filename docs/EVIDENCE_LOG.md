@@ -193,3 +193,11 @@ Letzte Prüfung: `2026-11-16`
 
 - `WebSite.name` (`index.html` L39): old title string → `"name": "Kimpress"` + `"alternateName": "Kimpress – KI Content Agentur & smarte Automatisierung"` (Google Site Name spec prefers concise brand name in `WebSite.name`; raw `&` in JSON string); old title string = 0 across repo source (`index.html`, `.js`, `.html`) | Site Name alignment | kimpress.de (this site), verified 2026-11-18
 - Runtime blog fallback (`src/blog-post.js`, 6 spots): related cards (L20), `postUrl` feeding JS canonical + `og:url` (L30), `BreadcrumbList` item (L103), back link (L116), footer nav (L209), and legal links (L223–224) cleaned from `.html` / `blog-post.html?slug=` to clean `/blog/:slug`, `/blog`, and `/?open=*`; `blog-post.html` shell stays `noindex, nofollow` | runtime clean-URL parity | kimpress.de (this site), verified 2026-11-18
+
+---
+
+## Deploy 17 — About Stat Box + geo-listings Cleanup
+
+- About stat box (`index.html` desktop L602–603 + mobile L637–638): `6` / `Services` → `1` / `ANSPRECHPARTNER` (locked decision 2026-11-18 — 100% factual, mirrors comparison tables `Ein Ansprechpartner (Cem Görül, Inhaber)`, zero UWG risk, no CSS changes) | factual operator parity | kimpress.de (this site), verified 2026-11-18
+- Directory drafts (`docs/geo-listings/geoagenturen.md`, `sortlist.md`, `feedbax.md`, `clutch.md`): purged all euro amounts from prose (`clutch.md` was the only file containing `1.950`, plus `2.500`/`3.500`/`1.500 €`/`€2,500`/`€3,500`) and replaced with locked price-free Track 2 texts (Python-counted DE `577` / `792`, EN `521` / `735`); `feedbax.md` step 1 updated to reflect live profile since 15 Nov 2026; `google-business-profile.md` untouched (verified live 691-char text) | price-free directory prose | kimpress.de (this site), verified 2026-11-18
+- Track 2 pack (`docs/TRACK2_OFFSITE_PACK.md`): created canonical offsite copy source with NAP block, Bing/GSC/GBP/directory checklist (10 priority URLs), all 4 verbatim price-free texts + counts, and structured submission fields | offsite consistency | kimpress.de (this site), verified 2026-11-18

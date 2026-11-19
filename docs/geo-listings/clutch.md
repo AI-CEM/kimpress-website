@@ -10,37 +10,22 @@
   - Website: `https://kimpress.de`
 
 ## Short Description (max 750 characters)
-- **Exact character count:** `494` characters
+- **Exact character count:** `521` characters
 
 ```text
-Kimpress is an owner-operated AI agency from Hamburg, Germany. Services include workflow automation starting at €2,500 (fixed price), AI assistants starting at €3,500 (fixed price), AI videos / Content Engine at €1,950/month for 12 videos. For Generative Engine Optimization (GEO), we offer GEO-Check, GEO-Audit, and GEO-Paket — each priced on request, depending on the project. Address: Max-Pechstein-Straße 37, 22115 Hamburg. Contact: hallo@kimpress.de, +49 1575 7221636, https://kimpress.de.
+Kimpress is an AI agency in Hamburg for SMEs, service providers and online shops across the DACH region. We automate recurring business processes, build custom AI chatbots for customer service and produce cinematic AI content: from short-form videos to advertising and explainer videos for lasting reach. With GEO and local SEO we also strengthen visibility on Google and in AI search engines such as ChatGPT and Perplexity – at fixed, plannable prices. Kimpress is the AI partner for companies that want their time back.
 ```
 
 ## Long Description (max 1,500 characters)
-- **Exact character count:** `516` characters
+- **Exact character count:** `735` characters
 
 ```text
-Kimpress is an owner-operated AI agency based in Hamburg, Germany (Max-Pechstein-Straße 37, 22115 Hamburg).
-
-Services and pricing:
-- Workflow automation: from €2,500 (fixed price)
-- AI assistant: from €3,500 (fixed price)
-- AI videos / Content Engine: €1,950/month for 12 videos
-- GEO-Check: price on request
-- GEO-Audit: price on request
-- GEO-Paket: price on request
-
-Contact:
-Kimpress · Cem Görül
-Max-Pechstein-Straße 37, 22115 Hamburg
-Email: hallo@kimpress.de
-Phone: +49 1575 7221636
-Website: https://kimpress.de
+Kimpress is an AI agency in Hamburg for SMEs, service providers and online shops across the DACH region. Our four services: process automation, AI chatbots for customer service, AI videos and content, and GEO plus local SEO. We automate recurring workflows so less manual work remains, and we produce cinematic AI content – from short-form videos to advertising and explainer videos for lasting reach on every social channel. With GEO we make companies visible on ChatGPT, Perplexity and Google AI Overviews: with audit, implementation and measurement. No one can guarantee a mention – and we say so openly. We bill at fixed, plannable prices instead of hourly rates. Kimpress is the AI partner for companies that want their time back.
 ```
 
 ## Operator to do
 1. Create a Clutch vendor account (`https://clutch.co`) using `hallo@kimpress.de` or corporate LinkedIn login.
 2. Enter company details: `Kimpress`, founded `2026-02`, address `Max-Pechstein-Straße 37, 22115 Hamburg, Germany`, phone `+49 1575 7221636`, website `https://kimpress.de`.
-3. Paste the Short Description (494 characters) and/or Long Description (516 characters) into the Clutch company profile fields.
+3. Paste the Short Description (521 characters) and/or Long Description (735 characters) into the Clutch company profile fields.
 4. Upload the Kimpress logo and select service lines (do not add fabricated case studies or client reviews).
 5. Complete Clutch verification and submit the profile for review.
